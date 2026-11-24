@@ -2,10 +2,10 @@
   "seed": 9089,
   "slug": "retail",
   "title": "连锁零售：关店与新店爬坡",
-  "rule": "Close B of opening stores at year start. Open A; they earn C of a mature store's annual sales in their first year. All surviving opening stores are mature.",
+  "rule": "Close fraction B of opening stores at year start. Open A new stores; each new store earns fraction C of a mature store's annual sales in its first year. All surviving opening stores are mature.",
   "driver_labels": {
     "A": "openings",
-    "B": "closure",
+    "B": "closure rate",
     "C": "new-store productivity"
   },
   "unit": "stores",

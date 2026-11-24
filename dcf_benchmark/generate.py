@@ -51,14 +51,22 @@ Cash COGS is cogs_pct of sales; operating expenses are opex_fixed excluding D&A.
 CAPM cost of equity: risk_free + beta times erp. WACC uses target debt_weight and statutory tax shield on debt_cost. Discount each forecast FCFF using {d['timing']} timing (0.5–4.5 for midyear; 1–5 for year-end). Terminal method: {d['terminal']}. Perpetuity uses 2030 FCFF grown one year at g; exit uses 2030 EBITDA times exit_multiple. For BOTH conventions, terminal value is at end-2030 and discounted five years. Bridge EV using **actual FY2025 closing** cash and debt only; divide equity value by shares.
 
 ## Delivery contract
-Inputs!B4:B6 must be editable numeric values, in order: price_multiplier, dso_shift (days), risk_free. Formulas must respond to edits. Other inputs may be laid out freely. Statements!B3:G3 must be the numeric years 2025–2030. Row numbers below denote outputs in that sheet. In B (actuals) only rows {', '.join(map(str, HIST))} are required. C:G require every row. Each row name below is also the requested metric definition. Balance-sheet assets are cash + receivables + inventory + net PP&E, liabilities and equity are AP + debt + equity.
+Inputs!B4:B6 must be editable numeric values stored in the exact underlying units below (display formatting is optional), and downstream formulas must respond dynamically to edits:
+- Inputs!B4 (`price_multiplier`): dimensionless decimal multiplier (e.g., `1.0`).
+- Inputs!B5 (`dso_shift`): additive shift in calendar days (e.g., `0.0`).
+- Inputs!B6 (`risk_free`): annual decimal fraction (e.g., 320 bp MUST be stored as `0.032`, not `320` or `3.2`; display as `3.20%` is optional).
+Other inputs and helper tabs may be laid out freely.
+
+Formula scope: every required computed forecast cell in Statements!C4:G33 EXCEPT row 8 (exogenous Cash operating expense, which may either link to a budget sheet or hold the numeric EUR millions budget value), plus every required output in DCF!B4:B9 (and DCF!B12:B15 where requested), MUST be a live Excel formula referencing upstream computation cells (hardcoded numbers, constant-only formulas such as `=1.13`, or bare links to hardcoded helper cells are rejected).
+
+Statements!B3:G3 must be the numeric years 2025–2030. Row numbers below denote outputs in that sheet. In B (actuals) only rows {', '.join(map(str, HIST))} are required. C:G require every row. Each row name below is also the requested metric definition. Balance-sheet assets are cash + receivables + inventory + net PP&E, liabilities and equity are AP + debt + equity.
 
 {chr(10).join(f'- {n}: {v}' for n, v in ROWS.items())}
 
-DCF sheet outputs:
+DCF sheet outputs (rates such as WACC in B4 must evaluate to annual decimal fractions, e.g., `0.0827` for 8.27%):
 {chr(10).join(f'- B{n}: {v}' for n, v in VAL.items())}
 
-Numeric tolerance: greater of EUR million (or native-unit) absolute 0.000001 and 0.0001% relative. Scoring includes base results, cash/equity/FCFF reconciliation and independent recalculation after each of the three editable assumptions changes.
+Numeric tolerance: greater of EUR million (or native-unit) absolute 0.000001 and 0.0001% relative. Scoring includes base results, cash/equity/FCFF reconciliation, formula integrity, and independent LibreOffice recalculation after each of the three editable assumptions changes (with a dynamic model gate penalizing hardcoded submissions).
 """
 
 

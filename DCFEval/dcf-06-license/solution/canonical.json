@@ -2,10 +2,10 @@
   "seed": 7071,
   "slug": "license",
   "title": "许可合同：续签、签约费与持续费",
-  "rule": "Renew B of opening licenses and sign A at midyear. Bill renewals for full year, additions for half year; each addition also pays C times unit rate upfront, recognised immediately.",
+  "rule": "Renew B of opening licenses and sign A at midyear. Recognise full-year service revenue on renewed licenses and half-year service revenue on new additions; in addition, each new addition pays an immediate upfront license fee equal to C times the full annual unit rate, recognised in full as revenue in the year signed.",
   "driver_labels": {
     "A": "new licenses",
-    "B": "renewal",
+    "B": "renewal rate",
     "C": "upfront multiple"
   },
   "unit": "licenses",

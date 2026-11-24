@@ -14,8 +14,60 @@
           9
         ],
         "formulas": [
-          160,
-          160
+          155,
+          155
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          45,
+          45
+        ],
+        "shock_discount": [
+          11,
+          11
+        ]
+      },
+      "examples": {}
+    },
+    "alt_layout": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          155,
+          155
         ],
         "history": [
           19,
@@ -68,7 +120,7 @@
           ],
           "formulas": [
             0,
-            160
+            155
           ],
           "history": [
             19,
@@ -126,11 +178,6 @@
               "live_formula_with_upstream_computation"
             ],
             [
-              "Statements!C8",
-              11.466191,
-              "live_formula_with_upstream_computation"
-            ],
-            [
               "Statements!C18",
               11.0870598051411,
               "live_formula_with_upstream_computation"
@@ -143,6 +190,11 @@
             [
               "Statements!C10",
               53.3695215487146,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C21",
+              4.176938,
               "live_formula_with_upstream_computation"
             ]
           ],
@@ -288,8 +340,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -421,11 +473,11 @@
         "reason": "missing output.xlsx"
       },
       "fake_formula": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -434,8 +486,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -496,11 +548,11 @@
         }
       },
       "alias_hardcode": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -509,8 +561,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -584,8 +636,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -678,8 +730,60 @@
           9
         ],
         "formulas": [
-          160,
-          160
+          155,
+          155
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          43,
+          43
+        ],
+        "shock_discount": [
+          10,
+          10
+        ]
+      },
+      "examples": {}
+    },
+    "alt_layout": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          155,
+          155
         ],
         "history": [
           19,
@@ -732,7 +836,7 @@
           ],
           "formulas": [
             0,
-            160
+            155
           ],
           "history": [
             19,
@@ -790,11 +894,6 @@
               "live_formula_with_upstream_computation"
             ],
             [
-              "Statements!C8",
-              25.996313,
-              "live_formula_with_upstream_computation"
-            ],
-            [
               "Statements!C18",
               15.0354852865764,
               "live_formula_with_upstream_computation"
@@ -807,6 +906,11 @@
             [
               "Statements!C10",
               54.8200533932092,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C21",
+              10.637057,
               "live_formula_with_upstream_computation"
             ]
           ],
@@ -952,8 +1056,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -1080,11 +1184,11 @@
         "reason": "missing output.xlsx"
       },
       "fake_formula": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -1093,8 +1197,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -1155,11 +1259,11 @@
         }
       },
       "alias_hardcode": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -1168,8 +1272,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -1243,8 +1347,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -1337,8 +1441,60 @@
           9
         ],
         "formulas": [
-          160,
-          160
+          155,
+          155
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          45,
+          45
+        ],
+        "shock_discount": [
+          11,
+          11
+        ]
+      },
+      "examples": {}
+    },
+    "alt_layout": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          155,
+          155
         ],
         "history": [
           19,
@@ -1391,7 +1547,7 @@
           ],
           "formulas": [
             0,
-            160
+            155
           ],
           "history": [
             19,
@@ -1449,11 +1605,6 @@
               "live_formula_with_upstream_computation"
             ],
             [
-              "Statements!C8",
-              22.088087,
-              "live_formula_with_upstream_computation"
-            ],
-            [
               "Statements!C18",
               5.45099286447611,
               "live_formula_with_upstream_computation"
@@ -1466,6 +1617,11 @@
             [
               "Statements!C10",
               14.5110886828023,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C21",
+              5.131021,
               "live_formula_with_upstream_computation"
             ]
           ],
@@ -1611,8 +1767,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -1744,11 +1900,11 @@
         "reason": "missing output.xlsx"
       },
       "fake_formula": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -1757,8 +1913,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -1819,11 +1975,11 @@
         }
       },
       "alias_hardcode": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -1832,8 +1988,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -1907,8 +2063,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -2001,8 +2157,60 @@
           9
         ],
         "formulas": [
-          160,
-          160
+          155,
+          155
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          43,
+          43
+        ],
+        "shock_discount": [
+          10,
+          10
+        ]
+      },
+      "examples": {}
+    },
+    "alt_layout": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          155,
+          155
         ],
         "history": [
           19,
@@ -2055,7 +2263,7 @@
           ],
           "formulas": [
             0,
-            160
+            155
           ],
           "history": [
             19,
@@ -2113,11 +2321,6 @@
               "live_formula_with_upstream_computation"
             ],
             [
-              "Statements!C8",
-              24.66375,
-              "live_formula_with_upstream_computation"
-            ],
-            [
               "Statements!C18",
               12.8967082815266,
               "live_formula_with_upstream_computation"
@@ -2130,6 +2333,11 @@
             [
               "Statements!C10",
               48.8335314949136,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C21",
+              7.882574,
               "live_formula_with_upstream_computation"
             ]
           ],
@@ -2275,8 +2483,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -2403,11 +2611,11 @@
         "reason": "missing output.xlsx"
       },
       "fake_formula": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -2416,8 +2624,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -2478,11 +2686,11 @@
         }
       },
       "alias_hardcode": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -2491,8 +2699,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -2566,8 +2774,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -2660,8 +2868,60 @@
           9
         ],
         "formulas": [
-          160,
-          160
+          155,
+          155
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          45,
+          45
+        ],
+        "shock_discount": [
+          11,
+          11
+        ]
+      },
+      "examples": {}
+    },
+    "alt_layout": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          155,
+          155
         ],
         "history": [
           19,
@@ -2714,7 +2974,7 @@
           ],
           "formulas": [
             0,
-            160
+            155
           ],
           "history": [
             19,
@@ -2772,11 +3032,6 @@
               "live_formula_with_upstream_computation"
             ],
             [
-              "Statements!C8",
-              29.676915,
-              "live_formula_with_upstream_computation"
-            ],
-            [
               "Statements!C18",
               9.27037041493053,
               "live_formula_with_upstream_computation"
@@ -2789,6 +3044,11 @@
             [
               "Statements!C10",
               52.2800614527191,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C21",
+              8.062035,
               "live_formula_with_upstream_computation"
             ]
           ],
@@ -2934,8 +3194,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -3067,11 +3327,11 @@
         "reason": "missing output.xlsx"
       },
       "fake_formula": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -3080,8 +3340,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -3142,11 +3402,11 @@
         }
       },
       "alias_hardcode": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -3155,8 +3415,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -3230,8 +3490,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -3324,8 +3584,60 @@
           9
         ],
         "formulas": [
-          160,
-          160
+          155,
+          155
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          43,
+          43
+        ],
+        "shock_discount": [
+          10,
+          10
+        ]
+      },
+      "examples": {}
+    },
+    "alt_layout": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          155,
+          155
         ],
         "history": [
           19,
@@ -3378,7 +3690,7 @@
           ],
           "formulas": [
             0,
-            160
+            155
           ],
           "history": [
             19,
@@ -3436,11 +3748,6 @@
               "live_formula_with_upstream_computation"
             ],
             [
-              "Statements!C8",
-              17.325721,
-              "live_formula_with_upstream_computation"
-            ],
-            [
               "Statements!C18",
               8.64188158533826,
               "live_formula_with_upstream_computation"
@@ -3453,6 +3760,11 @@
             [
               "Statements!C10",
               40.9859472838803,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C21",
+              6.055866,
               "live_formula_with_upstream_computation"
             ]
           ],
@@ -3598,8 +3910,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -3726,11 +4038,11 @@
         "reason": "missing output.xlsx"
       },
       "fake_formula": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -3739,8 +4051,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -3801,11 +4113,11 @@
         }
       },
       "alias_hardcode": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -3814,8 +4126,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -3889,8 +4201,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -3983,8 +4295,60 @@
           9
         ],
         "formulas": [
-          160,
-          160
+          155,
+          155
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          118,
+          118
+        ],
+        "shock_collection": [
+          45,
+          45
+        ],
+        "shock_discount": [
+          11,
+          11
+        ]
+      },
+      "examples": {}
+    },
+    "alt_layout": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          155,
+          155
         ],
         "history": [
           19,
@@ -4037,7 +4401,7 @@
           ],
           "formulas": [
             0,
-            160
+            155
           ],
           "history": [
             19,
@@ -4095,11 +4459,6 @@
               "live_formula_with_upstream_computation"
             ],
             [
-              "Statements!C8",
-              15.347111,
-              "live_formula_with_upstream_computation"
-            ],
-            [
               "Statements!C18",
               4.63909991531375,
               "live_formula_with_upstream_computation"
@@ -4112,6 +4471,11 @@
             [
               "Statements!C10",
               8.54117623347647,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C21",
+              5.244199,
               "live_formula_with_upstream_computation"
             ]
           ],
@@ -4257,8 +4621,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -4390,11 +4754,11 @@
         "reason": "missing output.xlsx"
       },
       "fake_formula": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -4403,8 +4767,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -4465,11 +4829,11 @@
         }
       },
       "alias_hardcode": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -4478,8 +4842,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -4553,8 +4917,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -4647,8 +5011,60 @@
           9
         ],
         "formulas": [
-          160,
-          160
+          155,
+          155
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          43,
+          43
+        ],
+        "shock_discount": [
+          10,
+          10
+        ]
+      },
+      "examples": {}
+    },
+    "alt_layout": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          155,
+          155
         ],
         "history": [
           19,
@@ -4701,7 +5117,7 @@
           ],
           "formulas": [
             0,
-            160
+            155
           ],
           "history": [
             19,
@@ -4759,11 +5175,6 @@
               "live_formula_with_upstream_computation"
             ],
             [
-              "Statements!C8",
-              17.482904,
-              "live_formula_with_upstream_computation"
-            ],
-            [
               "Statements!C18",
               6.76581584488058,
               "live_formula_with_upstream_computation"
@@ -4776,6 +5187,11 @@
             [
               "Statements!C10",
               18.9992506801545,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C21",
+              4.169825,
               "live_formula_with_upstream_computation"
             ]
           ],
@@ -4921,8 +5337,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -5049,11 +5465,11 @@
         "reason": "missing output.xlsx"
       },
       "fake_formula": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -5062,8 +5478,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -5124,11 +5540,11 @@
         }
       },
       "alias_hardcode": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -5137,8 +5553,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -5212,8 +5628,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -5306,8 +5722,60 @@
           9
         ],
         "formulas": [
-          160,
-          160
+          155,
+          155
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          45,
+          45
+        ],
+        "shock_discount": [
+          11,
+          11
+        ]
+      },
+      "examples": {}
+    },
+    "alt_layout": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          155,
+          155
         ],
         "history": [
           19,
@@ -5360,7 +5828,7 @@
           ],
           "formulas": [
             0,
-            160
+            155
           ],
           "history": [
             19,
@@ -5418,11 +5886,6 @@
               "live_formula_with_upstream_computation"
             ],
             [
-              "Statements!C8",
-              26.61136,
-              "live_formula_with_upstream_computation"
-            ],
-            [
               "Statements!C18",
               17.1005086103367,
               "live_formula_with_upstream_computation"
@@ -5435,6 +5898,11 @@
             [
               "Statements!C10",
               60.782935062929,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C21",
+              7.230224,
               "live_formula_with_upstream_computation"
             ]
           ],
@@ -5580,8 +6048,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -5713,11 +6181,11 @@
         "reason": "missing output.xlsx"
       },
       "fake_formula": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -5726,8 +6194,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -5788,11 +6256,11 @@
         }
       },
       "alias_hardcode": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -5801,8 +6269,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -5876,8 +6344,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -5970,8 +6438,60 @@
           9
         ],
         "formulas": [
-          160,
-          160
+          155,
+          155
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          43,
+          43
+        ],
+        "shock_discount": [
+          10,
+          10
+        ]
+      },
+      "examples": {}
+    },
+    "alt_layout": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          155,
+          155
         ],
         "history": [
           19,
@@ -6024,7 +6544,7 @@
           ],
           "formulas": [
             0,
-            160
+            155
           ],
           "history": [
             19,
@@ -6082,11 +6602,6 @@
               "live_formula_with_upstream_computation"
             ],
             [
-              "Statements!C8",
-              15.108907,
-              "live_formula_with_upstream_computation"
-            ],
-            [
               "Statements!C18",
               8.41187051244346,
               "live_formula_with_upstream_computation"
@@ -6099,6 +6614,11 @@
             [
               "Statements!C10",
               50.2924316728406,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C21",
+              5.39202,
               "live_formula_with_upstream_computation"
             ]
           ],
@@ -6244,8 +6764,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,
@@ -6372,11 +6892,11 @@
         "reason": "missing output.xlsx"
       },
       "fake_formula": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -6385,8 +6905,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -6447,11 +6967,11 @@
         }
       },
       "alias_hardcode": {
-        "reward": 0.98578375,
+        "reward": 0.985326285,
         "pass_strict": false,
-        "raw_score": 0.997,
-        "dynamic_gate": 0.98875,
-        "formula_ratio": 0.975,
+        "raw_score": 0.996903226,
+        "dynamic_gate": 0.988387097,
+        "formula_ratio": 0.974194,
         "shock_ratio": 1.0,
         "excel_errors": [],
         "groups": {
@@ -6460,8 +6980,8 @@
             9
           ],
           "formulas": [
-            156,
-            160
+            151,
+            155
           ],
           "history": [
             19,
@@ -6535,8 +7055,8 @@
             9
           ],
           "formulas": [
-            160,
-            160
+            155,
+            155
           ],
           "history": [
             19,

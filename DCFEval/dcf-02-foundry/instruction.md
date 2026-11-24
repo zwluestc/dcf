@@ -2,14 +2,22 @@
 
 Start from a blank workbook. Read the seven source exhibits in /work/data/. They are original synthetic records, not a public company's filings. Deliver a self-contained /work/output.xlsx. Use the operating memo, budget, two site extracts and treasury/peer and valuation notes to build your own schedules, including peer beta and option dilution. Preserve full precision. Inputs and outputs are in EUR millions and millions of shares unless a source explicitly uses different units. Price per share is in EUR. The required price is DCF intrinsic value, not the market quote.
 
-Reconstruct FY2025 actuals and forecast FY2026–2030 IS, BS and CF. No other balances, tax deferrals, distributions, funding, issuance or transactions. Revenue-equivalent units are net of credits, upfront fees or guarantees as applicable. Forecast revenue = those units times full annual price times the editable multiplier. Budget rate fields suffixed pct are percent, while operations memo ratios are decimal fractions.
+Reconstruct FY2025 actuals (income statement and closing balance sheet; FY2025 cash flow statement is NOT required) and forecast FY2026–2030 IS, BS and CF. No other balances, tax deferrals, distributions, funding, issuance or transactions. Revenue-equivalent billable units express full-price equivalent annual volume: deduct expected warranty credits (returns), ADD immediate upfront license fees recognised in full (license), and apply minimum billing guarantees (royalty), strictly following operations_memo.md. Forecast revenue = those revenue-equivalent billable units times full annual unit price (converted to EUR millions) times the editable price_multiplier. Budget rate fields suffixed pct are percentages (e.g., 45.0 = 45%), while operations memo ratios are decimal fractions (e.g., 0.08 = 8%).
 
 Cash COGS is cogs_pct of sales; operating expenses are opex_fixed excluding D&A. Capex equals capex_pct of sales, capitalized in full. D&A uses dep_rate on opening net PP&E plus half current capex. Cap principal repayments at opening debt; interest uses average opening/closing debt at debt_cost. Tax on positive EBT only, no tax benefit or carryforward. Unlevered tax is on positive EBIT. Receivables use sales and dso plus dso_shift; inventory and payables use cash COGS and dio/dpo, on a 365-day basis. NWC = AR + inventory less AP. Equity accumulates net income, and cash accumulates the three cash flows. Operating cash flow is after interest and tax. Show COGS, opex, D&A, tax, interest, capex and principal as positive expenses/outlays; investing/financing cash flows use cash signs. Change in NWC is closing less opening.
 
 CAPM/WACC use the signed treasury policy. Discount each annual FCFF at year-end (1–5) or midyear (0.5–4.5) as signed. Terminal at FY2030 close; perpetuity grows last FCFF by g, exit method uses final EBITDA. Equity value is EV plus FY2025 cash less FY2025 debt. Divide by TSM diluted shares.
 
 ## Delivery contract
-Inputs!B4:B6 must be editable numeric values, in order: price_multiplier, dso_shift (days), risk_free. Formulas must respond to edits. Other inputs may be laid out freely. Statements!B3:G3 must be the numeric years 2025–2030. Row numbers below denote outputs in that sheet. In B (actuals) only rows 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 22, 23, 24, 25 are required. C:G require every row. Each row name below is also the requested metric definition. Balance-sheet assets are cash + receivables + inventory + net PP&E, liabilities and equity are AP + debt + equity.
+Inputs!B4:B6 must be editable numeric values stored in the exact underlying units below (display formatting is optional), and downstream formulas must respond dynamically to edits:
+- Inputs!B4 (`price_multiplier`): dimensionless decimal multiplier (e.g., `1.0`).
+- Inputs!B5 (`dso_shift`): additive shift in calendar days (e.g., `0.0`).
+- Inputs!B6 (`risk_free`): annual decimal fraction (e.g., 320 bp MUST be stored as `0.032`, not `320` or `3.2`; display as `3.20%` is optional).
+Other inputs and helper tabs may be laid out freely.
+
+Formula scope: every required computed forecast cell in Statements!C4:G33 EXCEPT row 8 (exogenous Cash operating expense, which may either link to a budget sheet or hold the numeric EUR millions budget value), plus every required output in DCF!B4:B9 (and DCF!B12:B15 where requested), MUST be a live Excel formula referencing upstream computation cells (hardcoded numbers, constant-only formulas such as `=1.13`, or bare links to hardcoded helper cells are rejected).
+
+Statements!B3:G3 must be the numeric years 2025–2030. Row numbers below denote outputs in that sheet. In B (actuals) only rows 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 22, 23, 24, 25 are required. C:G require every row. Each row name below is also the requested metric definition. Balance-sheet assets are cash + receivables + inventory + net PP&E, liabilities and equity are AP + debt + equity.
 
 - 4: Closing operating units
 - 5: Revenue-equivalent billable units
@@ -42,7 +50,7 @@ Inputs!B4:B6 must be editable numeric values, in order: price_multiplier, dso_sh
 - 32: FCFF
 - 33: PV of FCFF
 
-DCF sheet outputs:
+DCF sheet outputs (rates such as WACC in B4 must evaluate to annual decimal fractions, e.g., `0.0827` for 8.27%):
 - B4: WACC
 - B5: Terminal value at FY2030 end
 - B6: PV of terminal value
@@ -50,6 +58,6 @@ DCF sheet outputs:
 - B8: Equity value
 - B9: Value per diluted share
 
-Numeric tolerance: greater of EUR million (or native-unit) absolute 0.000001 and 0.0001% relative. Scoring includes base results, cash/equity/FCFF reconciliation and independent recalculation after each of the three editable assumptions changes.
+Numeric tolerance: greater of EUR million (or native-unit) absolute 0.000001 and 0.0001% relative. Scoring includes base results, cash/equity/FCFF reconciliation, formula integrity, and independent LibreOffice recalculation after each of the three editable assumptions changes (with a dynamic model gate penalizing hardcoded submissions).
 
-Additional required outputs: DCF!B12 = relevered equity beta; B13 = diluted shares (millions); B14 = median unlevered peer beta; B15 = TSM incremental shares (millions). All four must be formulas referencing upstream cells. Their base values and formulas are graded as part of valuation.
+Additional required outputs (included in the 155 graded live-formula cells): DCF!B12 = relevered equity beta; DCF!B13 = diluted shares (millions); DCF!B14 = median unlevered peer beta; DCF!B15 = TSM incremental shares (millions). All four must resolve to live upstream calculation formulas. Their base values and formulas are graded as part of valuation.

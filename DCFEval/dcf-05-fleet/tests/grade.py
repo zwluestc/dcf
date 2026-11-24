@@ -103,13 +103,13 @@ def grade(path, spec):
         for cell, v in spec["controls"].items():
             audit("controls", "Inputs!" + cell, wb["Inputs"][cell].value, v)
 
-        # Row 8 in Statements (Cash operating expense) is legitimately a direct link to budget input
+        # Row 8 in Statements (Cash operating expense) is an exogenous budget input, so it is graded
+        # numerically in `forecast` without forcing an Excel formula (155 computed cells graded for formulas).
         for sheet, cells in base.items():
             for cell in cells:
-                if sheet == "DCF" or cell[0] != "B":
-                    allow_input_link = sheet == "Statements" and int(cell[1:]) == 8
+                if sheet == "DCF" or (cell[0] != "B" and int(cell[1:]) != 8):
                     v = wb[sheet][cell]
-                    ok = resolves_to_computation(wb, sheet, cell, allow_pure_input_link=allow_input_link)
+                    ok = resolves_to_computation(wb, sheet, cell, allow_pure_input_link=False)
                     audit("formulas", sheet + "!" + cell, v.value, "live_formula_with_upstream_computation", ok)
         wb.close()
 

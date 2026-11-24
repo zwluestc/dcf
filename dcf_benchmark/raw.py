@@ -208,16 +208,20 @@ def public_instruction(d, original):
         "Deliver a self-contained /work/output.xlsx. Use the operating memo, budget, two site extracts and treasury/peer and valuation notes to build your own schedules, "
         "including peer beta and option dilution. Preserve full precision. Inputs and outputs are in EUR millions and millions of shares unless a source explicitly uses different units. "
         "Price per share is in EUR. The required price is DCF intrinsic value, not the market quote.\n\n"
-        "Reconstruct FY2025 actuals and forecast FY2026–2030 IS, BS and CF. No other balances, tax deferrals, distributions, funding, issuance or transactions. "
-        "Revenue-equivalent units are net of credits, upfront fees or guarantees as applicable. Forecast revenue = those units times full annual price times the editable multiplier. "
-        "Budget rate fields suffixed pct are percent, while operations memo ratios are decimal fractions.\n\n"
+        "Reconstruct FY2025 actuals (income statement and closing balance sheet; FY2025 cash flow statement is NOT required) and forecast FY2026–2030 IS, BS and CF. "
+        "No other balances, tax deferrals, distributions, funding, issuance or transactions. "
+        "Revenue-equivalent billable units express full-price equivalent annual volume: deduct expected warranty credits (returns), ADD immediate upfront license fees recognised in full (license), "
+        "and apply minimum billing guarantees (royalty), strictly following operations_memo.md. "
+        "Forecast revenue = those revenue-equivalent billable units times full annual unit price (converted to EUR millions) times the editable price_multiplier. "
+        "Budget rate fields suffixed pct are percentages (e.g., 45.0 = 45%), while operations memo ratios are decimal fractions (e.g., 0.08 = 8%).\n\n"
         + policy
         + "CAPM/WACC use the signed treasury policy. Discount each annual FCFF at year-end (1–5) or midyear (0.5–4.5) as signed. "
         "Terminal at FY2030 close; perpetuity grows last FCFF by g, exit method uses final EBITDA. "
         "Equity value is EV plus FY2025 cash less FY2025 debt. Divide by TSM diluted shares.\n\n"
         + out
-        + "\nAdditional required outputs: DCF!B12 = relevered equity beta; B13 = diluted shares (millions); B14 = median unlevered peer beta; B15 = TSM incremental shares (millions). "
-        "All four must be formulas referencing upstream cells. Their base values and formulas are graded as part of valuation.\n"
+        + "\nAdditional required outputs (included in the 155 graded live-formula cells): "
+        "DCF!B12 = relevered equity beta; DCF!B13 = diluted shares (millions); DCF!B14 = median unlevered peer beta; DCF!B15 = TSM incremental shares (millions). "
+        "All four must resolve to live upstream calculation formulas. Their base values and formulas are graded as part of valuation.\n"
     )
 
 
