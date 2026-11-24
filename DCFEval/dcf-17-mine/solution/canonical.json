@@ -1,0 +1,242 @@
+{
+  "seed": 108083,
+  "wave": 1,
+  "company": "RidgeSpring Zinc (岭泉锌业)",
+  "slug": "mine",
+  "title": "RidgeSpring Zinc (岭泉锌业) | 矿业：储量、开采上限与回收率",
+  "rule": "Discover A before extraction. Extract the lesser of B and opening reserves plus discoveries. Close reserves net of extraction. Sell C of extracted units. For the prescribed terminal scenario, assume annual resource replacement sustains terminal output and its cost is already included in terminal FCFF.",
+  "driver_labels": {
+    "A": "discoveries",
+    "B": "extraction cap",
+    "C": "recovery"
+  },
+  "unit": "reserves",
+  "series": {
+    "A": [
+      263.501959,
+      251.99087,
+      255.120394,
+      263.699211,
+      210.564502
+    ],
+    "B": [
+      502.922237,
+      438.519937,
+      513.872006,
+      434.258604,
+      534.659083
+    ],
+    "C": [
+      0.880228,
+      0.789617,
+      0.83739,
+      0.881957,
+      0.82128
+    ],
+    "unit_price": [
+      0.320872,
+      0.333019,
+      0.353406,
+      0.340852,
+      0.336461
+    ],
+    "cogs_pct": [
+      0.438397,
+      0.430783,
+      0.428672,
+      0.430673,
+      0.459306
+    ],
+    "opex_fixed": [
+      16.092024,
+      16.846886,
+      16.886977,
+      18.227888,
+      16.613776
+    ],
+    "capex_pct": [
+      0.052505,
+      0.051015,
+      0.056832,
+      0.051437,
+      0.056039
+    ],
+    "dso": [
+      55.765516,
+      50.562124,
+      49.009926,
+      51.215225,
+      49.129825
+    ],
+    "dio": [
+      69.066398,
+      75.505135,
+      76.444621,
+      79.212214,
+      76.93171
+    ],
+    "dpo": [
+      37.263397,
+      42.175444,
+      42.669243,
+      40.35523,
+      39.088374
+    ],
+    "repay": [
+      7.989812,
+      8.531638,
+      8.358516,
+      8.714249,
+      7.918268
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0305,
+    "beta": 1.3252,
+    "erp": 0.0561,
+    "debt_weight": 0.3783,
+    "debt_cost": 0.0536,
+    "tax_rate": 0.2353,
+    "g": 0.0194,
+    "exit_multiple": 8.18,
+    "shares": 9.736,
+    "opening_units": 1016,
+    "dep_rate": 0.1458
+  },
+  "ledger": [
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 9.376
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 6.754
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 4.696
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 12.124
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 8.711
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 7.567
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 19.763
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 40.737
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 4.933
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 2.623
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 21.806
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 31.733
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 30.912
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 2.304
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 6.814
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 9.346
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 1.951
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 10.494
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 4.077
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 28.188
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 69.524
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 41.167
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 61.276
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 10.089
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 1.149
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 3.786
+    }
+  ],
+  "terminal": "exit EBITDA",
+  "timing": "midyear"
+}

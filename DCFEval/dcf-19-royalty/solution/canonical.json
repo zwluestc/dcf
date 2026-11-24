@@ -1,0 +1,242 @@
+{
+  "seed": 110101,
+  "wave": 1,
+  "company": "SpringStone Media (泉石影像)",
+  "slug": "royalty",
+  "title": "SpringStone Media (泉石影像) | 特许权：分档计费与最低保底",
+  "rule": "Add A placements at year start. First B closing units earn full unit rate, excess earns C of rate. Minimum annual bill equals 0.90 times opening units at full rate; take higher bill.",
+  "driver_labels": {
+    "A": "new placements",
+    "B": "threshold",
+    "C": "excess-rate multiple"
+  },
+  "unit": "installed units",
+  "series": {
+    "A": [
+      147.551019,
+      169.317039,
+      136.496278,
+      159.017902,
+      172.00245
+    ],
+    "B": [
+      908.522076,
+      1174.749696,
+      1136.432864,
+      1188.592763,
+      951.362942
+    ],
+    "C": [
+      0.468143,
+      0.459087,
+      0.492645,
+      0.522533,
+      0.396661
+    ],
+    "unit_price": [
+      0.095053,
+      0.107986,
+      0.108961,
+      0.109998,
+      0.105044
+    ],
+    "cogs_pct": [
+      0.542324,
+      0.539874,
+      0.474186,
+      0.538004,
+      0.525366
+    ],
+    "opex_fixed": [
+      12.827983,
+      13.621918,
+      13.158177,
+      12.111276,
+      13.21728
+    ],
+    "capex_pct": [
+      0.070394,
+      0.067935,
+      0.064566,
+      0.063671,
+      0.070695
+    ],
+    "dso": [
+      62.475589,
+      63.200355,
+      65.698693,
+      61.37824,
+      63.945754
+    ],
+    "dio": [
+      64.890213,
+      64.116828,
+      60.463574,
+      60.904974,
+      64.41731
+    ],
+    "dpo": [
+      76.635421,
+      64.634296,
+      71.264616,
+      63.882246,
+      76.236108
+    ],
+    "repay": [
+      4.217827,
+      4.57888,
+      4.682761,
+      4.622264,
+      3.938804
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0349,
+    "beta": 1.337,
+    "erp": 0.0578,
+    "debt_weight": 0.2099,
+    "debt_cost": 0.0556,
+    "tax_rate": 0.2379,
+    "g": 0.0181,
+    "exit_multiple": 9.23,
+    "shares": 14.646,
+    "opening_units": 1191,
+    "dep_rate": 0.1443
+  },
+  "ledger": [
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 61.083
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 11.042
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 5.034
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 2.903
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 6.365
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 25.945
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 4.866
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 11.426
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 3.035
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 10.471
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 24.642
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 11.258
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 5.774
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 27.058
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 2.597
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 17.561
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 3.841
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 34.139
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 7.286
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 0.973
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 6.429
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 37.055
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 1.127
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 39.517
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 4.814
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 3.159
+    }
+  ],
+  "terminal": "exit EBITDA",
+  "timing": "year-end"
+}

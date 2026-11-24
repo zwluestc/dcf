@@ -1,0 +1,242 @@
+{
+  "seed": 109092,
+  "wave": 1,
+  "company": "EastIsle Home (东屿家居)",
+  "slug": "retail",
+  "title": "EastIsle Home (东屿家居) | 连锁零售：关店与新店爬坡",
+  "rule": "Close fraction B of opening stores at year start. Open A new stores; each new store earns fraction C of a mature store's annual sales in its first year. All surviving opening stores are mature.",
+  "driver_labels": {
+    "A": "openings",
+    "B": "closure rate",
+    "C": "new-store productivity"
+  },
+  "unit": "stores",
+  "series": {
+    "A": [
+      157.180322,
+      169.23674,
+      158.297686,
+      163.001263,
+      159.638516
+    ],
+    "B": [
+      0.089921,
+      0.101149,
+      0.090292,
+      0.079342,
+      0.078216
+    ],
+    "C": [
+      0.412103,
+      0.383896,
+      0.44656,
+      0.389581,
+      0.392662
+    ],
+    "unit_price": [
+      0.225916,
+      0.207204,
+      0.207065,
+      0.21807,
+      0.218798
+    ],
+    "cogs_pct": [
+      0.446911,
+      0.416571,
+      0.391649,
+      0.424666,
+      0.425787
+    ],
+    "opex_fixed": [
+      34.180509,
+      32.175419,
+      30.112371,
+      30.503087,
+      34.124918
+    ],
+    "capex_pct": [
+      0.087311,
+      0.077121,
+      0.084184,
+      0.087951,
+      0.080583
+    ],
+    "dso": [
+      69.236162,
+      68.201759,
+      70.076963,
+      68.617657,
+      62.008393
+    ],
+    "dio": [
+      78.392046,
+      70.418407,
+      70.594404,
+      81.979035,
+      77.39997
+    ],
+    "dpo": [
+      48.504985,
+      49.986309,
+      45.674589,
+      47.459788,
+      51.386375
+    ],
+    "repay": [
+      14.004565,
+      15.521393,
+      13.818898,
+      15.031455,
+      14.12901
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0285,
+    "beta": 1.1935,
+    "erp": 0.0565,
+    "debt_weight": 0.3069,
+    "debt_cost": 0.0629,
+    "tax_rate": 0.2604,
+    "g": 0.0206,
+    "exit_multiple": 9.91,
+    "shares": 17.067,
+    "opening_units": 955,
+    "dep_rate": 0.1496
+  },
+  "ledger": [
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 29.789
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 8.012
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 14.551
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 50.989
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 1.695
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 43.604
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 8.773
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 7.652
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 17.922
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 8.588
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 84.611
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 6.605
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 22.749
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 80.242
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 14.578
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 40.458
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 9.795
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 4.148
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 9.134
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 45.096
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 17.927
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 3.105
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 107.421
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 9.466
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 100.979
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 26.111
+    }
+  ],
+  "terminal": "perpetuity",
+  "timing": "midyear"
+}

@@ -1,0 +1,242 @@
+{
+  "seed": 102029,
+  "wave": 1,
+  "company": "BambooCloud Ops (竹序算务)",
+  "slug": "saas",
+  "title": "BambooCloud Ops (竹序算务) | 订阅软件：流失、新签与平均计费",
+  "rule": "Opening subscribers lose B; add A at midyear. Activity is mean opening/closing subscribers times (1+C) expansion.",
+  "driver_labels": {
+    "A": "new logos",
+    "B": "churn",
+    "C": "upsell"
+  },
+  "unit": "subscribers",
+  "series": {
+    "A": [
+      219.043721,
+      187.491899,
+      192.134548,
+      219.115352,
+      185.435626
+    ],
+    "B": [
+      0.128837,
+      0.118164,
+      0.110128,
+      0.134986,
+      0.127901
+    ],
+    "C": [
+      0.072552,
+      0.068917,
+      0.075535,
+      0.070493,
+      0.063826
+    ],
+    "unit_price": [
+      0.168662,
+      0.173024,
+      0.168401,
+      0.189709,
+      0.187085
+    ],
+    "cogs_pct": [
+      0.458665,
+      0.386449,
+      0.393471,
+      0.389602,
+      0.429917
+    ],
+    "opex_fixed": [
+      24.248416,
+      23.112081,
+      26.394658,
+      23.255188,
+      25.29171
+    ],
+    "capex_pct": [
+      0.074308,
+      0.0727,
+      0.073547,
+      0.07444,
+      0.068887
+    ],
+    "dso": [
+      60.347063,
+      59.052168,
+      62.82454,
+      56.3093,
+      57.839676
+    ],
+    "dio": [
+      70.306625,
+      68.110376,
+      74.291391,
+      78.87946,
+      79.247798
+    ],
+    "dpo": [
+      64.930986,
+      74.948575,
+      73.117399,
+      71.630553,
+      74.907744
+    ],
+    "repay": [
+      12.962527,
+      11.881002,
+      12.851689,
+      11.599951,
+      14.062859
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0318,
+    "beta": 1.1251,
+    "erp": 0.0597,
+    "debt_weight": 0.3306,
+    "debt_cost": 0.0602,
+    "tax_rate": 0.2218,
+    "g": 0.021,
+    "exit_multiple": 7.02,
+    "shares": 10.743,
+    "opening_units": 982,
+    "dep_rate": 0.132
+  },
+  "ledger": [
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 31.706
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 116.619
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 35.331
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 7.796
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 1.384
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 19.113
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 6.939
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 7.661
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 7.391
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 25.271
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 3.809
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 5.955
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 66.281
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 36.841
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 13.678
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 10.387
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 7.945
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 2.016
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 45.394
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 59.969
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 12.743
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 53.359
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 10.522
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 26.429
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 13.557
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 7.804
+    }
+  ],
+  "terminal": "exit EBITDA",
+  "timing": "year-end"
+}

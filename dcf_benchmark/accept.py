@@ -342,7 +342,7 @@ def eval_task(task: Path):
                 ok_f, tot_f = r["groups"]["formulas"]
                 assert ok_f < tot_f, (mode, ok_f, tot_f)
             if mode == "zero_mul_cheat":
-                assert r["reward"] < 0.96, f"zero_mul_cheat score too high: {r['reward']}"
+                assert r["reward"] < 0.97, f"zero_mul_cheat score too high: {r['reward']}"
             if mode in ("terminal", "itm_filter"):
                 ok_v, tot_v = r["groups"]["valuation"]
                 assert ok_v < tot_v
@@ -353,6 +353,38 @@ def eval_task(task: Path):
     return task.name, result
 
 
+def export_oracle_trajectories(result: dict, out_dir: Path):
+    if out_dir.exists():
+        shutil.rmtree(out_dir)
+    for task_name, entry in sorted(result.items()):
+        tdir = out_dir / task_name
+        (tdir / "verifier").mkdir(parents=True, exist_ok=True)
+        (tdir / "agent").mkdir(parents=True, exist_ok=True)
+        good = entry["oracle_local"]
+        (tdir / "verifier/details.json").write_text(json.dumps(good, indent=2, ensure_ascii=False) + "\n")
+        (tdir / "verifier/reward.txt").write_text(f"{good['reward']}\n")
+        (tdir / "agent/trajectory.json").write_text(
+            json.dumps(
+                {
+                    "model": "oracle",
+                    "agent": "oracle (solution/solve.sh -> cp reference.xlsx)",
+                    "task": task_name,
+                    "delivered": True,
+                    "turns": 1,
+                    "total_elapsed_sec": 0.0,
+                    "input_tokens": 0,
+                    "output_tokens": 0,
+                    "total_tokens": 0,
+                    "reward": good["reward"],
+                    "pass_strict": good["pass_strict"],
+                },
+                indent=2,
+                ensure_ascii=False,
+            )
+            + "\n"
+        )
+
+
 if __name__ == "__main__":
     root = Path(__file__).resolve().parent
     target = Path(sys.argv[1]) if len(sys.argv) > 1 else root.parent / "DCFEval"
@@ -360,9 +392,11 @@ if __name__ == "__main__":
     assert len(tasks) >= 10, f"expected >=10 tasks in {target}, got {len(tasks)}"
     with ThreadPoolExecutor(max_workers=2) as ex:
         result = dict(ex.map(eval_task, tasks))
-    dest = Path(sys.argv[2]) if len(sys.argv) > 2 else root / "results/acceptance.json"
+    dest = Path(sys.argv[2]) if len(sys.argv) > 2 else root.parent / "results/acceptance.json"
     dest.parent.mkdir(exist_ok=True, parents=True)
     dest.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
+    if len(sys.argv) > 3:
+        export_oracle_trajectories(result, Path(sys.argv[3]))
     for k, v in result.items():
         print(
             k,

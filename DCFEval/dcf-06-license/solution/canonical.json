@@ -1,7 +1,9 @@
 {
   "seed": 7071,
+  "wave": 0,
+  "company": "ClearRiver CAD (晴川图软)",
   "slug": "license",
-  "title": "许可合同：续签、签约费与持续费",
+  "title": "ClearRiver CAD (晴川图软) | 许可合同：续签、签约费与持续费",
   "rule": "Renew B of opening licenses and sign A at midyear. Recognise full-year service revenue on renewed licenses and half-year service revenue on new additions; in addition, each new addition pays an immediate upfront license fee equal to C times the full annual unit rate, recognised in full as revenue in the year signed.",
   "driver_labels": {
     "A": "new licenses",
@@ -32,53 +34,53 @@
       0.442519
     ],
     "unit_price": [
-      0.11422,
-      0.116675,
-      0.133838,
-      0.110657,
-      0.110058
+      0.121986,
+      0.124146,
+      0.139242,
+      0.118852,
+      0.118326
     ],
     "cogs_pct": [
-      0.464595,
-      0.409208,
-      0.453139,
-      0.418587,
-      0.410031
+      0.462802,
+      0.412953,
+      0.452491,
+      0.421395,
+      0.413694
     ],
     "opex_fixed": [
-      17.325721,
-      18.42551,
-      18.199342,
-      16.969649,
-      15.363797
+      17.288248,
+      18.278058,
+      18.074507,
+      16.967783,
+      15.522516
     ],
     "capex_pct": [
-      0.068258,
-      0.05818,
-      0.058086,
-      0.064043,
-      0.064349
+      0.067054,
+      0.058655,
+      0.058577,
+      0.063541,
+      0.063796
     ],
     "dso": [
-      44.16074,
-      45.056591,
-      41.336653,
-      38.91328,
-      38.481582
+      43.88395,
+      44.630493,
+      41.530544,
+      39.511066,
+      39.151318
     ],
     "dio": [
-      65.637588,
-      58.563569,
-      64.905083,
-      70.249633,
-      60.276492
+      65.404657,
+      59.50964,
+      64.794236,
+      69.248027,
+      60.937077
     ],
     "dpo": [
-      57.221909,
-      66.930941,
-      68.71547,
-      69.170987,
-      60.656027
+      58.391591,
+      66.482451,
+      67.969558,
+      68.349156,
+      61.253356
     ],
     "repay": [
       6.055866,
@@ -91,17 +93,17 @@
   "scalar": {
     "price_multiplier": 1.0,
     "dso_shift": 0.0,
-    "risk_free": 0.0293,
-    "beta": 1.4295,
+    "risk_free": 0.0297,
+    "beta": 1.3629,
     "erp": 0.0615,
-    "debt_weight": 0.2638,
-    "debt_cost": 0.0424,
+    "debt_weight": 0.2568,
+    "debt_cost": 0.0443,
     "tax_rate": 0.2738,
-    "g": 0.0216,
-    "exit_multiple": 8.54,
+    "g": 0.0208,
+    "exit_multiple": 8.43,
     "shares": 12.479,
     "opening_units": 1142,
-    "dep_rate": 0.1165
+    "dep_rate": 0.1137
   },
   "ledger": [
     {

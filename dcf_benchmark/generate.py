@@ -70,40 +70,50 @@ Numeric tolerance: greater of EUR million (or native-unit) absolute 0.000001 and
 """
 
 
-def build(out, seed):
+def build(out, seed, waves=2):
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True, exist_ok=True)
-    for k, (slug, *_) in enumerate(CASES):
-        sd = seed + 1009 * k
-        for attempt in range(400):
-            cand_seed = sd + attempt * 104729
-            d = generate(k, cand_seed)
-            baseline = calculate(d)
-            w = baseline["DCF"]["B4"]
-            if (
-                w - d["scalar"]["g"] >= 0.025
-                and baseline["DCF"]["B5"] > 0
-                and baseline["DCF"]["B9"] > 0
-                and min(baseline["Statements"][c + "22"] for c in "CDEFG") >= 0
-                and min(baseline["Statements"][c + "19"] for c in "CDEFG") > 0
-                and branches_covered(d)
-            ):
-                break
-        else:
-            raise ValueError(f"No valid going-concern/branch-covered case for {slug}, seed {seed}")
+    for wave in range(waves):
+        wave_seed = seed + wave * 100003
+        offset = 10 * wave
+        for k, (slug, *_) in enumerate(CASES):
+            sd = wave_seed + 1009 * k
+            for attempt in range(600):
+                cand_seed = sd + attempt * 104729
+                d = generate(k, cand_seed, wave=wave)
+                baseline = calculate(d)
+                w = baseline["DCF"]["B4"]
+                ev = baseline["DCF"]["B7"]
+                pvt = baseline["DCF"]["B6"]
+                ebitda25 = baseline["Statements"]["B10"] + baseline["Statements"]["B9"]
+                pv_share = pvt / ev if ev > 0 else 0.0
+                ev_mult = ev / ebitda25 if ebitda25 > 0 else 0.0
+                if (
+                    w - d["scalar"]["g"] >= 0.025
+                    and baseline["DCF"]["B5"] > 0
+                    and baseline["DCF"]["B9"] > 0
+                    and min(baseline["Statements"][c + "22"] for c in "CDEFG") >= 0
+                    and min(baseline["Statements"][c + "19"] for c in "CDEFG") > 0
+                    and 0.50 <= pv_share <= 0.85
+                    and 4.5 <= ev_mult <= 22.0
+                    and branches_covered(d)
+                ):
+                    break
+            else:
+                raise ValueError(f"No valid going-concern/branch-covered case for {slug}, wave={wave}, seed={seed}")
 
-        task = out / f"dcf-{k + 1:02}-{slug}"
-        for sub in ("environment/data", "solution", "tests"):
-            (task / sub).mkdir(parents=True, exist_ok=True)
-        save(task / "environment/data/case.json", d)
-        (task / "instruction.md").write_text(instruction(d))
-        (task / "task.toml").write_text(
-            f'''schema_version = "1.4"
+            task = out / f"dcf-{offset + k + 1:02}-{slug}"
+            for sub in ("environment/data", "solution", "tests"):
+                (task / sub).mkdir(parents=True, exist_ok=True)
+            save(task / "environment/data/case.json", d)
+            (task / "instruction.md").write_text(instruction(d))
+            (task / "task.toml").write_text(
+                f'''schema_version = "1.4"
 artifacts = ["/work/output.xlsx"]
 [task]
 name = "dcfeval/{task.name}"
-description = "From-blank integrated 3-statement forecast and FCFF valuation: {slug}"
+description = "From-blank integrated 3-statement forecast and FCFF valuation: {slug} (wave {wave + 1})"
 [agent]
 timeout_sec = 900
 [environment]
@@ -123,33 +133,34 @@ memory_mb = 1536
 network_mode = "no-network"
 workdir = "/tests"
 '''
-        )
-        (task / "environment/Dockerfile").write_text(INLINE_DOCKERFILE)
-        (task / "solution/solve.sh").write_text("#!/bin/sh\nset -eu\ncp /solution/reference.xlsx /work/output.xlsx\n")
-        (task / "tests/test.sh").write_text(
-            "#!/bin/sh\nset -eu\npython3 /tests/grade.py /work/output.xlsx /tests/answers.json /logs/verifier/details.json\n"
-        )
-        for f in ("solution/solve.sh", "tests/test.sh"):
-            (task / f).chmod(0o755)
-        shutil.copyfile(HERE / "grade.py", task / "tests/grade.py")
+            )
+            (task / "environment/Dockerfile").write_text(INLINE_DOCKERFILE)
+            (task / "solution/solve.sh").write_text("#!/bin/sh\nset -eu\ncp /solution/reference.xlsx /work/output.xlsx\n")
+            (task / "tests/test.sh").write_text(
+                "#!/bin/sh\nset -eu\npython3 /tests/grade.py /work/output.xlsx /tests/answers.json /logs/verifier/details.json\n"
+            )
+            for f in ("solution/solve.sh", "tests/test.sh"):
+                (task / f).chmod(0o755)
+            shutil.copyfile(HERE / "grade.py", task / "tests/grade.py")
 
-        rng = random.Random(cand_seed + 18019)
-        s = d["scalar"]
-        keys = ["price_multiplier", "dso_shift", "risk_free"]
-        vs = [
-            round(rng.uniform(0.80, 0.94), 6),
-            rng.randint(6, 15),
-            round(s["risk_free"] + rng.uniform(0.006, 0.015), 6),
-        ]
-        tar = {"base": baseline, "controls": {f"B{i + 4}": s[key] for i, key in enumerate(keys)}, "shocks": {}}
-        for i, (key, new, kind) in enumerate(zip(keys, vs, ["operations", "collection", "discount"])):
-            tar["shocks"][kind] = {"changes": {f"B{i + 4}": new}, "expected": calculate(d, {key: new})}
-        save(task / "tests/answers.json", tar)
+            rng = random.Random(cand_seed + 18019)
+            s = d["scalar"]
+            keys = ["price_multiplier", "dso_shift", "risk_free"]
+            vs = [
+                round(rng.uniform(0.80, 0.94), 6),
+                rng.randint(6, 15),
+                round(s["risk_free"] + rng.uniform(0.006, 0.015), 6),
+            ]
+            tar = {"base": baseline, "controls": {f"B{i + 4}": s[key] for i, key in enumerate(keys)}, "shocks": {}}
+            for i, (key, new, kind) in enumerate(zip(keys, vs, ["operations", "collection", "discount"])):
+                tar["shocks"][kind] = {"changes": {f"B{i + 4}": new}, "expected": calculate(d, {key: new})}
+            save(task / "tests/answers.json", tar)
 
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--out", type=Path, default=HERE.parent / "DCFEvalStructured")
     p.add_argument("--seed", type=int, default=2026)
+    p.add_argument("--waves", type=int, default=2, help="Number of 10-case waves (default 2 -> 20 tasks)")
     a = p.parse_args()
-    build(a.out, a.seed)
+    build(a.out, a.seed, waves=a.waves)

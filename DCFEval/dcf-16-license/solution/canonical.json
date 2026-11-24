@@ -1,0 +1,242 @@
+{
+  "seed": 107074,
+  "wave": 1,
+  "company": "Shoreline Design (岸禾设计)",
+  "slug": "license",
+  "title": "Shoreline Design (岸禾设计) | 许可合同：续签、签约费与持续费",
+  "rule": "Renew B of opening licenses and sign A at midyear. Recognise full-year service revenue on renewed licenses and half-year service revenue on new additions; in addition, each new addition pays an immediate upfront license fee equal to C times the full annual unit rate, recognised in full as revenue in the year signed.",
+  "driver_labels": {
+    "A": "new licenses",
+    "B": "renewal rate",
+    "C": "upfront multiple"
+  },
+  "unit": "licenses",
+  "series": {
+    "A": [
+      256.890849,
+      301.968756,
+      306.325985,
+      254.369937,
+      244.875985
+    ],
+    "B": [
+      0.844545,
+      0.792895,
+      0.778725,
+      0.74704,
+      0.844638
+    ],
+    "C": [
+      0.411648,
+      0.409072,
+      0.472292,
+      0.429584,
+      0.420629
+    ],
+    "unit_price": [
+      0.174497,
+      0.173525,
+      0.192604,
+      0.180009,
+      0.160182
+    ],
+    "cogs_pct": [
+      0.444341,
+      0.413034,
+      0.427005,
+      0.376815,
+      0.433348
+    ],
+    "opex_fixed": [
+      31.472313,
+      33.815949,
+      29.221375,
+      30.895986,
+      33.255928
+    ],
+    "capex_pct": [
+      0.075352,
+      0.071722,
+      0.074801,
+      0.074855,
+      0.079412
+    ],
+    "dso": [
+      67.752519,
+      57.285022,
+      62.910924,
+      65.764502,
+      61.835842
+    ],
+    "dio": [
+      52.703822,
+      52.151449,
+      51.141752,
+      47.961982,
+      47.157531
+    ],
+    "dpo": [
+      56.50344,
+      57.561888,
+      64.451843,
+      56.520897,
+      65.294226
+    ],
+    "repay": [
+      14.470148,
+      12.209493,
+      12.684081,
+      13.590635,
+      13.314916
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0332,
+    "beta": 1.0648,
+    "erp": 0.0583,
+    "debt_weight": 0.3799,
+    "debt_cost": 0.0441,
+    "tax_rate": 0.2112,
+    "g": 0.0202,
+    "exit_multiple": 9.89,
+    "shares": 16.94,
+    "opening_units": 1082,
+    "dep_rate": 0.1028
+  },
+  "ledger": [
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 6.532
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 17.175
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 20.544
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 1.114
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 34.038
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 56.508
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 12.156
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 8.711
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 7.734
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 51.004
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 5.768
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 6.366
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 121.225
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 6.895
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 29.892
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 18.762
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 87.775
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 45.253
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 60.047
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 49.596
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 12.304
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 11.196
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 7.705
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 19.125
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 1.986
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 8.189
+    }
+  ],
+  "terminal": "perpetuity",
+  "timing": "year-end"
+}

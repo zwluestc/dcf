@@ -48,9 +48,9 @@
 
 ---
 
-### 3. 10 题真实 DeepSeek 轨迹实测对比（v1 vs v2.1 vs **v3.0**）
+### 3. v3.0 校准原理验证（早期 10 题试点轨迹回放：v1 vs v2.1 vs **v3.0**）
 
-将原始 10 题 DeepSeek 提交工作簿交由 `grade.py` v3.0 在 LibreOffice 中完整重算：
+> 注：本小节仅用于展示评分器从 v1 演进到 v3.0 的校准合理性（基于早期单模型 10 题试点工作簿在 LibreOffice 中的完整重算对照）；最新 20 题多模型正式评测汇总表与全量轨迹见根目录 [`README.md`](../README.md) 及 [`results/leaderboard.json`](../results/leaderboard.json)。
 
 | 任务 | 三表&FCFF (40) | 估值桥 (25) | 勾稽 (15) | 敏感性Δ (20) | 有效公式 | 门控 Gate | v1 旧分 | v2.1 分 | **v3.0 新分** | 评估结论 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
@@ -66,55 +66,54 @@
 
 ---
 
-## 二、参考解双独立路径生产与 100 项自动化验收
+## 二、参考解双独立路径生产与 200 项自动化验收
 
-### 1. 四项核心流程重构
-1. **100% 开源纯 Python 可复现**：移除所有 Node.js / 私有 Excel 包依赖，使用纯 Python `openpyxl`（[`reference.py`](../dcf_benchmark/reference.py)）生成动态公式工作簿。
-2. **输入路径完全独立**：`reference.py` 在原始材料模式下**绝不读取私有 `canonical.json`**，只调用 `audit_sources.reconstruct()` 解析 `environment/data/` 的 7 份公开文件。
-3. **全参数化防同质化 + 强制双分支触发**：每题独立采样公司规模、历史三表与完整资本/估值参数（WACC 分布 `6.61%–10.90%`、每股价值 `5.09–63.17 EUR`）；`branches_covered()` 强制 `foundry / storage / mine / royalty` 在五年内两侧 `MIN/MAX` 分支均触发；动态生成 3/5 家同行、动态流动/非流动债拆比、动态含价内+价外多批次期权。
-4. **自包含 Docker 环境与标准开放评测接口**：每题 `Dockerfile` 内联自包含（优先阿里云镜像并自动回退官方源）+ `build_timeout_sec = 1200`；`pilot.py` 采用标准 OpenAI-compatible 环境变量接口。
+### 1. 四项核心流程设计
+1. **100% 开源纯 Python 可复现**：移除所有 Node.js / 私有 Excel 包依赖，使用纯 Python `openpyxl`（[`reference.py`](../dcf_benchmark/reference.py)）生成动态公式工作簿，支持 `--waves N` / `--seed S` 零人工无限扩展。
+2. **输入路径完全独立**：`reference.py` 在原始材料模式下**绝不读取私有 `canonical.json`**，只调用 `audit_sources.reconstruct()` 解析 `environment/data/` 的 7 份公开文件，交由第三方 LibreOffice Calc 重算后与路径 A 的 `tests/answers.json` 交叉校验。
+3. **全参数化防同质化 + 2×2 象限均衡 + 双分支与合理性门禁**：20 题覆盖 10 种行业机制 × 2 波次，`{perpetuity, exit EBITDA} × {midyear, year-end}` 四个象限各精确 5 题；每题按首年计费量连贯标定单价并筛查持续经营、估值倍数（`4.5x <= EV/FY25 EBITDA <= 22.0x`、`50% <= PV(TV)/EV <= 85%`）及 `branches_covered()` 非线性双分支激活；动态生成 3/5 家同行、动态流动/非流动债拆比、动态含价内+价外多批次期权。
+4. **自包含 Docker 环境与标准开放评测接口**：每题 `Dockerfile` 内联自包含 + `build_timeout_sec = 1200`；`pilot.py` 采用标准 OpenAI-compatible 环境变量接口并自动记录每轮耗时、Token 与轮次至 `agent/trajectory.json`。
 
 ### 2. 双独立路径校验闭环
 
 ```mermaid
 flowchart LR
-    S["主种子 (--seed)"] --> G["Stage 1: model.py + generate.py\n独立公司生成 + 持续经营与双分支筛查"]
+    S["主种子 (--seed) + 波次 (--waves 2)"] --> G["Stage 1: model.py + generate.py\n20 家独立公司 + 持续经营/倍数/双分支门禁"]
     G --> P1["路径 A: 纯 Python 数值引擎\n20 项会计恒等断言 -> tests/answers.json"]
     G --> R["Stage 2: raw.py\n编译 7 份公开原始材料 -> environment/data/*"]
     R --> P2["路径 B: reference.py\n仅读 7 份公开文件 -> 纯公式 reference.xlsx"]
     P2 --> LO["第三方独立引擎\nLibreOffice Calc 无头重算 (基准 + 3 组扰动 + leaf_probe)"]
-    P1 --> V["Stage 3: 100 项全量验收 (accept.py)\n7,160 项公开还原 + 10 Oracle=1.0 + 10 alt_layout=1.0\n+ 10 dep_bug(gate=1.0) + 70 反例<1.0"]
+    P1 --> V["Stage 3: 200 项全量验收 (accept.py)\n14,320 项公开还原 + 20 Oracle=1.0 + 20 alt_layout=1.0\n+ 20 dep_bug(gate=1.0) + 140 反例<1.0"]
     LO --> V
 ```
 
-**100 项全量验收指标（全部通过）**：
-- `oracle`（10/10）：全部 **`1.0000`**，`pass_strict = true`；
-- `alt_layout`（10/10，完全不同工作表布局、最小 `Inputs`、外生数值第 8 行、`IF` 等价公式、跨表链接）：全部 **`1.0000`**，证实零误杀；
-- `single_dep_bug`（10/10，100% 动态公式 + 仅折旧漏括号）：`dynamic_gate = 1.0000`、`ties = 20/20`、`ties_shock = 40/40`、回款 $\Delta$ `100%`，得分 **`0.5883–0.6652`**；
-- `frozen`（10/10，纯贴死数）：**`0.1520`**（`< 0.20`）；
-- `terminal`（10/10，终值少折现一年）：**`0.8238–0.8264`**；
-- `itm_filter`（10/10，错误纳入价外期权）：**`0.9250`**；
-- `zero_mul_cheat`（10/10，`=val + 0*Inputs!$B$4` 死引用伪公式）：**`0.9530–0.9597`**（被 `leaf_probe` 拦截）；
-- `fake_formula` & `alias_hardcode`（20/20）：**`0.9866`**；
-- `missing`（10/10）：**`0.0000`**。
+**200 项全量验收标准（20 题 × 10 组，全部通过，详见 [`results/acceptance.json`](../results/acceptance.json)）**：
+- `oracle`（20/20）：全部 **`1.0000`**，`pass_strict = true`；
+- `alt_layout`（20/20，完全不同工作表布局、最小 `Inputs`、外生数值第 8 行、`IF` 等价公式、跨表链接）：全部 **`1.0000`**，证实零误杀；
+- `single_dep_bug`（20/20，100% 动态公式 + 仅折旧漏括号）：`dynamic_gate = 1.0000`、`ties = 20/20`、`ties_shock = 40/40`、回款 $\Delta$ `100%`；
+- `frozen`（20/20，纯贴死数）：`< 0.20`（三组敏感性全 0）；
+- `terminal`（20/20，终值少折现一年）、`itm_filter`（20/20，错误纳入价外期权）、`zero_mul_cheat`（20/20，`=val + 0*Inputs!$B$4` 死引用伪公式）、`fake_formula` & `alias_hardcode`（40/40）、`missing`（20/20）：140/140 严格 `< 1.0`。
 
 ---
 
 ## 三、一键复现命令
 
 ```bash
-# 1. 一键全自动无人工生成评测集（含 7,160 项公开还原审计）
-python3 dcf_benchmark/build_all.py --seed 2026 --out DCFEval
+# 1. 一键全自动无人工生成 20 题评测集（含 14,320 项公开还原审计与 manifest）
+python3 dcf_benchmark/build_all.py --seed 2026 --waves 2 --out DCFEval --manifest results/manifest.json
 
-# 2. 全量 100 项自动化验收（需 openpyxl 与 soffice）
-python3 dcf_benchmark/accept.py DCFEval dcf_benchmark/results/acceptance.json
+# 2. 全量 200 项自动化验收并归档 Oracle 轨迹（需 openpyxl 与 soffice）
+python3 dcf_benchmark/accept.py DCFEval results/acceptance.json trajectories/oracle
 
-# 3. Harbor Oracle 端到端全量验证（10/10 全部 reward = 1.0）
-harbor run -p DCFEval -a oracle -n 4 --jobs-dir "$PWD/dcf_benchmark/jobs" --job-name oracle-final
+# 3. Harbor Oracle 端到端全量验证（20/20 全部 reward = 1.0）
+harbor run -p DCFEval -a oracle -n 4 --jobs-dir "$PWD/dcf_benchmark/jobs" --job-name oracle-20
 
 # 4. 正向 Python API 查验单题三表与估值真值
 python3 dcf_benchmark/forward.py DCFEval/dcf-02-foundry/solution/canonical.json
 
-# 5. 汇总 Harbor 评测任务分数表与逐题首项诊断
-python3 dcf_benchmark/report.py dcf_benchmark/jobs/oracle-final
+# 5. 多模型汇总（均分/均时/均Token/均轮次 + 失败归纳 + 导出脱敏轨迹）
+python3 dcf_benchmark/report.py \
+  --models oracle=trajectories/oracle \
+  --export-trajectories trajectories \
+  --json-out results/leaderboard.json
 ```

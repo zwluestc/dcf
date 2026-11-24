@@ -176,9 +176,44 @@ UNIT_SCALED_DRIVERS = {
 }
 
 
-def generate(k, seed):
+COMPANY_NAMES = [
+    [
+        "SpruceCollab (云杉协作)",
+        "Elmbridge Semi (榆桥微芯)",
+        "Starport Machinery (星浦机床)",
+        "Ninggang ColdChain (宁港冷仓)",
+        "RiverRidge Fleet (川岭器租)",
+        "ClearRiver CAD (晴川图软)",
+        "StoneCourt Copper (石庭铜业)",
+        "Platform Books (月台书铺)",
+        "SeaChord Audio (海弦音频)",
+        "SwiftBoat Care (凌舟维保)",
+    ],
+    [
+        "BambooCloud Ops (竹序算务)",
+        "HarborCreek Fab (泊川晶圆)",
+        "Langstone Pumps (朗石泵业)",
+        "ReedBay Thermal (芦湾恒温)",
+        "Greenfield Equip (青浦工装)",
+        "Shoreline Design (岸禾设计)",
+        "RidgeSpring Zinc (岭泉锌业)",
+        "EastIsle Home (东屿家居)",
+        "SpringStone Media (泉石影像)",
+        "SilverDock Service (银栈售服)",
+    ],
+]
+
+
+def company_name(k, wave):
+    if wave < len(COMPANY_NAMES):
+        return COMPANY_NAMES[wave][k]
+    return f"NovaCorp-W{wave + 1:02d}-{k + 1:02d}"
+
+
+def generate(k, seed, wave=0):
     r = random.Random(seed)
     slug, title, unit, aa, bb, cc, driver_ratios, rule = CASES[k]
+    cname = company_name(k, wave)
 
     opening_units = r.randrange(860, 1240)
     unit_scaled = set(UNIT_SCALED_DRIVERS[slug])
@@ -222,37 +257,38 @@ def generate(k, seed):
         - Decimal(str(debt))
     )
 
-    # Scale forecast drivers coherently to company size
-    base_unit_price = round((rev / opening_units) * r.uniform(0.92, 1.12), 6)
+    # Scale forecast unit price coherently to Year-1 billable volume so FY25->FY26 revenue is realistic across all 10 mechanisms
+    _, est_y1_billable = operating(slug, opening_units, inp["A"][0], inp["B"][0], inp["C"][0])
+    base_unit_price = round((rev / max(1.0, est_y1_billable)) * r.uniform(0.96, 1.12), 6)
     base_dso = round(ar / rev * 365.0, 2)
     base_dio = round(inv / cogs * 365.0, 2)
     base_dpo = round(ap / cogs * 365.0, 2)
 
     inp.update(
-        unit_price=arr(base_unit_price, 0.12),
-        cogs_pct=arr(cogs_ratio, 0.10),
-        opex_fixed=arr(opex * r.uniform(0.96, 1.08), 0.10),
-        capex_pct=arr(r.uniform(0.055, 0.085), 0.12),
-        dso=arr(base_dso, 0.12),
-        dio=arr(base_dio, 0.12),
-        dpo=arr(base_dpo, 0.12),
+        unit_price=arr(base_unit_price, 0.10),
+        cogs_pct=arr(cogs_ratio, 0.09),
+        opex_fixed=arr(opex * r.uniform(0.96, 1.08), 0.09),
+        capex_pct=arr(r.uniform(0.055, 0.085), 0.10),
+        dso=arr(base_dso, 0.10),
+        dio=arr(base_dio, 0.10),
+        dpo=arr(base_dpo, 0.10),
         repay=arr(debt * r.uniform(0.18, 0.26), 0.12),
     )
 
     draws = dict(
         price_multiplier=1.0,
         dso_shift=0.0,
-        risk_free=round(r.uniform(0.024, 0.044), 4),
-        beta=round(r.uniform(0.85, 1.45), 4),
+        risk_free=round(r.uniform(0.025, 0.043), 4),
+        beta=round(r.uniform(0.88, 1.38), 4),
         erp=round(r.uniform(0.048, 0.064), 4),
-        debt_weight=round(r.uniform(0.18, 0.42), 4),
-        debt_cost=round(r.uniform(0.042, 0.072), 4),
+        debt_weight=round(r.uniform(0.18, 0.40), 4),
+        debt_cost=round(r.uniform(0.044, 0.070), 4),
         tax_rate=tax_rate,
-        g=round(r.uniform(0.016, 0.030), 4),
-        exit_multiple=round(r.uniform(6.8, 11.2), 2),
+        g=round(r.uniform(0.016, 0.028), 4),
+        exit_multiple=round(r.uniform(7.0, 10.6), 2),
         shares=round(r.uniform(8.5, 18.0), 3),
         opening_units=opening_units,
-        dep_rate=round(r.uniform(0.10, 0.16), 4),
+        dep_rate=round(r.uniform(0.10, 0.15), 4),
     )
 
     raw = dict(
@@ -282,16 +318,18 @@ def generate(k, seed):
 
     return dict(
         seed=seed,
+        wave=wave,
+        company=cname,
         slug=slug,
-        title=title,
+        title=f"{cname} | {title}",
         rule=rule,
         driver_labels=dict(zip("ABC", (aa, bb, cc))),
         unit=unit,
         series=inp,
         scalar=draws,
         ledger=ledger,
-        terminal="perpetuity" if k % 2 == 0 else "exit EBITDA",
-        timing="midyear" if k % 3 != 0 else "year-end",
+        terminal=["perpetuity", "exit EBITDA"][(k + wave) % 2],
+        timing=["midyear", "year-end"][(k // 2 + wave) % 2],
     )
 
 

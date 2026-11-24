@@ -1,0 +1,16 @@
+year,status,account,local_caption,normal_side,amount_EUR_thousands
+2025,POSTED,2315,Supplier balances,Cr,3022.000
+2025,POSTED,7900,Current income tax,Dr,6103.000
+2025,POSTED,6202,Administration and selling,Dr,6471.000
+2025,POSTED,2112,Bank facility due within 12 months,Cr,4053.50000
+2025,POSTED,2710,Bank facility due after 12 months,Cr,12160.50000
+2025,POSTED,4100,Product and service billings,Cr,94180.00
+2025,POSTED,6710,Depreciation expense,Dr,9672.000
+2025,POSTED,1015,Cash balances,Dr,7778.000
+2025,POSTED,3105,Closing book equity,Cr,73079.000
+2025,POSTED,5105,Direct fulfilment,Dr,23849.000
+2025,POSTED,1210,Trade receivables,Dr,12236.000
+2025,POSTED,1520,Net operating plant,Dr,35237.000
+2025,POSTED,7102,Interest charged,Dr,981.000
+2025,POSTED,1320,Stock on hand,Dr,6387.000
+2025,VOID,4100,Product and service billings,Cr,5000

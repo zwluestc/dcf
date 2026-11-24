@@ -1,4 +1,4 @@
-# 特许权：分档计费与最低保底 | FY2025 valuation
+# SeaChord Audio (海弦音频) | 特许权：分档计费与最低保底 | FY2025 valuation
 
 Start from a blank workbook. Read the seven source exhibits in /work/data/. They are original synthetic records, not a public company's filings. Deliver a self-contained /work/output.xlsx. Use the operating memo, budget, two site extracts and treasury/peer and valuation notes to build your own schedules, including peer beta and option dilution. Preserve full precision. Inputs and outputs are in EUR millions and millions of shares unless a source explicitly uses different units. Price per share is in EUR. The required price is DCF intrinsic value, not the market quote.
 

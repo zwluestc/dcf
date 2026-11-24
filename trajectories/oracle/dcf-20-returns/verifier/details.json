@@ -1,0 +1,63 @@
+{
+  "reward": 1.0,
+  "pass_strict": true,
+  "raw_score": 1.0,
+  "dynamic_gate": 1.0,
+  "formula_ratio": 1.0,
+  "responsiveness_ratio": 1.0,
+  "shock_ratio": 1.0,
+  "pillars": {
+    "statements_and_fcff_40": 40.0,
+    "valuation_bridge_25": 25.0,
+    "accounting_integrity_15": 15.0,
+    "sensitivity_delta_20": 20.0
+  },
+  "excel_errors": [],
+  "groups": {
+    "controls": [
+      10,
+      10
+    ],
+    "history": [
+      19,
+      19
+    ],
+    "forecast": [
+      130,
+      130
+    ],
+    "fcff": [
+      20,
+      20
+    ],
+    "valuation": [
+      10,
+      10
+    ],
+    "formulas": [
+      155,
+      155
+    ],
+    "ties": [
+      20,
+      20
+    ],
+    "shock_operations": [
+      120,
+      120
+    ],
+    "ties_shock": [
+      40,
+      40
+    ],
+    "shock_collection": [
+      45,
+      45
+    ],
+    "shock_discount": [
+      11,
+      11
+    ]
+  },
+  "examples": {}
+}

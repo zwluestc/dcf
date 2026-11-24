@@ -1,0 +1,242 @@
+{
+  "seed": 105056,
+  "wave": 1,
+  "company": "ReedBay Thermal (芦湾恒温)",
+  "slug": "storage",
+  "title": "ReedBay Thermal (芦湾恒温) | 仓储：退租、可用库位与入住时点",
+  "rule": "Opening slots suffer B attrition at year start. Admit at most A new leases up to C total capacity. Surviving slots earn a full year; new leases earn half.",
+  "driver_labels": {
+    "A": "new demand",
+    "B": "attrition",
+    "C": "max slots"
+  },
+  "unit": "leased slots",
+  "series": {
+    "A": [
+      229.350885,
+      247.519152,
+      246.288574,
+      214.141084,
+      206.873073
+    ],
+    "B": [
+      0.182344,
+      0.163013,
+      0.162768,
+      0.142145,
+      0.182107
+    ],
+    "C": [
+      1364.154163,
+      1102.85512,
+      1140.946299,
+      1129.74163,
+      1369.246187
+    ],
+    "unit_price": [
+      0.19783,
+      0.167638,
+      0.176314,
+      0.165025,
+      0.200104
+    ],
+    "cogs_pct": [
+      0.468777,
+      0.505904,
+      0.483854,
+      0.470641,
+      0.497773
+    ],
+    "opex_fixed": [
+      31.232509,
+      30.435833,
+      28.794777,
+      29.223678,
+      31.620859
+    ],
+    "capex_pct": [
+      0.058682,
+      0.05163,
+      0.054175,
+      0.059997,
+      0.05716
+    ],
+    "dso": [
+      55.585127,
+      58.73571,
+      54.503713,
+      53.821472,
+      59.7917
+    ],
+    "dio": [
+      74.437906,
+      73.223937,
+      82.090394,
+      72.115746,
+      74.239426
+    ],
+    "dpo": [
+      62.117861,
+      70.791497,
+      66.42484,
+      73.154875,
+      71.365468
+    ],
+    "repay": [
+      8.557312,
+      8.593808,
+      9.170948,
+      9.641526,
+      8.958566
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0334,
+    "beta": 1.1654,
+    "erp": 0.0503,
+    "debt_weight": 0.3657,
+    "debt_cost": 0.0617,
+    "tax_rate": 0.2045,
+    "g": 0.0161,
+    "exit_multiple": 9.08,
+    "shares": 12.401,
+    "opening_units": 1177,
+    "dep_rate": 0.1397
+  },
+  "ledger": [
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 18.627
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 3.696
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 45.278
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 12.683
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 14.511
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 2.415
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 11.573
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 12.52
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 6.717
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 16.78
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 104.621
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 5.796
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 18.465
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 55.29
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 29.889
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 75.479
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 4.004
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 12.335
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 75.21
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 43.122
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 10.143
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 1.285
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 6.057
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 75.87
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 7.604
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 35.73
+    }
+  ],
+  "terminal": "perpetuity",
+  "timing": "midyear"
+}

@@ -1,0 +1,242 @@
+{
+  "seed": 111110,
+  "wave": 1,
+  "company": "SilverDock Service (银栈售服)",
+  "slug": "returns",
+  "title": "SilverDock Service (银栈售服) | 售后服务：保修期、返修结算与新单",
+  "rule": "Expire B of opening covers; sell A new annual covers. Service revenue uses surviving opening covers plus half additions. Deduct expected credits equal to C times opening covers times 40% of unit rate.",
+  "driver_labels": {
+    "A": "new covers",
+    "B": "expiry rate",
+    "C": "claim incidence"
+  },
+  "unit": "covered units",
+  "series": {
+    "A": [
+      158.505944,
+      167.131249,
+      172.604696,
+      153.26085,
+      173.238994
+    ],
+    "B": [
+      0.12077,
+      0.128122,
+      0.136302,
+      0.153063,
+      0.135835
+    ],
+    "C": [
+      0.146549,
+      0.19123,
+      0.173621,
+      0.171117,
+      0.189171
+    ],
+    "unit_price": [
+      0.187098,
+      0.180419,
+      0.184438,
+      0.163284,
+      0.161808
+    ],
+    "cogs_pct": [
+      0.486997,
+      0.445408,
+      0.439604,
+      0.450584,
+      0.458919
+    ],
+    "opex_fixed": [
+      20.285153,
+      19.906041,
+      19.218688,
+      19.003851,
+      19.272843
+    ],
+    "capex_pct": [
+      0.065722,
+      0.065905,
+      0.062381,
+      0.065054,
+      0.071176
+    ],
+    "dso": [
+      57.044566,
+      54.765302,
+      55.418809,
+      53.086679,
+      52.612306
+    ],
+    "dio": [
+      55.531178,
+      51.385814,
+      60.412164,
+      60.27021,
+      56.482644
+    ],
+    "dpo": [
+      62.811058,
+      60.39863,
+      59.452648,
+      54.810435,
+      58.152981
+    ],
+    "repay": [
+      9.385522,
+      7.906383,
+      9.389285,
+      7.764962,
+      8.248509
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0394,
+    "beta": 1.3399,
+    "erp": 0.0608,
+    "debt_weight": 0.3815,
+    "debt_cost": 0.0577,
+    "tax_rate": 0.2178,
+    "g": 0.0275,
+    "exit_multiple": 7.32,
+    "shares": 13.222,
+    "opening_units": 954,
+    "dep_rate": 0.1495
+  },
+  "ledger": [
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 12.012
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 10.404
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 2.762
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 9.0
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 37.343
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 3.901
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 1.749
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 78.872
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 6.622
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 28.157
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 6.199
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 62.828
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 13.5
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 34.035
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 43.265
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 5.542
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 26.664
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 3.858
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 15.061
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 37.936
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 0.951
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 15.288
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 3.978
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 22.439
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 9.796
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 5.038
+    }
+  ],
+  "terminal": "perpetuity",
+  "timing": "year-end"
+}

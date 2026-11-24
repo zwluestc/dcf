@@ -1,7 +1,9 @@
 {
   "seed": 217538,
+  "wave": 0,
+  "company": "StoneCourt Copper (石庭铜业)",
   "slug": "mine",
-  "title": "矿业：储量、开采上限与回收率",
+  "title": "StoneCourt Copper (石庭铜业) | 矿业：储量、开采上限与回收率",
   "rule": "Discover A before extraction. Extract the lesser of B and opening reserves plus discoveries. Close reserves net of extraction. Sell C of extracted units. For the prescribed terminal scenario, assume annual resource replacement sustains terminal output and its cost is already included in terminal FCFF.",
   "driver_labels": {
     "A": "discoveries",
@@ -32,53 +34,53 @@
       0.82556
     ],
     "unit_price": [
-      0.125011,
-      0.131415,
-      0.124704,
-      0.125934,
-      0.120229
+      0.280371,
+      0.292237,
+      0.279801,
+      0.28208,
+      0.27151
     ],
     "cogs_pct": [
-      0.453984,
-      0.394681,
-      0.394874,
-      0.408284,
-      0.418946
+      0.450042,
+      0.396669,
+      0.396842,
+      0.408911,
+      0.418507
     ],
     "opex_fixed": [
-      15.347111,
-      16.748998,
-      17.380427,
-      17.605285,
-      17.891389
+      15.50469,
+      16.766388,
+      17.334674,
+      17.537047,
+      17.794541
     ],
     "capex_pct": [
-      0.069924,
-      0.086903,
-      0.069011,
-      0.073497,
-      0.087576
+      0.071313,
+      0.085462,
+      0.070552,
+      0.07429,
+      0.086023
     ],
     "dso": [
-      69.23715,
-      58.706314,
-      60.787046,
-      70.946379,
-      63.678609
+      68.539291,
+      59.763595,
+      61.497538,
+      69.963649,
+      63.907174
     ],
     "dio": [
-      53.908579,
-      53.912709,
-      65.46813,
-      59.820243,
-      63.139366
+      54.893816,
+      54.897257,
+      64.526775,
+      59.820203,
+      62.586139
     ],
     "dpo": [
-      62.651994,
-      56.129746,
-      62.206659,
-      60.387314,
-      65.856616
+      62.078329,
+      56.643122,
+      61.707216,
+      60.191095,
+      64.748847
     ],
     "repay": [
       5.244199,
@@ -91,17 +93,17 @@
   "scalar": {
     "price_multiplier": 1.0,
     "dso_shift": 0.0,
-    "risk_free": 0.0406,
-    "beta": 1.1807,
+    "risk_free": 0.0399,
+    "beta": 1.1555,
     "erp": 0.0572,
-    "debt_weight": 0.3941,
-    "debt_cost": 0.0589,
+    "debt_weight": 0.3763,
+    "debt_cost": 0.0587,
     "tax_rate": 0.248,
-    "g": 0.0234,
-    "exit_multiple": 7.75,
+    "g": 0.0224,
+    "exit_multiple": 7.77,
     "shares": 16.579,
     "opening_units": 1168,
-    "dep_rate": 0.1536
+    "dep_rate": 0.1447
   },
   "ledger": [
     {

@@ -1,0 +1,13 @@
+{
+  "model": "oracle",
+  "agent": "oracle (solution/solve.sh -> cp reference.xlsx)",
+  "task": "dcf-15-fleet",
+  "delivered": true,
+  "turns": 1,
+  "total_elapsed_sec": 0.0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "total_tokens": 0,
+  "reward": 1.0,
+  "pass_strict": true
+}

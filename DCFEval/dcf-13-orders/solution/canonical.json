@@ -1,0 +1,242 @@
+{
+  "seed": 104047,
+  "wave": 1,
+  "company": "Langstone Pumps (朗石泵业)",
+  "slug": "orders",
+  "title": "Langstone Pumps (朗石泵业) | 装备制造：在手订单与分期履约",
+  "rule": "Fulfil B of opening backlog and C of new bookings A. Recognise fulfilled orders; carry both unfulfilled portions forward.",
+  "driver_labels": {
+    "A": "bookings",
+    "B": "conversion",
+    "C": "same-year delivery"
+  },
+  "unit": "backlog",
+  "series": {
+    "A": [
+      1011.936617,
+      1077.007561,
+      1061.270925,
+      1004.044131,
+      964.345454
+    ],
+    "B": [
+      0.556111,
+      0.544238,
+      0.68477,
+      0.561584,
+      0.550793
+    ],
+    "C": [
+      0.228663,
+      0.233424,
+      0.20365,
+      0.227702,
+      0.221302
+    ],
+    "unit_price": [
+      0.165854,
+      0.165979,
+      0.18627,
+      0.187232,
+      0.178879
+    ],
+    "cogs_pct": [
+      0.473832,
+      0.493194,
+      0.49047,
+      0.477764,
+      0.48638
+    ],
+    "opex_fixed": [
+      18.389971,
+      16.291228,
+      16.750882,
+      18.299821,
+      16.200192
+    ],
+    "capex_pct": [
+      0.061937,
+      0.057949,
+      0.068583,
+      0.067708,
+      0.060361
+    ],
+    "dso": [
+      60.597606,
+      55.905529,
+      54.664809,
+      56.093917,
+      59.807219
+    ],
+    "dio": [
+      51.186823,
+      51.358496,
+      45.324926,
+      44.881093,
+      44.327342
+    ],
+    "dpo": [
+      56.79757,
+      60.175374,
+      61.545147,
+      56.251025,
+      52.008418
+    ],
+    "repay": [
+      5.603493,
+      5.561847,
+      5.62658,
+      5.141353,
+      5.293892
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0375,
+    "beta": 1.2498,
+    "erp": 0.0568,
+    "debt_weight": 0.2591,
+    "debt_cost": 0.0639,
+    "tax_rate": 0.2066,
+    "g": 0.0266,
+    "exit_multiple": 7.07,
+    "shares": 17.768,
+    "opening_units": 1111,
+    "dep_rate": 0.1203
+  },
+  "ledger": [
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 58.812
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 11.911
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 5.102
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 13.984
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 5.667
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 3.143
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 2.933
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 5.098
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 6.283
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 11.975
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 1.014
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 55.888
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 11.816
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 86.76
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 3.52
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 9.617
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 5.557
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 6.78
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 12.125
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 55.087
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 55.54
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 24.24
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 1.286
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 40.813
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 41.16
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 10.189
+    }
+  ],
+  "terminal": "exit EBITDA",
+  "timing": "midyear"
+}

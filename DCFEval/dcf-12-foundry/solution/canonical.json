@@ -1,0 +1,242 @@
+{
+  "seed": 103038,
+  "wave": 1,
+  "company": "HarborCreek Fab (泊川晶圆)",
+  "slug": "foundry",
+  "title": "HarborCreek Fab (泊川晶圆) | 晶圆代工：良率与产能上限",
+  "rule": "Capacity adds A at year start. Process the lesser of closing capacity and B demand; C is good-output yield.",
+  "driver_labels": {
+    "A": "new capacity",
+    "B": "demand",
+    "C": "yield"
+  },
+  "unit": "capacity",
+  "series": {
+    "A": [
+      119.409192,
+      119.602488,
+      118.093615,
+      107.050543,
+      125.349815
+    ],
+    "B": [
+      1148.066388,
+      1155.671757,
+      1288.877333,
+      1338.385763,
+      1340.274786
+    ],
+    "C": [
+      0.967607,
+      0.849791,
+      0.846336,
+      0.905369,
+      0.889297
+    ],
+    "unit_price": [
+      0.216271,
+      0.250962,
+      0.227789,
+      0.227325,
+      0.22042
+    ],
+    "cogs_pct": [
+      0.454981,
+      0.49006,
+      0.45632,
+      0.445771,
+      0.480775
+    ],
+    "opex_fixed": [
+      29.785863,
+      30.564158,
+      27.502489,
+      32.005472,
+      31.674437
+    ],
+    "capex_pct": [
+      0.075122,
+      0.07866,
+      0.068098,
+      0.077748,
+      0.077987
+    ],
+    "dso": [
+      46.16078,
+      46.901525,
+      48.031844,
+      52.335985,
+      46.899266
+    ],
+    "dio": [
+      45.932783,
+      41.818583,
+      44.096976,
+      47.522762,
+      47.698927
+    ],
+    "dpo": [
+      46.414156,
+      44.396953,
+      47.066191,
+      41.431696,
+      44.160895
+    ],
+    "repay": [
+      11.027381,
+      11.518731,
+      9.707295,
+      12.08175,
+      11.509802
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0404,
+    "beta": 1.0283,
+    "erp": 0.0529,
+    "debt_weight": 0.2029,
+    "debt_cost": 0.0507,
+    "tax_rate": 0.2344,
+    "g": 0.0181,
+    "exit_multiple": 8.58,
+    "shares": 11.519,
+    "opening_units": 882,
+    "dep_rate": 0.1054
+  },
+  "ledger": [
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 45.685
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 6.628
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 12.341
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 55.515
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 9.103
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 49.57
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 23.49
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 16.691
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 6.473
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 6.627
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 13.209
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 68.279
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 25.61
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 6.99
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 57.43
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 10.659
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 34.821
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 134.264
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 3.01
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 8.043
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 9.41
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 82.536
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 1.99
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 5.872
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 19.197
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 4.357
+    }
+  ],
+  "terminal": "perpetuity",
+  "timing": "year-end"
+}

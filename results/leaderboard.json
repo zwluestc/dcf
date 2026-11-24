@@ -1,0 +1,549 @@
+{
+  "schema_version": "3.0",
+  "models": [
+    {
+      "model": "oracle",
+      "num_tasks": 20,
+      "mean_reward": 1.0,
+      "pass_count": 20,
+      "pass_rate": 1.0,
+      "delivered_count": 20,
+      "delivery_rate": 1.0,
+      "avg_elapsed_sec": 0.0,
+      "avg_input_tokens": 0,
+      "avg_output_tokens": 0,
+      "avg_total_tokens": 0,
+      "avg_turns": 1,
+      "avg_gate": 1.0,
+      "avg_pillars": {
+        "three_stmt_fcff": 40.0,
+        "valuation": 25.0,
+        "accounting_ties": 15.0,
+        "sensitivity": 20.0
+      },
+      "failure_tag_counts": {},
+      "trials": {
+        "dcf-01-saas": {
+          "task": "dcf-01-saas",
+          "dir": "trajectories/oracle/dcf-01-saas",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-02-foundry": {
+          "task": "dcf-02-foundry",
+          "dir": "trajectories/oracle/dcf-02-foundry",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-03-orders": {
+          "task": "dcf-03-orders",
+          "dir": "trajectories/oracle/dcf-03-orders",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-04-storage": {
+          "task": "dcf-04-storage",
+          "dir": "trajectories/oracle/dcf-04-storage",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-05-fleet": {
+          "task": "dcf-05-fleet",
+          "dir": "trajectories/oracle/dcf-05-fleet",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-06-license": {
+          "task": "dcf-06-license",
+          "dir": "trajectories/oracle/dcf-06-license",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-07-mine": {
+          "task": "dcf-07-mine",
+          "dir": "trajectories/oracle/dcf-07-mine",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-08-retail": {
+          "task": "dcf-08-retail",
+          "dir": "trajectories/oracle/dcf-08-retail",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-09-royalty": {
+          "task": "dcf-09-royalty",
+          "dir": "trajectories/oracle/dcf-09-royalty",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-10-returns": {
+          "task": "dcf-10-returns",
+          "dir": "trajectories/oracle/dcf-10-returns",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-11-saas": {
+          "task": "dcf-11-saas",
+          "dir": "trajectories/oracle/dcf-11-saas",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-12-foundry": {
+          "task": "dcf-12-foundry",
+          "dir": "trajectories/oracle/dcf-12-foundry",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-13-orders": {
+          "task": "dcf-13-orders",
+          "dir": "trajectories/oracle/dcf-13-orders",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-14-storage": {
+          "task": "dcf-14-storage",
+          "dir": "trajectories/oracle/dcf-14-storage",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-15-fleet": {
+          "task": "dcf-15-fleet",
+          "dir": "trajectories/oracle/dcf-15-fleet",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-16-license": {
+          "task": "dcf-16-license",
+          "dir": "trajectories/oracle/dcf-16-license",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-17-mine": {
+          "task": "dcf-17-mine",
+          "dir": "trajectories/oracle/dcf-17-mine",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-18-retail": {
+          "task": "dcf-18-retail",
+          "dir": "trajectories/oracle/dcf-18-retail",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-19-royalty": {
+          "task": "dcf-19-royalty",
+          "dir": "trajectories/oracle/dcf-19-royalty",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        },
+        "dcf-20-returns": {
+          "task": "dcf-20-returns",
+          "dir": "trajectories/oracle/dcf-20-returns",
+          "reward": 1.0,
+          "pass_strict": true,
+          "delivered": true,
+          "elapsed_sec": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "turns": 1,
+          "dynamic_gate": 1.0,
+          "formulas": [
+            155,
+            155
+          ],
+          "pillars": {
+            "three_stmt_fcff": 40.0,
+            "valuation": 25.0,
+            "accounting_ties": 15.0,
+            "sensitivity": 20.0
+          },
+          "failure_tags": [],
+          "first_examples": [],
+          "error": null
+        }
+      }
+    }
+  ]
+}

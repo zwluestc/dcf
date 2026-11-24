@@ -1,0 +1,242 @@
+{
+  "seed": 106065,
+  "wave": 1,
+  "company": "Greenfield Equip (青浦工装)",
+  "slug": "fleet",
+  "title": "Greenfield Equip (青浦工装) | 设备租赁：退役、投放与利用率",
+  "rule": "Retire B of opening fleet at year start. Deliver A at midyear. Closing fleet includes deliveries; charge for surviving fleet plus half deliveries, at C utilization.",
+  "driver_labels": {
+    "A": "new units",
+    "B": "retirement",
+    "C": "utilization"
+  },
+  "unit": "fleet",
+  "series": {
+    "A": [
+      154.126149,
+      155.927114,
+      129.180482,
+      130.828242,
+      146.09677
+    ],
+    "B": [
+      0.084758,
+      0.0714,
+      0.071094,
+      0.086814,
+      0.087953
+    ],
+    "C": [
+      0.814825,
+      0.838362,
+      0.792665,
+      0.805536,
+      0.817247
+    ],
+    "unit_price": [
+      0.204006,
+      0.177871,
+      0.180493,
+      0.200837,
+      0.195268
+    ],
+    "cogs_pct": [
+      0.458761,
+      0.399569,
+      0.465034,
+      0.417022,
+      0.431173
+    ],
+    "opex_fixed": [
+      18.340384,
+      17.014494,
+      17.724885,
+      18.323288,
+      17.497678
+    ],
+    "capex_pct": [
+      0.059501,
+      0.051039,
+      0.055847,
+      0.052613,
+      0.051485
+    ],
+    "dso": [
+      52.781723,
+      62.507121,
+      53.682274,
+      57.526899,
+      61.596599
+    ],
+    "dio": [
+      74.936331,
+      69.108954,
+      72.59452,
+      79.863704,
+      68.655842
+    ],
+    "dpo": [
+      51.41655,
+      47.183819,
+      46.096067,
+      43.408136,
+      43.436596
+    ],
+    "repay": [
+      6.536568,
+      6.462815,
+      7.281062,
+      6.800801,
+      6.080424
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0288,
+    "beta": 1.2274,
+    "erp": 0.063,
+    "debt_weight": 0.2208,
+    "debt_cost": 0.0506,
+    "tax_rate": 0.2687,
+    "g": 0.0167,
+    "exit_multiple": 8.48,
+    "shares": 16.754,
+    "opening_units": 1045,
+    "dep_rate": 0.1453
+  },
+  "ledger": [
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 74.363
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 3.022
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 6.103
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 6.471
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 16.214
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 62.721
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 94.18
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 11.286
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 9.672
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 9.197
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 7.778
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 4.828
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 73.079
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 13.664
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 23.849
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 12.236
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 0.919
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 35.237
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 0.981
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 45.951
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 11.629
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 69.02
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 7.913
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 5.978
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 14.722
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 6.387
+    }
+  ],
+  "terminal": "exit EBITDA",
+  "timing": "year-end"
+}

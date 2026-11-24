@@ -1,0 +1,268 @@
+{
+  "case": "mine",
+  "currency": "EUR",
+  "amount_scale": "millions",
+  "valuation_date": "2025-12-31",
+  "years": {
+    "2025": {
+      "operations": {
+        "Closing operating units": 1016
+      },
+      "income_statement": {
+        "Revenue": 130.8,
+        "Cash COGS": 60.5,
+        "Cash operating expense": 16.1,
+        "Depreciation": 7.0,
+        "EBIT": 47.20000000000002,
+        "Interest": 3.1,
+        "Income tax": 10.6,
+        "Net income": 33.500000000000014
+      },
+      "balance_sheet": {
+        "Receivables": 18.8,
+        "Inventory": 12.5,
+        "Payables": 6.7,
+        "Net working capital": 24.6,
+        "Net PP&E": 59.099999999999994,
+        "Term debt": 32.3,
+        "Cash": 21.5,
+        "Book equity": 72.9,
+        "Assets": 111.89999999999999,
+        "Liabilities and equity": 111.9
+      }
+    },
+    "2026": {
+      "operations": {
+        "Closing operating units": 776.579722,
+        "Revenue-equivalent billable units": 442.686234830036
+      },
+      "income_statement": {
+        "Revenue": 142.04561754238333,
+        "Cash COGS": 62.27237259372822,
+        "Cash operating expense": 16.092024,
+        "Depreciation": 9.16047586536668,
+        "EBIT": 54.52074508328843,
+        "Interest": 1.5171530383999998,
+        "Income tax": 12.471745208162249,
+        "Net income": 40.53184683672619
+      },
+      "balance_sheet": {
+        "Receivables": 21.702047007642896,
+        "Inventory": 11.783365671130756,
+        "Payables": 6.357479841347985,
+        "Net working capital": 27.12793283742567,
+        "Net PP&E": 57.39762928369615,
+        "Term debt": 24.310187999999997,
+        "Cash": 53.21647271560436,
+        "Book equity": 113.4318468367262,
+        "Assets": 144.09951467807417,
+        "Liabilities and equity": 144.09951467807417
+      },
+      "cash_flow_statement": {
+        "Operating cash flow": 47.1643898646672,
+        "Investing cash flow": -7.458105149062837,
+        "Financing cash flow": -7.989812,
+        "Change in cash": 31.71647271560436,
+        "Opening cash": 21.5,
+        "Closing cash": 53.21647271560436
+      },
+      "supporting_schedules": {
+        "Capital expenditure": 7.458105149062837,
+        "Principal repaid": 7.989812,
+        "Unlevered cash tax": 12.828731318097768,
+        "Change in NWC": 2.52793283742567,
+        "FCFF": 40.86645164406883,
+        "PV of FCFF": 39.31125896340467
+      }
+    },
+    "2027": {
+      "operations": {
+        "Closing operating units": 590.050655,
+        "Revenue-equivalent billable units": 346.26279709412904
+      },
+      "income_statement": {
+        "Revenue": 115.31209042548976,
+        "Cash COGS": 49.674488249763755,
+        "Cash operating expense": 16.846886,
+        "Depreciation": 8.797419264326708,
+        "EBIT": 39.9932969113993,
+        "Interest": 1.0743781783999997,
+        "Income tax": 9.157621577874735,
+        "Net income": 29.761297155124566
+      },
+      "balance_sheet": {
+        "Receivables": 15.973764972035138,
+        "Inventory": 10.275832716039249,
+        "Payables": 5.739845472346764,
+        "Net working capital": 20.509752215727623,
+        "Net PP&E": 54.4828563124258,
+        "Term debt": 15.778549999999997,
+        "Cash": 83.97908546369732,
+        "Book equity": 143.19314399185077,
+        "Assets": 164.7115394641975,
+        "Liabilities and equity": 164.71153946419753
+      },
+      "cash_flow_statement": {
+        "Operating cash flow": 45.17689704114932,
+        "Investing cash flow": -5.88264629305636,
+        "Financing cash flow": -8.531638,
+        "Change in cash": 30.762612748092955,
+        "Opening cash": 53.21647271560436,
+        "Closing cash": 83.97908546369732
+      },
+      "supporting_schedules": {
+        "Capital expenditure": 5.88264629305636,
+        "Principal repaid": 8.531638,
+        "Unlevered cash tax": 9.410422763252255,
+        "Change in NWC": -6.618180621698048,
+        "FCFF": 40.11582774111544,
+        "PV of FCFF": 35.708024513714115
+      }
+    },
+    "2028": {
+      "operations": {
+        "Closing operating units": 331.299043,
+        "Revenue-equivalent billable units": 430.31127910434003
+      },
+      "income_statement": {
+        "Revenue": 152.0745879031484,
+        "Cash COGS": 65.19011774561842,
+        "Cash operating expense": 16.886977,
+        "Depreciation": 8.573653497572668,
+        "EBIT": 61.42383965995731,
+        "Interest": 0.6217220511999999,
+        "Income tax": 14.306738273340596,
+        "Net income": 46.495379335416715
+      },
+      "balance_sheet": {
+        "Receivables": 20.419628218119996,
+        "Inventory": 13.653243408244313,
+        "Payables": 7.620857466538095,
+        "Net working capital": 26.452014159826216,
+        "Net PP&E": 54.55190579456486,
+        "Term debt": 7.420033999999998,
+        "Cash": 116.10463737287637,
+        "Book equity": 189.6885233272675,
+        "Assets": 204.72941479380557,
+        "Liabilities and equity": 204.72941479380557
+      },
+      "cash_flow_statement": {
+        "Operating cash flow": 49.12677088889079,
+        "Investing cash flow": -8.64270297971173,
+        "Financing cash flow": -8.358516,
+        "Change in cash": 32.12555190917906,
+        "Opening cash": 83.97908546369732,
+        "Closing cash": 116.10463737287637
+      },
+      "supporting_schedules": {
+        "Capital expenditure": 8.64270297971173,
+        "Principal repaid": 8.358516,
+        "Unlevered cash tax": 14.453029471987955,
+        "Change in NWC": 5.942261944098593,
+        "FCFF": 40.95949876173171,
+        "PV of FCFF": 33.73686662117496
+      }
+    },
+    "2029": {
+      "operations": {
+        "Closing operating units": 160.73964999999998,
+        "Revenue-equivalent billable units": 382.997415608028
+      },
+      "income_statement": {
+        "Revenue": 130.54543510482756,
+        "Cash COGS": 56.222394172901396,
+        "Cash operating expense": 18.227888,
+        "Depreciation": 8.44318156311356,
+        "EBIT": 47.651971368812596,
+        "Interest": 0.19885691119999993,
+        "Income tax": 11.165717831876245,
+        "Net income": 36.287396625736356
+      },
+      "balance_sheet": {
+        "Receivables": 18.317572141415457,
+        "Inventory": 12.20137073648279,
+        "Payables": 6.216075747939987,
+        "Net working capital": 24.30286712995826,
+        "Net PP&E": 52.82358977693831,
+        "Term debt": 0.0,
+        "Cash": 148.84946304610725,
+        "Book equity": 225.97591995300385,
+        "Assets": 232.19199570094383,
+        "Liabilities and equity": 232.19199570094383
+      },
+      "cash_flow_statement": {
+        "Operating cash flow": 46.87972521871788,
+        "Investing cash flow": -6.714865545487015,
+        "Financing cash flow": -7.420033999999998,
+        "Change in cash": 32.744825673230864,
+        "Opening cash": 116.10463737287637,
+        "Closing cash": 148.84946304610725
+      },
+      "supporting_schedules": {
+        "Capital expenditure": 6.714865545487015,
+        "Principal repaid": 7.420033999999998,
+        "Unlevered cash tax": 11.212508863081604,
+        "Change in NWC": -2.149147029867958,
+        "FCFF": 40.3169255532255,
+        "PV of FCFF": 30.728231201695092
+      }
+    },
+    "2030": {
+      "operations": {
+        "Closing operating units": 0.0,
+        "Revenue-equivalent billable units": 304.94467395456
+      },
+      "income_statement": {
+        "Revenue": 102.60198994342522,
+        "Cash COGS": 47.12570959295486,
+        "Cash operating expense": 16.613776,
+        "Depreciation": 8.120833460940254,
+        "EBIT": 30.741670889530106,
+        "Interest": 0.0,
+        "Income tax": 7.2335151603064345,
+        "Net income": 23.50815572922367
+      },
+      "balance_sheet": {
+        "Receivables": 13.81045975499244,
+        "Inventory": 9.932771024518962,
+        "Payables": 5.046759894752897,
+        "Net working capital": 18.696470884758504,
+        "Net PP&E": 50.452469230437664,
+        "Term debt": 0.0,
+        "Cash": 180.33513556703133,
+        "Book equity": 249.4840756822275,
+        "Assets": 254.5308355769804,
+        "Liabilities and equity": 254.53083557698042
+      },
+      "cash_flow_statement": {
+        "Operating cash flow": 37.23538543536368,
+        "Investing cash flow": -5.7497129144396055,
+        "Financing cash flow": -0.0,
+        "Change in cash": 31.485672520924076,
+        "Opening cash": 148.84946304610725,
+        "Closing cash": 180.33513556703133
+      },
+      "supporting_schedules": {
+        "Capital expenditure": 5.7497129144396055,
+        "Principal repaid": 0.0,
+        "Unlevered cash tax": 7.2335151603064345,
+        "Change in NWC": -5.606396245199754,
+        "FCFF": 31.485672520924073,
+        "PV of FCFF": 22.205633803780408
+      }
+    }
+  },
+  "valuation": {
+    "WACC": 0.08068707085999999,
+    "Terminal value at FY2030 end": 317.89528558684754,
+    "PV of terminal value": 215.66730378863258,
+    "Enterprise value": 377.35731889240185,
+    "Equity value": 366.55731889240184,
+    "Value per diluted share": 37.649683534552366
+  },
+  "equity_bridge": {
+    "FY2025 cash": 21.5,
+    "FY2025 debt": 32.3,
+    "diluted shares (millions)": 9.736
+  }
+}
