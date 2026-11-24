@@ -36,8 +36,8 @@
 
 | 评分维度 | 旧权重 | 新权重 | 检查内容与容差 |
 |---|---:|---:|---|
-| `controls` | 3% | **3%** | `Inputs!B4:B6` 可编辑假设 + `Statements!B3:G3` 年份 `2025–2030` |
-| `formulas` | 7% | **12%** | 160 个预测与估值单元格通过递归计算链审计 |
+| `controls` | 3% | **3%** | `Inputs!B4:B6` 可编辑假设（底层小数/天数）+ `Statements!B3:G3` 年份 `2025–2030` |
+| `formulas` | 7% | **12%** | 155 个计算型预测与估值单元格通过递归计算链审计（豁免外生固定费用第 8 行） |
 | `history` | 10% | **8%** | FY2025 19 项历史科目（跨站千/元单位换算、过滤 `VOID`、合并长短债） |
 | `forecast` | 22% | **18%** | FY2026–2030 130 项利润表、资产负债表、现金流量表与经营量 |
 | `fcff` | 10% | **9%** | 20 项无杠杆税费、ΔNWC、FCFF 与折现现值 |
@@ -58,7 +58,7 @@ $$\text{reward} = \text{raw\_score} \times \text{dynamic\_gate}$$
 - **单调性与边界保障**：
   - **Oracle 与完全正确的活体模型**（`raw_score = 1.0`, `formula_ratio = 1.0`, `shock_ratio = 1.0`）：`dynamic_gate = 1.0` → **`reward = 1.0000`**，`pass_strict = true`；
   - **基准数 100% 正确但纯静态硬编码（`frozen`）**：`raw_score = 0.61`, `dynamic_gate = 0.25` → **`reward = 0.1525`**（旧版虚高至 `0.6900`）；
-  - **160/160 全动态公式但局部公式小失误**：`dynamic_gate ≥ 0.70`，显著高于任何纯硬编码表格。
+  - **155/155 全动态公式但局部公式小失误**：`dynamic_gate ≥ 0.70`，显著高于任何纯硬编码表格。
 - **结构化诊断输出**：`details.json` 同步输出 `reward`、`pass_strict`（`reward == 1.0` 且零 Excel 错误）、`raw_score`、`dynamic_gate`、`formula_ratio`、`shock_ratio`、`excel_errors`（显式列出 `#REF! / #DIV/0! / #VALUE! / #NAME? / #N/A` 单元格）。
 
 #### (3) 修复前后对真实 10 题实测分数的重算对照
@@ -101,7 +101,7 @@ flowchart LR
     G --> R["Stage 2: raw.py\n降维编译 7 份公开原始材料\n-> environment/data/*（零模板、零答案）"]
     R --> P2["路径 B（仅看公开材料的 Excel 公式引擎）\nreference.py 只解析 7 份公开文件\n写出纯公式 solution/reference.xlsx"]
     P2 --> LO["第三方独立引擎\nLibreOffice Calc 无头现场重算\n（基准 + 3 组输入扰动副本）"]
-    P1 --> V["Stage 3: 双路交叉核对\n1. audit_sources.py（7,160 项公开还原 < 1e-8）\n2. grade.py（Oracle 逐格比对 < 1e-6 -> reward = 1.0）\n3. accept.py（6 类 60 组反例全部 < 1.0）"]
+    P1 --> V["Stage 3: 双路交叉核对\n1. audit_sources.py（7,160 项公开还原 < 1e-8）\n2. grade.py（Oracle + 替代布局 alt_layout 均 10/10 = 1.0）\n3. accept.py（6 类 60 组反例全部 < 1.0）"]
     LO --> V
 ```
 
@@ -109,12 +109,14 @@ flowchart LR
 1. **会计恒等式硬断言**：`model.py` 与 `grade.py` 独立校验全部 5 年资产负债表配平（$|\text{Assets} - (\text{Liab}+\text{Equity})| < 10^{-8}$）、现金流期末现金闭合、留存收益权益滚存、FCFF 定义恒等。
 2. **输入路径独立**：`reference.py` 在生产 `reference.xlsx` 时**不读 `canonical.json`**，只从 `environment/data/` 下的 7 份公开原始文件重建输入——如果公开材料缺少任何信息或单位笔误，参考解本身就会构建失败或偏离 `answers.json`。
 3. **计算引擎独立**：`answers.json` 由纯 Python 浮点引擎算出；`reference.xlsx` 只写 Excel 公式字符串，交由独立第三方电子表格引擎 **LibreOffice Calc** 重算，两者在基准与 3 组扰动下超过 500 个单元格/题、误差全部 $< 10^{-6}$。
-4. **6 类 60 组反例突变验收（[`accept.py`](../dcf_benchmark/accept.py)）**：
+4. **80 组正反例全面验收（[`accept.py`](../dcf_benchmark/accept.py)）**：
+   - `oracle`（10/10 公开材料参考解）：全部 `reward == 1.0000`；
+   - `alt_layout`（10/10 独立替代布局工作簿——最小 `Inputs`、不同辅助表、外生数值第 8 行、等价 `IF` 公式与跨表链接）：全部 `reward == 1.0000`，证实零误杀；
    - `frozen`（纯静态数值冻结）：要求 `reward < 0.25`（实测 `0.1525`）且三组扰动全 0；
-   - `fake_formula`（无单元格引用常数伪公式 `=1.13`）：要求 `formulas` 扣分且 `reward < 1.0`；
-   - `alias_hardcode`（裸链接指向辅助表硬编码 `=Helper!A1`）：要求 `formulas` 扣分且 `reward < 1.0`；
-   - `terminal`（终值少折现一年）：要求 `valuation` 扣分且 `reward < 1.0`；
-   - `itm_filter`（错误纳入价外期权）：要求 `DCF!B9` 每股价值报错且 `reward < 1.0`；
+   - `fake_formula`（无单元格引用常数伪公式 `=1.13`）：实测 `0.9853 < 1.0`；
+   - `alias_hardcode`（裸链接指向辅助表硬编码 `=Helper!A1`）：实测 `0.9853 < 1.0`；
+   - `terminal`（终值少折现一年）：实测 `0.8816–0.8819 < 1.0`；
+   - `itm_filter`（错误纳入价外期权）：实测 `0.9412–0.9422 < 1.0` 且 `DCF!B9` 报错；
    - `missing`（未交付工作簿）：`reward == 0.0`。
 
 ---
@@ -125,11 +127,11 @@ flowchart LR
 # 1. 一键全自动无人工生成全新 Seed 评测集（含 7 份原始材料 + 独立参考解 + 7,160 项公开还原审计）
 python3 dcf_benchmark/build_all.py --seed 2026 --out DCFEval
 
-# 2. 本地全量 Oracle + 6 类 60 组反例突变验收（需 openpyxl 与 soffice）
+# 2. 本地全量 80 组验收（10 Oracle + 10 独立替代布局 + 60 反例，需 openpyxl 与 soffice）
 python3 dcf_benchmark/accept.py DCFEval dcf_benchmark/results/acceptance.json
 
 # 3. Harbor Oracle 全量端到端验证（10/10 必须全部 reward = 1.0）
-harbor run -p DCFEval -a oracle -n 4 --jobs-dir dcf_benchmark/jobs --job-name oracle-final
+harbor run -p DCFEval -a oracle -n 4 --jobs-dir "$PWD/dcf_benchmark/jobs" --job-name oracle-final
 
 # 4. 直接用正向 Python API 查验单题完整三表与估值真值
 python3 dcf_benchmark/forward.py DCFEval/dcf-02-foundry/solution/canonical.json
