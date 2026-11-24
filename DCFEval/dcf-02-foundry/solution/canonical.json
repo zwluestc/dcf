@@ -1,0 +1,240 @@
+{
+  "seed": 3035,
+  "slug": "foundry",
+  "title": "晶圆代工：良率与产能上限",
+  "rule": "Capacity adds A at year start. Process the lesser of closing capacity and B demand; C is good-output yield.",
+  "driver_labels": {
+    "A": "new capacity",
+    "B": "demand",
+    "C": "yield"
+  },
+  "unit": "capacity",
+  "series": {
+    "A": [
+      139.986217,
+      129.057828,
+      143.394,
+      159.572754,
+      133.491751
+    ],
+    "B": [
+      1473.547548,
+      1586.770672,
+      1808.662478,
+      1593.28359,
+      1798.006412
+    ],
+    "C": [
+      0.916281,
+      0.960629,
+      0.876236,
+      0.943749,
+      0.913441
+    ],
+    "unit_price": [
+      0.186752,
+      0.219578,
+      0.198035,
+      0.188722,
+      0.189327
+    ],
+    "cogs_pct": [
+      0.533016,
+      0.494441,
+      0.538338,
+      0.547216,
+      0.474846
+    ],
+    "opex_fixed": [
+      25.996313,
+      27.272989,
+      26.829461,
+      27.191128,
+      30.1983
+    ],
+    "capex_pct": [
+      0.069187,
+      0.059364,
+      0.062232,
+      0.060389,
+      0.062914
+    ],
+    "dso": [
+      63.739938,
+      67.579701,
+      63.760377,
+      66.199653,
+      69.413181
+    ],
+    "dio": [
+      50.233134,
+      56.408529,
+      57.957286,
+      51.982789,
+      53.809322
+    ],
+    "dpo": [
+      41.301954,
+      38.845448,
+      42.368367,
+      42.407492,
+      43.790866
+    ],
+    "repay": [
+      10.637057,
+      10.076151,
+      9.824238,
+      10.774898,
+      8.708341
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0248,
+    "beta": 1.3983,
+    "erp": 0.0609,
+    "debt_weight": 0.3052,
+    "debt_cost": 0.0474,
+    "tax_rate": 0.2003,
+    "g": 0.0199,
+    "exit_multiple": 6.99,
+    "shares": 13.829,
+    "opening_units": 1130,
+    "dep_rate": 0.1364
+  },
+  "ledger": [
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 13.843
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 1.953
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 9.93
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 7.373
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 17.97
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 7.462
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 104.616
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 7.625
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 76.636
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 67.535
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 9.075
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 13.857
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 25.357
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 76.465
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 103.664
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 5.338
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 4.635
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 8.827
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 6.965
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 110.484
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 23.443
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 14.759
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 40.843
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 69.557
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 0.947
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 29.341
+    }
+  ],
+  "terminal": "exit EBITDA",
+  "timing": "midyear"
+}

@@ -1,0 +1,240 @@
+{
+  "seed": 6062,
+  "slug": "fleet",
+  "title": "设备租赁：退役、投放与利用率",
+  "rule": "Retire B of opening fleet at year start. Deliver A at midyear. Closing fleet includes deliveries; charge for surviving fleet plus half deliveries, at C utilization.",
+  "driver_labels": {
+    "A": "new units",
+    "B": "retirement",
+    "C": "utilization"
+  },
+  "unit": "fleet",
+  "series": {
+    "A": [
+      150.298352,
+      175.381014,
+      183.002085,
+      163.504054,
+      156.311224
+    ],
+    "B": [
+      0.084205,
+      0.083838,
+      0.082022,
+      0.07102,
+      0.08525
+    ],
+    "C": [
+      0.843976,
+      0.823715,
+      0.855708,
+      0.845596,
+      0.828237
+    ],
+    "unit_price": [
+      0.173948,
+      0.181794,
+      0.176979,
+      0.162121,
+      0.16592
+    ],
+    "cogs_pct": [
+      0.435498,
+      0.379838,
+      0.373105,
+      0.428797,
+      0.389217
+    ],
+    "opex_fixed": [
+      29.676915,
+      30.94322,
+      34.043143,
+      33.840876,
+      33.701749
+    ],
+    "capex_pct": [
+      0.055292,
+      0.05524,
+      0.055937,
+      0.059841,
+      0.052332
+    ],
+    "dso": [
+      50.683212,
+      45.784474,
+      51.632741,
+      44.7931,
+      44.200959
+    ],
+    "dio": [
+      47.462611,
+      49.186668,
+      43.002112,
+      45.131392,
+      43.484577
+    ],
+    "dpo": [
+      42.575482,
+      49.706486,
+      40.25265,
+      50.165399,
+      41.721935
+    ],
+    "repay": [
+      8.062035,
+      7.471789,
+      8.816747,
+      8.027826,
+      8.096062
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0349,
+    "beta": 1.2644,
+    "erp": 0.0495,
+    "debt_weight": 0.1873,
+    "debt_cost": 0.0652,
+    "tax_rate": 0.2714,
+    "g": 0.02,
+    "exit_multiple": 8.24,
+    "shares": 12.788,
+    "opening_units": 1165,
+    "dep_rate": 0.1168
+  },
+  "ledger": [
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 5.524
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 36.657
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 5.423
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 2.259
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 16.545
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 7.354
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 16.711
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 13.055
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 64.308
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 8.243
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 16.447
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 18.513
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 10.157
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 87.587
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 67.812
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 20.353
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 39.692
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 22.887
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 8.889
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 42.143
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 4.377
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 57.688
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 1.341
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 106.213
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 4.776
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 9.346
+    }
+  ],
+  "terminal": "perpetuity",
+  "timing": "midyear"
+}

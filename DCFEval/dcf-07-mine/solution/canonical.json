@@ -1,0 +1,240 @@
+{
+  "seed": 217538,
+  "slug": "mine",
+  "title": "矿业：储量、开采上限与回收率",
+  "rule": "Discover A before extraction. Extract the lesser of B and opening reserves plus discoveries. Close reserves net of extraction. Sell C of extracted units. For the prescribed terminal scenario, assume annual resource replacement sustains terminal output and its cost is already included in terminal FCFF.",
+  "driver_labels": {
+    "A": "discoveries",
+    "B": "extraction cap",
+    "C": "recovery"
+  },
+  "unit": "reserves",
+  "series": {
+    "A": [
+      311.323218,
+      297.004014,
+      253.323922,
+      294.17768,
+      272.075862
+    ],
+    "B": [
+      588.655527,
+      619.415819,
+      490.250471,
+      634.639662,
+      608.860557
+    ],
+    "C": [
+      0.901567,
+      0.800203,
+      0.862916,
+      0.803529,
+      0.82556
+    ],
+    "unit_price": [
+      0.125011,
+      0.131415,
+      0.124704,
+      0.125934,
+      0.120229
+    ],
+    "cogs_pct": [
+      0.453984,
+      0.394681,
+      0.394874,
+      0.408284,
+      0.418946
+    ],
+    "opex_fixed": [
+      15.347111,
+      16.748998,
+      17.380427,
+      17.605285,
+      17.891389
+    ],
+    "capex_pct": [
+      0.069924,
+      0.086903,
+      0.069011,
+      0.073497,
+      0.087576
+    ],
+    "dso": [
+      69.23715,
+      58.706314,
+      60.787046,
+      70.946379,
+      63.678609
+    ],
+    "dio": [
+      53.908579,
+      53.912709,
+      65.46813,
+      59.820243,
+      63.139366
+    ],
+    "dpo": [
+      62.651994,
+      56.129746,
+      62.206659,
+      60.387314,
+      65.856616
+    ],
+    "repay": [
+      5.244199,
+      4.955476,
+      4.689705,
+      4.843041,
+      5.247893
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0406,
+    "beta": 1.1807,
+    "erp": 0.0572,
+    "debt_weight": 0.3941,
+    "debt_cost": 0.0589,
+    "tax_rate": 0.248,
+    "g": 0.0234,
+    "exit_multiple": 7.75,
+    "shares": 16.579,
+    "opening_units": 1168,
+    "dep_rate": 0.1536
+  },
+  "ledger": [
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 4.051
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 40.467
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 10.301
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 16.157
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 5.143
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 0.702
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 5.536
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 57.501
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 4.449
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 4.164
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 1.198
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 14.651
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 9.543
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 7.05
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 28.759
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 42.625
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 10.349
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 49.241
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 6.714
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 5.85
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 86.699
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 9.586
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 6.699
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 4.657
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 53.175
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 19.333
+    }
+  ],
+  "terminal": "perpetuity",
+  "timing": "year-end"
+}

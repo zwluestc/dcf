@@ -1,0 +1,240 @@
+{
+  "seed": 4044,
+  "slug": "orders",
+  "title": "装备制造：在手订单与分期履约",
+  "rule": "Fulfil B of opening backlog and C of new bookings A. Recognise fulfilled orders; carry both unfulfilled portions forward.",
+  "driver_labels": {
+    "A": "bookings",
+    "B": "conversion",
+    "C": "same-year delivery"
+  },
+  "unit": "backlog",
+  "series": {
+    "A": [
+      1180.834459,
+      1074.160541,
+      1089.490583,
+      1189.991139,
+      999.801383
+    ],
+    "B": [
+      0.623227,
+      0.595327,
+      0.588073,
+      0.554136,
+      0.555085
+    ],
+    "C": [
+      0.224271,
+      0.225394,
+      0.201401,
+      0.247587,
+      0.228128
+    ],
+    "unit_price": [
+      0.092428,
+      0.095572,
+      0.105707,
+      0.084809,
+      0.096397
+    ],
+    "cogs_pct": [
+      0.508876,
+      0.539487,
+      0.524686,
+      0.491487,
+      0.554759
+    ],
+    "opex_fixed": [
+      22.088087,
+      20.379171,
+      19.058563,
+      19.319055,
+      19.443997
+    ],
+    "capex_pct": [
+      0.058236,
+      0.064588,
+      0.056631,
+      0.068358,
+      0.061554
+    ],
+    "dso": [
+      53.836401,
+      66.432184,
+      58.012841,
+      58.136584,
+      54.445091
+    ],
+    "dio": [
+      56.352151,
+      54.337774,
+      49.811906,
+      53.490614,
+      53.407046
+    ],
+    "dpo": [
+      44.452797,
+      40.35103,
+      40.635562,
+      37.990503,
+      43.900963
+    ],
+    "repay": [
+      5.131021,
+      5.01779,
+      5.289375,
+      5.481349,
+      5.360317
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0319,
+    "beta": 1.1057,
+    "erp": 0.0492,
+    "debt_weight": 0.2999,
+    "debt_cost": 0.058,
+    "tax_rate": 0.2542,
+    "g": 0.0193,
+    "exit_multiple": 6.99,
+    "shares": 16.653,
+    "opening_units": 1200,
+    "dep_rate": 0.1593
+  },
+  "ledger": [
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 0.978
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 4.464
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 69.158
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 8.045
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 2.407
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 34.744
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 7.535
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 24.656
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 10.755
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 4.636
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 43.942
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 13.028
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 4.127
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 2.773
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 18.24
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 3.993
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 2.906
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 7.099
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 25.082
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 37.86
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 8.572
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 3.894
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 52.218
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 0.722
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 12.401
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 14.165
+    }
+  ],
+  "terminal": "perpetuity",
+  "timing": "midyear"
+}

@@ -1,0 +1,240 @@
+{
+  "seed": 11107,
+  "slug": "returns",
+  "title": "售后服务：保修期、返修结算与新单",
+  "rule": "Expire B of opening covers; sell A new annual covers. Service revenue uses surviving opening covers plus half additions. Deduct expected credits equal to C times opening covers times 40% of unit rate.",
+  "driver_labels": {
+    "A": "new covers",
+    "B": "expiry rate",
+    "C": "claim incidence"
+  },
+  "unit": "covered units",
+  "series": {
+    "A": [
+      143.973822,
+      148.145141,
+      131.140869,
+      147.190666,
+      165.665312
+    ],
+    "B": [
+      0.140191,
+      0.133529,
+      0.152212,
+      0.133046,
+      0.123684
+    ],
+    "C": [
+      0.187159,
+      0.187815,
+      0.175376,
+      0.147036,
+      0.181035
+    ],
+    "unit_price": [
+      0.172538,
+      0.159785,
+      0.168038,
+      0.165826,
+      0.170519
+    ],
+    "cogs_pct": [
+      0.431405,
+      0.482715,
+      0.519302,
+      0.469552,
+      0.463527
+    ],
+    "opex_fixed": [
+      15.108907,
+      17.408868,
+      14.85033,
+      15.604211,
+      17.340985
+    ],
+    "capex_pct": [
+      0.063788,
+      0.05857,
+      0.066402,
+      0.061268,
+      0.065984
+    ],
+    "dso": [
+      37.257262,
+      43.562279,
+      39.490034,
+      40.69853,
+      43.843691
+    ],
+    "dio": [
+      43.005796,
+      43.09123,
+      50.216855,
+      42.324785,
+      52.362972
+    ],
+    "dpo": [
+      49.130806,
+      54.610942,
+      46.99685,
+      52.874407,
+      50.911883
+    ],
+    "repay": [
+      5.39202,
+      4.888111,
+      4.822293,
+      5.727661,
+      4.597117
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0353,
+    "beta": 0.9236,
+    "erp": 0.0505,
+    "debt_weight": 0.3981,
+    "debt_cost": 0.0552,
+    "tax_rate": 0.2381,
+    "g": 0.0178,
+    "exit_multiple": 6.95,
+    "shares": 12.841,
+    "opening_units": 882,
+    "dep_rate": 0.1068
+  },
+  "ledger": [
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 3.912
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 1.109
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 3.425
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 5.788
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 7.187
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 3.413
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 5.781
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 5.475
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 31.834
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 5.879
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 40.043
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 7.057
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 10.22
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 1.091
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 42.178
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 50.964
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 3.521
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 6.118
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 18.48
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 28.657
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 48.522
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 12.019
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 10.082
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 93.036
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 53.666
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 9.543
+    }
+  ],
+  "terminal": "exit EBITDA",
+  "timing": "year-end"
+}

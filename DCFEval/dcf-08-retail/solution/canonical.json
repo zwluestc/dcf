@@ -1,0 +1,240 @@
+{
+  "seed": 9089,
+  "slug": "retail",
+  "title": "连锁零售：关店与新店爬坡",
+  "rule": "Close B of opening stores at year start. Open A; they earn C of a mature store's annual sales in their first year. All surviving opening stores are mature.",
+  "driver_labels": {
+    "A": "openings",
+    "B": "closure",
+    "C": "new-store productivity"
+  },
+  "unit": "stores",
+  "series": {
+    "A": [
+      148.569575,
+      192.615587,
+      152.438514,
+      158.915646,
+      156.58373
+    ],
+    "B": [
+      0.092998,
+      0.083226,
+      0.097274,
+      0.078078,
+      0.101759
+    ],
+    "C": [
+      0.363668,
+      0.377128,
+      0.380919,
+      0.427993,
+      0.450391
+    ],
+    "unit_price": [
+      0.095816,
+      0.105391,
+      0.109068,
+      0.106903,
+      0.09654
+    ],
+    "cogs_pct": [
+      0.523346,
+      0.455487,
+      0.479732,
+      0.445571,
+      0.500214
+    ],
+    "opex_fixed": [
+      17.482904,
+      19.289147,
+      19.891861,
+      17.932028,
+      19.301342
+    ],
+    "capex_pct": [
+      0.069106,
+      0.070605,
+      0.075423,
+      0.080567,
+      0.068301
+    ],
+    "dso": [
+      56.055465,
+      53.666799,
+      50.603622,
+      47.235789,
+      56.06924
+    ],
+    "dio": [
+      79.766982,
+      77.173571,
+      81.815531,
+      71.063383,
+      85.116347
+    ],
+    "dpo": [
+      43.212234,
+      49.530427,
+      43.375024,
+      47.620952,
+      47.722209
+    ],
+    "repay": [
+      4.169825,
+      3.609079,
+      3.715282,
+      4.063256,
+      3.554156
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0343,
+    "beta": 1.3472,
+    "erp": 0.0596,
+    "debt_weight": 0.222,
+    "debt_cost": 0.0458,
+    "tax_rate": 0.2434,
+    "g": 0.0218,
+    "exit_multiple": 11.09,
+    "shares": 16.972,
+    "opening_units": 1067,
+    "dep_rate": 0.1301
+  },
+  "ledger": [
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 2.595
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 4.905
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 9.369
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 8.131
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 33.246
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 57.489
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 3.296
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 28.16
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 9.595
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 75.59
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 0.514
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 9.025
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 2.698
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 6.675
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 34.911
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 10.989
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 5.302
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 46.74
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 0.886
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 22.354
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 10.605
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 38.21
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 4.104
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 7.011
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 4.677
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 7.223
+    }
+  ],
+  "terminal": "exit EBITDA",
+  "timing": "midyear"
+}

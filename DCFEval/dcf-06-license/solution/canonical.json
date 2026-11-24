@@ -1,0 +1,240 @@
+{
+  "seed": 7071,
+  "slug": "license",
+  "title": "许可合同：续签、签约费与持续费",
+  "rule": "Renew B of opening licenses and sign A at midyear. Bill renewals for full year, additions for half year; each addition also pays C times unit rate upfront, recognised immediately.",
+  "driver_labels": {
+    "A": "new licenses",
+    "B": "renewal",
+    "C": "upfront multiple"
+  },
+  "unit": "licenses",
+  "series": {
+    "A": [
+      264.477468,
+      276.48277,
+      253.411547,
+      270.296504,
+      327.588218
+    ],
+    "B": [
+      0.751847,
+      0.745485,
+      0.795655,
+      0.740163,
+      0.815548
+    ],
+    "C": [
+      0.444624,
+      0.475502,
+      0.437225,
+      0.464389,
+      0.442519
+    ],
+    "unit_price": [
+      0.11422,
+      0.116675,
+      0.133838,
+      0.110657,
+      0.110058
+    ],
+    "cogs_pct": [
+      0.464595,
+      0.409208,
+      0.453139,
+      0.418587,
+      0.410031
+    ],
+    "opex_fixed": [
+      17.325721,
+      18.42551,
+      18.199342,
+      16.969649,
+      15.363797
+    ],
+    "capex_pct": [
+      0.068258,
+      0.05818,
+      0.058086,
+      0.064043,
+      0.064349
+    ],
+    "dso": [
+      44.16074,
+      45.056591,
+      41.336653,
+      38.91328,
+      38.481582
+    ],
+    "dio": [
+      65.637588,
+      58.563569,
+      64.905083,
+      70.249633,
+      60.276492
+    ],
+    "dpo": [
+      57.221909,
+      66.930941,
+      68.71547,
+      69.170987,
+      60.656027
+    ],
+    "repay": [
+      6.055866,
+      6.749431,
+      6.535051,
+      6.838775,
+      6.271371
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0293,
+    "beta": 1.4295,
+    "erp": 0.0615,
+    "debt_weight": 0.2638,
+    "debt_cost": 0.0424,
+    "tax_rate": 0.2738,
+    "g": 0.0216,
+    "exit_multiple": 8.54,
+    "shares": 12.479,
+    "opening_units": 1142,
+    "dep_rate": 0.1165
+  },
+  "ledger": [
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 10.644
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 50.322
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 4.479
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 7.575
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 0.992
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 2.621
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 1.008
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 8.725
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 50.135
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 46.174
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 9.604
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 3.546
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 26.865
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 9.934
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 36.878
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 7.265
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 7.454
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 34.074
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 28.426
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 7.696
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 17.656
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 12.266
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 3.902
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 93.826
+    },
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 7.098
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 5.735
+    }
+  ],
+  "terminal": "exit EBITDA",
+  "timing": "midyear"
+}

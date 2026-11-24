@@ -1,0 +1,6617 @@
+{
+  "dcf-01-saas": {
+    "oracle_local": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          160,
+          160
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          45,
+          45
+        ],
+        "shock_discount": [
+          11,
+          11
+        ]
+      },
+      "examples": {}
+    },
+    "negative": {
+      "frozen": {
+        "reward": 0.1525,
+        "pass_strict": false,
+        "raw_score": 0.61,
+        "dynamic_gate": 0.25,
+        "formula_ratio": 0.0,
+        "shock_ratio": 0.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            0,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "shock_collection": [
+            0,
+            45
+          ],
+          "shock_discount": [
+            0,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "Statements!C4",
+              980.830113,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C5",
+              1022.09631047629,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C6",
+              128.863858632229,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C7",
+              57.0444220284462,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C8",
+              11.466191,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C18",
+              11.0870598051411,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C9",
+              6.98372405506842,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C10",
+              53.3695215487146,
+              "live_formula_with_upstream_computation"
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6",
+              128.863858632229,
+              103.44803979419467
+            ],
+            [
+              "Statements!C7",
+              57.0444220284462,
+              45.79355067177575
+            ],
+            [
+              "Statements!C18",
+              11.0870598051411,
+              8.900358999773127
+            ],
+            [
+              "Statements!C9",
+              6.98372405506842,
+              6.861050139887272
+            ],
+            [
+              "Statements!C10",
+              53.3695215487146,
+              39.327247982531645
+            ],
+            [
+              "Statements!C12",
+              12.2219755649582,
+              8.934679323114718
+            ],
+            [
+              "Statements!C13",
+              39.9863779803565,
+              29.231400656016927
+            ],
+            [
+              "Statements!C14",
+              18.0527783839746,
+              14.492228903303252
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14",
+              18.0527783839746,
+              22.99550172877239
+            ],
+            [
+              "Statements!C17",
+              15.4999983009579,
+              20.442721645755732
+            ],
+            [
+              "Statements!C31",
+              2.99999830095789,
+              7.942721645755732
+            ],
+            [
+              "Statements!C26",
+              43.970103734467,
+              39.02738038966917
+            ],
+            [
+              "Statements!C29",
+              28.7061059293259,
+              23.76338258452806
+            ],
+            [
+              "Statements!C22",
+              47.1061059293259,
+              42.16338258452806
+            ],
+            [
+              "Statements!C32",
+              33.77238250313,
+              28.82965915833212
+            ],
+            [
+              "Statements!C33",
+              31.192954850175,
+              26.627741065897343
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33",
+              31.192954850175,
+              30.934467209729036
+            ],
+            [
+              "Statements!D33",
+              25.6577485799982,
+              25.234272750536654
+            ],
+            [
+              "Statements!E33",
+              34.0794793284864,
+              33.2392581597828
+            ],
+            [
+              "Statements!F33",
+              30.5819774388315,
+              29.580809804985837
+            ],
+            [
+              "Statements!G33",
+              30.280778515808,
+              29.04675730137758
+            ],
+            [
+              "DCF!B4",
+              0.082692635736,
+              0.091739588536
+            ],
+            [
+              "DCF!B5",
+              812.26846175083,
+              700.8247206304804
+            ],
+            [
+              "DCF!B6",
+              545.976156662059,
+              451.87063342813826
+            ]
+          ]
+        }
+      },
+      "terminal": {
+        "reward": 0.881858058,
+        "pass_strict": false,
+        "raw_score": 0.900272727,
+        "dynamic_gate": 0.979545455,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.931818,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            6,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            116,
+            120
+          ],
+          "shock_collection": [
+            41,
+            45
+          ],
+          "shock_discount": [
+            7,
+            11
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B6",
+              591.124364105456,
+              545.9761566620591
+            ],
+            [
+              "DCF!B7",
+              742.917302818755,
+              697.7690953753581
+            ],
+            [
+              "DCF!B8",
+              740.317302818755,
+              695.1690953753581
+            ],
+            [
+              "DCF!B9",
+              60.0955680508771,
+              56.43064334567401
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B6",
+              452.546570993474,
+              417.9824966536684
+            ],
+            [
+              "DCF!B7",
+              570.066471462194,
+              535.5023971223882
+            ],
+            [
+              "DCF!B8",
+              567.466471462194,
+              532.9023971223882
+            ],
+            [
+              "DCF!B9",
+              46.0643292038472,
+              43.25857594954039
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B6",
+              590.616104284839,
+              545.5067161174009
+            ],
+            [
+              "DCF!B7",
+              737.371699008585,
+              692.2623108411469
+            ],
+            [
+              "DCF!B8",
+              734.771699008585,
+              689.6623108411469
+            ],
+            [
+              "DCF!B9",
+              59.6454013319738,
+              55.98362779780395
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B6",
+              493.325059410337,
+              451.87063342813826
+            ],
+            [
+              "DCF!B7",
+              641.360624636749,
+              599.9061986545502
+            ],
+            [
+              "DCF!B8",
+              638.760624636749,
+              597.3061986545501
+            ],
+            [
+              "DCF!B9",
+              51.8516620372392,
+              48.48658159384285
+            ]
+          ]
+        }
+      },
+      "missing": {
+        "reward": 0.0,
+        "pass_strict": false,
+        "reason": "missing output.xlsx"
+      },
+      "fake_formula": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            45,
+            45
+          ],
+          "shock_discount": [
+            11,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=1.0912",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=12.319",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=0.810289069970907",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=0.05",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "alias_hardcode": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            45,
+            45
+          ],
+          "shock_discount": [
+            11,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=Helper!A1",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=Helper!A2",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=Helper!A3",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=Helper!A4",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "itm_filter": {
+        "reward": 0.94222522,
+        "pass_strict": false,
+        "raw_score": 0.947068182,
+        "dynamic_gate": 0.994886364,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.982955,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            7,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            119,
+            120
+          ],
+          "shock_collection": [
+            44,
+            45
+          ],
+          "shock_discount": [
+            10,
+            11
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B9",
+              57.3028146045714,
+              56.43064334567401
+            ],
+            [
+              "DCF!B13",
+              12.1315,
+              12.319
+            ],
+            [
+              "DCF!B15",
+              -0.1375,
+              0.05
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B9",
+              43.9271645816584,
+              43.25857594954039
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B9",
+              56.8488901488808,
+              55.98362779780395
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B9",
+              49.235972357462,
+              48.48658159384285
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "dcf-02-foundry": {
+    "oracle_local": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          160,
+          160
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          43,
+          43
+        ],
+        "shock_discount": [
+          10,
+          10
+        ]
+      },
+      "examples": {}
+    },
+    "negative": {
+      "frozen": {
+        "reward": 0.1525,
+        "pass_strict": false,
+        "raw_score": 0.61,
+        "dynamic_gate": 0.25,
+        "formula_ratio": 0.0,
+        "shock_ratio": 0.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            0,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "shock_collection": [
+            0,
+            43
+          ],
+          "shock_discount": [
+            0,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "Statements!C4",
+              1269.986217,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C5",
+              1163.66424089898,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C6",
+              217.316624316366,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C7",
+              115.833237826612,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C8",
+              25.996313,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C18",
+              15.0354852865764,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C9",
+              20.6670200965445,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C10",
+              54.8200533932092,
+              "live_formula_with_upstream_computation"
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6",
+              217.316624316366,
+              199.41190763894042
+            ],
+            [
+              "Statements!C7",
+              115.833237826612,
+              106.28973736207747
+            ],
+            [
+              "Statements!C18",
+              15.0354852865764,
+              13.79671165381537
+            ],
+            [
+              "Statements!C9",
+              20.6670200965445,
+              20.582535734790206
+            ],
+            [
+              "Statements!C10",
+              54.8200533932092,
+              46.54332154207274
+            ],
+            [
+              "Statements!C12",
+              10.6122568723151,
+              8.95442748253244
+            ],
+            [
+              "Statements!C13",
+              42.3695547717942,
+              35.7506523104403
+            ],
+            [
+              "Statements!C14",
+              37.9499949597108,
+              34.82329487498024
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14",
+              37.9499949597108,
+              43.903875077967406
+            ],
+            [
+              "Statements!C17",
+              40.7843168693335,
+              46.73819698759009
+            ],
+            [
+              "Statements!C31",
+              -0.415683130666508,
+              5.538196987590084
+            ],
+            [
+              "Statements!C26",
+              63.4522579990052,
+              57.49837788074859
+            ],
+            [
+              "Statements!C29",
+              37.7797157124288,
+              31.82583559417219
+            ],
+            [
+              "Statements!C22",
+              76.9797157124288,
+              71.0258355941722
+            ],
+            [
+              "Statements!C32",
+              49.886814639184,
+              43.93293452092746
+            ],
+            [
+              "Statements!C33",
+              47.8275344277603,
+              42.119424812138384
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33",
+              47.8275344277603,
+              47.73505726339179
+            ],
+            [
+              "Statements!D33",
+              55.626100073354,
+              55.30405521027308
+            ],
+            [
+              "Statements!E33",
+              59.4439052603286,
+              58.8714330812306
+            ],
+            [
+              "Statements!F33",
+              48.4652989638259,
+              47.813119580376956
+            ],
+            [
+              "Statements!G33",
+              56.8401959305181,
+              55.85867892277192
+            ],
+            [
+              "DCF!B4",
+              0.087966599412,
+              0.092186119812
+            ],
+            [
+              "DCF!B6",
+              610.329407065706,
+              598.6305060930887
+            ],
+            [
+              "DCF!B7",
+              878.532441721493,
+              864.212850151133
+            ]
+          ]
+        }
+      },
+      "terminal": {
+        "reward": 0.881577699,
+        "pass_strict": false,
+        "raw_score": 0.89872093,
+        "dynamic_gate": 0.980924855,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.936416,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            6,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            116,
+            120
+          ],
+          "shock_collection": [
+            40,
+            43
+          ],
+          "shock_discount": [
+            6,
+            10
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B6",
+              664.018009526418,
+              610.3294070657058
+            ],
+            [
+              "DCF!B7",
+              932.221044182205,
+              878.5324417214927
+            ],
+            [
+              "DCF!B8",
+              927.321044182205,
+              873.6324417214927
+            ],
+            [
+              "DCF!B9",
+              67.0562617819224,
+              63.17394184116658
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B6",
+              596.896703841557,
+              548.6351365604
+            ],
+            [
+              "DCF!B7",
+              839.936257564658,
+              791.674690283501
+            ],
+            [
+              "DCF!B8",
+              835.036257564658,
+              786.7746902835011
+            ],
+            [
+              "DCF!B9",
+              60.3829819628793,
+              56.89310075084974
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B7",
+              924.405899821231,
+              870.7172973605184
+            ],
+            [
+              "DCF!B8",
+              919.505899821231,
+              865.8172973605184
+            ],
+            [
+              "DCF!B9",
+              66.4911345593485,
+              62.608814618592696
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B6",
+              653.815929650904,
+              598.6305060930887
+            ],
+            [
+              "DCF!B7",
+              919.398273708949,
+              864.212850151133
+            ],
+            [
+              "DCF!B8",
+              914.498273708949,
+              859.312850151133
+            ],
+            [
+              "DCF!B9",
+              66.1290240587858,
+              62.13846627747002
+            ]
+          ]
+        }
+      },
+      "missing": {
+        "reward": 0.0,
+        "pass_strict": false,
+        "reason": "missing output.xlsx"
+      },
+      "fake_formula": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=1.3983",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=13.829",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=1.0347976336279874",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=0.09",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "alias_hardcode": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=Helper!A1",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=Helper!A2",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=Helper!A3",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=Helper!A4",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "itm_filter": {
+        "reward": 0.941234773,
+        "pass_strict": false,
+        "raw_score": 0.946156977,
+        "dynamic_gate": 0.994797688,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.982659,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            7,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            119,
+            120
+          ],
+          "shock_collection": [
+            42,
+            43
+          ],
+          "shock_discount": [
+            9,
+            10
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B9",
+              63.8666892113088,
+              63.17394184116658
+            ],
+            [
+              "DCF!B13",
+              13.679,
+              13.829
+            ],
+            [
+              "DCF!B15",
+              -0.06,
+              0.09
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B9",
+              57.5169742147453,
+              56.89310075084974
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B9",
+              63.2953649653131,
+              62.608814618592696
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B9",
+              62.8198589188634,
+              62.13846627747002
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "dcf-03-orders": {
+    "oracle_local": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          160,
+          160
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          45,
+          45
+        ],
+        "shock_discount": [
+          11,
+          11
+        ]
+      },
+      "examples": {}
+    },
+    "negative": {
+      "frozen": {
+        "reward": 0.1525,
+        "pass_strict": false,
+        "raw_score": 0.61,
+        "dynamic_gate": 0.25,
+        "formula_ratio": 0.0,
+        "shock_ratio": 0.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            0,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "shock_collection": [
+            0,
+            45
+          ],
+          "shock_discount": [
+            0,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "Statements!C4",
+              1368.13513404561,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C5",
+              1012.69932495439,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C6",
+              93.6017732068843,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C7",
+              47.6316959424264,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C8",
+              22.088087,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C18",
+              5.45099286447611,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C9",
+              9.37090158165552,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C10",
+              14.5110886828023,
+              "live_formula_with_upstream_computation"
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6",
+              93.6017732068843,
+              79.07590122645429
+            ],
+            [
+              "Statements!C7",
+              47.6316959424264,
+              40.239828312513154
+            ],
+            [
+              "Statements!C18",
+              5.45099286447611,
+              4.605064183823792
+            ],
+            [
+              "Statements!C9",
+              9.37090158165552,
+              9.303523362241565
+            ],
+            [
+              "Statements!C10",
+              14.5110886828023,
+              7.444462551699571
+            ],
+            [
+              "Statements!C12",
+              3.40808184377614,
+              1.6117454812498309
+            ],
+            [
+              "Statements!C13",
+              9.99900644802615,
+              4.72871667944974
+            ],
+            [
+              "Statements!C14",
+              13.805979716923,
+              11.66345733661311
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14",
+              13.805979716923,
+              15.344639002515567
+            ],
+            [
+              "Statements!C17",
+              15.3588192008662,
+              16.897478486458844
+            ],
+            [
+              "Statements!C31",
+              -5.74118079913378,
+              -4.202521513541157
+            ],
+            [
+              "Statements!C26",
+              25.1110888288155,
+              23.57242954322283
+            ],
+            [
+              "Statements!C29",
+              14.5290749643393,
+              12.990415678746718
+            ],
+            [
+              "Statements!C22",
+              36.2290749643393,
+              34.69041567874672
+            ],
+            [
+              "Statements!C32",
+              20.4834594559471,
+              18.94480017035452
+            ],
+            [
+              "Statements!C33",
+              19.7707991471028,
+              18.285672879408637
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33",
+              19.7707991471028,
+              19.722286235006155
+            ],
+            [
+              "Statements!D33",
+              9.08041007227638,
+              9.013730355806029
+            ],
+            [
+              "Statements!E33",
+              18.5507968424134,
+              18.324314481990907
+            ],
+            [
+              "Statements!F33",
+              14.5073487792259,
+              14.259992148875146
+            ],
+            [
+              "Statements!G33",
+              11.1479858413116,
+              10.904197512565796
+            ],
+            [
+              "DCF!B4",
+              0.073391532404,
+              0.078678687604
+            ],
+            [
+              "DCF!B5",
+              288.922184568772,
+              263.1961792935182
+            ],
+            [
+              "DCF!B6",
+              202.763633477601,
+              180.2266831441999
+            ]
+          ]
+        }
+      },
+      "terminal": {
+        "reward": 0.881858058,
+        "pass_strict": false,
+        "raw_score": 0.900272727,
+        "dynamic_gate": 0.979545455,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.931818,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            6,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            116,
+            120
+          ],
+          "shock_collection": [
+            41,
+            45
+          ],
+          "shock_discount": [
+            7,
+            11
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B6",
+              217.644767254325,
+              202.7636334776012
+            ],
+            [
+              "DCF!B7",
+              290.702107936656,
+              275.82097415993144
+            ],
+            [
+              "DCF!B8",
+              290.802107936656,
+              275.9209741599314
+            ],
+            [
+              "DCF!B9",
+              17.4624456816583,
+              16.568844902415865
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B6",
+              154.423537437824,
+              143.86506020964453
+            ],
+            [
+              "DCF!B7",
+              210.593171068189,
+              200.03469384000897
+            ],
+            [
+              "DCF!B8",
+              210.693171068189,
+              200.13469384000896
+            ],
+            [
+              "DCF!B9",
+              12.6519648752891,
+              12.017936338197861
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B6",
+              214.944969685885,
+              200.2484305093111
+            ],
+            [
+              "DCF!B7",
+              286.368172149321,
+              271.67163297274635
+            ],
+            [
+              "DCF!B8",
+              286.468172149321,
+              271.7716329727463
+            ],
+            [
+              "DCF!B9",
+              17.2021961297857,
+              16.31968011605995
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B6",
+              194.406682045208,
+              180.2266831441999
+            ],
+            [
+              "DCF!B7",
+              266.631202779452,
+              252.45120387844395
+            ],
+            [
+              "DCF!B8",
+              266.731202779452,
+              252.55120387844394
+            ],
+            [
+              "DCF!B9",
+              16.0170061117788,
+              15.165507949225002
+            ]
+          ]
+        }
+      },
+      "missing": {
+        "reward": 0.0,
+        "pass_strict": false,
+        "reason": "missing output.xlsx"
+      },
+      "fake_formula": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            45,
+            45
+          ],
+          "shock_discount": [
+            11,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=1.1057",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=16.653",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=0.8379839223685165",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=0.08",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "alias_hardcode": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            45,
+            45
+          ],
+          "shock_discount": [
+            11,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=Helper!A1",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=Helper!A2",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=Helper!A3",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=Helper!A4",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "itm_filter": {
+        "reward": 0.94222522,
+        "pass_strict": false,
+        "raw_score": 0.947068182,
+        "dynamic_gate": 0.994886364,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.982955,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            7,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            119,
+            120
+          ],
+          "shock_collection": [
+            44,
+            45
+          ],
+          "shock_discount": [
+            10,
+            11
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B9",
+              16.6469414797959,
+              16.568844902415865
+            ],
+            [
+              "DCF!B13",
+              16.574875,
+              16.653
+            ],
+            [
+              "DCF!B15",
+              0.001875,
+              0.08
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B9",
+              12.0745823929296,
+              12.017936338197861
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B9",
+              16.3966022653412,
+              16.31968011605995
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B9",
+              15.2369899548832,
+              15.165507949225002
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "dcf-04-storage": {
+    "oracle_local": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          160,
+          160
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          43,
+          43
+        ],
+        "shock_discount": [
+          10,
+          10
+        ]
+      },
+      "examples": {}
+    },
+    "negative": {
+      "frozen": {
+        "reward": 0.1525,
+        "pass_strict": false,
+        "raw_score": 0.61,
+        "dynamic_gate": 0.25,
+        "formula_ratio": 0.0,
+        "shock_ratio": 0.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            0,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "shock_collection": [
+            0,
+            43
+          ],
+          "shock_discount": [
+            0,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "Statements!C4",
+              857.289972,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C5",
+              820.789089,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C6",
+              173.23574512434,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C7",
+              85.2375301450193,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C8",
+              24.66375,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C18",
+              12.8967082815266,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C9",
+              14.5009334844071,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C10",
+              48.8335314949136,
+              "live_formula_with_upstream_computation"
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6",
+              173.23574512434,
+              149.33233054059332
+            ],
+            [
+              "Statements!C7",
+              85.2375301450193,
+              73.47628526054922
+            ],
+            [
+              "Statements!C18",
+              12.8967082815266,
+              11.11719467942501
+            ],
+            [
+              "Statements!C9",
+              14.5009334844071,
+              14.394696522361674
+            ],
+            [
+              "Statements!C10",
+              48.8335314949136,
+              36.79759875768242
+            ],
+            [
+              "Statements!C12",
+              10.7735992267421,
+              8.024592189558506
+            ],
+            [
+              "Statements!C13",
+              36.3962747957715,
+              27.10934909572392
+            ],
+            [
+              "Statements!C14",
+              21.6175931323735,
+              18.634754396782327
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14",
+              21.6175931323735,
+              24.939922490922473
+            ],
+            [
+              "Statements!C17",
+              21.741248034701,
+              25.063577393250036
+            ],
+            [
+              "Statements!C31",
+              -4.05875196529896,
+              -0.7364226067499651
+            ],
+            [
+              "Statements!C26",
+              54.9559602454776,
+              51.633630886928614
+            ],
+            [
+              "Statements!C29",
+              34.176677963951,
+              30.854348605402002
+            ],
+            [
+              "Statements!C22",
+              60.176677963951,
+              56.854348605402
+            ],
+            [
+              "Statements!C32",
+              43.3429300696548,
+              40.02060071110583
+            ],
+            [
+              "Statements!C33",
+              40.1186888600686,
+              37.04350456560354
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33",
+              40.1186888600686,
+              39.79076543785365
+            ],
+            [
+              "Statements!D33",
+              28.5717753449833,
+              28.106602486603265
+            ],
+            [
+              "Statements!E33",
+              25.4335927852295,
+              24.81500692484581
+            ],
+            [
+              "Statements!F33",
+              30.6156373193301,
+              29.626855141444658
+            ],
+            [
+              "Statements!G33",
+              26.5331159643732,
+              25.466312677449476
+            ],
+            [
+              "DCF!B4",
+              0.080367561882,
+              0.089271080682
+            ],
+            [
+              "DCF!B6",
+              342.750375043397,
+              328.9695877743251
+            ],
+            [
+              "DCF!B7",
+              494.023185317381,
+              476.7751304425219
+            ]
+          ]
+        }
+      },
+      "terminal": {
+        "reward": 0.881577699,
+        "pass_strict": false,
+        "raw_score": 0.89872093,
+        "dynamic_gate": 0.980924855,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.936416,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            6,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            116,
+            120
+          ],
+          "shock_collection": [
+            40,
+            43
+          ],
+          "shock_discount": [
+            6,
+            10
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B6",
+              370.296387019776,
+              342.7503750433968
+            ],
+            [
+              "DCF!B7",
+              521.56919729376,
+              494.0231853173815
+            ],
+            [
+              "DCF!B8",
+              513.26919729376,
+              485.7231853173815
+            ],
+            [
+              "DCF!B9",
+              57.5995059245607,
+              54.50826902899579
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B6",
+              296.914923513307,
+              274.82769197187
+            ],
+            [
+              "DCF!B7",
+              420.534507774074,
+              398.44727623263725
+            ],
+            [
+              "DCF!B8",
+              412.234507774074,
+              390.14727623263724
+            ],
+            [
+              "DCF!B9",
+              46.2613071231146,
+              43.782659211383375
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B7",
+              518.543924026944,
+              490.99791205056516
+            ],
+            [
+              "DCF!B8",
+              510.243924026944,
+              482.6979120505652
+            ],
+            [
+              "DCF!B9",
+              57.2600071851581,
+              54.168770289593226
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B6",
+              358.337058386451,
+              328.9695877743251
+            ],
+            [
+              "DCF!B7",
+              506.142601054648,
+              476.7751304425219
+            ],
+            [
+              "DCF!B8",
+              497.842601054648,
+              468.4751304425219
+            ],
+            [
+              "DCF!B9",
+              55.8683201722195,
+              52.57267763915632
+            ]
+          ]
+        }
+      },
+      "missing": {
+        "reward": 0.0,
+        "pass_strict": false,
+        "reason": "missing output.xlsx"
+      },
+      "fake_formula": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=1.0953",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=8.911",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=0.8438451789497751",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=0.15",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "alias_hardcode": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=Helper!A1",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=Helper!A2",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=Helper!A3",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=Helper!A4",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "itm_filter": {
+        "reward": 0.941234773,
+        "pass_strict": false,
+        "raw_score": 0.946156977,
+        "dynamic_gate": 0.994797688,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.982659,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            7,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            119,
+            120
+          ],
+          "shock_collection": [
+            42,
+            43
+          ],
+          "shock_discount": [
+            9,
+            10
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B9",
+              55.3467622285075,
+              54.50826902899579
+            ],
+            [
+              "DCF!B13",
+              8.776,
+              8.911
+            ],
+            [
+              "DCF!B15",
+              0.015,
+              0.15
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B9",
+              44.4561618314309,
+              43.782659211383375
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B9",
+              55.002041026728,
+              54.168770289593226
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B9",
+              53.3813959027486,
+              52.57267763915632
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "dcf-05-fleet": {
+    "oracle_local": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          160,
+          160
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          45,
+          45
+        ],
+        "shock_discount": [
+          11,
+          11
+        ]
+      },
+      "examples": {}
+    },
+    "negative": {
+      "frozen": {
+        "reward": 0.1525,
+        "pass_strict": false,
+        "raw_score": 0.61,
+        "dynamic_gate": 0.25,
+        "formula_ratio": 0.0,
+        "shock_ratio": 0.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            0,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "shock_collection": [
+            0,
+            45
+          ],
+          "shock_discount": [
+            0,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "Statements!C4",
+              1217.199527,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C5",
+              963.863087035576,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C6",
+              167.662056263664,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C7",
+              73.0164901787133,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C8",
+              29.676915,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C18",
+              9.27037041493053,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C9",
+              12.6885896322319,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C10",
+              52.2800614527191,
+              "live_formula_with_upstream_computation"
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6",
+              167.662056263664,
+              157.51330433596848
+            ],
+            [
+              "Statements!C7",
+              73.0164901787133,
+              68.5967290117056
+            ],
+            [
+              "Statements!C18",
+              9.27037041493053,
+              8.70922562334437
+            ],
+            [
+              "Statements!C9",
+              12.6885896322319,
+              12.655818776403311
+            ],
+            [
+              "Statements!C10",
+              52.2800614527191,
+              46.58384154785956
+            ],
+            [
+              "Statements!C12",
+              13.5275540696154,
+              11.981599987436486
+            ],
+            [
+              "Statements!C13",
+              36.3160497241037,
+              32.16578390142308
+            ],
+            [
+              "Statements!C14",
+              23.2812371012801,
+              21.87200053830249
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14",
+              23.2812371012801,
+              26.037325697395104
+            ],
+            [
+              "Statements!C17",
+              24.2588836947886,
+              27.014972290903607
+            ],
+            [
+              "Statements!C31",
+              -1.84111630521142,
+              0.9149722909036093
+            ],
+            [
+              "Statements!C26",
+              50.8457556615471,
+              48.08966706543207
+            ],
+            [
+              "Statements!C29",
+              33.5133502466166,
+              30.75726165050154
+            ],
+            [
+              "Statements!C22",
+              70.3133502466166,
+              67.55726165050154
+            ],
+            [
+              "Statements!C32",
+              43.350588296964,
+              40.59449970084894
+            ],
+            [
+              "Statements!C33",
+              41.5580736007956,
+              38.915947225415294
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33",
+              41.5580736007956,
+              41.443564968930154
+            ],
+            [
+              "Statements!D33",
+              47.575698000595,
+              47.18351204088237
+            ],
+            [
+              "Statements!E33",
+              40.9359947303397,
+              40.37512129186672
+            ],
+            [
+              "Statements!F33",
+              37.8588760468962,
+              37.13467310906265
+            ],
+            [
+              "Statements!G33",
+              35.4346664381948,
+              34.56556295415004
+            ],
+            [
+              "DCF!B4",
+              0.088125969116,
+              0.094147263416
+            ],
+            [
+              "DCF!B5",
+              775.839909319494,
+              712.8360949037358
+            ],
+            [
+              "DCF!B6",
+              508.599864022007,
+              454.5804874402596
+            ]
+          ]
+        }
+      },
+      "terminal": {
+        "reward": 0.881858058,
+        "pass_strict": false,
+        "raw_score": 0.900272727,
+        "dynamic_gate": 0.979545455,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.931818,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            6,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            116,
+            120
+          ],
+          "shock_collection": [
+            41,
+            45
+          ],
+          "shock_discount": [
+            7,
+            11
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B6",
+              553.420719931213,
+              508.59986402200803
+            ],
+            [
+              "DCF!B7",
+              756.784028748034,
+              711.9631728388295
+            ],
+            [
+              "DCF!B8",
+              752.184028748034,
+              707.3631728388294
+            ],
+            [
+              "DCF!B9",
+              58.8195205464525,
+              55.31460532052154
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B6",
+              505.344263063017,
+              464.41705961081124
+            ],
+            [
+              "DCF!B7",
+              692.770689684515,
+              651.8434862323093
+            ],
+            [
+              "DCF!B8",
+              688.170689684515,
+              647.2434862323092
+            ],
+            [
+              "DCF!B9",
+              53.813785555561,
+              50.61334737506328
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B6",
+              552.433401180514,
+              507.69250698916306
+            ],
+            [
+              "DCF!B7",
+              752.83236648207,
+              708.091472290719
+            ],
+            [
+              "DCF!B8",
+              748.23236648207,
+              703.491472290719
+            ],
+            [
+              "DCF!B9",
+              58.5105072319417,
+              55.01184487728487
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B6",
+              497.377996335071,
+              454.5804874402596
+            ],
+            [
+              "DCF!B7",
+              698.080430699963,
+              655.2829218051515
+            ],
+            [
+              "DCF!B8",
+              693.480430699963,
+              650.6829218051515
+            ],
+            [
+              "DCF!B9",
+              54.2289983343731,
+              50.882305427365615
+            ]
+          ]
+        }
+      },
+      "missing": {
+        "reward": 0.0,
+        "pass_strict": false,
+        "reason": "missing output.xlsx"
+      },
+      "fake_formula": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            45,
+            45
+          ],
+          "shock_discount": [
+            11,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=1.2644",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=12.788",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=1.0826104554565215",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=0.87",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "alias_hardcode": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            45,
+            45
+          ],
+          "shock_discount": [
+            11,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=Helper!A1",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=Helper!A2",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=Helper!A3",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=Helper!A4",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "itm_filter": {
+        "reward": 0.94222522,
+        "pass_strict": false,
+        "raw_score": 0.947068182,
+        "dynamic_gate": 0.994886364,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.982955,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            7,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            119,
+            120
+          ],
+          "shock_collection": [
+            44,
+            45
+          ],
+          "shock_discount": [
+            10,
+            11
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B9",
+              55.6628244286142,
+              55.31460532052154
+            ],
+            [
+              "DCF!B13",
+              12.708,
+              12.788
+            ],
+            [
+              "DCF!B15",
+              0.79,
+              0.87
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B9",
+              50.9319709027627,
+              50.61334737506328
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B9",
+              55.3581580335787,
+              55.01184487728487
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B9",
+              51.2026221124608,
+              50.882305427365615
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "dcf-06-license": {
+    "oracle_local": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          160,
+          160
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          43,
+          43
+        ],
+        "shock_discount": [
+          10,
+          10
+        ]
+      },
+      "examples": {}
+    },
+    "negative": {
+      "frozen": {
+        "reward": 0.1525,
+        "pass_strict": false,
+        "raw_score": 0.61,
+        "dynamic_gate": 0.25,
+        "formula_ratio": 0.0,
+        "shock_ratio": 0.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            0,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "shock_collection": [
+            0,
+            43
+          ],
+          "shock_discount": [
+            0,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "Statements!C4",
+              1123.086742,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C5",
+              1108.44103773203,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C6",
+              126.606135329753,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C7",
+              58.8205774435265,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C8",
+              17.325721,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C18",
+              8.64188158533826,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C9",
+              9.47388960234595,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C10",
+              40.9859472838803,
+              "live_formula_with_upstream_computation"
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6",
+              126.606135329753,
+              118.76782288535237
+            ],
+            [
+              "Statements!C7",
+              58.8205774435265,
+              55.17893667342028
+            ],
+            [
+              "Statements!C18",
+              8.64188158533826,
+              8.106854054508382
+            ],
+            [
+              "Statements!C9",
+              9.47388960234595,
+              9.442724248675113
+            ],
+            [
+              "Statements!C10",
+              40.9859472838803,
+              36.82044096325698
+            ],
+            [
+              "Statements!C12",
+              10.9285659078754,
+              9.78805027728872
+            ],
+            [
+              "Statements!C13",
+              28.9858457352049,
+              25.96085504516826
+            ],
+            [
+              "Statements!C14",
+              15.317864725211,
+              14.369520402208481
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14",
+              15.317864725211,
+              17.745927594548743
+            ],
+            [
+              "Statements!C17",
+              16.6740704741408,
+              19.102133343478496
+            ],
+            [
+              "Statements!C31",
+              0.374070474140776,
+              2.802133343478495
+            ],
+            [
+              "Statements!C26",
+              38.0856648634101,
+              35.65760199407237
+            ],
+            [
+              "Statements!C29",
+              23.3879172780718,
+              20.95985440873411
+            ],
+            [
+              "Statements!C22",
+              45.5879172780718,
+              43.159854408734105
+            ],
+            [
+              "Statements!C32",
+              30.2219324604208,
+              27.793869591083073
+            ],
+            [
+              "Statements!C33",
+              28.8889036529242,
+              26.56793776540522
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33",
+              28.8889036529242,
+              28.75636382054858
+            ],
+            [
+              "Statements!D33",
+              34.0710374639784,
+              33.60424058940399
+            ],
+            [
+              "Statements!E33",
+              30.8810959123189,
+              30.179167104178013
+            ],
+            [
+              "Statements!F33",
+              27.0287254880274,
+              26.172543556784237
+            ],
+            [
+              "Statements!G33",
+              26.1060847650693,
+              25.047704196832207
+            ],
+            [
+              "DCF!B4",
+              0.094415764994,
+              0.10452747199399999
+            ],
+            [
+              "DCF!B6",
+              346.279054816768,
+              330.7160822300608
+            ],
+            [
+              "DCF!B7",
+              493.254902099086,
+              474.4761014978078
+            ]
+          ]
+        }
+      },
+      "terminal": {
+        "reward": 0.881577699,
+        "pass_strict": false,
+        "raw_score": 0.89872093,
+        "dynamic_gate": 0.980924855,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.936416,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            6,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            116,
+            120
+          ],
+          "shock_collection": [
+            40,
+            43
+          ],
+          "shock_discount": [
+            6,
+            10
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B6",
+              378.973256678693,
+              346.2790548167682
+            ],
+            [
+              "DCF!B7",
+              525.949103961011,
+              493.2549020990864
+            ],
+            [
+              "DCF!B8",
+              519.849103961011,
+              487.1549020990864
+            ],
+            [
+              "DCF!B9",
+              41.6579136117486,
+              39.037975967552406
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B6",
+              349.848317142066,
+              319.66673757114955
+            ],
+            [
+              "DCF!B7",
+              486.047215281981,
+              455.86563571106433
+            ],
+            [
+              "DCF!B8",
+              479.947215281981,
+              449.7656357110643
+            ],
+            [
+              "DCF!B9",
+              38.460390678899,
+              36.04180108270409
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B7",
+              523.504565291689,
+              490.81036342976455
+            ],
+            [
+              "DCF!B8",
+              517.404565291689,
+              484.7103634297645
+            ],
+            [
+              "DCF!B9",
+              41.4620214193196,
+              38.84208377512337
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B6",
+              365.284998253329,
+              330.7160822300608
+            ],
+            [
+              "DCF!B7",
+              509.045017521076,
+              474.4761014978078
+            ],
+            [
+              "DCF!B8",
+              502.945017521076,
+              468.3761014978078
+            ],
+            [
+              "DCF!B9",
+              40.3033109641058,
+              37.53314380141099
+            ]
+          ]
+        }
+      },
+      "missing": {
+        "reward": 0.0,
+        "pass_strict": false,
+        "reason": "missing output.xlsx"
+      },
+      "fake_formula": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=1.4295",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=12.479",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=1.134328691860311",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=0.39",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "alias_hardcode": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=Helper!A1",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=Helper!A2",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=Helper!A3",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=Helper!A4",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "itm_filter": {
+        "reward": 0.941234773,
+        "pass_strict": false,
+        "raw_score": 0.946156977,
+        "dynamic_gate": 0.994797688,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.982659,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            7,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            119,
+            120
+          ],
+          "shock_collection": [
+            42,
+            43
+          ],
+          "shock_discount": [
+            9,
+            10
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B9",
+              39.5129290371552,
+              39.037975967552406
+            ],
+            [
+              "DCF!B13",
+              12.329,
+              12.479
+            ],
+            [
+              "DCF!B15",
+              0.24,
+              0.39
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B9",
+              36.4803013797603,
+              36.04180108270409
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B9",
+              39.3146535347364,
+              38.84208377512337
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B9",
+              37.9897884254853,
+              37.53314380141099
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "dcf-07-mine": {
+    "oracle_local": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          160,
+          160
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          118,
+          118
+        ],
+        "shock_collection": [
+          45,
+          45
+        ],
+        "shock_discount": [
+          11,
+          11
+        ]
+      },
+      "examples": {}
+    },
+    "negative": {
+      "frozen": {
+        "reward": 0.1525,
+        "pass_strict": false,
+        "raw_score": 0.61,
+        "dynamic_gate": 0.25,
+        "formula_ratio": 0.0,
+        "shock_ratio": 0.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            0,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            0,
+            118
+          ],
+          "shock_collection": [
+            0,
+            45
+          ],
+          "shock_discount": [
+            0,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "Statements!C4",
+              890.667691,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C5",
+              530.712397510809,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C6",
+              66.3448875252237,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C7",
+              30.1195174182512,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C8",
+              15.347111,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C18",
+              4.63909991531375,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C9",
+              12.3370828734961,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C10",
+              8.54117623347647,
+              "live_formula_with_upstream_computation"
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6",
+              66.3448875252237,
+              59.25268539366485
+            ],
+            [
+              "Statements!C7",
+              30.1195174182512,
+              26.899771125757542
+            ],
+            [
+              "Statements!C18",
+              4.63909991531375,
+              4.143184773466621
+            ],
+            [
+              "Statements!C9",
+              12.3370828734961,
+              12.298996590602236
+            ],
+            [
+              "Statements!C10",
+              8.54117623347647,
+              4.7068066773050745
+            ],
+            [
+              "Statements!C12",
+              1.79133323771856,
+              0.8404095877880584
+            ],
+            [
+              "Statements!C13",
+              5.43178465630791,
+              2.548338750067016
+            ],
+            [
+              "Statements!C14",
+              12.5850162447042,
+              11.239690593161596
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14",
+              12.5850162447042,
+              13.857383950667428
+            ],
+            [
+              "Statements!C17",
+              11.8635164080262,
+              13.135884113989349
+            ],
+            [
+              "Statements!C31",
+              -13.9364835919738,
+              -12.664115886010652
+            ],
+            [
+              "Statements!C26",
+              31.7053511217778,
+              30.43298341581465
+            ],
+            [
+              "Statements!C29",
+              21.8220522064641,
+              20.549684500500902
+            ],
+            [
+              "Statements!C22",
+              38.8220522064641,
+              37.5496845005009
+            ],
+            [
+              "Statements!C32",
+              28.0574310777305,
+              26.785063371767308
+            ],
+            [
+              "Statements!C33",
+              25.9077266043886,
+              24.732845177253555
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33",
+              25.9077266043886,
+              25.760632778547432
+            ],
+            [
+              "Statements!D33",
+              13.4063088289463,
+              13.254509544518347
+            ],
+            [
+              "Statements!E33",
+              8.80153004994879,
+              8.652464775612236
+            ],
+            [
+              "Statements!F33",
+              6.75103663719804,
+              6.599018563089547
+            ],
+            [
+              "Statements!G33",
+              2.06143336350071,
+              2.0035740914385247
+            ],
+            [
+              "DCF!B4",
+              0.082975419116,
+              0.089159234516
+            ],
+            [
+              "DCF!B5",
+              52.7522033066646,
+              47.79153292184874
+            ],
+            [
+              "DCF!B6",
+              35.4117677308969,
+              31.181289445808346
+            ]
+          ]
+        }
+      },
+      "terminal": {
+        "reward": 0.8815966,
+        "pass_strict": false,
+        "raw_score": 0.90022188,
+        "dynamic_gate": 0.979310345,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.931034,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            6,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            114,
+            118
+          ],
+          "shock_collection": [
+            41,
+            45
+          ],
+          "shock_discount": [
+            7,
+            11
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B6",
+              38.3500740000065,
+              35.411767730896855
+            ],
+            [
+              "DCF!B7",
+              95.2781094839889,
+              92.33980321487927
+            ],
+            [
+              "DCF!B8",
+              87.2781094839889,
+              84.33980321487927
+            ],
+            [
+              "DCF!B9",
+              5.26437719307491,
+              5.087146583924198
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B6",
+              10.3656893880425,
+              9.571490917590417
+            ],
+            [
+              "DCF!B7",
+              58.8965588645253,
+              58.10236039407325
+            ],
+            [
+              "DCF!B8",
+              50.8965588645253,
+              50.10236039407326
+            ],
+            [
+              "DCF!B9",
+              3.0699414237605,
+              3.0220375411106373
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B6",
+              47.0418011796292,
+              43.437552089619935
+            ],
+            [
+              "DCF!B7",
+              103.321903727738,
+              99.71765463772863
+            ],
+            [
+              "DCF!B8",
+              95.3219037277379,
+              91.71765463772863
+            ],
+            [
+              "DCF!B9",
+              5.74955689292104,
+              5.5321584316140076
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B6",
+              33.9613893440184,
+              31.181289445808346
+            ],
+            [
+              "DCF!B7",
+              90.2315890972245,
+              87.45148919901443
+            ],
+            [
+              "DCF!B8",
+              82.2315890972245,
+              79.45148919901443
+            ],
+            [
+              "DCF!B9",
+              4.95998486622984,
+              4.792296833283939
+            ]
+          ]
+        }
+      },
+      "missing": {
+        "reward": 0.0,
+        "pass_strict": false,
+        "reason": "missing output.xlsx"
+      },
+      "fake_formula": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            118,
+            118
+          ],
+          "shock_collection": [
+            45,
+            45
+          ],
+          "shock_discount": [
+            11,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=1.1807",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=16.579",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=0.7928796497518684",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=0.2",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "alias_hardcode": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            118,
+            118
+          ],
+          "shock_collection": [
+            45,
+            45
+          ],
+          "shock_discount": [
+            11,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=Helper!A1",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=Helper!A2",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=Helper!A3",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=Helper!A4",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "itm_filter": {
+        "reward": 0.942156907,
+        "pass_strict": false,
+        "raw_score": 0.94705547,
+        "dynamic_gate": 0.994827586,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.982759,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            7,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            117,
+            118
+          ],
+          "shock_collection": [
+            44,
+            45
+          ],
+          "shock_discount": [
+            10,
+            11
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B9",
+              5.15713606548118,
+              5.087146583924198
+            ],
+            [
+              "DCF!B13",
+              16.354,
+              16.579
+            ],
+            [
+              "DCF!B15",
+              -0.025,
+              0.2
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B9",
+              3.06361504182911,
+              3.0220375411106373
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B9",
+              5.60827043155978,
+              5.5321584316140076
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B9",
+              4.85822974189889,
+              4.792296833283939
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "dcf-08-retail": {
+    "oracle_local": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          160,
+          160
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          43,
+          43
+        ],
+        "shock_discount": [
+          10,
+          10
+        ]
+      },
+      "examples": {}
+    },
+    "negative": {
+      "frozen": {
+        "reward": 0.1525,
+        "pass_strict": false,
+        "raw_score": 0.61,
+        "dynamic_gate": 0.25,
+        "formula_ratio": 0.0,
+        "shock_ratio": 0.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            0,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "shock_collection": [
+            0,
+            43
+          ],
+          "shock_discount": [
+            0,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "Statements!C4",
+              1116.340709,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C5",
+              1021.8011342011,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C6",
+              97.9048974746126,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C7",
+              51.2381364737486,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C8",
+              17.482904,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C18",
+              6.76581584488058,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C9",
+              10.1846063207095,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C10",
+              18.9992506801545,
+              "live_formula_with_upstream_computation"
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6",
+              97.9048974746126,
+              82.42251070266978
+            ],
+            [
+              "Statements!C7",
+              51.2381364737486,
+              43.13549128619942
+            ],
+            [
+              "Statements!C18",
+              6.76581584488058,
+              5.695890024618698
+            ],
+            [
+              "Statements!C9",
+              10.1846063207095,
+              10.115007646101446
+            ],
+            [
+              "Statements!C10",
+              18.9992506801545,
+              11.689107770368917
+            ],
+            [
+              "Statements!C12",
+              4.42247569232411,
+              2.6431869080822943
+            ],
+            [
+              "Statements!C13",
+              13.7471039803304,
+              8.216249854786623
+            ],
+            [
+              "Statements!C14",
+              15.0359028868952,
+              12.658170312070222
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14",
+              15.0359028868952,
+              18.791159228387155
+            ],
+            [
+              "Statements!C17",
+              20.1674019739842,
+              23.922658315476163
+            ],
+            [
+              "Statements!C31",
+              -0.0325980260158225,
+              3.722658315476167
+            ],
+            [
+              "Statements!C26",
+              23.9643083270557,
+              20.20905198556372
+            ],
+            [
+              "Statements!C29",
+              13.0286674821751,
+              9.273411140683141
+            ],
+            [
+              "Statements!C22",
+              30.5286674821751,
+              26.77341114068314
+            ],
+            [
+              "Statements!C32",
+              17.8262215664496,
+              14.07096522495764
+            ],
+            [
+              "Statements!C33",
+              17.0210529242896,
+              13.435412709141108
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33",
+              17.0210529242896,
+              16.951833553928115
+            ],
+            [
+              "Statements!D33",
+              23.008516814869,
+              22.728951194881247
+            ],
+            [
+              "Statements!E33",
+              19.4833068733503,
+              19.090352954572364
+            ],
+            [
+              "Statements!F33",
+              26.2320592120485,
+              25.49436420868223
+            ],
+            [
+              "Statements!G33",
+              13.8733969170162,
+              13.373809361586227
+            ],
+            [
+              "DCF!B4",
+              0.09684625352,
+              0.10582203952000001
+            ],
+            [
+              "DCF!B6",
+              285.997923658481,
+              274.5778209813389
+            ],
+            [
+              "DCF!B7",
+              385.616256400055,
+              372.2171322549891
+            ]
+          ]
+        }
+      },
+      "terminal": {
+        "reward": 0.881577699,
+        "pass_strict": false,
+        "raw_score": 0.89872093,
+        "dynamic_gate": 0.980924855,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.936416,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            6,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            116,
+            120
+          ],
+          "shock_collection": [
+            40,
+            43
+          ],
+          "shock_discount": [
+            6,
+            10
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B6",
+              313.695751079304,
+              285.99792365848117
+            ],
+            [
+              "DCF!B7",
+              413.314083820878,
+              385.6162564000546
+            ],
+            [
+              "DCF!B8",
+              410.614083820878,
+              382.91625640005464
+            ],
+            [
+              "DCF!B9",
+              24.1936179484373,
+              22.561646028756456
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B6",
+              240.702114941453,
+              219.44927483591326
+            ],
+            [
+              "DCF!B7",
+              319.833773570031,
+              298.5809334644917
+            ],
+            [
+              "DCF!B8",
+              317.133773570031,
+              295.8809334644917
+            ],
+            [
+              "DCF!B9",
+              18.6857043112203,
+              17.433474750441412
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B7",
+              408.948336108335,
+              381.2505086875122
+            ],
+            [
+              "DCF!B8",
+              406.248336108335,
+              378.5505086875122
+            ],
+            [
+              "DCF!B9",
+              23.9363855826264,
+              22.304413662945567
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B6",
+              303.634206004542,
+              274.5778209813389
+            ],
+            [
+              "DCF!B7",
+              401.273517278192,
+              372.2171322549891
+            ],
+            [
+              "DCF!B8",
+              398.573517278192,
+              369.5171322549891
+            ],
+            [
+              "DCF!B9",
+              23.4841808436361,
+              21.772161928764383
+            ]
+          ]
+        }
+      },
+      "missing": {
+        "reward": 0.0,
+        "pass_strict": false,
+        "reason": "missing output.xlsx"
+      },
+      "fake_formula": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=1.3472",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=16.972",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=1.1079917104772987",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=0.12",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "alias_hardcode": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=Helper!A1",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=Helper!A2",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=Helper!A3",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=Helper!A4",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "itm_filter": {
+        "reward": 0.941234773,
+        "pass_strict": false,
+        "raw_score": 0.946156977,
+        "dynamic_gate": 0.994797688,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.982659,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            7,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            119,
+            120
+          ],
+          "shock_collection": [
+            42,
+            43
+          ],
+          "shock_discount": [
+            9,
+            10
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B9",
+              22.9263714764732,
+              22.561646028756456
+            ],
+            [
+              "DCF!B13",
+              16.702,
+              16.972
+            ],
+            [
+              "DCF!B15",
+              -0.15,
+              0.12
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B9",
+              17.7152995727752,
+              17.433474750441412
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B9",
+              22.6649807620352,
+              22.304413662945567
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B9",
+              22.124124790743,
+              21.772161928764383
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "dcf-09-royalty": {
+    "oracle_local": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          160,
+          160
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          45,
+          45
+        ],
+        "shock_discount": [
+          11,
+          11
+        ]
+      },
+      "examples": {}
+    },
+    "negative": {
+      "frozen": {
+        "reward": 0.1525,
+        "pass_strict": false,
+        "raw_score": 0.61,
+        "dynamic_gate": 0.25,
+        "formula_ratio": 0.0,
+        "shock_ratio": 0.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            0,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "shock_collection": [
+            0,
+            45
+          ],
+          "shock_discount": [
+            0,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "Statements!C4",
+              1390.764925,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C5",
+              1275.63564580126,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C6",
+              200.23780295707,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C7",
+              98.0031888524904,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C8",
+              26.61136,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C18",
+              17.1005086103367,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C9",
+              14.8403190416502,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C10",
+              60.782935062929,
+              "live_formula_with_upstream_computation"
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6",
+              200.23780295707,
+              168.96526360464333
+            ],
+            [
+              "Statements!C7",
+              98.0031888524904,
+              82.697344827075
+            ],
+            [
+              "Statements!C18",
+              17.1005086103367,
+              14.429802477100145
+            ],
+            [
+              "Statements!C9",
+              14.8403190416502,
+              14.68782172144242
+            ],
+            [
+              "Statements!C10",
+              60.782935062929,
+              44.9687370561259
+            ],
+            [
+              "Statements!C12",
+              13.788405553865,
+              10.075231861867643
+            ],
+            [
+              "Statements!C13",
+              44.935638542664,
+              32.83461422785826
+            ],
+            [
+              "Statements!C14",
+              31.9741418925715,
+              26.980516334215345
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14",
+              31.9741418925715,
+              39.654495978596074
+            ],
+            [
+              "Statements!C17",
+              41.0666135484485,
+              48.746967634473066
+            ],
+            [
+              "Statements!C31",
+              5.56661354844847,
+              13.246967634473066
+            ],
+            [
+              "Statements!C26",
+              54.2093440358657,
+              46.528989949841126
+            ],
+            [
+              "Statements!C29",
+              29.878611425529,
+              22.198257339504426
+            ],
+            [
+              "Statements!C22",
+              63.278611425529,
+              55.59825733950443
+            ],
+            [
+              "Statements!C32",
+              38.6842987930183,
+              31.003944706993707
+            ],
+            [
+              "Statements!C33",
+              36.7338863289716,
+              29.44076579260564
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33",
+              36.7338863289716,
+              36.57418099824118
+            ],
+            [
+              "Statements!D33",
+              46.9548875799053,
+              46.34511895432825
+            ],
+            [
+              "Statements!E33",
+              26.526450842394,
+              25.95480717796883
+            ],
+            [
+              "Statements!F33",
+              29.6300731364153,
+              28.740005553694004
+            ],
+            [
+              "Statements!G33",
+              38.4914445211881,
+              37.0112538442506
+            ],
+            [
+              "DCF!B4",
+              0.109010613888,
+              0.11871700228799999
+            ],
+            [
+              "DCF!B5",
+              777.048361914077,
+              693.9985692948106
+            ],
+            [
+              "DCF!B6",
+              463.2010509964,
+              396.05671627588526
+            ]
+          ]
+        }
+      },
+      "terminal": {
+        "reward": 0.881858058,
+        "pass_strict": false,
+        "raw_score": 0.900272727,
+        "dynamic_gate": 0.979545455,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.931818,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            6,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            116,
+            120
+          ],
+          "shock_collection": [
+            41,
+            45
+          ],
+          "shock_discount": [
+            7,
+            11
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B6",
+              513.694881919085,
+              463.2010509964002
+            ],
+            [
+              "DCF!B7",
+              692.031624327959,
+              641.5377934052746
+            ],
+            [
+              "DCF!B8",
+              689.031624327959,
+              638.5377934052746
+            ],
+            [
+              "DCF!B9",
+              60.2300370916048,
+              55.81624068227924
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B6",
+              407.652649969401,
+              367.5822799749776
+            ],
+            [
+              "DCF!B7",
+              552.53246578286,
+              512.4620957884365
+            ],
+            [
+              "DCF!B8",
+              549.53246578286,
+              509.4620957884365
+            ],
+            [
+              "DCF!B9",
+              48.0360547012989,
+              44.53339998150669
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B6",
+              512.367662006393,
+              462.0042906623956
+            ],
+            [
+              "DCF!B7",
+              682.402785774811,
+              632.0394144308135
+            ],
+            [
+              "DCF!B8",
+              679.402785774811,
+              629.0394144308135
+            ],
+            [
+              "DCF!B9",
+              59.3883553998961,
+              54.985962799896285
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B6",
+              443.075382368187,
+              396.05671627588526
+            ],
+            [
+              "DCF!B7",
+              617.70074889667,
+              570.6820828043682
+            ],
+            [
+              "DCF!B8",
+              614.70074889667,
+              567.6820828043682
+            ],
+            [
+              "DCF!B9",
+              53.7325829455131,
+              49.62255968569652
+            ]
+          ]
+        }
+      },
+      "missing": {
+        "reward": 0.0,
+        "pass_strict": false,
+        "reason": "missing output.xlsx"
+      },
+      "fake_formula": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            45,
+            45
+          ],
+          "shock_discount": [
+            11,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=1.4436",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=11.44",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=1.2309266547669346",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=0.17",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "alias_hardcode": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            45,
+            45
+          ],
+          "shock_discount": [
+            11,
+            11
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=Helper!A1",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=Helper!A2",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=Helper!A3",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=Helper!A4",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "itm_filter": {
+        "reward": 0.94222522,
+        "pass_strict": false,
+        "raw_score": 0.947068182,
+        "dynamic_gate": 0.994886364,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.982955,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            7,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            119,
+            120
+          ],
+          "shock_collection": [
+            44,
+            45
+          ],
+          "shock_discount": [
+            10,
+            11
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B9",
+              56.0120871408136,
+              55.81624068227924
+            ],
+            [
+              "DCF!B13",
+              11.4,
+              11.44
+            ],
+            [
+              "DCF!B15",
+              0.13,
+              0.17
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B9",
+              44.6896575253015,
+              44.53339998150669
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B9",
+              55.1788960027029,
+              54.985962799896285
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B9",
+              49.7966739302077,
+              49.62255968569652
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "dcf-10-returns": {
+    "oracle_local": {
+      "reward": 1.0,
+      "pass_strict": true,
+      "raw_score": 1.0,
+      "dynamic_gate": 1.0,
+      "formula_ratio": 1.0,
+      "shock_ratio": 1.0,
+      "excel_errors": [],
+      "groups": {
+        "controls": [
+          9,
+          9
+        ],
+        "formulas": [
+          160,
+          160
+        ],
+        "history": [
+          19,
+          19
+        ],
+        "forecast": [
+          130,
+          130
+        ],
+        "fcff": [
+          20,
+          20
+        ],
+        "valuation": [
+          10,
+          10
+        ],
+        "ties": [
+          20,
+          20
+        ],
+        "shock_operations": [
+          120,
+          120
+        ],
+        "shock_collection": [
+          43,
+          43
+        ],
+        "shock_discount": [
+          10,
+          10
+        ]
+      },
+      "examples": {}
+    },
+    "negative": {
+      "frozen": {
+        "reward": 0.1525,
+        "pass_strict": false,
+        "raw_score": 0.61,
+        "dynamic_gate": 0.25,
+        "formula_ratio": 0.0,
+        "shock_ratio": 0.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            0,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "shock_collection": [
+            0,
+            43
+          ],
+          "shock_discount": [
+            0,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "Statements!C4",
+              902.32536,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C5",
+              764.3087538,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C6",
+              131.872303763144,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C7",
+              56.8903712049393,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C8",
+              15.108907,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C18",
+              8.41187051244346,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C9",
+              9.58059388536448,
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "Statements!C10",
+              50.2924316728406,
+              "live_formula_with_upstream_computation"
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6",
+              131.872303763144,
+              115.3415829972192
+            ],
+            [
+              "Statements!C7",
+              56.8903712049393,
+              49.75893561291535
+            ],
+            [
+              "Statements!C18",
+              8.41187051244346,
+              7.357408896226619
+            ],
+            [
+              "Statements!C9",
+              9.58059388536448,
+              9.524285635058503
+            ],
+            [
+              "Statements!C10",
+              50.2924316728406,
+              40.94945474924535
+            ],
+            [
+              "Statements!C12",
+              11.6328544202546,
+              9.408291614746517
+            ],
+            [
+              "Statements!C13",
+              37.2241570045861,
+              30.10574288649883
+            ],
+            [
+              "Statements!C14",
+              13.4608245804029,
+              11.77345637595107
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14",
+              13.4608245804029,
+              16.712470426617415
+            ],
+            [
+              "Statements!C17",
+              12.5061558337345,
+              15.757801679949017
+            ],
+            [
+              "Statements!C31",
+              -3.59384416626551,
+              -0.3421983200509846
+            ],
+            [
+              "Statements!C26",
+              50.3985950562161,
+              47.14694921000153
+            ],
+            [
+              "Statements!C29",
+              36.5947045437726,
+              33.34305869755807
+            ],
+            [
+              "Statements!C22",
+              54.3947045437726,
+              51.143058697558075
+            ],
+            [
+              "Statements!C32",
+              43.0803712307238,
+              39.828725384509276
+            ],
+            [
+              "Statements!C33",
+              40.4106947196414,
+              37.360552302714986
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33",
+              40.4106947196414,
+              40.114225723063996
+            ],
+            [
+              "Statements!D33",
+              26.9472611643206,
+              26.553319798802875
+            ],
+            [
+              "Statements!E33",
+              23.7673924363538,
+              23.248119480167013
+            ],
+            [
+              "Statements!F33",
+              29.7457866573499,
+              28.882437876763625
+            ],
+            [
+              "Statements!G33",
+              24.6438494672952,
+              23.753030900263553
+            ],
+            [
+              "DCF!B4",
+              0.066063613348,
+              0.07394248434799999
+            ],
+            [
+              "DCF!B6",
+              301.274248677449,
+              290.3838764226384
+            ],
+            [
+              "DCF!B7",
+              446.78923312241,
+              432.93501020169947
+            ]
+          ]
+        }
+      },
+      "terminal": {
+        "reward": 0.881577699,
+        "pass_strict": false,
+        "raw_score": 0.89872093,
+        "dynamic_gate": 0.980924855,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.936416,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            6,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            116,
+            120
+          ],
+          "shock_collection": [
+            40,
+            43
+          ],
+          "shock_discount": [
+            6,
+            10
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B6",
+              321.177514153786,
+              301.27424867744935
+            ],
+            [
+              "DCF!B7",
+              466.692498598746,
+              446.7892331224102
+            ],
+            [
+              "DCF!B8",
+              455.792498598746,
+              435.88923312241025
+            ],
+            [
+              "DCF!B9",
+              35.4950937309202,
+              33.9451158883584
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B6",
+              269.21990296304,
+              252.5364336538494
+            ],
+            [
+              "DCF!B7",
+              392.968947663454,
+              376.2854783542627
+            ],
+            [
+              "DCF!B8",
+              382.068947663454,
+              365.3854783542627
+            ],
+            [
+              "DCF!B9",
+              29.7538312953394,
+              28.45459686584088
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B7",
+              463.43553000234,
+              443.53226452600387
+            ],
+            [
+              "DCF!B8",
+              452.53553000234,
+              432.6322645260039
+            ],
+            [
+              "DCF!B9",
+              35.2414554943026,
+              33.691477651740826
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B6",
+              311.855581659931,
+              290.3838764226384
+            ],
+            [
+              "DCF!B7",
+              454.406715438992,
+              432.93501020169947
+            ],
+            [
+              "DCF!B8",
+              443.506715438992,
+              422.0350102016995
+            ],
+            [
+              "DCF!B9",
+              34.5383315504238,
+              32.86621059120781
+            ]
+          ]
+        }
+      },
+      "missing": {
+        "reward": 0.0,
+        "pass_strict": false,
+        "reason": "missing output.xlsx"
+      },
+      "fake_formula": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=0.9236",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=12.841",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=0.6141264151278354",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=0.05",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "alias_hardcode": {
+        "reward": 0.98578375,
+        "pass_strict": false,
+        "raw_score": 0.997,
+        "dynamic_gate": 0.98875,
+        "formula_ratio": 0.975,
+        "shock_ratio": 1.0,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            156,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "formulas": [
+            [
+              "DCF!B12",
+              "=Helper!A1",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B13",
+              "=Helper!A2",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B14",
+              "=Helper!A3",
+              "live_formula_with_upstream_computation"
+            ],
+            [
+              "DCF!B15",
+              "=Helper!A4",
+              "live_formula_with_upstream_computation"
+            ]
+          ]
+        }
+      },
+      "itm_filter": {
+        "reward": 0.941234773,
+        "pass_strict": false,
+        "raw_score": 0.946156977,
+        "dynamic_gate": 0.994797688,
+        "formula_ratio": 1.0,
+        "shock_ratio": 0.982659,
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            9,
+            9
+          ],
+          "formulas": [
+            160,
+            160
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            7,
+            10
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            119,
+            120
+          ],
+          "shock_collection": [
+            42,
+            43
+          ],
+          "shock_discount": [
+            9,
+            10
+          ]
+        },
+        "examples": {
+          "valuation": [
+            [
+              "DCF!B9",
+              34.1044701605829,
+              33.9451158883584
+            ],
+            [
+              "DCF!B13",
+              12.781,
+              12.841
+            ],
+            [
+              "DCF!B15",
+              -0.01,
+              0.05
+            ]
+          ],
+          "shock_operations": [
+            [
+              "DCF!B9",
+              28.5881760702811,
+              28.45459686584088
+            ]
+          ],
+          "shock_collection": [
+            [
+              "DCF!B9",
+              33.8496412272908,
+              33.691477651740826
+            ]
+          ],
+          "shock_discount": [
+            [
+              "DCF!B9",
+              33.0204999766606,
+              32.86621059120781
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

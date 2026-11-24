@@ -1,0 +1,240 @@
+{
+  "seed": 5053,
+  "slug": "storage",
+  "title": "仓储：退租、可用库位与入住时点",
+  "rule": "Opening slots suffer B attrition at year start. Admit at most A new leases up to C total capacity. Surviving slots earn a full year; new leases earn half.",
+  "driver_labels": {
+    "A": "new demand",
+    "B": "attrition",
+    "C": "max slots"
+  },
+  "unit": "leased slots",
+  "series": {
+    "A": [
+      193.09732,
+      205.664606,
+      197.897937,
+      162.848787,
+      168.998041
+    ],
+    "B": [
+      0.160291,
+      0.14113,
+      0.162354,
+      0.17323,
+      0.13865
+    ],
+    "C": [
+      857.289972,
+      1046.163148,
+      1049.258003,
+      846.203159,
+      955.395916
+    ],
+    "unit_price": [
+      0.21106,
+      0.195372,
+      0.219216,
+      0.203927,
+      0.20743
+    ],
+    "cogs_pct": [
+      0.492032,
+      0.513162,
+      0.515119,
+      0.466909,
+      0.491805
+    ],
+    "opex_fixed": [
+      24.66375,
+      26.400458,
+      28.650499,
+      29.697464,
+      26.041323
+    ],
+    "capex_pct": [
+      0.074446,
+      0.085377,
+      0.083501,
+      0.072341,
+      0.078841
+    ],
+    "dso": [
+      45.547306,
+      38.387379,
+      43.123469,
+      37.325267,
+      37.753695
+    ],
+    "dio": [
+      70.134808,
+      78.866634,
+      69.066155,
+      79.234383,
+      75.015515
+    ],
+    "dpo": [
+      69.605299,
+      71.706399,
+      63.264082,
+      63.606242,
+      73.996206
+    ],
+    "repay": [
+      7.882574,
+      7.938728,
+      7.136589,
+      7.872605,
+      7.910037
+    ]
+  },
+  "scalar": {
+    "price_multiplier": 1.0,
+    "dso_shift": 0.0,
+    "risk_free": 0.0264,
+    "beta": 1.0953,
+    "erp": 0.0627,
+    "debt_weight": 0.2786,
+    "debt_cost": 0.0548,
+    "tax_rate": 0.2284,
+    "g": 0.0257,
+    "exit_multiple": 8.45,
+    "shares": 8.911,
+    "opening_units": 934,
+    "dep_rate": 0.1194
+  },
+  "ledger": [
+    {
+      "site": "South",
+      "account": "ap",
+      "amount": 9.238
+    },
+    {
+      "site": "North",
+      "account": "revenue",
+      "amount": 78.132
+    },
+    {
+      "site": "North",
+      "account": "da",
+      "amount": 7.293
+    },
+    {
+      "site": "South",
+      "account": "ar",
+      "amount": 9.276
+    },
+    {
+      "site": "North",
+      "account": "interest",
+      "amount": 1.122
+    },
+    {
+      "site": "South",
+      "account": "revenue",
+      "amount": 141.368
+    },
+    {
+      "site": "South",
+      "account": "inv",
+      "amount": 13.46
+    },
+    {
+      "site": "North",
+      "account": "debt",
+      "amount": 20.865
+    },
+    {
+      "site": "South",
+      "account": "equity",
+      "amount": 70.053
+    },
+    {
+      "site": "North",
+      "account": "tax",
+      "amount": 6.103
+    },
+    {
+      "site": "North",
+      "account": "equity",
+      "amount": 62.447
+    },
+    {
+      "site": "North",
+      "account": "cash",
+      "amount": 11.569
+    },
+    {
+      "site": "North",
+      "account": "opex",
+      "amount": 17.891
+    },
+    {
+      "site": "North",
+      "account": "ap",
+      "amount": 11.962
+    },
+    {
+      "site": "North",
+      "account": "ppe",
+      "amount": 69.704
+    },
+    {
+      "site": "North",
+      "account": "ar",
+      "amount": 15.624
+    },
+    {
+      "site": "South",
+      "account": "opex",
+      "amount": 8.509
+    },
+    {
+      "site": "South",
+      "account": "cash",
+      "amount": 14.431
+    },
+    {
+      "site": "North",
+      "account": "cogs",
+      "amount": 48.278
+    },
+    {
+      "site": "South",
+      "account": "cogs",
+      "amount": 62.622
+    },
+    {
+      "site": "North",
+      "account": "inv",
+      "amount": 8.64
+    },
+    {
+      "site": "South",
+      "account": "debt",
+      "amount": 13.435
+    },
+    {
+      "site": "South",
+      "account": "tax",
+      "amount": 9.697
+    },
+    {
+      "site": "South",
+      "account": "interest",
+      "amount": 1.178
+    },
+    {
+      "site": "South",
+      "account": "ppe",
+      "amount": 45.296
+    },
+    {
+      "site": "South",
+      "account": "da",
+      "amount": 3.707
+    }
+  ],
+  "terminal": "exit EBITDA",
+  "timing": "year-end"
+}
