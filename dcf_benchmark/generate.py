@@ -66,7 +66,7 @@ Statements!B3:G3 must be the numeric years 2025–2030. Row numbers below denote
 DCF sheet outputs (rates such as WACC in B4 must evaluate to annual decimal fractions, e.g., `0.0827` for 8.27%):
 {chr(10).join(f'- B{n}: {v}' for n, v in VAL.items())}
 
-Numeric tolerance: greater of EUR million (or native-unit) absolute 0.000001 and 0.0001% relative. Scoring includes base results, cash/equity/FCFF reconciliation, formula integrity, and independent LibreOffice recalculation after each of the three editable assumptions changes (with a dynamic model gate penalizing hardcoded submissions).
+Numeric tolerance: greater of EUR million (or native-unit) absolute 0.000001 and 0.0001% relative. Scoring follows a practitioner four-pillar rubric: three-statement & FCFF accuracy (40%), materiality-weighted valuation bridge & per-share value (25%), base & post-shock accounting reconciliation (15%), and assumption sensitivity delta linkage across the three editable assumptions (20%), multiplied by an anti-hardcoding dynamic formula gate.
 """
 
 

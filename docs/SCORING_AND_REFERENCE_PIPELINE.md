@@ -1,141 +1,120 @@
-# DCFEval 评分标准修复与参考解生产流程规范
+# DCFEval 评分标准演进（v1 → v3 从业者四支柱版）与参考解生产规范
 
-本文档系统梳理 `DCFEval` 评测集的两大核心升级：
-1. **评分标准修复（[`dcf_benchmark/grade.py`](../dcf_benchmark/grade.py) & [`accept.py`](../dcf_benchmark/accept.py)）**：彻底解决原版评分中「纯硬编码静态表格反超真动态模型」「常数伪公式与静态中转别名绕过」「Excel 报错未显式记录」三大漏洞。
-2. **参考解生产与独立校验流程重构（[`model.py`](../dcf_benchmark/model.py) → [`raw.py`](../dcf_benchmark/raw.py) → [`reference.py`](../dcf_benchmark/reference.py) → [`audit_sources.py`](../dcf_benchmark/audit_sources.py) → [`build_all.py`](../dcf_benchmark/build_all.py)）**：彻底消除私有依赖、消除 10 题参数同质化、消除参考解对私有真值的依赖，构建双独立路径可验证闭环。
+本文档系统梳理 `DCFEval` 评测集的两大核心工程规范：
+1. **DCF 从业者四支柱评分标准（[`dcf_benchmark/grade.py`](../dcf_benchmark/grade.py) v3.0 & [`accept.py`](../dcf_benchmark/accept.py)）**：从真实投行 / 买方估值审阅标准出发，彻底解决原版（v1）“静态硬编码反超动态模型”、v2.1 “39 格扰动盲区可被 `+0*B4` 伪公式绕过”以及“上游单点笔误触发三重连坐惩罚”等结构性缺陷。
+2. **双独立路径参考解生产与校验闭环（[`model.py`](../dcf_benchmark/model.py) → [`raw.py`](../dcf_benchmark/raw.py) → [`reference.py`](../dcf_benchmark/reference.py) → [`audit_sources.py`](../dcf_benchmark/audit_sources.py) → [`build_all.py`](../dcf_benchmark/build_all.py)）**：零私有依赖、全参数化防同质化、双分支强制覆盖、纯公开材料构建参考解。
 
 ---
 
-## 一、原版评分标准的三大核心问题与修复方案
+## 一、评分标准演进与 v3.0 从业者四支柱设计
 
-### 1. 问题诊断（基于 10 题实测暴露的真实缺陷）
+### 1. 历史版本暴露的 4 类真实缺陷
 
-| 缺陷编号 | 暴露现象 | 根因分析 | 危害 |
+| 缺陷编号 | 暴露现象 | 根因分析 | v3.0 解决方案 |
 |---|---|---|---|
-| **缺陷 1：动态模型权重失衡（最严重）** | `dcf-04-storage`（**0/160 条 Excel 公式**、三组扰动全 0、纯 Python 算完填死数字）拿到 **`0.6650`**，反而高于 **160/160 全动态公式**、20/20 勾稽全过、仅折旧公式漏一对括号的 `dcf-02-foundry`（`0.6252`） | 旧版纯线性加权中，静态数值+勾稽+控制项占 **69%**，公式（7%）+三组扰动（24%）仅占 **31%**，且无动态门控 | 诱导 Agent 用 Python 外部计算后硬编码填表，违背「从零构建可编辑动态 Excel DCF 模型」的核心评测目标 |
-| **缺陷 2：伪公式与中转别名绕过** | 旧版 `grade.py` 仅判断 `cell.data_type == "f"`。对于不受三组扰动影响的 `DCF!B12:B15`（Beta、TSM 稀释股数），写 `=1.13` 常数公式或写 `=Helper!A1`（指向静态硬编码单元格）均可拿到满分 `1.0` | 缺少公式单元格引用校验与递归计算链追踪 | 存在可复现的评分作弊漏洞 |
-| **缺陷 3：题面契约三处边界未钉死** | ① `license` 通用题面误写 `net of ... upfront fees` 与备忘录“全额当期确认”文字冲突；② `DCFEvalRaw` 未明示逐格公式范围，且对外生固定费用第 8 行也强求公式；③ `Inputs!B6` 未钉死必须以小数（`0.032`）而非基点（`320`）存储 | 原始版 `raw.py` 剪裁题面时丢失了小数单位与公式范围声明，且把 `upfront fees` 误并入 `net of` 短语 | 合法的替代建模做法（如第 8 行直接填外生预算值、或 `B6` 填 `320` 再除 `10000`）可能被误扣分 |
+| **缺陷 1：贴死数反超真动态模型（v1）** | `dcf-04-storage`（**0/155 公式**、三组扰动全 0）旧分 **`0.6650`**，反超全动态公式、仅折旧漏括号的 `dcf-02-foundry`（`0.6252`） | v1 纯线性加权缺少动态门控 | 引入底层防贴死数 `dynamic_gate ∈ [0.20, 1.00]`，纯贴死数最高仅 `0.1520` |
+| **缺陷 2：伪公式与 `+0*B4` 零乘数绕过（v1/v2.1）** | 39 个格子（经营驱动 `C4:G5`、债务利息、`DCF!B12:B15`）在 3 组扰动下不变；写 `=硬编码 + 0*Inputs!$B$4` 在 v2.1 可拿 **`1.0000`** | 静态正则只查“含引用+运算符”，未验证输入变化是否真引发重算 | 新增全工作簿静态叶节点微扰探针 **`leaf_probe`**，非零计算格必须真实响应输入微扰 |
+| **缺陷 3：单点上游笔误触发三重连坐（v2.1）** | `dcf-02-foundry`（100% 动态公式、60/60 勾稽全过、仅折旧漏括号）在 v2.1 因绝对值扰动失分且连坐 `dynamic_gate=0.811`，被压至 `0.5101` | 扰动按绝对值判分且直接塞进 `dynamic_gate`，把“基准算错”误罚为“贴死数” | ① 扰动改判**变动增量 $\Delta$ 与比例弹性 $\%\Delta$**；② `dynamic_gate` 改用**非零响应率 `responsiveness_ratio`**，全动态模型 `gate` 恒为 `1.0000` |
+| **缺陷 4：估值权重大锅饭与契约缺口（v1/v2.1）** | 核心估值结论 `DCF!B9`（每股价值）仅占 `1.4%`；`formulas` 抢占 `12%` 表面权重；旧题面 `license` 措辞、第 8 行豁免与 `B6` 单位未钉死 | 未按从业者关注度加权核心估值桥，且题面契约边界不完整 | ① 重构为 **40 / 25 / 15 / 20 从业者四支柱**（`B9` 提升至 `5%`，核心 `DCF!B4:B9` 占 `20%`）；② `formulas` 表面权重归 `0%` 仅作底层门控；③ 钉死三项题面契约 |
 
 ---
 
-### 2. 修复后的评分标准与零歧义契约（`grade.py` v2.1 + `raw.py` v2.1）
+### 2. v3.0 四支柱评分权重明细（[`grade.py`](../dcf_benchmark/grade.py)）
 
-#### (0) 题面契约三项精准钉死（消除全部口径冲突与未声明约束）
-1. **消除 `license` 签约费口径冲突**：彻底移除 `net of ... upfront fees`，改为明文区分——`deduct expected warranty credits (returns), ADD immediate upfront license fees recognised in full (license), and apply minimum billing guarantees (royalty)`，与 `operations_memo.md` 完全一致；同时明示 FY2025 仅要求历史利润表与期末资产负债表，不要求历史现金流量表。
-2. **明示逐格公式范围并豁免外生第 8 行**：在 `instruction.md` 写死受检公式范围为 **155 个计算型输出格**（`Statements!C4:G33` 除去外生固定费用第 8 行 + `DCF!B4:B9, B12:B15`）；`grade.py` 同步豁免第 8 行的公式强制要求（仍严格校验其数值），允许分析师直接填外生预算数或链接预算表。
-3. **钉死 `Inputs!B4:B6` 与 `DCF!B4` 底层存储单位**：明文规定 `Inputs!B6`（`risk_free`）与 `DCF!B4`（`WACC`）必须以**年化小数**存储（例如 `320 bp` 必须填 `0.032`，不可填 `320` 或 `3.2`，展示格式 `3.20%` 可选）。
+主分 `raw_score` 满分 `100%`，精准对应 DCF 从业者审模型的四个核心维度：
 
-#### (1) 递归公式计算链审计（`resolves_to_computation`）
-对全部 **155 个计算型输出单元格**（`DCF!B4:B9, B12:B15` 与 `Statements!C4:G33` 除第 8 行外）递归审计公式 AST：
-- **必须包含至少一个单元格引用**（彻底封堵 `=1.13`、`=0.4` 等常数字面量伪公式）；
-- **若为单单元格裸引用（`=Sheet!A1`）**：自动沿引用链递归追踪上游单元格，确认最终落脚点是**真正的运算公式**（包含 `+ - * / ^` 或 Excel 函数如 `SUM / MEDIAN / AVERAGE / MIN / MAX / IF`），彻底封堵 `=Helper!A1` 静态中转作弊，同时完全兼容合法的跨表引用架构（例如 `DCF!B15 = WACC_TSM!B22`）。
-- **独立替代布局正向验收（`accept.py` 新增 `alt_layout`）**：除参考解外，额外为每题独立构造一份**完全不同工作表布局、最小化 `Inputs`（仅 B4:B6）、第 8 行直接填外生数值、采用等价替代公式（如 `IF` 替代 `MAX/MIN`）并跨表引用 `DCF!B12:B15`** 的工作簿，强制断言 10/10 同样拿到 `reward == 1.0` 且 `pass_strict == True`，证明评分器对合法建模布局零误杀。
+| 支柱 | 总权重 | 评分维度 | 子权重 | 考核内容与容差 |
+|---|---:|---|---:|---|
+| **支柱一：三表与自由现金流预测** | **40%** | `history` | **7%** | FY2025 19 项历史科目（跨站千/元单位换算、过滤 `VOID`、合并长短债 `2112+2710`） |
+| | | `forecast` | **21%** | FY2026–2030 130 项经营驱动、利润表、资产负债表、现金流量表（含第 8 行外生固定费用数值） |
+| | | `fcff` | **12%** | FY2026–2030 20 项无杠杆税费、$\Delta\text{NWC}$、FCFF 与折现现值（连接三表与估值的咽喉） |
+| **支柱二：估值桥与每股价值** | **25%** | `valuation` | **25%** | 差异化重要性加权：**核心估值桥 `DCF!B4:B9` 占 20%**（`B9` 每股稀释价值 **5.0%**、`B7` EV **3.5%**、`B8` 股权价值 **3.5%**、`B4` WACC **3.0%**、`B5` 终值 **2.5%**、`B6` 终值现值 **2.5%**）+ **资本与稀释表 `DCF!B12:B15` 占 5%**（Peer Beta 与 TSM 各 1.25%） |
+| **支柱三：会计勾稽与表健康度** | **15%** | `ties` | **9%** | 基准 5 年 × 4 项会计恒等式（资产=负债+权益、现金流闭环、留存收益滚动、FCFF 恒等，共 20 项） |
+| | | `ties_shock` | **4%** | **价格与回款天数扰动后的动态会计恒等式**（2 组扰动 × 5 年 × 4 项 = 40 项，且要求资产负债表科目 AR/Cash/Assets 发生真实变动，防止贴死表混分） |
+| | | `controls` | **2%** | `Inputs!B4:B6` 可编辑假设（底层年化小数/天数）+ `Statements!B3:G3` 年份 `2025–2030` + 全表零 `#REF!/#DIV/0!/#VALUE!/#NAME?/#N/A` 报错 |
+| **支柱四：假设敏感性增量联动** | **20%** | `shock_operations` | **7%** | 扰动单价乘数 `price_multiplier` 后的增量 $\Delta$ / 弹性 $\%\Delta$ 校验 |
+| | | `shock_collection` | **6%** | 扰动回款天数 `dso_shift` 后的增量 $\Delta$ / 弹性 $\%\Delta$ 校验 |
+| | | `shock_discount` | **7%** | 扰动无风险利率 `risk_free` 后的增量 $\Delta$ / 弹性 $\%\Delta$ 校验 |
 
-#### (2) 权重重平衡 + 动态模型门控乘子（Dynamic Model Gate）
-基础 10 项权重调整为（动态公式与三组扰动基础权重由 31% 提升至 **39%**）：
+#### 底层防贴死数门控（`formulas` 表面权重 = `0%`，只作门控）
 
-| 评分维度 | 旧权重 | 新权重 | 检查内容与容差 |
-|---|---:|---:|---|
-| `controls` | 3% | **3%** | `Inputs!B4:B6` 可编辑假设（底层小数/天数）+ `Statements!B3:G3` 年份 `2025–2030` |
-| `formulas` | 7% | **12%** | 155 个计算型预测与估值单元格通过递归计算链审计（豁免外生固定费用第 8 行） |
-| `history` | 10% | **8%** | FY2025 19 项历史科目（跨站千/元单位换算、过滤 `VOID`、合并长短债） |
-| `forecast` | 22% | **18%** | FY2026–2030 130 项利润表、资产负债表、现金流量表与经营量 |
-| `fcff` | 10% | **9%** | 20 项无杠杆税费、ΔNWC、FCFF 与折现现值 |
-| `valuation` | 14% | **14%** | 10 项核心估值与资本结构（WACC、TV、PV(TV)、EV、股权价值、每股价值、Beta、TSM） |
-| `ties` | 10% | **9%** | 5 年 × 4 项会计恒等勾稽（资产负债表配平、现金流闭合、权益滚存、FCFF 定义） |
-| `shock_operations` | 8% | **9%** | 扰动价格倍数 `price_multiplier` 后 LibreOffice 独立重算 |
-| `shock_collection` | 8% | **9%** | 扰动回款天数 `dso_shift` 后 LibreOffice 独立重算 |
-| `shock_discount` | 8% | **9%** | 扰动无风险利率 `risk_free` 后 LibreOffice 独立重算 |
-
-在此基础上，引入连续可微、无断崖的**动态模型门控乘子**：
-
-$$\text{formula\_ratio} = \frac{\text{formulas\_ok}}{\text{formulas\_total}}, \qquad \text{shock\_ratio} = \frac{\sum \text{shock\_ok}}{\sum \text{shock\_total}}$$
-
-$$\text{dynamic\_gate} = 0.25 + 0.75 \times \left(0.6 \cdot \text{formula\_ratio} + 0.4 \cdot \text{shock\_ratio}\right)$$
-
-$$\text{reward} = \text{raw\_score} \times \text{dynamic\_gate}$$
-
-- **单调性与边界保障**：
-  - **Oracle 与完全正确的活体模型**（`raw_score = 1.0`, `formula_ratio = 1.0`, `shock_ratio = 1.0`）：`dynamic_gate = 1.0` → **`reward = 1.0000`**，`pass_strict = true`；
-  - **基准数 100% 正确但纯静态硬编码（`frozen`）**：`raw_score = 0.61`, `dynamic_gate = 0.25` → **`reward = 0.1525`**（旧版虚高至 `0.6900`）；
-  - **155/155 全动态公式但局部公式小失误**：`dynamic_gate ≥ 0.70`，显著高于任何纯硬编码表格。
-- **结构化诊断输出**：`details.json` 同步输出 `reward`、`pass_strict`（`reward == 1.0` 且零 Excel 错误）、`raw_score`、`dynamic_gate`、`formula_ratio`、`shock_ratio`、`excel_errors`（显式列出 `#REF! / #DIV/0! / #VALUE! / #NAME? / #N/A` 单元格）。
-
-#### (3) 修复前后对真实 10 题实测分数的重算对照
-
-基于先前 DeepSeek 10 题完整实测的逐维度原始通过计数，对比旧版与新版评分公式：
-
-| 任务 | 动态公式比例 | 扰动通过率 | 旧版 Reward | 新版 Raw Score | 动态门控 Gate | **新版 Reward** | 排序合理性变化 |
-|---|---:|---:|---:|---:|---:|---:|---|
-| `dcf-02-foundry` | 100% (160/160) | 37% | 0.6252 | 0.6290 | 0.8110 | **0.5101** | **跃升第 1**（真动态模型，仅折旧漏括号） |
-| `dcf-09-royalty` | 100% (160/160) | 0% | 0.4292 | 0.4385 | 0.7000 | **0.3069** | 第 2（有完整公式与勾稽，单价单位错） |
-| `dcf-06-license` | 100% (160/160) | 7% | 0.3797 | 0.3917 | 0.7208 | **0.2823** | 第 3（有完整公式，稀释股数 `#DIV/0!`） |
-| `dcf-03-orders` | 100% (160/160) | 0% | 0.3680 | 0.3839 | 0.7000 | **0.2687** | 第 4（有完整公式，单位与 WACC 错） |
-| `dcf-10-returns` | 100% (160/160) | 0% | 0.1992 | 0.2398 | 0.7000 | **0.1679** | 第 5（有完整公式，历史行映射错） |
-| `dcf-04-storage` | **0% (0/160)** | 0% | ~~0.6650~~ | 0.5875 | **0.2500** | **0.1469** | **从虚高第 1 降至第 6**（纯硬编码死数字） |
-| `dcf-08-retail` | **0% (0/160)** | 0% | ~~0.3423~~ | 0.3046 | **0.2500** | **0.0762** | 降至第 7（纯硬编码 + 股价偏 41%） |
-| `dcf-01 / 05 / 07` | 0%（未交付） | 0% | 0.0000 | 0.0000 | 0.0000 | **0.0000** | 未生成工作簿 |
-| **10 题均值** | — | — | 0.3009 | — | — | **0.1759** | 彻底消除“静态硬编码反超动态模型”倒挂 |
+1. **`formula_ratio`（155 个计算型单元格，豁免外生第 8 行）**：每格必须同时通过：
+   - **静态递归计算链审计 `resolves_to_computation`**：必须含单元格引用，裸链接递归追踪至算术或函数运算（拦截纯数字、`=1.13` 常数公式、`=Helper!A1` 静态中转）；
+   - **叶节点微扰探针 `leaf_probe`**：对工作簿内非年份/非索引/非科目码的静态数值叶节点施加 `1.7%–3.5%` 确定性微扰后由 LibreOffice 重算，所有基准非零（$|v| > 10^{-9}$）的计算格必须产生真实响应（$|v_{\text{probe}} - v_{\text{base}}| > \max(10^{-9}, 10^{-8}|v_{\text{base}}|)$），彻底封堵 `=常数 + 0*Inputs!$B$4` 死引用作弊。
+2. **`responsiveness_ratio`（三组扰动非零响应率）**：统计三组扰动下所有理论应动格中满足 $|v_{\text{shock}} - v_{\text{base}}| > 10^{-9}$ 的比例——仅衡量“模型是不是活的”，与基准误差彻底解耦。
+3. **最终得分公式**：
+   $$\text{dynamic\_gate} = 0.20 + 0.80 \times \left(0.65 \cdot \text{formula\_ratio} + 0.35 \cdot \text{responsiveness\_ratio}\right)$$
+   $$\text{reward} = \text{round}\left(\text{raw\_score} \times \text{dynamic\_gate},\ 9\right)$$
 
 ---
 
-## 二、参考解生产与独立校验流程重构
+### 3. 10 题真实 DeepSeek 轨迹实测对比（v1 vs v2.1 vs **v3.0**）
 
-### 1. 原流程的 4 个隐蔽隐患与修复
+将原始 10 题 DeepSeek 提交工作簿交由 `grade.py` v3.0 在 LibreOffice 中完整重算：
 
-| 隐患 | 原版实现问题 | 新版修复方案 |
-|---|---|---|
-| **私有工具依赖** | 原 Node 建表脚本依赖非公开第三方 Excel 包，外部评审机器无法运行造题复现命令 | 完全重写为纯 Python `openpyxl` 版 [`reference.py`](../dcf_benchmark/reference.py)，零 Node.js、零私有依赖 |
-| **参考解未与私有真值彻底解耦** | 原 `reference.mjs` 仍从私有 `solution/canonical.json` 读取 `series` 和 `scalar` | 新版 `reference.py` 在原始材料模式下**仅调用 `audit_sources.reconstruct()` 读取 `environment/data/` 的 7 份公开文件**，不读取任何私有 `canonical.json` 字段 |
-| **跨题财务参数雷同 + 分支未触发** | 原 `model.py` / `raw.py` 10 题共用同一组 WACC（`7.99%`）、同一份历史资产负债表和写死的 TSM 增量 `0.4M`，且 `02-foundry` 5 年从未触发产能瓶颈 | 按每题独立种子全参数采样公司规模、历史三表、$R_f/\beta/\text{ERP}/W_d/K_d/\tau/g/M$、动态 3/5 家可比公司、动态流动/非流动债拆比、动态含价内+价外多批次期权；加入 `branches_covered()` 强制 4 类非线性题双分支均触发 |
-| **容器构建依赖外部前置镜像** | 原 `Dockerfile` 依赖本地手动 `docker build -t dcfeval-calc:v1` | 每题 `Dockerfile` 内联自包含（优先阿里云镜像并自动回退官方源）+ 10 题共享前段 Docker Layer Cache + `build_timeout_sec = 1200` |
+| 任务 | 三表&FCFF (40) | 估值桥 (25) | 勾稽 (15) | 敏感性Δ (20) | 有效公式 | 门控 Gate | v1 旧分 | v2.1 分 | **v3.0 新分** | 评估结论 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| `dcf-02-foundry` | 22.12 | 13.00 | 15.00 | 13.64 | 155/155 | **1.0000** | 0.6252 | 0.5101 | **0.6376** | 稳居第 1，消除多重连坐，真实体现高完成度动态模型 |
+| `dcf-09-royalty` | 12.65 | 8.00 | 15.00 | 4.43 | 150/155 | 0.9498 | 0.4292 | 0.3069 | **0.3808** | 第 2，精准抓出 `DCF!B4, B12:B15` 静态中转别名 |
+| `dcf-06-license` | 12.28 | 1.25 | 14.80 | 4.72 | 155/155 | 0.9709 | 0.3797 | 0.2823 | **0.3209** | 第 3，`#DIV/0!` 报错被 `controls` 精准扣分 |
+| `dcf-03-orders` | 10.67 | 5.00 | 11.75 | 3.84 | 155/155 | 0.9984 | 0.3680 | 0.2687 | **0.3121** | 第 4，FCFF 漏折旧在基准与扰动勾稽中体现 |
+| `dcf-10-returns` | 0.97 | 1.25 | 11.55 | 3.91 | 155/155 | 0.9871 | 0.1992 | 0.1679 | **0.1745** | 第 5，历史映射错位 + BS 不平 |
+| `dcf-04-storage` | 37.00 | 25.00 | 11.00 | 0.00 | **0/155** | **0.2000** | ~~0.6650~~ | 0.1469 | **0.1460** | 降至第 6，彻底终结“贴死数反超动态模型” |
+| `dcf-08-retail` | 11.04 | 8.00 | 11.00 | 0.00 | **0/155** | **0.2000** | ~~0.3423~~ | 0.0762 | **0.0601** | 降至第 7，纯硬编码 + 关店率算错 |
+| `dcf-01 / 05 / 07` | 0.00 | 0.00 | 0.00 | 0.00 | 未交付 | 0.0000 | 0.0000 | 0.0000 | **0.0000** | 未生成工作簿 |
+| **10 题均值** | — | — | — | — | — | — | 0.3009 | 0.1759 | **0.2032** | 排序与金融专业质量完全一致 |
 
 ---
 
-### 2. 双独立路径的参考解生产闭环（如何 mathematically 证明参考值 100% 正确）
+## 二、参考解双独立路径生产与 100 项自动化验收
+
+### 1. 四项核心流程重构
+1. **100% 开源纯 Python 可复现**：移除所有 Node.js / 私有 Excel 包依赖，使用纯 Python `openpyxl`（[`reference.py`](../dcf_benchmark/reference.py)）生成动态公式工作簿。
+2. **输入路径完全独立**：`reference.py` 在原始材料模式下**绝不读取私有 `canonical.json`**，只调用 `audit_sources.reconstruct()` 解析 `environment/data/` 的 7 份公开文件。
+3. **全参数化防同质化 + 强制双分支触发**：每题独立采样公司规模、历史三表与完整资本/估值参数（WACC 分布 `6.61%–10.90%`、每股价值 `5.09–63.17 EUR`）；`branches_covered()` 强制 `foundry / storage / mine / royalty` 在五年内两侧 `MIN/MAX` 分支均触发；动态生成 3/5 家同行、动态流动/非流动债拆比、动态含价内+价外多批次期权。
+4. **自包含 Docker 环境与标准开放评测接口**：每题 `Dockerfile` 内联自包含（优先阿里云镜像并自动回退官方源）+ `build_timeout_sec = 1200`；`pilot.py` 采用标准 OpenAI-compatible 环境变量接口。
+
+### 2. 双独立路径校验闭环
 
 ```mermaid
 flowchart LR
-    S["主种子 --seed"] --> G["Stage 1: model.py + generate.py\n生成 10 家独立公司 + 门禁筛查\n(WACC-g>=2.5%, 现金非负, 双分支触发)"]
-    G --> P1["路径 A（纯 Python 数值引擎）\nmodel.calculate() + 20 项会计恒等断言\n-> tests/answers.json（基准+3组扰动）"]
-    G --> R["Stage 2: raw.py\n降维编译 7 份公开原始材料\n-> environment/data/*（零模板、零答案）"]
-    R --> P2["路径 B（仅看公开材料的 Excel 公式引擎）\nreference.py 只解析 7 份公开文件\n写出纯公式 solution/reference.xlsx"]
-    P2 --> LO["第三方独立引擎\nLibreOffice Calc 无头现场重算\n（基准 + 3 组输入扰动副本）"]
-    P1 --> V["Stage 3: 双路交叉核对\n1. audit_sources.py（7,160 项公开还原 < 1e-8）\n2. grade.py（Oracle + 替代布局 alt_layout 均 10/10 = 1.0）\n3. accept.py（6 类 60 组反例全部 < 1.0）"]
+    S["主种子 (--seed)"] --> G["Stage 1: model.py + generate.py\n独立公司生成 + 持续经营与双分支筛查"]
+    G --> P1["路径 A: 纯 Python 数值引擎\n20 项会计恒等断言 -> tests/answers.json"]
+    G --> R["Stage 2: raw.py\n编译 7 份公开原始材料 -> environment/data/*"]
+    R --> P2["路径 B: reference.py\n仅读 7 份公开文件 -> 纯公式 reference.xlsx"]
+    P2 --> LO["第三方独立引擎\nLibreOffice Calc 无头重算 (基准 + 3 组扰动 + leaf_probe)"]
+    P1 --> V["Stage 3: 100 项全量验收 (accept.py)\n7,160 项公开还原 + 10 Oracle=1.0 + 10 alt_layout=1.0\n+ 10 dep_bug(gate=1.0) + 70 反例<1.0"]
     LO --> V
 ```
 
-**四重独立证明链**：
-1. **会计恒等式硬断言**：`model.py` 与 `grade.py` 独立校验全部 5 年资产负债表配平（$|\text{Assets} - (\text{Liab}+\text{Equity})| < 10^{-8}$）、现金流期末现金闭合、留存收益权益滚存、FCFF 定义恒等。
-2. **输入路径独立**：`reference.py` 在生产 `reference.xlsx` 时**不读 `canonical.json`**，只从 `environment/data/` 下的 7 份公开原始文件重建输入——如果公开材料缺少任何信息或单位笔误，参考解本身就会构建失败或偏离 `answers.json`。
-3. **计算引擎独立**：`answers.json` 由纯 Python 浮点引擎算出；`reference.xlsx` 只写 Excel 公式字符串，交由独立第三方电子表格引擎 **LibreOffice Calc** 重算，两者在基准与 3 组扰动下超过 500 个单元格/题、误差全部 $< 10^{-6}$。
-4. **80 组正反例全面验收（[`accept.py`](../dcf_benchmark/accept.py)）**：
-   - `oracle`（10/10 公开材料参考解）：全部 `reward == 1.0000`；
-   - `alt_layout`（10/10 独立替代布局工作簿——最小 `Inputs`、不同辅助表、外生数值第 8 行、等价 `IF` 公式与跨表链接）：全部 `reward == 1.0000`，证实零误杀；
-   - `frozen`（纯静态数值冻结）：要求 `reward < 0.25`（实测 `0.1525`）且三组扰动全 0；
-   - `fake_formula`（无单元格引用常数伪公式 `=1.13`）：实测 `0.9853 < 1.0`；
-   - `alias_hardcode`（裸链接指向辅助表硬编码 `=Helper!A1`）：实测 `0.9853 < 1.0`；
-   - `terminal`（终值少折现一年）：实测 `0.8816–0.8819 < 1.0`；
-   - `itm_filter`（错误纳入价外期权）：实测 `0.9412–0.9422 < 1.0` 且 `DCF!B9` 报错；
-   - `missing`（未交付工作簿）：`reward == 0.0`。
+**100 项全量验收指标（全部通过）**：
+- `oracle`（10/10）：全部 **`1.0000`**，`pass_strict = true`；
+- `alt_layout`（10/10，完全不同工作表布局、最小 `Inputs`、外生数值第 8 行、`IF` 等价公式、跨表链接）：全部 **`1.0000`**，证实零误杀；
+- `single_dep_bug`（10/10，100% 动态公式 + 仅折旧漏括号）：`dynamic_gate = 1.0000`、`ties = 20/20`、`ties_shock = 40/40`、回款 $\Delta$ `100%`，得分 **`0.5883–0.6652`**；
+- `frozen`（10/10，纯贴死数）：**`0.1520`**（`< 0.20`）；
+- `terminal`（10/10，终值少折现一年）：**`0.8238–0.8264`**；
+- `itm_filter`（10/10，错误纳入价外期权）：**`0.9250`**；
+- `zero_mul_cheat`（10/10，`=val + 0*Inputs!$B$4` 死引用伪公式）：**`0.9530–0.9597`**（被 `leaf_probe` 拦截）；
+- `fake_formula` & `alias_hardcode`（20/20）：**`0.9866`**；
+- `missing`（10/10）：**`0.0000`**。
 
 ---
 
-## 三、一键复现与扩展命令清单
+## 三、一键复现命令
 
 ```bash
-# 1. 一键全自动无人工生成全新 Seed 评测集（含 7 份原始材料 + 独立参考解 + 7,160 项公开还原审计）
+# 1. 一键全自动无人工生成评测集（含 7,160 项公开还原审计）
 python3 dcf_benchmark/build_all.py --seed 2026 --out DCFEval
 
-# 2. 本地全量 80 组验收（10 Oracle + 10 独立替代布局 + 60 反例，需 openpyxl 与 soffice）
+# 2. 全量 100 项自动化验收（需 openpyxl 与 soffice）
 python3 dcf_benchmark/accept.py DCFEval dcf_benchmark/results/acceptance.json
 
-# 3. Harbor Oracle 全量端到端验证（10/10 必须全部 reward = 1.0）
+# 3. Harbor Oracle 端到端全量验证（10/10 全部 reward = 1.0）
 harbor run -p DCFEval -a oracle -n 4 --jobs-dir "$PWD/dcf_benchmark/jobs" --job-name oracle-final
 
-# 4. 直接用正向 Python API 查验单题完整三表与估值真值
+# 4. 正向 Python API 查验单题三表与估值真值
 python3 dcf_benchmark/forward.py DCFEval/dcf-02-foundry/solution/canonical.json
 
-# 5. 汇总任意 Harbor 评测任务分数表与逐题失败诊断
+# 5. 汇总 Harbor 评测任务分数表与逐题首项诊断
 python3 dcf_benchmark/report.py dcf_benchmark/jobs/oracle-final
 ```

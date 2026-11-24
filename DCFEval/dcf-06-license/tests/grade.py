@@ -1,12 +1,30 @@
-"""Grade one isolated DCF workbook via headless LibreOffice recalculation.
+"""Grade one isolated DCF workbook via headless LibreOffice recalculation (v3.0 Practitioner Edition).
 
-Key hardening features:
-1. Recursive formula computation audit: blocks literal values, constant-literal formulas (=1.13),
-   and alias links to hardcoded helper cells (=Helper!A1 where Helper!A1 is a static number).
-2. Explicit Excel formula error audit (#REF!, #DIV/0!, #VALUE!, #NAME?, #N/A, Err:).
-3. Three independent live input perturbation shocks (operations, collection, discount).
-4. Dynamic Model Gate Multiplier: prevents zero-formula hardcoded sheets from outscoring genuine
-   formula-driven models while keeping Oracle strictly at reward = 1.0.
+Practitioner-aligned Four-Pillar Rubric (raw_score = 100%):
+1. Three-Statement & FCFF Forecast Accuracy (40%):
+   - `history` (7%): FY2025 closing balance sheet & income statement consolidation (19 cells).
+   - `forecast` (21%): FY2026-2030 operating drivers, IS, BS, and CFS lines (130 cells).
+   - `fcff` (12%): FY2026-2030 unlevered tax, Change in NWC, FCFF, and PV of FCFF (20 cells).
+2. Valuation Bridge & Per-Share Accuracy (25%):
+   - `valuation` (25%): Materiality-weighted DCF outputs — core valuation bridge `DCF!B4:B9` (20%,
+     with intrinsic share price `B9` = 5%, `EV`/`EqV` = 3.5% each, `WACC` = 3%, `TV`/`PV(TV)` = 2.5% each)
+     plus Peer Beta & TSM dilution schedule `DCF!B12:B15` (5%, 1.25% each).
+3. Accounting Integrity & Model Hygiene (15%):
+   - `ties` (9%): 20 base FY2026-2030 accounting identities (BS balance, Cash roll, Equity roll, FCFF tie).
+   - `ties_shock` (4%): 40 post-shock dynamic accounting identities across `operations` and `collection`
+     shocks (verifying the balance sheet and cash flow remain balanced when assumptions change).
+   - `controls` (2%): Editable `Inputs!B4:B6`, year headers `Statements!B3:G3`, and zero Excel formula errors.
+4. Assumption Sensitivity Delta Linkage (20%):
+   - `shock_operations` (7%), `shock_collection` (6%), `shock_discount` (7%): Graded on shock response
+     deltas `(actual_shock - actual_base)` vs `(expected_shock - expected_base)` so localized base errors
+     are never double-counted when downstream sensitivity mechanics are genuinely linked.
+
+Anti-Hardcoding Dynamic Gate (`dynamic_gate` in [0.20, 1.00]):
+- Combines recursive formula AST + leaf-input perturbation (`leaf_probe`, blocking `=const + 0*Inputs!B4`
+  dead-reference cheats across all 155 computed cells) with live shock responsiveness (`responsiveness_ratio`,
+  checking whether shock-sensitive cells actually move, independent of base-level offsets).
+- `dynamic_gate = 0.20 + 0.80 * (0.65 * formula_ratio + 0.35 * responsiveness_ratio)`.
+  Genuine dynamic models achieve `dynamic_gate = 1.0`; static pasted-value workbooks get `0.20` (`reward ~ 0.15`).
 """
 import argparse
 import json
@@ -25,9 +43,49 @@ BARE_LINK_RE = re.compile(r"^=\s*(?:(?:'([^']+)'|([A-Za-z0-9_]+))!)?\$?([A-Za-z]
 COMPUTE_OP_RE = re.compile(r"[+\-*/^]|[A-Za-z_][A-Za-z0-9_.]*\s*\(")
 EXCEL_ERR_PREFIXES = ("#REF!", "#DIV/0!", "#VALUE!", "#NAME?", "#N/A", "#NUM!", "#NULL!", "Err:")
 
+SKIP_PROBE_INTS = {
+    0, 1, 2, 3, 4, 5,
+    100, 365, 1000, 10000, 100000, 1000000,
+    1015, 1210, 1320, 1520, 2112, 2315, 2710, 3105, 4100, 5105, 6202, 6710, 7102, 7900,
+}
+
+DCF_CELL_WEIGHTS = {
+    "B4": 3.0,    # WACC
+    "B5": 2.5,    # Terminal value at FY2030 end
+    "B6": 2.5,    # PV of terminal value
+    "B7": 3.5,    # Enterprise value (EV)
+    "B8": 3.5,    # Equity value
+    "B9": 5.0,    # Intrinsic value per diluted share (EUR)
+    "B12": 1.25,  # Relevered equity beta
+    "B13": 1.25,  # Diluted shares (millions)
+    "B14": 1.25,  # Median unlevered peer beta
+    "B15": 1.25,  # TSM incremental shares (millions)
+}
+
+
+def is_num(x):
+    return type(x) in (int, float) and math.isfinite(x)
+
 
 def close(a, b):
-    return type(a) in (int, float) and math.isfinite(a) and abs(a - b) <= max(1e-6, abs(b) * 1e-6)
+    return is_num(a) and abs(a - b) <= max(1e-6, abs(b) * 1e-6)
+
+
+def close_delta(actual_shock, actual_base, expected_shock, expected_base):
+    if not (is_num(actual_shock) and is_num(actual_base)):
+        return False, None, expected_shock - expected_base
+    act_d = actual_shock - actual_base
+    exp_d = expected_shock - expected_base
+    tol = max(1e-6, abs(exp_d) * 1e-5, abs(expected_base) * 1e-6)
+    if abs(act_d - exp_d) <= tol:
+        return True, act_d, exp_d
+    # Also accept exact proportional elasticity (%Δ) when multiplicative linkage is exact despite upstream scale offset
+    if abs(expected_base) > 1e-2 and abs(actual_base) > 1e-2 and (actual_base * expected_base > 0):
+        act_pct = act_d / actual_base
+        exp_pct = exp_d / expected_base
+        if abs(act_pct - exp_pct) <= max(1e-6, abs(exp_pct) * 1e-5):
+            return True, act_d, exp_d
+    return False, act_d, exp_d
 
 
 def is_excel_error(val):
@@ -35,11 +93,7 @@ def is_excel_error(val):
 
 
 def resolves_to_computation(wb, sheet_name, cell_addr, allow_pure_input_link=False, visited=None):
-    """Verify a cell is a genuine formula referencing upstream cells (not a constant or static alias).
-
-    - Bare aliases (`=OtherSheet!B5`) are traced recursively to confirm the upstream cell is either
-      a genuine computation (default) or an input cell (when allow_pure_input_link=True, e.g. fixed opex).
-    """
+    """Verify a cell is a genuine formula referencing upstream cells (not a constant or static alias)."""
     if visited is None:
         visited = set()
     key = (sheet_name, cell_addr.replace("$", "").upper())
@@ -52,7 +106,6 @@ def resolves_to_computation(wb, sheet_name, cell_addr, allow_pure_input_link=Fal
         return False
     expr = cell.value.strip()
     if not CELL_REF_RE.search(expr):
-        # Blocks constant-literal pseudo-formulas like =1.13 or =0.4
         return False
 
     m = BARE_LINK_RE.match(expr)
@@ -64,13 +117,89 @@ def resolves_to_computation(wb, sheet_name, cell_addr, allow_pure_input_link=Fal
         target_cell = wb[target_sheet][target_addr]
         if target_cell.data_type == "f":
             return resolves_to_computation(wb, target_sheet, target_addr, allow_pure_input_link, visited)
-        # Bare link to a numeric input cell is valid ONLY for pass-through input rows (e.g. fixed opex)
         return allow_pure_input_link and type(target_cell.value) in (int, float)
 
     return bool(COMPUTE_OP_RE.search(expr))
 
 
-def grade(path, spec):
+def build_leaf_probe_workbook(src_path: Path, dst_path: Path):
+    """Perturb static numeric leaf inputs slightly to detect dead-reference pseudo-formulas (e.g. `=val+0*B4`)."""
+    w = load_workbook(src_path, keep_links=False)
+    for ws in w.worksheets:
+        for r in range(1, ws.max_row + 1):
+            for c in range(1, ws.max_column + 1):
+                cell = ws.cell(row=r, column=c)
+                if cell.data_type == "f":
+                    continue
+                val = cell.value
+                if type(val) not in (int, float) or not math.isfinite(val):
+                    continue
+                if ws.title == "Inputs" and c == 2 and r in (4, 5, 6):
+                    if r == 4:
+                        cell.value = float(val) + 0.031
+                    elif r == 5:
+                        cell.value = float(val) + 2.3
+                    else:
+                        cell.value = float(val) + 0.0027
+                    continue
+                if float(val).is_integer():
+                    iv = int(round(float(val)))
+                    if 2000 <= iv <= 2100 or iv in SKIP_PROBE_INTS:
+                        continue
+                factor = 1.0 + 0.017 + 0.0023 * ((r * 7 + c * 13) % 9)
+                cell.value = float(val) * factor
+    w.save(dst_path)
+    w.close()
+
+
+def check_accounting_ties(ws):
+    """Return list of (col_label, err_val, bs_sig) for the 20 forecast accounting ties across C..G."""
+    out = []
+    for idx, cc in enumerate("CDEFG"):
+        get = lambda i, col=cc: ws[col + str(i)].value
+        prior = lambda i, pcol="BCDEF"[idx]: ws[pcol + str(i)].value
+        bs_sig = (get(14), get(22), get(24))  # AR, Cash, Total Assets
+        for label, fn in [
+            ("balance", lambda: get(24) - get(25)),
+            ("cash", lambda: get(22) - prior(22) - get(26) - get(27) - get(28)),
+            ("equity", lambda: get(23) - prior(23) - get(13)),
+            ("fcff", lambda: get(32) - get(10) + get(30) - get(9) + get(18) + get(31)),
+        ]:
+            try:
+                err = fn()
+            except (TypeError, ValueError):
+                err = None
+            out.append((f"{cc}:{label}", err, bs_sig))
+    return out
+
+
+def run_soffice_recalc(src_dir: Path, out_dir: Path, timeout: int = 125):
+    engine = os.getenv("SOFFICE") or shutil.which("soffice") or shutil.which("libreoffice")
+    if not engine:
+        raise RuntimeError("Calc recalculation engine unavailable")
+    subprocess.run(
+        [
+            engine,
+            "-env:UserInstallation=" + (src_dir / "profile").as_uri(),
+            "--headless",
+            "--norestore",
+            "--nolockcheck",
+            "--convert-to",
+            "xlsx",
+            "--outdir",
+            str(out_dir),
+            *map(str, sorted(src_dir.glob("*.xlsx"))),
+        ],
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        start_new_session=True,
+        check=True,
+        timeout=timeout,
+    )
+
+
+def grade(path, spec, recalc_fn=None):
     if not path.is_file():
         return {"reward": 0.0, "pass_strict": False, "reason": "missing output.xlsx"}
     with zipfile.ZipFile(path) as z:
@@ -80,14 +209,18 @@ def grade(path, spec):
             return {"reward": 0.0, "pass_strict": False, "reason": "not a self-contained xlsx"}
 
     groups = {}
+    weighted_pts = {}
     examples = {}
     excel_errors = []
 
-    def audit(group, address, actual, expected, ok=None):
-        ok = close(actual, expected) if ok is None else ok
+    def audit(group, address, actual, expected, ok=None, weight=1.0):
+        ok = close(actual, expected) if ok is None else bool(ok)
         pair = groups.setdefault(group, [0, 0])
         pair[0] += int(ok)
         pair[1] += 1
+        w_pair = weighted_pts.setdefault(group, [0.0, 0.0])
+        w_pair[0] += weight if ok else 0.0
+        w_pair[1] += weight
         if not ok and len(examples.setdefault(group, [])) < 8:
             examples[group].append([address, actual, expected])
 
@@ -103,17 +236,18 @@ def grade(path, spec):
         for cell, v in spec["controls"].items():
             audit("controls", "Inputs!" + cell, wb["Inputs"][cell].value, v)
 
-        # Row 8 in Statements (Cash operating expense) is an exogenous budget input, so it is graded
-        # numerically in `forecast` without forcing an Excel formula (155 computed cells graded for formulas).
+        # Static AST audit on the 155 computed cells (Row 8 exogenous fixed opex is exempted)
+        static_formula_ok = {}
         for sheet, cells in base.items():
             for cell in cells:
                 if sheet == "DCF" or (cell[0] != "B" and int(cell[1:]) != 8):
-                    v = wb[sheet][cell]
-                    ok = resolves_to_computation(wb, sheet, cell, allow_pure_input_link=False)
-                    audit("formulas", sheet + "!" + cell, v.value, "live_formula_with_upstream_computation", ok)
+                    static_formula_ok[(sheet, cell)] = resolves_to_computation(
+                        wb, sheet, cell, allow_pure_input_link=False
+                    )
         wb.close()
 
         shutil.copyfile(path, p / "base.xlsx")
+        build_leaf_probe_workbook(path, p / "leaf_probe.xlsx")
         for k, v in spec["shocks"].items():
             w = load_workbook(path, keep_links=False)
             for addr, n in v["changes"].items():
@@ -121,92 +255,161 @@ def grade(path, spec):
             w.save(p / (k + ".xlsx"))
             w.close()
 
-        engine = os.getenv("SOFFICE") or shutil.which("soffice") or shutil.which("libreoffice")
-        if not engine:
-            raise RuntimeError("Calc recalculation engine unavailable")
-        subprocess.run(
-            [
-                engine,
-                "-env:UserInstallation=" + (p / "profile").as_uri(),
-                "--headless",
-                "--convert-to",
-                "xlsx",
-                "--outdir",
-                str(out),
-                *map(str, sorted(p.glob("*.xlsx"))),
-            ],
-            capture_output=True,
-            check=True,
-            timeout=125,
-        )
+        if recalc_fn is not None:
+            recalc_fn(p, out)
+        else:
+            run_soffice_recalc(p, out, timeout=125)
 
-        for k, target in [("base", base)] + [(k, v["expected"]) for k, v in spec["shocks"].items()]:
-            w = load_workbook(out / (k + ".xlsx"), data_only=True, read_only=False)
-            for sh, cs in target.items():
-                for c, v in cs.items():
-                    if k != "base" and close(v, base[sh][c]):
+        # 1. Read recalculated base and leaf_probe workbooks
+        w_base = load_workbook(out / "base.xlsx", data_only=True, read_only=False)
+        w_probe = load_workbook(out / "leaf_probe.xlsx", data_only=True, read_only=False)
+
+        actual_base = {"Statements": {}, "DCF": {}}
+        for sh, cs in base.items():
+            for c, v in cs.items():
+                aval = w_base[sh][c].value
+                actual_base[sh][c] = aval
+                if is_excel_error(aval) and len(excel_errors) < 20:
+                    excel_errors.append([sh + "!" + c, aval])
+                r = int(c[1:])
+                if sh == "DCF":
+                    audit("valuation", f"DCF!{c}", aval, v, weight=DCF_CELL_WEIGHTS.get(c, 1.25))
+                elif c[0] == "B":
+                    audit("history", f"Statements!{c}", aval, v)
+                elif r >= 30:
+                    audit("fcff", f"Statements!{c}", aval, v)
+                else:
+                    audit("forecast", f"Statements!{c}", aval, v)
+
+        # Combine static AST + live leaf_probe sensitivity for the 155 formula cells
+        for (sh, c), ast_ok in static_formula_ok.items():
+            bval = actual_base[sh][c]
+            pval = w_probe[sh][c].value
+            if not ast_ok:
+                audit("formulas", f"{sh}!{c}", "non_formula_or_static_alias", "live_formula", ok=False)
+            elif is_num(bval) and abs(bval) > 1e-9:
+                moved = is_num(pval) and abs(pval - bval) > max(1e-9, abs(bval) * 1e-8)
+                audit(
+                    "formulas",
+                    f"{sh}!{c}",
+                    bval if not moved else "live_formula",
+                    "live_formula_sensitive_to_inputs",
+                    ok=moved,
+                )
+            else:
+                audit("formulas", f"{sh}!{c}", "live_formula", "live_formula", ok=True)
+
+        ws_base = w_base["Statements"]
+        for j, cc in enumerate("BCDEFG"):
+            audit("controls", cc + "3", ws_base[cc + "3"].value, 2025 + j)
+        audit("controls", "Workbook!zero_excel_errors", len(excel_errors), 0, ok=(len(excel_errors) == 0))
+
+        base_ties = check_accounting_ties(ws_base)
+        base_bs_by_col = {}
+        for label, err, bs_sig in base_ties:
+            base_bs_by_col[label.split(":")[0]] = bs_sig
+            audit("ties", label, err, 0)
+
+        w_base.close()
+        w_probe.close()
+
+        # 2. Evaluate the 3 shocks using Delta (shock - base) + post-shock accounting ties + responsiveness
+        responsive_moves = 0
+        responsive_total = 0
+        for k, v in spec["shocks"].items():
+            w_sh = load_workbook(out / (k + ".xlsx"), data_only=True, read_only=False)
+            for sh, cs in v["expected"].items():
+                for c, exp_sh in cs.items():
+                    exp_b = base[sh][c]
+                    if abs(exp_sh - exp_b) <= max(1e-5, abs(exp_b) * 1e-5):
                         continue
-                    actual_val = w[sh][c].value
-                    if k == "base" and is_excel_error(actual_val) and len(excel_errors) < 20:
-                        excel_errors.append([sh + "!" + c, actual_val])
-                    r = int(c[1:])
-                    group = (
-                        "shock_" + k
-                        if k != "base"
-                        else ("valuation" if sh == "DCF" else "history" if c[0] == "B" else "fcff" if r >= 30 else "forecast")
+                    act_sh = w_sh[sh][c].value
+                    act_b = actual_base[sh][c]
+                    responsive_total += 1
+                    if is_num(act_sh) and is_num(act_b) and abs(act_sh - act_b) > 1e-9:
+                        responsive_moves += 1
+                    ok_d, act_d, exp_d = close_delta(act_sh, act_b, exp_sh, exp_b)
+                    audit("shock_" + k, f"{sh}!{c}(Δ)", act_d, exp_d, ok=ok_d)
+
+            # Operations and collection shocks directly alter BS/CFS; verify post-shock accounting ties hold
+            if k in ("operations", "collection"):
+                for label, err, sh_bs in check_accounting_ties(w_sh["Statements"]):
+                    col_let = label.split(":")[0]
+                    b_bs = base_bs_by_col.get(col_let, (None, None, None))
+                    bs_moved = any(
+                        is_num(sv) and is_num(bv) and abs(sv - bv) > 1e-6 for sv, bv in zip(sh_bs, b_bs)
                     )
-                    audit(group, sh + "!" + c, actual_val, v)
-            if k == "base":
-                ws = w["Statements"]
-                for j, cc in enumerate("BCDEFG"):
-                    audit("controls", cc + "3", ws[cc + "3"].value, 2025 + j)
-                for idx, cc in enumerate("CDEFG"):
-                    get = lambda i: ws[cc + str(i)].value
-                    prior = lambda i: ws["BCDEF"[idx] + str(i)].value
-                    for label, fn in [
-                        ("balance", lambda: get(24) - get(25)),
-                        ("cash", lambda: get(22) - prior(22) - get(26) - get(27) - get(28)),
-                        ("equity", lambda: get(23) - prior(23) - get(13)),
-                        ("fcff", lambda: get(32) - get(10) + get(30) - get(9) + get(18) + get(31)),
-                    ]:
-                        try:
-                            err = fn()
-                        except (TypeError, ValueError):
-                            err = None
-                        audit("ties", cc + ":" + label, err, 0)
-            w.close()
+                    tie_ok = close(err, 0) and bs_moved
+                    audit("ties_shock", f"{k}:{label}", err if bs_moved else "static_unmoved_bs", 0, ok=tie_ok)
+            w_sh.close()
 
+    # Practitioner Four-Pillar Weights (Total = 100.0 points; `formulas` acts strictly via `dynamic_gate`)
     weights = dict(
-        controls=3,
-        formulas=12,
-        history=8,
-        forecast=18,
-        fcff=9,
-        valuation=14,
-        ties=9,
-        shock_operations=9,
-        shock_collection=9,
-        shock_discount=9,
+        # Pillar 1: 3-Statement & FCFF Forecast Accuracy (40%)
+        history=7.0,
+        forecast=21.0,
+        fcff=12.0,
+        # Pillar 2: Valuation Bridge & Per-Share Accuracy (25%)
+        valuation=25.0,
+        # Pillar 3: Accounting Integrity & Model Hygiene (15%)
+        ties=9.0,
+        ties_shock=4.0,
+        controls=2.0,
+        # Pillar 4: Assumption Sensitivity Delta Linkage (20%)
+        shock_operations=7.0,
+        shock_collection=6.0,
+        shock_discount=7.0,
     )
-    raw_score = sum(weights[g] * a / b for g, (a, b) in groups.items()) / 100.0
+    raw_score = sum(
+        weights[g] * (weighted_pts[g][0] / weighted_pts[g][1])
+        for g in weights
+        if g in weighted_pts and weighted_pts[g][1] > 0
+    ) / 100.0
 
-    # Dynamic Model Gate: prevents static hardcoded sheets from outscoring live formula models
-    f_ok, f_tot = groups["formulas"]
+    # Anti-Hardcoding Dynamic Gate: checks live formula integrity + non-zero shock responsiveness
+    f_ok, f_tot = groups.get("formulas", [0, 0])
     formula_ratio = f_ok / f_tot if f_tot else 0.0
+    responsiveness_ratio = responsive_moves / responsive_total if responsive_total else 0.0
     s_ok = sum(groups[g][0] for g in ("shock_operations", "shock_collection", "shock_discount") if g in groups)
     s_tot = sum(groups[g][1] for g in ("shock_operations", "shock_collection", "shock_discount") if g in groups)
-    shock_ratio = s_ok / s_tot if s_tot else 0.0
-    dynamic_gate = 0.25 + 0.75 * (0.6 * formula_ratio + 0.4 * shock_ratio)
+    shock_delta_ratio = s_ok / s_tot if s_tot else 0.0
 
+    dynamic_gate = 0.20 + 0.80 * (0.65 * formula_ratio + 0.35 * responsiveness_ratio)
     reward = round(raw_score * dynamic_gate, 9)
     pass_strict = (reward == 1.0) and (len(excel_errors) == 0)
+
+    pillar_scores = {
+        "statements_and_fcff_40": round(
+            sum(weights[g] * weighted_pts[g][0] / weighted_pts[g][1] for g in ("history", "forecast", "fcff") if g in weighted_pts),
+            4,
+        ),
+        "valuation_bridge_25": round(
+            weights["valuation"] * weighted_pts["valuation"][0] / weighted_pts["valuation"][1] if "valuation" in weighted_pts else 0.0,
+            4,
+        ),
+        "accounting_integrity_15": round(
+            sum(weights[g] * weighted_pts[g][0] / weighted_pts[g][1] for g in ("ties", "ties_shock", "controls") if g in weighted_pts),
+            4,
+        ),
+        "sensitivity_delta_20": round(
+            sum(
+                weights[g] * weighted_pts[g][0] / weighted_pts[g][1]
+                for g in ("shock_operations", "shock_collection", "shock_discount")
+                if g in weighted_pts
+            ),
+            4,
+        ),
+    }
+
     return dict(
         reward=reward,
         pass_strict=pass_strict,
         raw_score=round(raw_score, 9),
         dynamic_gate=round(dynamic_gate, 9),
         formula_ratio=round(formula_ratio, 6),
-        shock_ratio=round(shock_ratio, 6),
+        responsiveness_ratio=round(responsiveness_ratio, 6),
+        shock_ratio=round(shock_delta_ratio, 6),
+        pillars=pillar_scores,
         excel_errors=excel_errors,
         groups=groups,
         examples=examples,

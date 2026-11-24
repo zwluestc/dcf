@@ -58,6 +58,6 @@ DCF sheet outputs (rates such as WACC in B4 must evaluate to annual decimal frac
 - B8: Equity value
 - B9: Value per diluted share
 
-Numeric tolerance: greater of EUR million (or native-unit) absolute 0.000001 and 0.0001% relative. Scoring includes base results, cash/equity/FCFF reconciliation, formula integrity, and independent LibreOffice recalculation after each of the three editable assumptions changes (with a dynamic model gate penalizing hardcoded submissions).
+Numeric tolerance: greater of EUR million (or native-unit) absolute 0.000001 and 0.0001% relative. Scoring follows a practitioner four-pillar rubric: three-statement & FCFF accuracy (40%), materiality-weighted valuation bridge & per-share value (25%), base & post-shock accounting reconciliation (15%), and assumption sensitivity delta linkage across the three editable assumptions (20%), multiplied by an anti-hardcoding dynamic formula gate.
 
 Additional required outputs (included in the 155 graded live-formula cells): DCF!B12 = relevered equity beta; DCF!B13 = diluted shares (millions); DCF!B14 = median unlevered peer beta; DCF!B15 = TSM incremental shares (millions). All four must resolve to live upstream calculation formulas. Their base values and formulas are graded as part of valuation.

@@ -1,12 +1,15 @@
-"""Reference acceptance, alternative-layout positive verification, and 6-category negative mutation tests.
+"""Reference acceptance, alternative-layout verification, practitioner fairness, and 7-category negative tests.
 
-Verifies for every task:
+Verifies for every task (100 total checks across 10 tasks):
 1. Reference Oracle (`solution/reference.xlsx`): reward == 1.0, pass_strict == True.
 2. Independent Alternative Layout (`alt_layout.xlsx`): completely different helper sheet names,
    minimal Inputs sheet (only B4:B6), exogenous numeric row 8, plain actuals without Ledger,
    equivalent alternative Excel formulas, and cross-sheet DCF!B12:B15 links -> MUST ALSO score 1.0!
-3. Six negative mutation counterexamples (60 total across 10 tasks): frozen (<0.25), terminal,
-   missing, fake_formula, alias_hardcode, itm_filter -> ALL strictly < 1.0.
+3. Practitioner Fairness (`single_dep_bug.xlsx`): 100% live dynamic formulas with one upstream parenthesis
+   typo in Depreciation -> `dynamic_gate == 1.0` (zero anti-hardcoding gate penalty), `ties == 20/20`,
+   `ties_shock == 40/40`, `shock_collection` 100%, and `0.65 < reward < 1.0`.
+4. Seven negative mutation counterexamples (70 total across 10 tasks): frozen (<0.20), terminal,
+   missing, fake_formula, alias_hardcode, zero_mul_cheat, itm_filter -> ALL strictly < 1.0.
 """
 import csv
 import json
@@ -21,7 +24,7 @@ from pathlib import Path
 from openpyxl import Workbook, load_workbook
 
 from audit_sources import reconstruct
-from grade import grade
+from grade import build_leaf_probe_workbook, grade, run_soffice_recalc
 
 
 def find_otm_row(ws_cap):
@@ -204,53 +207,57 @@ def build_alt_layout_workbook(task: Path, out_path: Path):
     wb.save(out_path)
 
 
+def stage_for_batch(tag: str, wb_path: Path, spec: dict, batch_in: Path):
+    shutil.copyfile(wb_path, batch_in / f"{tag}__base.xlsx")
+    build_leaf_probe_workbook(wb_path, batch_in / f"{tag}__leaf_probe.xlsx")
+    for k, v in spec["shocks"].items():
+        w = load_workbook(wb_path, keep_links=False)
+        for addr, n in v["changes"].items():
+            w["Inputs"][addr] = n
+        w.save(batch_in / f"{tag}__{k}.xlsx")
+        w.close()
+
+
+def make_recalc_loader(tag: str, batch_out: Path):
+    def _loader(_src: Path, out: Path):
+        for suffix in ("base", "leaf_probe", *("operations", "collection", "discount")):
+            f = batch_out / f"{tag}__{suffix}.xlsx"
+            if f.exists():
+                shutil.copyfile(f, out / f"{suffix}.xlsx")
+    return _loader
+
+
 def eval_task(task: Path):
     spec = json.loads((task / "tests/answers.json").read_text())
     ref = task / "solution/reference.xlsx"
-    good = grade(ref, spec)
-    assert good["reward"] == 1.0 and good["pass_strict"], (task, good)
-    result = {"oracle_local": good, "alt_layout": None, "negative": {}}
+    result = {"oracle_local": None, "alt_layout": None, "single_dep_bug": None, "negative": {}}
 
     with tempfile.TemporaryDirectory() as tmp:
         tp = Path(tmp)
+        batch_in = tp / "batch_in"
+        batch_out = tp / "batch_out"
+        batch_in.mkdir()
+        batch_out.mkdir()
 
-        # Positive alternative-layout acceptance check (proves zero layout overfitting)
+        # Build positive alt_layout + fairness single_dep_bug + formula-based negative workbooks
         alt_path = tp / "alt_layout.xlsx"
         build_alt_layout_workbook(task, alt_path)
-        alt_res = grade(alt_path, spec)
-        assert alt_res["reward"] == 1.0 and alt_res["pass_strict"], (task.name, "alt_layout", alt_res)
-        result["alt_layout"] = alt_res
 
-        engine = os.getenv("SOFFICE") or shutil.which("soffice") or shutil.which("libreoffice")
-        recalc_dir = tp / "recalc"
-        recalc_dir.mkdir()
-        subprocess.run(
-            [
-                engine,
-                "-env:UserInstallation=" + (tp / "prof").as_uri(),
-                "--headless",
-                "--convert-to",
-                "xlsx",
-                "--outdir",
-                str(recalc_dir),
-                str(ref),
-            ],
-            capture_output=True,
-            check=True,
-            timeout=60,
-        )
-        cached_ref = recalc_dir / ref.name
+        dep_bug_path = tp / "single_dep_bug.xlsx"
+        w_bug = load_workbook(ref)
+        for idx_c, col_c in enumerate("CDEFG"):
+            prev_c = "BCDEF"[idx_c]
+            w_bug["Statements"][f"{col_c}9"] = f"=Inputs!$B$16*{prev_c}19+{col_c}18/2"
+        w_bug.save(dep_bug_path)
+        w_bug.close()
 
-        modes = ["frozen", "terminal", "missing", "fake_formula", "alias_hardcode"] + (
+        staged_paths = {"oracle": ref, "alt_layout": alt_path, "single_dep_bug": dep_bug_path}
+        formula_neg_modes = ["terminal", "fake_formula", "alias_hardcode", "zero_mul_cheat"] + (
             ["itm_filter"] if "B15" in spec["base"]["DCF"] else []
         )
-        for mode in modes:
-            p = tp / (mode + ".xlsx")
-            if mode == "frozen":
-                w = load_workbook(cached_ref, data_only=True)
-                w.save(p)
-                w.close()
-            elif mode == "terminal":
+        for mode in formula_neg_modes:
+            p = tp / f"{mode}.xlsx"
+            if mode == "terminal":
                 w = load_workbook(ref)
                 w["DCF"]["B6"] = "=B5/(1+B4)^4"
                 w.save(p)
@@ -271,6 +278,17 @@ def eval_task(task: Path):
                         w["DCF"][cell] = f"=Helper!A{idx}"
                 w.save(p)
                 w.close()
+            elif mode == "zero_mul_cheat":
+                w = load_workbook(ref)
+                for col_c in "CDEFG":
+                    for row_r in (4, 5):
+                        addr = f"{col_c}{row_r}"
+                        w["Statements"][addr] = f"={spec['base']['Statements'][addr]}+0*Inputs!$B$4"
+                for cell in ("B12", "B13", "B14", "B15"):
+                    if cell in spec["base"]["DCF"]:
+                        w["DCF"][cell] = f"={spec['base']['DCF'][cell]}+0*Inputs!$B$4"
+                w.save(p)
+                w.close()
             elif mode == "itm_filter":
                 w = load_workbook(ref)
                 otm_r = find_otm_row(w["Capital"])
@@ -280,21 +298,58 @@ def eval_task(task: Path):
                 w["Capital"][f"D{otm_r}"] = f"=B{otm_r}*(1-C{otm_r}/$B${quote_r})"
                 w.save(p)
                 w.close()
+            staged_paths[mode] = p
 
-            r = grade(p, spec)
+        # Single batch LibreOffice recalculation for all 8 formula workbooks (40 xlsx files in 1 soffice startup)
+        for tag, wb_p in staged_paths.items():
+            stage_for_batch(tag, wb_p, spec, batch_in)
+        run_soffice_recalc(batch_in, batch_out, timeout=180)
+
+        # On dcf-01-saas, also exercise standalone `grade(ref, spec)` without recalc_fn to verify CLI path
+        good = grade(ref, spec) if task.name == "dcf-01-saas" else grade(ref, spec, recalc_fn=make_recalc_loader("oracle", batch_out))
+        assert good["reward"] == 1.0 and good["pass_strict"], (task.name, good)
+        result["oracle_local"] = good
+
+        alt_res = grade(alt_path, spec, recalc_fn=make_recalc_loader("alt_layout", batch_out))
+        assert alt_res["reward"] == 1.0 and alt_res["pass_strict"], (task.name, "alt_layout", alt_res)
+        result["alt_layout"] = alt_res
+
+        dep_res = grade(dep_bug_path, spec, recalc_fn=make_recalc_loader("single_dep_bug", batch_out))
+        assert dep_res["dynamic_gate"] == 1.0, (task.name, "single_dep_bug gate penalized!", dep_res)
+        assert dep_res["groups"]["ties"] == [20, 20], (task.name, "single_dep_bug base ties", dep_res)
+        assert dep_res["groups"]["ties_shock"] == [40, 40], (task.name, "single_dep_bug shock ties", dep_res)
+        sc_ok, sc_tot = dep_res["groups"]["shock_collection"]
+        assert sc_ok == sc_tot, (task.name, "single_dep_bug collection delta double-penalized", dep_res)
+        assert 0.55 < dep_res["reward"] < 1.0, (task.name, "single_dep_bug reward out of range", dep_res)
+        result["single_dep_bug"] = dep_res
+
+        # Build `frozen` from LibreOffice-recalculated oracle__base.xlsx and grade directly via standalone soffice
+        frozen_path = tp / "frozen.xlsx"
+        w_frz = load_workbook(batch_out / "oracle__base.xlsx", data_only=True)
+        w_frz.save(frozen_path)
+        w_frz.close()
+
+        all_neg = [("frozen", frozen_path, None), ("missing", tp / "missing.xlsx", None)] + [
+            (m, staged_paths[m], make_recalc_loader(m, batch_out)) for m in formula_neg_modes
+        ]
+        for mode, p, loader in all_neg:
+            r = grade(p, spec, recalc_fn=loader)
             assert r["reward"] < 1.0 and not r["pass_strict"], (task.name, mode, r)
             if mode == "frozen":
-                assert r["reward"] < 0.25, f"frozen hardcoding score too high: {r['reward']}"
+                assert r["reward"] < 0.20, f"frozen hardcoding score too high: {r['reward']}"
                 assert all(r["groups"]["shock_" + g][0] == 0 for g in ["operations", "collection", "discount"])
-            if mode in ("fake_formula", "alias_hardcode"):
+            if mode in ("fake_formula", "alias_hardcode", "zero_mul_cheat"):
                 ok_f, tot_f = r["groups"]["formulas"]
                 assert ok_f < tot_f, (mode, ok_f, tot_f)
+            if mode == "zero_mul_cheat":
+                assert r["reward"] < 0.96, f"zero_mul_cheat score too high: {r['reward']}"
             if mode in ("terminal", "itm_filter"):
                 ok_v, tot_v = r["groups"]["valuation"]
                 assert ok_v < tot_v
             if mode == "itm_filter":
                 assert any(t[0] == "DCF!B9" for t in r["examples"]["valuation"])
             result["negative"][mode] = r
+    print(f"checked {task.name}: oracle={good['reward']} alt={alt_res['reward']} dep_bug={dep_res['reward']}", flush=True)
     return task.name, result
 
 
@@ -313,5 +368,6 @@ if __name__ == "__main__":
             k,
             f"oracle={v['oracle_local']['reward']}",
             f"alt_layout={v['alt_layout']['reward']}",
+            f"dep_bug={v['single_dep_bug']['reward']}(gate={v['single_dep_bug']['dynamic_gate']})",
             {m: r["reward"] for m, r in v["negative"].items()},
         )

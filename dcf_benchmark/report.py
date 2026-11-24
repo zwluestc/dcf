@@ -31,34 +31,36 @@ def collect(job_dir: Path):
 
 def render_table(trials):
     lines = [
-        "| 任务 | Reward | 控制 | 公式 | 历史 | 预测三表 | FCFF | 估值 | 勾稽 | 价格扰动 | 回款扰动 | 折现扰动 |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "| 任务 | Reward | Gate | 历史 | 预测三表 | FCFF | 估值 | 基准勾稽 | 扰动勾稽 | 价格Δ | 回款Δ | 折现Δ | 有效公式 |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     rewards = []
     for name, t in sorted(trials.items()):
         d = t["detail"] or {}
         if t["error"] and not d:
-            lines.append(f"| `{name}` | ERR ({t['error']}) | - | - | - | - | - | - | - | - | - | - |")
+            lines.append(f"| `{name}` | ERR ({t['error']}) | - | - | - | - | - | - | - | - | - | - | - |")
             continue
         rewards.append(t["reward"])
         gs = d.get("groups", {})
+        gate = d.get("dynamic_gate")
+        gate_s = f"{gate:.2f}" if isinstance(gate, (int, float)) else "-"
         fmt = lambda g: f"{gs[g][0]}/{gs[g][1]}" if g in gs else "-"
         cols = [
             fmt(g)
             for g in [
-                "controls",
-                "formulas",
                 "history",
                 "forecast",
                 "fcff",
                 "valuation",
                 "ties",
+                "ties_shock",
                 "shock_operations",
                 "shock_collection",
                 "shock_discount",
+                "formulas",
             ]
         ]
-        lines.append(f"| `{name}` | **{t['reward']:.4f}** | " + " | ".join(cols) + " |")
+        lines.append(f"| `{name}` | **{t['reward']:.4f}** | {gate_s} | " + " | ".join(cols) + " |")
     if rewards:
         lines.append("")
         lines.append(
