@@ -1,6 +1,6 @@
 # DCFEval v1 · 财报清洗与存量模型修复
 
-[六个推理模型的 120 次实测结果与修正后的耗时](results/domestic-thinking/report.md)
+[四个推理模型的 80 次实测结果与修正后的耗时](results/domestic-thinking/report.md)
 
 20 道离线 Harbor 任务覆盖 10 种经营模型。每道题的公开资料都包含两家子公司的合成年报、收入更正和债务到期附注，以及经营、预算、同业、资金和估值文件。Agent 要从资料中清洗 FY2025 历史财务数据，预测 FY2026–2030 三张报表，再计算 FCFF 和每股估值。
 
@@ -25,6 +25,6 @@ Agent 在容器内读取 `/work/data/`，交付 `/work/output.xlsx`。评分依�
 
 本分支的验收结果记录的是参考解、可接受的替代实现和错误对照。此前的模型分数对应旧题集。[v1 题目清单](results/manifest.json) · [逐题验收](results/acceptance.json) · [旧版模型报告](https://github.com/zwluestc/dcf/blob/54179c302783d73b8894f04f8dfbdd79b879d951/README.md)
 
-本轮国产模型测评使用本页的 20 题。四个模型均开启推理，每题最多提交两个脚本，GLM 的有效上限按服务端返回值记录。运行 `python3 dcf_benchmark/envmux_eval.py` 可复现请求与断网容器评测，运行 `python3 dcf_benchmark/envmux_report.py --archive` 可生成分数及逐题轨迹包。需要 Python、openpyxl、Docker 与本地镜像 `dcfeval-calc:v1`（可用任一题的 environment/Dockerfile 构建）。用 `ENVMUX_BASE_URL` 指定网关，`ENVMUX_API_KEY` 或隐藏输入提供密钥。
+公开报告中的四个模型均使用本页的 20 题，开启推理，每题最多提交两个脚本。运行 `python3 dcf_benchmark/envmux_eval.py --model dashscope.deepseek-v4.1-flash-1017 --model qwen4-max` 可复现这两个模型的请求与断网容器评测。需要 Python、openpyxl、Docker 与本地镜像 `dcfeval-calc:v1`（可用任一题的 environment/Dockerfile 构建）。用 `ENVMUX_BASE_URL` 指定网关，`ENVMUX_API_KEY` 或隐藏输入提供密钥。
 
 原远端 v1 题集与评分器保存在固定提交。该版本的修复题为 02、05、08、11、14、17，可以用来对照本次默认题集。[原远端 v1 完整快照](https://github.com/zwluestc/dcf/tree/d555c35ae8ca227842a91082fddba7e33e256510) · [比较两套题集的改动](https://github.com/zwluestc/dcf/compare/d555c35ae8ca227842a91082fddba7e33e256510..14523e74d97c27f60308b0517bef1f5ed8a25e7a)
