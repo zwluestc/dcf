@@ -238,5 +238,6 @@
     }
   ],
   "terminal": "exit EBITDA",
-  "timing": "year-end"
+  "timing": "year-end",
+  "task_mode": "brownfield"
 }

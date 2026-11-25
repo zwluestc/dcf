@@ -238,5 +238,6 @@
     }
   ],
   "terminal": "perpetuity",
-  "timing": "year-end"
+  "timing": "year-end",
+  "task_mode": "greenfield"
 }

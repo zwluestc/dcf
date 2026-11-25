@@ -1,8 +1,11 @@
 {
   "reward": 1.0,
   "pass_strict": true,
+  "task_mode": "brownfield",
   "raw_score": 1.0,
   "dynamic_gate": 1.0,
+  "structure_gate": 1.0,
+  "missing_required_sheets": [],
   "formula_ratio": 1.0,
   "responsiveness_ratio": 1.0,
   "shock_ratio": 1.0,
@@ -15,8 +18,8 @@
   "excel_errors": [],
   "groups": {
     "controls": [
-      10,
-      10
+      25,
+      25
     ],
     "history": [
       19,

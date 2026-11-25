@@ -1,0 +1,81 @@
+====================================================================================
+ANNUAL FINANCIAL REPORT & STATUTORY FOOTNOTES — LANGSTONE PUMPS (朗石泵业)
+FISCAL YEAR ENDED 31 DECEMBER 2025 (SYNTHETIC FILING FOR VALUATION AUDIT)
+====================================================================================
+
+NOTE 1 — BASIS OF CONSOLIDATION, REPORTING SCALES AND CLEANING RULES
+The Group operates two wholly owned reporting divisions: North Division and South
+Division. There are no intercompany eliminations. All figures below are unsigned
+magnitudes accompanied by their normal accounting side (Dr / Cr).
+  * North Division statutory ledger extracts are stated in EUR THOUSANDS (EUR '000).
+  * South Division statutory ledger extracts are stated in whole EUR UNITS (EUR 1).
+  * Only rows stamped [FY2025 | POSTED] represent audited FY2025 balances/flows.
+  * Rows marked [VOID], [REVERSED], or [FY2024 COMPARATIVE] are disclosed solely
+    for audit trail completeness and MUST be excluded from FY2025 consolidation.
+  * Income-statement accounts (4100, 5105, 6202, 6710, 7102, 7900) are full-year
+    FY2025 flows; balance-sheet accounts are 31 Dec 2025 closing balances.
+  * Closing book equity (3105) ALREADY incorporates FY2025 net income; do NOT
+    double-count FY2025 earnings into closing equity.
+
+------------------------------------------------------------------------------------
+SCHEDULE 2.1 — NORTH DIVISION GENERAL LEDGER EXTRACT (EUR THOUSANDS)
+------------------------------------------------------------------------------------
+  [FY2024 COMPARATIVE] | Acct 4100 | Product and service billings           | Cr | 95,000 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 1210 | Trade receivables                    | Dr | 11,911 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 7900 | Current income tax                   | Dr | 5,102 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 2112 | Bank facility due within 12 months   | Cr | 4,894.4 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 2710 | Bank facility due after 12 months    | Cr | 9,089.6 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 6710 | Depreciation expense                 | Dr | 2,933 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 6202 | Administration and selling           | Dr | 6,283 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 1015 | Cash balances                        | Dr | 11,975 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 7102 | Interest charged                     | Dr | 1,014 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 3105 | Closing book equity                  | Cr | 55,888 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 2315 | Supplier balances                    | Cr | 3,520 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 1320 | Stock on hand                        | Dr | 5,557 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 4100 | Product and service billings         | Cr | 55,540 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 1520 | Net operating plant                  | Dr | 40,813 EUR THOUSANDS
+  [FY2025 | POSTED]    | Acct 5105 | Direct fulfilment                    | Dr | 41,160 EUR THOUSANDS
+  [FY2025 | VOID]      | Acct 4100 | Product and service billings (void)    | Cr | 3,000 EUR THOUSANDS
+
+------------------------------------------------------------------------------------
+SCHEDULE 2.2 — SOUTH DIVISION GENERAL LEDGER EXTRACT (EUR UNITS)
+------------------------------------------------------------------------------------
+  [FY2024 COMPARATIVE] | Acct 4100 | Product and service billings           | Cr | 93,000,000 EUR UNITS
+  [FY2025 | POSTED]    | Acct 3105 | Closing book equity                  | Cr | 58,812,000 EUR UNITS
+  [FY2025 | POSTED]    | Acct 6710 | Depreciation expense                 | Dr | 5,667,000 EUR UNITS
+  [FY2025 | POSTED]    | Acct 1320 | Stock on hand                        | Dr | 3,143,000 EUR UNITS
+  [FY2025 | POSTED]    | Acct 7900 | Current income tax                   | Dr | 5,098,000 EUR UNITS
+  [FY2025 | POSTED]    | Acct 2112 | Bank facility due within 12 months   | Cr | 4,135,600 EUR UNITS
+  [FY2025 | POSTED]    | Acct 2710 | Bank facility due after 12 months    | Cr | 7,680,400 EUR UNITS
+  [FY2025 | POSTED]    | Acct 4100 | Product and service billings         | Cr | 86,760,000 EUR UNITS
+  [FY2025 | POSTED]    | Acct 6202 | Administration and selling           | Dr | 9,617,000 EUR UNITS
+  [FY2025 | POSTED]    | Acct 2315 | Supplier balances                    | Cr | 6,780,000 EUR UNITS
+  [FY2025 | POSTED]    | Acct 1015 | Cash balances                        | Dr | 12,125,000 EUR UNITS
+  [FY2025 | POSTED]    | Acct 1520 | Net operating plant                  | Dr | 55,087,000 EUR UNITS
+  [FY2025 | POSTED]    | Acct 5105 | Direct fulfilment                    | Dr | 24,240,000 EUR UNITS
+  [FY2025 | POSTED]    | Acct 7102 | Interest charged                     | Dr | 1,286,000 EUR UNITS
+  [FY2025 | POSTED]    | Acct 1210 | Trade receivables                    | Dr | 10,189,000 EUR UNITS
+  [FY2025 | VOID]      | Acct 4100 | Product and service billings (void)    | Cr | 3,000,000 EUR UNITS
+
+------------------------------------------------------------------------------------
+NOTE 8 — BORROWINGS, CREDIT FACILITIES AND OFF-BALANCE-SHEET COMMITMENTS
+------------------------------------------------------------------------------------
+Both Bank Facility account 2112 (current portion due within 12 months) and account
+2710 (non-current portion due after 12 months) are interest-bearing term debt and
+must be summed into FY2025 closing Term Debt. Account 2112 is NOT supplier credit.
+[OFF-BALANCE-SHEET MEMO] The Group also maintains an undrawn committed revolving
+credit facility of EUR 15.0 million maturing in 2029 (EUR 0.0 drawn at close;
+do NOT include undrawn commitments in balance-sheet debt or EV bridge).
+
+------------------------------------------------------------------------------------
+NOTE 11 — SHARE CAPITAL AND EMPLOYEE OPTION TRANCHES (TREASURY STOCK METHOD)
+------------------------------------------------------------------------------------
+As of 31 December 2025, issued and outstanding basic ordinary shares totaled
+17,588,000 shares. For treasury stock method (TSM) dilution testing only, the
+Board-approved reference market quote is EUR 40 per ordinary share.
+Each option converts into one ordinary share. Include ONLY in-the-money (ITM)
+incremental shares under TSM (ignore out-of-the-money tranches; do not add
+hypothetical option exercise proceeds again in the EV-to-Equity bridge):
+    - Tranche 1: 550,000 vested/unvested options exercisable at EUR 46 per ordinary share
+    - Tranche 2: 400,000 vested/unvested options exercisable at EUR 22 per ordinary share
+

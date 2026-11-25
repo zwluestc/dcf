@@ -2,7 +2,7 @@ schema_version = "1.4"
 artifacts = ["/work/output.xlsx"]
 [task]
 name = "dcfeval/dcf-14-storage"
-description = "From-blank integrated 3-statement forecast and FCFF valuation: storage (wave 2)"
+description = "Brownfield 15-sheet legacy Excel takeover & audit (raw filings): storage (wave 2)"
 [agent]
 timeout_sec = 900
 [environment]

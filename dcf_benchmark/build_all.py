@@ -18,6 +18,7 @@ def sha256_file(path: Path) -> str:
 def write_manifest(dataset_dir: Path, manifest_path: Path, seed: int, waves: int, audit_counts: dict):
     tasks = []
     quadrants = {}
+    modes = {}
     for task in sorted(dataset_dir.glob("dcf-*")):
         canon = json.loads((task / "solution/canonical.json").read_text())
         ans = json.loads((task / "tests/answers.json").read_text())
@@ -26,9 +27,24 @@ def write_manifest(dataset_dir: Path, manifest_path: Path, seed: int, waves: int
         ebitda25 = st["B10"] + st["B9"]
         quad = f"{canon['terminal']} / {canon['timing']}"
         quadrants[quad] = quadrants.get(quad, 0) + 1
+        tmode = ans.get("task_mode", "greenfield")
+        modes[tmode] = modes.get(tmode, 0) + 1
+        hashes = {
+            "instruction": sha256_file(task / "instruction.md"),
+            "answers": sha256_file(task / "tests/answers.json"),
+            "grade": sha256_file(task / "tests/grade.py"),
+            "annual_report_fy2025": sha256_file(task / "environment/data/annual_report_fy2025.txt"),
+            "management_guidance": sha256_file(task / "environment/data/management_guidance_fy26_30.md"),
+            "broker_comps_memo": sha256_file(task / "environment/data/broker_comps_and_treasury_memo.md"),
+        }
+        legacy = task / "environment/data/legacy_model.xlsx"
+        if legacy.is_file():
+            hashes["legacy_model"] = sha256_file(legacy)
         tasks.append(
             {
                 "task": task.name,
+                "task_mode": tmode,
+                "required_sheets_count": len(ans.get("required_sheets") or []),
                 "wave": canon.get("wave", 0) + 1,
                 "company": canon.get("company", ""),
                 "slug": canon["slug"],
@@ -47,19 +63,15 @@ def write_manifest(dataset_dir: Path, manifest_path: Path, seed: int, waves: int
                 "pv_tv_share": round(dcf["B6"] / dcf["B7"], 4),
                 "ev_to_fy25_ebitda": round(dcf["B7"] / ebitda25, 2),
                 "audit_checked_values": audit_counts.get(task.name, 0),
-                "sha256": {
-                    "instruction": sha256_file(task / "instruction.md"),
-                    "answers": sha256_file(task / "tests/answers.json"),
-                    "grade": sha256_file(task / "tests/grade.py"),
-                    "operations_memo": sha256_file(task / "environment/data/operations_memo.md"),
-                },
+                "sha256": hashes,
             }
         )
     manifest = {
-        "schema_version": "3.0",
+        "schema_version": "4.0",
         "seed": seed,
         "waves": waves,
         "num_tasks": len(tasks),
+        "mode_counts": modes,
         "quadrant_counts": quadrants,
         "total_audit_checked_values": sum(audit_counts.values()),
         "tasks": tasks,
@@ -82,20 +94,21 @@ def main():
         print(f"[1/4] Generating structured canonical cases (seed={args.seed}, waves={args.waves})...")
         build_structured(staged, args.seed, waves=args.waves)
 
-        print(f"[2/4] Compiling 7-exhibit raw Harbor tasks -> {args.out}...")
+        print(f"[2/4] Compiling v4.0 raw-filing & 30% brownfield Harbor tasks -> {args.out}...")
         build_raw(staged, args.out)
 
-    print("[3/4] Generating dynamic-formula Excel reference workbooks strictly from public exhibits (openpyxl)...")
+    print("[3/4] Generating dynamic-formula Excel Oracle & 15-sheet legacy models strictly from raw filings...")
     build_reference(args.out)
 
-    print("[4/4] Auditing independent round-trip reconstruction strictly from public exhibits...")
+    print("[4/4] Auditing independent round-trip reconstruction strictly from raw filings...")
     totals = {}
     for task in sorted(args.out.glob("dcf-*")):
         totals[task.name] = audit(task)
     manifest = write_manifest(args.out, args.manifest, args.seed, args.waves, totals)
     print(
         f"Audit passed across {manifest['num_tasks']} tasks "
-        f"({manifest['total_audit_checked_values']:,} checked values, quadrants={manifest['quadrant_counts']})."
+        f"({manifest['total_audit_checked_values']:,} checked values, "
+        f"modes={manifest['mode_counts']}, quadrants={manifest['quadrant_counts']})."
     )
     print(f"Wrote manifest -> {args.manifest}")
 

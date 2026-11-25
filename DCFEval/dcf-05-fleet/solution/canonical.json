@@ -238,5 +238,6 @@
     }
   ],
   "terminal": "perpetuity",
-  "timing": "midyear"
+  "timing": "midyear",
+  "task_mode": "brownfield"
 }

@@ -3,8 +3,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -66,8 +69,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -129,8 +135,11 @@
     "single_dep_bug": {
       "reward": 0.588312937,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.588312937,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.556818,
@@ -275,7 +284,7 @@
         "valuation": [
           [
             "DCF!B5",
-            729.572470341876,
+            729.572470341875,
             715.6546242089925
           ],
           [
@@ -364,8 +373,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -643,8 +655,11 @@
       "terminal": {
         "reward": 0.823795455,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.823795455,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.943182,
@@ -785,8 +800,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -871,8 +889,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -957,8 +978,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -1063,8 +1087,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -1125,18 +1152,18 @@
           "valuation": [
             [
               "DCF!B9",
-              51.1980165367951,
+              50.6328325604339,
               50.41876269308624
             ],
             [
               "DCF!B13",
-              12.1315,
+              12.2669166666667,
               12.319
             ],
             [
               "DCF!B15",
-              -0.1375,
-              0.05
+              0.0479166666666667,
+              0.1
             ]
           ]
         }
@@ -1147,8 +1174,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "brownfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -1161,8 +1191,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -1210,8 +1240,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "brownfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -1224,8 +1257,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -1273,8 +1306,11 @@
     "single_dep_bug": {
       "reward": 0.637570513,
       "pass_strict": false,
+      "task_mode": "brownfield",
       "raw_score": 0.637570513,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.560694,
@@ -1287,8 +1323,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -1498,8 +1534,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -1512,8 +1551,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -1777,8 +1816,11 @@
       "terminal": {
         "reward": 0.82525,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.82525,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.959538,
@@ -1791,8 +1833,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -1902,8 +1944,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -1916,8 +1961,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -1988,8 +2033,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -2002,8 +2050,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -2074,8 +2122,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -2088,8 +2139,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -2180,8 +2231,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -2194,8 +2248,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -2242,18 +2296,543 @@
           "valuation": [
             [
               "DCF!B9",
-              64.1215459843612,
+              63.9112960886095,
               63.426034241093134
             ],
             [
               "DCF!B13",
-              13.679,
+              13.724,
               13.829
             ],
             [
               "DCF!B15",
-              -0.06,
-              0.09
+              0.135,
+              0.24
+            ]
+          ]
+        }
+      },
+      "unmodified_legacy": {
+        "reward": 0.241638462,
+        "pass_strict": false,
+        "task_mode": "brownfield",
+        "raw_score": 0.241638462,
+        "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
+        "formula_ratio": 1.0,
+        "responsiveness_ratio": 1.0,
+        "shock_ratio": 0.0,
+        "pillars": {
+          "statements_and_fcff_40": 12.6538,
+          "valuation_bridge_25": 0.0,
+          "accounting_integrity_15": 11.51,
+          "sensitivity_delta_20": 0.0
+        },
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            22,
+            25
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            35,
+            130
+          ],
+          "fcff": [
+            0,
+            20
+          ],
+          "valuation": [
+            0,
+            10
+          ],
+          "formulas": [
+            155,
+            155
+          ],
+          "ties": [
+            15,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "ties_shock": [
+            30,
+            40
+          ],
+          "shock_collection": [
+            0,
+            43
+          ],
+          "shock_discount": [
+            0,
+            10
+          ]
+        },
+        "examples": {
+          "controls": [
+            [
+              "Inputs!B4",
+              1.04,
+              1.0
+            ],
+            [
+              "Inputs!B5",
+              4,
+              0.0
+            ],
+            [
+              "Inputs!B6",
+              0.0217,
+              0.0257
+            ]
+          ],
+          "forecast": [
+            [
+              "Statements!C6",
+              224.92251998116,
+              216.2716538280385
+            ],
+            [
+              "Statements!C7",
+              119.446003926075,
+              114.85192685199516
+            ],
+            [
+              "Statements!C18",
+              15.3851502117513,
+              14.79341366514549
+            ],
+            [
+              "Statements!C9",
+              19.7807117938062,
+              19.742130570967483
+            ],
+            [
+              "Statements!C10",
+              59.5426542612789,
+              55.52444640507586
+            ],
+            [
+              "Statements!C12",
+              11.5480955188255,
+              10.74324848522808
+            ],
+            [
+              "Statements!C13",
+              46.1059010804034,
+              42.892540257797776
+            ],
+            [
+              "Statements!C14",
+              41.696905804258,
+              37.723078342016635
+            ]
+          ],
+          "fcff": [
+            [
+              "Statements!C31",
+              3.63554852500569,
+              -0.45899596495671346
+            ],
+            [
+              "Statements!C30",
+              11.9263936485342,
+              11.121546614936694
+            ],
+            [
+              "Statements!C32",
+              55.6473707198053,
+              49.81061266091787
+            ],
+            [
+              "Statements!C33",
+              53.4099835131667,
+              47.775262801217615
+            ],
+            [
+              "Statements!D31",
+              19.6730044187599,
+              18.153567858893695
+            ],
+            [
+              "Statements!D30",
+              20.6450802010858,
+              19.514910918748324
+            ],
+            [
+              "Statements!D32",
+              103.567549798139,
+              61.800308972804814
+            ],
+            [
+              "Statements!D33",
+              91.5708163603845,
+              54.52984333197724
+            ]
+          ],
+          "valuation": [
+            [
+              "DCF!B4",
+              0.08553644963076,
+              0.087020157464
+            ],
+            [
+              "DCF!B5",
+              983.985657550372,
+              937.8964342245887
+            ],
+            [
+              "DCF!B6",
+              708.616280372527,
+              617.9692946399911
+            ],
+            [
+              "DCF!B7",
+              1027.74848473438,
+              882.018627520077
+            ],
+            [
+              "DCF!B8",
+              944.44848473438,
+              877.118627520077
+            ],
+            [
+              "DCF!B9",
+              68.817289764965,
+              63.426034241093134
+            ],
+            [
+              "DCF!B12",
+              1.3680337725468,
+              1.3369
+            ],
+            [
+              "DCF!B13",
+              13.724,
+              13.829
+            ]
+          ],
+          "ties": [
+            [
+              "C:fcff",
+              7.271097050011393,
+              0
+            ],
+            [
+              "D:fcff",
+              39.34600883752009,
+              0
+            ],
+            [
+              "E:fcff",
+              -15.134076720549842,
+              0
+            ],
+            [
+              "F:fcff",
+              6.951338424038662,
+              0
+            ],
+            [
+              "G:fcff",
+              15.357019761898911,
+              0
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6(Δ)",
+              -26.469487712014,
+              -17.81862155889209
+            ],
+            [
+              "Statements!C7(Δ)",
+              -14.056727327415999,
+              -9.46265025333588
+            ],
+            [
+              "Statements!C18(Δ)",
+              -1.8105658984771011,
+              -1.218829351871337
+            ],
+            [
+              "Statements!C9(Δ)",
+              -0.11804889658070294,
+              -0.07946767374200903
+            ],
+            [
+              "Statements!C10(Δ)",
+              -12.2947114880172,
+              -8.276503631814201
+            ],
+            [
+              "Statements!C12(Δ)",
+              -2.4626307110497994,
+              -1.6577836774523842
+            ],
+            [
+              "Statements!C13(Δ)",
+              -9.832080776967402,
+              -6.618719954361815
+            ],
+            [
+              "Statements!C14(Δ)",
+              -4.9070041359453995,
+              -3.1080044245987466
+            ]
+          ],
+          "ties_shock": [
+            [
+              "operations:C:fcff",
+              -3.2816390730183613,
+              0
+            ],
+            [
+              "operations:D:fcff",
+              34.71566458595831,
+              0
+            ],
+            [
+              "operations:E:fcff",
+              -13.353057826484385,
+              0
+            ],
+            [
+              "operations:F:fcff",
+              6.133286203155862,
+              0
+            ],
+            [
+              "operations:G:fcff",
+              13.549764330496519,
+              0
+            ],
+            [
+              "collection:C:fcff",
+              14.665810035693369,
+              0
+            ],
+            [
+              "collection:D:fcff",
+              41.72589037405189,
+              0
+            ],
+            [
+              "collection:E:fcff",
+              -15.893490882670445,
+              0
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14(Δ)",
+              3.6973564928409957,
+              5.925250789809276
+            ],
+            [
+              "Statements!C17(Δ)",
+              3.6973564928410028,
+              5.925250789809276
+            ],
+            [
+              "Statements!C31(Δ)",
+              3.69735649284098,
+              5.925250789809276
+            ],
+            [
+              "Statements!C26(Δ)",
+              -3.6973564928409033,
+              -5.925250789809276
+            ],
+            [
+              "Statements!C29(Δ)",
+              -3.6973564928409033,
+              -5.925250789809283
+            ],
+            [
+              "Statements!C22(Δ)",
+              -3.697356492840896,
+              -5.925250789809283
+            ],
+            [
+              "Statements!C32(Δ)",
+              3.6973564928409957,
+              -5.925250789809276
+            ],
+            [
+              "Statements!C33(Δ)",
+              3.5486986495599027,
+              -5.683134547517206
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33(Δ)",
+              -0.17389780706619717,
+              -0.09383613283007008
+            ],
+            [
+              "Statements!D33(Δ)",
+              -0.8915284638665923,
+              -0.3206780525997175
+            ],
+            [
+              "Statements!E33(Δ)",
+              -0.7820732125182062,
+              -0.5611739234986715
+            ],
+            [
+              "Statements!F33(Δ)",
+              -1.2621678379500025,
+              -0.6576911269621633
+            ],
+            [
+              "Statements!G33(Δ)",
+              -2.021082617582195,
+              -0.9866943714054699
+            ],
+            [
+              "DCF!B4(Δ)",
+              0.007103479600000004,
+              0.004282679600000006
+            ],
+            [
+              "DCF!B6(Δ)",
+              -18.248524288846966,
+              -12.030911800996137
+            ],
+            [
+              "DCF!B7(Δ)",
+              -23.379274227830138,
+              -14.650985408292286
+            ]
+          ]
+        }
+      },
+      "stripped_sheets": {
+        "reward": 0.165333334,
+        "pass_strict": false,
+        "task_mode": "brownfield",
+        "raw_score": 0.992,
+        "dynamic_gate": 1.0,
+        "structure_gate": 0.166666667,
+        "missing_required_sheets": [
+          "Cover",
+          "Drivers",
+          "Revenue_Build",
+          "Cost_OpEx",
+          "Working_Capital",
+          "PPE_Capex",
+          "Debt_Schedule",
+          "Peer_Comps",
+          "TSM_Dilution",
+          "Checks_Audit"
+        ],
+        "formula_ratio": 1.0,
+        "responsiveness_ratio": 1.0,
+        "shock_ratio": 1.0,
+        "pillars": {
+          "statements_and_fcff_40": 40.0,
+          "valuation_bridge_25": 25.0,
+          "accounting_integrity_15": 14.2,
+          "sensitivity_delta_20": 20.0
+        },
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            15,
+            25
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "formulas": [
+            155,
+            155
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "ties_shock": [
+            40,
+            40
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "controls": [
+            [
+              "LegacySheet!Cover",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Drivers",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Revenue_Build",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Cost_OpEx",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Working_Capital",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!PPE_Capex",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Debt_Schedule",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Peer_Comps",
+              false,
+              true
             ]
           ]
         }
@@ -2264,8 +2843,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -2327,8 +2909,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -2390,8 +2975,11 @@
     "single_dep_bug": {
       "reward": 0.588312937,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.588312937,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.556818,
@@ -2541,7 +3129,7 @@
           ],
           [
             "DCF!B6",
-            287.936410307233,
+            287.936410307234,
             282.0022010797671
           ],
           [
@@ -2625,8 +3213,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -2904,8 +3495,11 @@
       "terminal": {
         "reward": 0.823795455,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.823795455,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.943182,
@@ -3010,7 +3604,7 @@
             ],
             [
               "DCF!B8(Δ)",
-              -4.555287716535986,
+              -4.55528771653502,
               -4.374019093286677
             ],
             [
@@ -3046,8 +3640,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -3132,8 +3729,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -3218,8 +3818,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -3324,8 +3927,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -3386,18 +3992,18 @@
           "valuation": [
             [
               "DCF!B9",
-              22.5632670599762,
+              22.7525297262714,
               22.457414946899803
             ],
             [
               "DCF!B13",
-              16.574875,
+              16.437,
               16.653
             ],
             [
               "DCF!B15",
-              0.001875,
-              0.08
+              -0.0260000000000001,
+              0.19
             ]
           ]
         }
@@ -3408,8 +4014,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -3471,8 +4080,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -3534,8 +4146,11 @@
     "single_dep_bug": {
       "reward": 0.637570513,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.637570513,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.560694,
@@ -3759,8 +4374,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -4038,8 +4656,11 @@
       "terminal": {
         "reward": 0.82525,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.82525,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.959538,
@@ -4163,8 +4784,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -4249,8 +4873,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -4335,8 +4962,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -4441,8 +5071,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -4503,18 +5136,18 @@
           "valuation": [
             [
               "DCF!B9",
-              69.6464616778326,
+              69.3698045266893,
               68.591330679459
             ],
             [
               "DCF!B13",
-              8.776,
+              8.811,
               8.911
             ],
             [
               "DCF!B15",
-              0.015,
-              0.15
+              -0.02,
+              0.08
             ]
           ]
         }
@@ -4525,8 +5158,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "brownfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -4539,8 +5175,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -4588,8 +5224,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "brownfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -4602,8 +5241,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -4651,8 +5290,11 @@
     "single_dep_bug": {
       "reward": 0.588312937,
       "pass_strict": false,
+      "task_mode": "brownfield",
       "raw_score": 0.588312937,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.556818,
@@ -4665,8 +5307,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -4886,8 +5528,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -4900,8 +5545,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -5165,8 +5810,11 @@
       "terminal": {
         "reward": 0.823795455,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.823795455,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.943182,
@@ -5179,8 +5827,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -5298,7 +5946,7 @@
             ],
             [
               "DCF!B9(Δ)",
-              -6.382864934774602,
+              -6.382864934774702,
               -6.168571996964147
             ]
           ]
@@ -5307,8 +5955,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -5321,8 +5972,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -5393,8 +6044,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -5407,8 +6061,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -5479,8 +6133,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -5493,8 +6150,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -5585,8 +6242,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -5599,8 +6259,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -5647,18 +6307,543 @@
           "valuation": [
             [
               "DCF!B9",
-              75.5374805875637,
+              75.9308375389313,
               75.06492831613693
             ],
             [
               "DCF!B13",
-              12.708,
+              12.6421666666667,
               12.788
             ],
             [
               "DCF!B15",
-              0.79,
-              0.87
+              0.114166666666667,
+              0.26
+            ]
+          ]
+        }
+      },
+      "unmodified_legacy": {
+        "reward": 0.241638462,
+        "pass_strict": false,
+        "task_mode": "brownfield",
+        "raw_score": 0.241638462,
+        "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
+        "formula_ratio": 1.0,
+        "responsiveness_ratio": 1.0,
+        "shock_ratio": 0.0,
+        "pillars": {
+          "statements_and_fcff_40": 12.6538,
+          "valuation_bridge_25": 0.0,
+          "accounting_integrity_15": 11.51,
+          "sensitivity_delta_20": 0.0
+        },
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            22,
+            25
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            35,
+            130
+          ],
+          "fcff": [
+            0,
+            20
+          ],
+          "valuation": [
+            0,
+            10
+          ],
+          "formulas": [
+            155,
+            155
+          ],
+          "ties": [
+            15,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "ties_shock": [
+            30,
+            40
+          ],
+          "shock_collection": [
+            0,
+            45
+          ],
+          "shock_discount": [
+            0,
+            11
+          ]
+        },
+        "examples": {
+          "controls": [
+            [
+              "Inputs!B4",
+              1.04,
+              1.0
+            ],
+            [
+              "Inputs!B5",
+              4,
+              0.0
+            ],
+            [
+              "Inputs!B6",
+              0.0308,
+              0.0348
+            ]
+          ],
+          "forecast": [
+            [
+              "Statements!C6",
+              214.462235682059,
+              206.21368815582628
+            ],
+            [
+              "Statements!C7",
+              92.7793656273584,
+              89.21092848784463
+            ],
+            [
+              "Statements!C18",
+              11.9206689081516,
+              11.462181642453448
+            ],
+            [
+              "Statements!C9",
+              12.5354781277646,
+              12.509344353619847
+            ],
+            [
+              "Statements!C10",
+              79.2913909269363,
+              74.6374143143618
+            ],
+            [
+              "Statements!C12",
+              20.8695850249535,
+              19.606495772300743
+            ],
+            [
+              "Statements!C13",
+              56.0264541237328,
+              52.635566763811056
+            ],
+            [
+              "Statements!C14",
+              31.8878962666395,
+              28.401562683338145
+            ]
+          ],
+          "fcff": [
+            [
+              "Statements!C31",
+              6.92139956981189,
+              3.3914697056193397
+            ],
+            [
+              "Statements!C30",
+              21.5196834975705,
+              20.256594244917792
+            ],
+            [
+              "Statements!C32",
+              65.3079162187907,
+              52.03651307499108
+            ],
+            [
+              "Statements!C33",
+              62.7344985166643,
+              49.92558057658687
+            ],
+            [
+              "Statements!D31",
+              -1.56823265471584,
+              -1.6592710595456772
+            ],
+            [
+              "Statements!D30",
+              26.5400326207353,
+              25.08606503157626
+            ],
+            [
+              "Statements!D32",
+              69.4822175223999,
+              69.21806737205696
+            ],
+            [
+              "Statements!D33",
+              61.5879121746249,
+              61.131391227726816
+            ]
+          ],
+          "valuation": [
+            [
+              "DCF!B4",
+              0.0837242524462,
+              0.08635089489700001
+            ],
+            [
+              "DCF!B5",
+              1225.83381088435,
+              1059.4387051339575
+            ],
+            [
+              "DCF!B6",
+              888.702549376816,
+              700.2049924869206
+            ],
+            [
+              "DCF!B7",
+              1179.21666987191,
+              964.5303033067592
+            ],
+            [
+              "DCF!B8",
+              1101.01666987191,
+              959.9303033067591
+            ],
+            [
+              "DCF!B9",
+              87.0908206561565,
+              75.06492831613693
+            ],
+            [
+              "DCF!B12",
+              1.24086341850076,
+              1.2253
+            ],
+            [
+              "DCF!B13",
+              12.6421666666667,
+              12.788
+            ]
+          ],
+          "ties": [
+            [
+              "C:fcff",
+              13.842799139623782,
+              0
+            ],
+            [
+              "D:fcff",
+              -3.136465309431734,
+              0
+            ],
+            [
+              "E:fcff",
+              12.841138085155606,
+              0
+            ],
+            [
+              "F:fcff",
+              -13.002423802175171,
+              0
+            ],
+            [
+              "G:fcff",
+              4.159473368397698,
+              0
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6(Δ)",
+              -20.730868283993004,
+              -12.482320757760334
+            ],
+            [
+              "Statements!C7(Δ)",
+              -8.968463851811507,
+              -5.400026712297731
+            ],
+            [
+              "Statements!C18(Δ)",
+              -1.1523045826975,
+              -0.6938173169993505
+            ],
+            [
+              "Statements!C9(Δ)",
+              -0.06568136121370038,
+              -0.039547587068963
+            ],
+            [
+              "Statements!C10(Δ)",
+              -11.696723070968105,
+              -7.042746458393651
+            ],
+            [
+              "Statements!C12(Δ)",
+              -3.1744906414607996,
+              -1.911401388808038
+            ],
+            [
+              "Statements!C13(Δ)",
+              -8.522232429507298,
+              -5.131345069585606
+            ],
+            [
+              "Statements!C14(Δ)",
+              -3.0824250957515,
+              -1.7191749907851417
+            ]
+          ],
+          "ties_shock": [
+            [
+              "operations:C:fcff",
+              7.45881006240696,
+              0
+            ],
+            [
+              "operations:D:fcff",
+              -2.8332806997946243,
+              0
+            ],
+            [
+              "operations:E:fcff",
+              11.599856880503161,
+              0
+            ],
+            [
+              "operations:F:fcff",
+              -11.745552006736228,
+              0
+            ],
+            [
+              "operations:G:fcff",
+              3.75740027493754,
+              0
+            ],
+            [
+              "collection:C:fcff",
+              16.19307021559157,
+              0
+            ],
+            [
+              "collection:D:fcff",
+              -2.979056062219997,
+              0
+            ],
+            [
+              "collection:E:fcff",
+              13.035327821921005,
+              0
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14(Δ)",
+              1.1751355379837989,
+              3.389814051876595
+            ],
+            [
+              "Statements!C17(Δ)",
+              1.1751355379839055,
+              3.3898140518765913
+            ],
+            [
+              "Statements!C31(Δ)",
+              1.1751355379838797,
+              3.3898140518765913
+            ],
+            [
+              "Statements!C26(Δ)",
+              -1.1751355379838984,
+              -3.3898140518765842
+            ],
+            [
+              "Statements!C29(Δ)",
+              -1.1751355379838984,
+              -3.3898140518765842
+            ],
+            [
+              "Statements!C22(Δ)",
+              -1.1751355379839055,
+              -3.3898140518765842
+            ],
+            [
+              "Statements!C32(Δ)",
+              1.1751355379839055,
+              -3.3898140518765842
+            ],
+            [
+              "Statements!C33(Δ)",
+              1.1288300551123953,
+              -3.2523015972018925
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33(Δ)",
+              -0.2668566502175054,
+              -0.13788951587282128
+            ],
+            [
+              "Statements!D33(Δ)",
+              -0.7825996469130985,
+              -0.5051189091311628
+            ],
+            [
+              "Statements!E33(Δ)",
+              -1.4384324484152984,
+              -0.7500257948537552
+            ],
+            [
+              "Statements!F33(Δ)",
+              -1.2969342965856967,
+              -0.972566916692287
+            ],
+            [
+              "Statements!G33(Δ)",
+              -2.0275066493205003,
+              -1.17836321709472
+            ],
+            [
+              "DCF!B4(Δ)",
+              0.009278939699999988,
+              0.006025739700000005
+            ],
+            [
+              "DCF!B5(Δ)",
+              -154.53729222537004,
+              -87.47871014464022
+            ],
+            [
+              "DCF!B6(Δ)",
+              -138.07591160017103,
+              -75.33973434353277
+            ]
+          ]
+        }
+      },
+      "stripped_sheets": {
+        "reward": 0.165333334,
+        "pass_strict": false,
+        "task_mode": "brownfield",
+        "raw_score": 0.992,
+        "dynamic_gate": 1.0,
+        "structure_gate": 0.166666667,
+        "missing_required_sheets": [
+          "Cover",
+          "Drivers",
+          "Revenue_Build",
+          "Cost_OpEx",
+          "Working_Capital",
+          "PPE_Capex",
+          "Debt_Schedule",
+          "Peer_Comps",
+          "TSM_Dilution",
+          "Checks_Audit"
+        ],
+        "formula_ratio": 1.0,
+        "responsiveness_ratio": 1.0,
+        "shock_ratio": 1.0,
+        "pillars": {
+          "statements_and_fcff_40": 40.0,
+          "valuation_bridge_25": 25.0,
+          "accounting_integrity_15": 14.2,
+          "sensitivity_delta_20": 20.0
+        },
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            15,
+            25
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "formulas": [
+            155,
+            155
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "ties_shock": [
+            40,
+            40
+          ],
+          "shock_collection": [
+            45,
+            45
+          ],
+          "shock_discount": [
+            11,
+            11
+          ]
+        },
+        "examples": {
+          "controls": [
+            [
+              "LegacySheet!Cover",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Drivers",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Revenue_Build",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Cost_OpEx",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Working_Capital",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!PPE_Capex",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Debt_Schedule",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Peer_Comps",
+              false,
+              true
             ]
           ]
         }
@@ -5669,8 +6854,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -5732,8 +6920,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -5795,8 +6986,11 @@
     "single_dep_bug": {
       "reward": 0.637570513,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.637570513,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.560694,
@@ -6001,17 +7195,17 @@
           [
             "DCF!B7(Δ)",
             -20.515127773419977,
-            -20.447723565196156
+            -20.447723565196213
           ],
           [
             "DCF!B8(Δ)",
             -20.515127773421,
-            -20.447723565196213
+            -20.447723565196327
           ],
           [
             "DCF!B9(Δ)",
             -1.6439720949931953,
-            -1.6385706839647582
+            -1.6385706839647654
           ]
         ]
       }
@@ -6020,8 +7214,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -6286,7 +7483,7 @@
             [
               "DCF!B7(Δ)",
               0.0,
-              -20.447723565196156
+              -20.447723565196213
             ]
           ]
         }
@@ -6299,8 +7496,11 @@
       "terminal": {
         "reward": 0.82525,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.82525,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.959538,
@@ -6406,17 +7606,17 @@
             [
               "DCF!B7(Δ)",
               -18.382578819279047,
-              -20.447723565196156
+              -20.447723565196213
             ],
             [
               "DCF!B8(Δ)",
               -18.382578819278933,
-              -20.447723565196213
+              -20.447723565196327
             ],
             [
               "DCF!B9(Δ)",
               -1.4730810817597018,
-              -1.6385706839647582
+              -1.6385706839647654
             ]
           ]
         }
@@ -6424,8 +7624,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -6510,8 +7713,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -6596,8 +7802,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -6702,8 +7911,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -6764,18 +7976,18 @@
           "valuation": [
             [
               "DCF!B9",
-              42.5645849243427,
+              42.307220858773,
               42.052950359181075
             ],
             [
               "DCF!B13",
-              12.329,
+              12.404,
               12.479
             ],
             [
               "DCF!B15",
-              0.24,
-              0.39
+              0.965,
+              1.04
             ]
           ]
         }
@@ -6786,8 +7998,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -6849,8 +8064,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -6912,8 +8130,11 @@
     "single_dep_bug": {
       "reward": 0.588312937,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.588312937,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.556818,
@@ -7147,8 +8368,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -7426,8 +8650,11 @@
       "terminal": {
         "reward": 0.823795455,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.823795455,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.943182,
@@ -7528,17 +8755,17 @@
             [
               "DCF!B7(Δ)",
               17.654202733907994,
-              16.19416650521066
+              16.194166505210717
             ],
             [
               "DCF!B8(Δ)",
               17.654202733907994,
-              16.19416650521066
+              16.194166505210717
             ],
             [
               "DCF!B9(Δ)",
               1.0648532923523,
-              0.9767878946384378
+              0.9767878946384414
             ]
           ],
           "shock_discount": [
@@ -7568,8 +8795,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -7654,8 +8884,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -7740,8 +8973,11 @@
       "zero_mul_cheat": {
         "reward": 0.959741935,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.959741935,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.922581,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -7846,8 +9082,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -7908,18 +9147,18 @@
           "valuation": [
             [
               "DCF!B9",
-              27.8779495454399,
+              27.6909893679475,
               27.499607145553085
             ],
             [
               "DCF!B13",
-              16.354,
+              16.4644166666667,
               16.579
             ],
             [
               "DCF!B15",
-              -0.025,
-              0.2
+              -0.0345833333333333,
+              0.08
             ]
           ]
         }
@@ -7930,8 +9169,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "brownfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -7944,8 +9186,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -7993,8 +9235,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "brownfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -8007,8 +9252,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -8056,8 +9301,11 @@
     "single_dep_bug": {
       "reward": 0.637570513,
       "pass_strict": false,
+      "task_mode": "brownfield",
       "raw_score": 0.637570513,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.560694,
@@ -8070,8 +9318,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -8262,17 +9510,17 @@
           [
             "DCF!B7(Δ)",
             -15.07545061337504,
-            -15.00826107715693
+            -15.008261077156874
           ],
           [
             "DCF!B8(Δ)",
             -15.075450613374983,
-            -15.00826107715693
+            -15.008261077156874
           ],
           [
             "DCF!B9(Δ)",
             -0.8882542195011993,
-            -0.8842953733889303
+            -0.8842953733889267
           ]
         ]
       }
@@ -8281,8 +9529,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -8295,8 +9546,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -8547,7 +9798,7 @@
             [
               "DCF!B7(Δ)",
               0.0,
-              -15.00826107715693
+              -15.008261077156874
             ]
           ]
         }
@@ -8560,8 +9811,11 @@
       "terminal": {
         "reward": 0.82525,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.82525,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.959538,
@@ -8574,8 +9828,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -8667,17 +9921,17 @@
             [
               "DCF!B7(Δ)",
               -13.50369148665601,
-              -15.00826107715693
+              -15.008261077156874
             ],
             [
               "DCF!B8(Δ)",
               -13.503691486655953,
-              -15.00826107715693
+              -15.008261077156874
             ],
             [
               "DCF!B9(Δ)",
               -0.7956452678916008,
-              -0.8842953733889303
+              -0.8842953733889267
             ]
           ]
         }
@@ -8685,8 +9939,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -8699,8 +9956,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -8771,8 +10028,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -8785,8 +10045,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -8857,8 +10117,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -8871,8 +10134,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -8963,8 +10226,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -8977,8 +10243,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -9025,18 +10291,543 @@
           "valuation": [
             [
               "DCF!B9",
-              24.6957656560387,
+              24.5634038820366,
               24.302891703226404
             ],
             [
               "DCF!B13",
-              16.702,
+              16.792,
               16.972
             ],
             [
               "DCF!B15",
-              -0.15,
-              0.12
+              0.02,
+              0.2
+            ]
+          ]
+        }
+      },
+      "unmodified_legacy": {
+        "reward": 0.241638462,
+        "pass_strict": false,
+        "task_mode": "brownfield",
+        "raw_score": 0.241638462,
+        "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
+        "formula_ratio": 1.0,
+        "responsiveness_ratio": 1.0,
+        "shock_ratio": 0.0,
+        "pillars": {
+          "statements_and_fcff_40": 12.6538,
+          "valuation_bridge_25": 0.0,
+          "accounting_integrity_15": 11.51,
+          "sensitivity_delta_20": 0.0
+        },
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            22,
+            25
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            35,
+            130
+          ],
+          "fcff": [
+            0,
+            20
+          ],
+          "valuation": [
+            0,
+            10
+          ],
+          "formulas": [
+            155,
+            155
+          ],
+          "ties": [
+            15,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "ties_shock": [
+            30,
+            40
+          ],
+          "shock_collection": [
+            0,
+            43
+          ],
+          "shock_discount": [
+            0,
+            10
+          ]
+        },
+        "examples": {
+          "controls": [
+            [
+              "Inputs!B4",
+              1.04,
+              1.0
+            ],
+            [
+              "Inputs!B5",
+              4,
+              0.0
+            ],
+            [
+              "Inputs!B6",
+              0.0302,
+              0.0342
+            ]
+          ],
+          "forecast": [
+            [
+              "Statements!C6",
+              110.905886385734,
+              106.6402753708978
+            ],
+            [
+              "Statements!C7",
+              57.6587503671927,
+              55.44110612230069
+            ],
+            [
+              "Statements!C18",
+              7.80012189539504,
+              7.5001172071106135
+            ],
+            [
+              "Statements!C9",
+              9.85788762455696,
+              9.839122331304768
+            ],
+            [
+              "Statements!C10",
+              25.841062393984,
+              23.81186091729234
+            ],
+            [
+              "Statements!C12",
+              6.08115884502396,
+              5.587251205597205
+            ],
+            [
+              "Statements!C13",
+              18.9030599102101,
+              17.367766072945134
+            ],
+            [
+              "Statements!C14",
+              17.9595283038796,
+              16.100116663259044
+            ]
+          ],
+          "fcff": [
+            [
+              "Statements!C31",
+              3.34936612071414,
+              1.2749607179076108
+            ],
+            [
+              "Statements!C30",
+              6.28971458669571,
+              5.7958069472689555
+            ],
+            [
+              "Statements!C32",
+              24.9584796571644,
+              19.08009837630993
+            ],
+            [
+              "Statements!C33",
+              22.8499985879423,
+              17.42734818229815
+            ],
+            [
+              "Statements!D31",
+              1.10929106675572,
+              0.8793273250798315
+            ],
+            [
+              "Statements!D30",
+              9.92520261440862,
+              9.287223679558537
+            ],
+            [
+              "Statements!D32",
+              32.4391765074934,
+              28.764348856079184
+            ],
+            [
+              "Statements!D33",
+              27.1897943171852,
+              23.996944345286185
+            ]
+          ],
+          "valuation": [
+            [
+              "DCF!B4",
+              0.0922748883816,
+              0.09483658539
+            ],
+            [
+              "DCF!B5",
+              516.253750501981,
+              488.6427586442124
+            ],
+            [
+              "DCF!B6",
+              362.689867438536,
+              310.63111797343294
+            ],
+            [
+              "DCF!B7",
+              485.749340451771,
+              415.16867798715856
+            ],
+            [
+              "DCF!B8",
+              448.049340451771,
+              412.46867798715857
+            ],
+            [
+              "DCF!B9",
+              26.6823094599673,
+              24.302891703226404
+            ],
+            [
+              "DCF!B12",
+              1.30651538195777,
+              1.2944
+            ],
+            [
+              "DCF!B13",
+              16.792,
+              16.972
+            ]
+          ],
+          "ties": [
+            [
+              "C:fcff",
+              6.698732241428329,
+              0
+            ],
+            [
+              "D:fcff",
+              2.2185821335114664,
+              0
+            ],
+            [
+              "E:fcff",
+              6.018878569927216,
+              0
+            ],
+            [
+              "F:fcff",
+              -5.468921337311638,
+              0
+            ],
+            [
+              "G:fcff",
+              7.758595010178346,
+              0
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6(Δ)",
+              -21.12938424116389,
+              -16.863773226327666
+            ],
+            [
+              "Statements!C7(Δ)",
+              -10.984934443754305,
+              -8.767290198862263
+            ],
+            [
+              "Statements!C18(Δ)",
+              -1.4860507230652802,
+              -1.1860460347808512
+            ],
+            [
+              "Statements!C9(Δ)",
+              -0.0929524727277311,
+              -0.07418717947554221
+            ],
+            [
+              "Statements!C10(Δ)",
+              -10.0514973246815,
+              -8.022295847989861
+            ],
+            [
+              "Statements!C12(Δ)",
+              -2.4465344488274905,
+              -1.9526268094007322
+            ],
+            [
+              "Statements!C13(Δ)",
+              -7.604962875854101,
+              -6.069669038589129
+            ],
+            [
+              "Statements!C14(Δ)",
+              -3.421583711101702,
+              -2.5460241487777964
+            ]
+          ],
+          "ties_shock": [
+            [
+              "operations:C:fcff",
+              -2.27434613368704,
+              0
+            ],
+            [
+              "operations:D:fcff",
+              1.7959059717926324,
+              0
+            ],
+            [
+              "operations:E:fcff",
+              4.872183816841,
+              0
+            ],
+            [
+              "operations:F:fcff",
+              -4.4270024267242185,
+              0
+            ],
+            [
+              "operations:G:fcff",
+              6.280455837551729,
+              0
+            ],
+            [
+              "collection:C:fcff",
+              12.775767111879517,
+              0
+            ],
+            [
+              "collection:D:fcff",
+              3.192535376874885,
+              0
+            ],
+            [
+              "collection:E:fcff",
+              6.618838939238767,
+              0
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14(Δ)",
+              3.0385174352256,
+              4.090311932034439
+            ],
+            [
+              "Statements!C17(Δ)",
+              3.0385174352256,
+              4.090311932034439
+            ],
+            [
+              "Statements!C31(Δ)",
+              3.0385174352255904,
+              4.090311932034439
+            ],
+            [
+              "Statements!C26(Δ)",
+              -3.0385174352256,
+              -4.090311932034439
+            ],
+            [
+              "Statements!C29(Δ)",
+              -3.0385174352256,
+              -4.090311932034439
+            ],
+            [
+              "Statements!C22(Δ)",
+              -3.0385174352256,
+              -4.090311932034439
+            ],
+            [
+              "Statements!C32(Δ)",
+              3.0385174352256,
+              -4.090311932034439
+            ],
+            [
+              "Statements!C33(Δ)",
+              2.781824857044601,
+              -3.7360022368793935
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33(Δ)",
+              -0.2512171136387984,
+              -0.142344941670018
+            ],
+            [
+              "Statements!D33(Δ)",
+              -0.5945727745317981,
+              -0.39040862242727314
+            ],
+            [
+              "Statements!E33(Δ)",
+              -0.8703432717992996,
+              -0.5047079832479824
+            ],
+            [
+              "Statements!F33(Δ)",
+              -1.059356394376902,
+              -0.861865704719925
+            ],
+            [
+              "Statements!G33(Δ)",
+              -1.1749663409507,
+              -0.6284557685146641
+            ],
+            [
+              "DCF!B4(Δ)",
+              0.012142165499999996,
+              0.009016165499999992
+            ],
+            [
+              "DCF!B6(Δ)",
+              -15.688806195850987,
+              -12.480478056577056
+            ],
+            [
+              "DCF!B7(Δ)",
+              -19.639262091148964,
+              -15.008261077156874
+            ]
+          ]
+        }
+      },
+      "stripped_sheets": {
+        "reward": 0.165333334,
+        "pass_strict": false,
+        "task_mode": "brownfield",
+        "raw_score": 0.992,
+        "dynamic_gate": 1.0,
+        "structure_gate": 0.166666667,
+        "missing_required_sheets": [
+          "Cover",
+          "Drivers",
+          "Revenue_Build",
+          "Cost_OpEx",
+          "Working_Capital",
+          "PPE_Capex",
+          "Debt_Schedule",
+          "Peer_Comps",
+          "TSM_Dilution",
+          "Checks_Audit"
+        ],
+        "formula_ratio": 1.0,
+        "responsiveness_ratio": 1.0,
+        "shock_ratio": 1.0,
+        "pillars": {
+          "statements_and_fcff_40": 40.0,
+          "valuation_bridge_25": 25.0,
+          "accounting_integrity_15": 14.2,
+          "sensitivity_delta_20": 20.0
+        },
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            15,
+            25
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "formulas": [
+            155,
+            155
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "ties_shock": [
+            40,
+            40
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "controls": [
+            [
+              "LegacySheet!Cover",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Drivers",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Revenue_Build",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Cost_OpEx",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Working_Capital",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!PPE_Capex",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Debt_Schedule",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Peer_Comps",
+              false,
+              true
             ]
           ]
         }
@@ -9047,8 +10838,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -9110,8 +10904,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -9173,8 +10970,11 @@
     "single_dep_bug": {
       "reward": 0.588312937,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.588312937,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.556818,
@@ -9408,8 +11208,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -9687,8 +11490,11 @@
       "terminal": {
         "reward": 0.823795455,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.823795455,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.943182,
@@ -9829,8 +11635,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -9915,8 +11724,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -10001,8 +11813,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -10107,8 +11922,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -10169,18 +11987,18 @@
           "valuation": [
             [
               "DCF!B9",
-              56.7652228206028,
+              57.2878488097443,
               56.56674302053067
             ],
             [
               "DCF!B13",
-              11.4,
+              11.296,
               11.44
             ],
             [
               "DCF!B15",
-              0.13,
-              0.17
+              -0.044,
+              0.1
             ]
           ]
         }
@@ -10191,8 +12009,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -10254,8 +12075,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -10317,8 +12141,11 @@
     "single_dep_bug": {
       "reward": 0.637570513,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.637570513,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.560694,
@@ -10542,8 +12369,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -10821,8 +12651,11 @@
       "terminal": {
         "reward": 0.82525,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.82525,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.959538,
@@ -10946,8 +12779,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -11032,8 +12868,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -11118,8 +12957,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -11224,8 +13066,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -11286,18 +13131,18 @@
           "valuation": [
             [
               "DCF!B9",
-              42.7415731666287,
+              42.6456446568186,
               42.54186174306374
             ],
             [
               "DCF!B13",
-              12.781,
+              12.80975,
               12.841
             ],
             [
               "DCF!B15",
-              -0.01,
-              0.05
+              0.09875,
+              0.13
             ]
           ]
         }
@@ -11308,8 +13153,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "brownfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -11322,8 +13170,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -11371,8 +13219,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "brownfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -11385,8 +13236,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -11434,8 +13285,11 @@
     "single_dep_bug": {
       "reward": 0.637570513,
       "pass_strict": false,
+      "task_mode": "brownfield",
       "raw_score": 0.637570513,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.560694,
@@ -11448,8 +13302,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -11659,8 +13513,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -11673,8 +13530,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -11938,8 +13795,11 @@
       "terminal": {
         "reward": 0.82525,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.82525,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.959538,
@@ -11952,8 +13812,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -12054,7 +13914,7 @@
             ],
             [
               "DCF!B9(Δ)",
-              -2.4221072403144035,
+              -2.422107240314304,
               -2.6968177827422153
             ]
           ]
@@ -12063,8 +13923,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -12077,8 +13940,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -12149,8 +14012,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -12163,8 +14029,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -12235,8 +14101,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -12249,8 +14118,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -12341,8 +14210,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -12355,8 +14227,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -12403,18 +14275,543 @@
           "valuation": [
             [
               "DCF!B9",
-              75.0011819536995,
+              75.1008972879723,
               74.48921260839514
             ],
             [
               "DCF!B13",
-              10.6696666666667,
+              10.6555,
               10.743
             ],
             [
               "DCF!B15",
-              0.266666666666667,
-              0.34
+              0.2825,
+              0.37
+            ]
+          ]
+        }
+      },
+      "unmodified_legacy": {
+        "reward": 0.241638462,
+        "pass_strict": false,
+        "task_mode": "brownfield",
+        "raw_score": 0.241638462,
+        "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
+        "formula_ratio": 1.0,
+        "responsiveness_ratio": 1.0,
+        "shock_ratio": 0.0,
+        "pillars": {
+          "statements_and_fcff_40": 12.6538,
+          "valuation_bridge_25": 0.0,
+          "accounting_integrity_15": 11.51,
+          "sensitivity_delta_20": 0.0
+        },
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            22,
+            25
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            35,
+            130
+          ],
+          "fcff": [
+            0,
+            20
+          ],
+          "valuation": [
+            0,
+            10
+          ],
+          "formulas": [
+            155,
+            155
+          ],
+          "ties": [
+            15,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "ties_shock": [
+            30,
+            40
+          ],
+          "shock_collection": [
+            0,
+            43
+          ],
+          "shock_discount": [
+            0,
+            10
+          ]
+        },
+        "examples": {
+          "controls": [
+            [
+              "Inputs!B4",
+              1.04,
+              1.0
+            ],
+            [
+              "Inputs!B5",
+              4,
+              0.0
+            ],
+            [
+              "Inputs!B6",
+              0.0278,
+              0.0318
+            ]
+          ],
+          "forecast": [
+            [
+              "Statements!C6",
+              193.451947484078,
+              186.01148796546
+            ],
+            [
+              "Statements!C7",
+              88.7296374927848,
+              85.3169591276777
+            ],
+            [
+              "Statements!C18",
+              14.3750273136469,
+              13.822141647737402
+            ],
+            [
+              "Statements!C9",
+              12.8551518027007,
+              12.81866134875067
+            ],
+            [
+              "Statements!C10",
+              67.6187421885929,
+              63.62745148903163
+            ],
+            [
+              "Statements!C12",
+              14.3940601689368,
+              13.508791891774075
+            ],
+            [
+              "Statements!C13",
+              50.5025140823561,
+              47.396491659957555
+            ],
+            [
+              "Statements!C14",
+              34.1042867184402,
+              30.75410132322015
+            ]
+          ],
+          "fcff": [
+            [
+              "Statements!C31",
+              4.91107712874728,
+              1.5106305639000084
+            ],
+            [
+              "Statements!C30",
+              14.9978370174299,
+              14.112568740267214
+            ],
+            [
+              "Statements!C32",
+              56.0121067889641,
+              47.000771885877676
+            ],
+            [
+              "Statements!C33",
+              51.8816552980549,
+              43.44933918834672
+            ],
+            [
+              "Statements!D31",
+              -0.240877984031755,
+              -0.4323467150416569
+            ],
+            [
+              "Statements!D30",
+              20.8806511700545,
+              19.792221960853944
+            ],
+            [
+              "Statements!D32",
+              70.698057389205,
+              68.0392625458139
+            ],
+            [
+              "Statements!D33",
+              60.6556571324101,
+              58.145481146713685
+            ]
+          ],
+          "valuation": [
+            [
+              "DCF!B4",
+              0.07961294733524,
+              0.081737323602
+            ],
+            [
+              "DCF!B5",
+              875.479254830386,
+              834.978214098448
+            ],
+            [
+              "DCF!B6",
+              644.426695272425,
+              563.7234111381183
+            ],
+            [
+              "DCF!B7",
+              942.53780088655,
+              825.637611051989
+            ],
+            [
+              "DCF!B8",
+              864.53780088655,
+              800.2376110519889
+            ],
+            [
+              "DCF!B9",
+              81.1353574104031,
+              74.48921260839514
+            ],
+            [
+              "DCF!B12",
+              1.1389433361219,
+              1.1251
+            ],
+            [
+              "DCF!B13",
+              10.6555,
+              10.743
+            ]
+          ],
+          "ties": [
+            [
+              "C:fcff",
+              9.822154257494573,
+              0
+            ],
+            [
+              "D:fcff",
+              -0.48175596806355436,
+              0
+            ],
+            [
+              "E:fcff",
+              10.81897608959725,
+              0
+            ],
+            [
+              "F:fcff",
+              8.752912783654242,
+              0
+            ],
+            [
+              "G:fcff",
+              1.9376057483619675,
+              0
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6(Δ)",
+              -22.374391829925003,
+              -14.933932311306961
+            ],
+            [
+              "Statements!C7(Δ)",
+              -10.262350428672704,
+              -6.849672063565606
+            ],
+            [
+              "Statements!C18(Δ)",
+              -1.6625963080981006,
+              -1.109710642188599
+            ],
+            [
+              "Statements!C9(Δ)",
+              -0.10973135633449971,
+              -0.07324090238444825
+            ],
+            [
+              "Statements!C10(Δ)",
+              -12.002310044918204,
+              -8.011019345356914
+            ],
+            [
+              "Statements!C12(Δ)",
+              -2.6621123679628997,
+              -1.7768440908001644
+            ],
+            [
+              "Statements!C13(Δ)",
+              -9.340197676955299,
+              -6.234175254556753
+            ],
+            [
+              "Statements!C14(Δ)",
+              -3.9444558922380004,
+              -2.469093024734729
+            ]
+          ],
+          "ties_shock": [
+            [
+              "operations:C:fcff",
+              1.6309592335881413,
+              0
+            ],
+            [
+              "operations:D:fcff",
+              -0.42603672131498116,
+              0
+            ],
+            [
+              "operations:E:fcff",
+              9.567667879080673,
+              0
+            ],
+            [
+              "operations:F:fcff",
+              7.74056267386416,
+              0
+            ],
+            [
+              "operations:G:fcff",
+              1.7135048758215476,
+              0
+            ],
+            [
+              "collection:C:fcff",
+              18.302239626659627,
+              0
+            ],
+            [
+              "collection:D:fcff",
+              0.3532944303826732,
+              0
+            ],
+            [
+              "collection:E:fcff",
+              11.15325390547667,
+              0
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14(Δ)",
+              4.240042684582598,
+              6.115446179686355
+            ],
+            [
+              "Statements!C17(Δ)",
+              4.240042684582498,
+              6.115446179686359
+            ],
+            [
+              "Statements!C31(Δ)",
+              4.24004268458255,
+              6.115446179686359
+            ],
+            [
+              "Statements!C26(Δ)",
+              -4.240042684582505,
+              -6.115446179686359
+            ],
+            [
+              "Statements!C29(Δ)",
+              -4.240042684582502,
+              -6.115446179686359
+            ],
+            [
+              "Statements!C22(Δ)",
+              -4.240042684582505,
+              -6.115446179686359
+            ],
+            [
+              "Statements!C32(Δ)",
+              4.240042684582505,
+              -6.115446179686359
+            ],
+            [
+              "Statements!C33(Δ)",
+              3.9273729488406985,
+              -5.653355991566393
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33(Δ)",
+              -0.5482478628594052,
+              -0.35269800091880654
+            ],
+            [
+              "Statements!D33(Δ)",
+              -1.275157097775697,
+              -0.9401551234601868
+            ],
+            [
+              "Statements!E33(Δ)",
+              -1.8837896233423947,
+              -1.176034647949784
+            ],
+            [
+              "Statements!F33(Δ)",
+              -2.8635659485209004,
+              -1.90417980775306
+            ],
+            [
+              "Statements!G33(Δ)",
+              -2.932651121147302,
+              -2.087303829585089
+            ],
+            [
+              "DCF!B4(Δ)",
+              0.011530414999999988,
+              0.008852815
+            ],
+            [
+              "DCF!B6(Δ)",
+              -26.810608718201024,
+              -22.511542030332635
+            ],
+            [
+              "DCF!B7(Δ)",
+              -36.31402037184705,
+              -28.971913439999526
+            ]
+          ]
+        }
+      },
+      "stripped_sheets": {
+        "reward": 0.165333334,
+        "pass_strict": false,
+        "task_mode": "brownfield",
+        "raw_score": 0.992,
+        "dynamic_gate": 1.0,
+        "structure_gate": 0.166666667,
+        "missing_required_sheets": [
+          "Cover",
+          "Drivers",
+          "Revenue_Build",
+          "Cost_OpEx",
+          "Working_Capital",
+          "PPE_Capex",
+          "Debt_Schedule",
+          "Peer_Comps",
+          "TSM_Dilution",
+          "Checks_Audit"
+        ],
+        "formula_ratio": 1.0,
+        "responsiveness_ratio": 1.0,
+        "shock_ratio": 1.0,
+        "pillars": {
+          "statements_and_fcff_40": 40.0,
+          "valuation_bridge_25": 25.0,
+          "accounting_integrity_15": 14.2,
+          "sensitivity_delta_20": 20.0
+        },
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            15,
+            25
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "formulas": [
+            155,
+            155
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "ties_shock": [
+            40,
+            40
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "controls": [
+            [
+              "LegacySheet!Cover",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Drivers",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Revenue_Build",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Cost_OpEx",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Working_Capital",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!PPE_Capex",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Debt_Schedule",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Peer_Comps",
+              false,
+              true
             ]
           ]
         }
@@ -12425,8 +14822,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -12488,8 +14888,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -12551,8 +14954,11 @@
     "single_dep_bug": {
       "reward": 0.588312937,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.588312937,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.556818,
@@ -12786,8 +15192,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -13065,8 +15474,11 @@
       "terminal": {
         "reward": 0.823795455,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.823795455,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.943182,
@@ -13137,7 +15549,7 @@
             ],
             [
               "DCF!B8",
-              998.158128957632,
+              998.158128957631,
               937.5402907876037
             ],
             [
@@ -13154,7 +15566,7 @@
             ],
             [
               "DCF!B8(Δ)",
-              -263.954006048926,
+              -263.95400604892495,
               -248.08119372168528
             ],
             [
@@ -13171,7 +15583,7 @@
             ],
             [
               "DCF!B8(Δ)",
-              -1.5185184321020415,
+              -1.5185184321010183,
               -1.7008781757707538
             ],
             [
@@ -13193,7 +15605,7 @@
             ],
             [
               "DCF!B8(Δ)",
-              -138.180400830199,
+              -138.18040083019798,
               -133.69950294039984
             ],
             [
@@ -13207,8 +15619,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -13293,8 +15708,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -13379,8 +15797,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -13485,8 +15906,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -13547,18 +15971,18 @@
           "valuation": [
             [
               "DCF!B9",
-              82.6463584967916,
+              82.6235976767334,
               81.39077096862607
             ],
             [
               "DCF!B13",
-              11.344,
+              11.347125,
               11.519
             ],
             [
               "DCF!B15",
-              0.315,
-              0.49
+              -0.051875,
+              0.12
             ]
           ]
         }
@@ -13569,8 +15993,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -13632,8 +16059,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -13695,8 +16125,11 @@
     "single_dep_bug": {
       "reward": 0.637570513,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.637570513,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.560694,
@@ -13920,8 +16353,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -14199,8 +16635,11 @@
       "terminal": {
         "reward": 0.82525,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.82525,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.959538,
@@ -14324,8 +16763,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -14410,8 +16852,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -14496,8 +16941,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -14602,8 +17050,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -14664,18 +17115,18 @@
           "valuation": [
             [
               "DCF!B9",
-              28.7920861100748,
+              28.7839460840337,
               28.650297077283753
             ],
             [
               "DCF!B13",
-              17.6805,
+              17.6855,
               17.768
             ],
             [
               "DCF!B15",
-              0.3725,
-              0.46
+              0.0975,
+              0.18
             ]
           ]
         }
@@ -14686,8 +17137,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "brownfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -14700,8 +17154,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -14749,8 +17203,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "brownfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -14763,8 +17220,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -14812,8 +17269,11 @@
     "single_dep_bug": {
       "reward": 0.588312937,
       "pass_strict": false,
+      "task_mode": "brownfield",
       "raw_score": 0.588312937,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.556818,
@@ -14826,8 +17286,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -15047,8 +17507,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -15061,8 +17524,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -15326,8 +17789,11 @@
       "terminal": {
         "reward": 0.823795455,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.823795455,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.943182,
@@ -15340,8 +17806,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -15403,7 +17869,7 @@
             ],
             [
               "DCF!B9",
-              53.9751979317291,
+              53.975197931729,
               51.173066486401744
             ]
           ],
@@ -15420,7 +17886,7 @@
             ],
             [
               "DCF!B9(Δ)",
-              -10.7049590638563,
+              -10.7049590638562,
               -10.130452205406783
             ]
           ],
@@ -15437,7 +17903,7 @@
             ],
             [
               "DCF!B9(Δ)",
-              -0.7837013325992004,
+              -0.7837013325991009,
               -0.746336385237008
             ]
           ],
@@ -15459,7 +17925,7 @@
             ],
             [
               "DCF!B9(Δ)",
-              -3.655137689916401,
+              -3.6551376899163017,
               -3.552594387529325
             ]
           ]
@@ -15468,8 +17934,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -15482,8 +17951,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -15554,8 +18023,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -15568,8 +18040,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -15640,8 +18112,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -15654,8 +18129,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -15746,8 +18221,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -15760,8 +18238,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -15808,18 +18286,543 @@
           "valuation": [
             [
               "DCF!B9",
-              52.3335970227501,
+              51.4496552304841,
               51.173066486401744
             ],
             [
               "DCF!B13",
-              12.126,
+              12.3343333333333,
               12.401
             ],
             [
               "DCF!B15",
-              0.115,
-              0.39
+              0.523333333333333,
+              0.59
+            ]
+          ]
+        }
+      },
+      "unmodified_legacy": {
+        "reward": 0.241638462,
+        "pass_strict": false,
+        "task_mode": "brownfield",
+        "raw_score": 0.241638462,
+        "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
+        "formula_ratio": 1.0,
+        "responsiveness_ratio": 1.0,
+        "shock_ratio": 0.0,
+        "pillars": {
+          "statements_and_fcff_40": 12.6538,
+          "valuation_bridge_25": 0.0,
+          "accounting_integrity_15": 11.51,
+          "sensitivity_delta_20": 0.0
+        },
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            22,
+            25
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            35,
+            130
+          ],
+          "fcff": [
+            0,
+            20
+          ],
+          "valuation": [
+            0,
+            10
+          ],
+          "formulas": [
+            155,
+            155
+          ],
+          "ties": [
+            15,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "ties_shock": [
+            30,
+            40
+          ],
+          "shock_collection": [
+            0,
+            45
+          ],
+          "shock_discount": [
+            0,
+            11
+          ]
+        },
+        "examples": {
+          "controls": [
+            [
+              "Inputs!B4",
+              1.04,
+              1.0
+            ],
+            [
+              "Inputs!B5",
+              4,
+              0.0
+            ],
+            [
+              "Inputs!B6",
+              0.0294,
+              0.0334
+            ]
+          ],
+          "forecast": [
+            [
+              "Statements!C6",
+              221.597062103804,
+              213.074098176735
+            ],
+            [
+              "Statements!C7",
+              103.879605981835,
+              99.8842365209953
+            ],
+            [
+              "Statements!C18",
+              13.0037587983754,
+              12.503614229207162
+            ],
+            [
+              "Statements!C9",
+              16.4988325520665,
+              16.463897453910118
+            ],
+            [
+              "Statements!C10",
+              69.9861145699028,
+              65.49345520182958
+            ],
+            [
+              "Statements!C12",
+              13.8059233534235,
+              12.887174512652548
+            ],
+            [
+              "Statements!C13",
+              53.7047042916793,
+              50.130793764377025
+            ],
+            [
+              "Statements!C14",
+              36.1750385980331,
+              32.44863234949119
+            ]
+          ],
+          "fcff": [
+            [
+              "Statements!C31",
+              7.18134385907,
+              3.3200797158728506
+            ],
+            [
+              "Statements!C30",
+              14.3121604295451,
+              13.393411588774148
+            ],
+            [
+              "Statements!C32",
+              66.3503717531187,
+              52.74024712188553
+            ],
+            [
+              "Statements!C33",
+              64.0164460374509,
+              50.83606983296772
+            ],
+            [
+              "Statements!D31",
+              -7.59505822029337,
+              -6.897160497609374
+            ],
+            [
+              "Statements!D30",
+              9.05217964733931,
+              8.359134696314642
+            ],
+            [
+              "Statements!D32",
+              33.9273789682076,
+              45.99685610498726
+            ],
+            [
+              "Statements!D33",
+              30.4715754200507,
+              41.19244496924653
+            ]
+          ],
+          "valuation": [
+            [
+              "DCF!B4",
+              0.07424564317905,
+              0.076317460361
+            ],
+            [
+              "DCF!B5",
+              1060.4916501881,
+              657.6930149616878
+            ],
+            [
+              "DCF!B6",
+              796.329582560339,
+              455.3247957824059
+            ],
+            [
+              "DCF!B7",
+              1006.89611507248,
+              648.197197497868
+            ],
+            [
+              "DCF!B8",
+              931.696115072484,
+              634.597197497868
+            ],
+            [
+              "DCF!B9",
+              75.5368036434195,
+              51.173066486401744
+            ],
+            [
+              "DCF!B12",
+              1.17998638420306,
+              1.1654
+            ],
+            [
+              "DCF!B13",
+              12.3343333333333,
+              12.401
+            ]
+          ],
+          "ties": [
+            [
+              "C:fcff",
+              14.362687718139899,
+              0
+            ],
+            [
+              "D:fcff",
+              -15.19011644058676,
+              0
+            ],
+            [
+              "E:fcff",
+              4.3591708699661975,
+              0
+            ],
+            [
+              "F:fcff",
+              -11.69021577239284,
+              0
+            ],
+            [
+              "G:fcff",
+              19.573804644372807,
+              0
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6(Δ)",
+              -35.81690360711602,
+              -27.293939680047032
+            ],
+            [
+              "Statements!C7(Δ)",
+              -16.790140622233096,
+              -12.794771161393413
+            ],
+            [
+              "Statements!C18(Δ)",
+              -2.1018075374728014,
+              -1.6016629683045203
+            ],
+            [
+              "Statements!C9(Δ)",
+              -0.14681125649249793,
+              -0.11187615833607012
+            ],
+            [
+              "Statements!C10(Δ)",
+              -18.879951728390793,
+              -14.387292360317545
+            ],
+            [
+              "Statements!C12(Δ)",
+              -3.8609501284558903,
+              -2.942201287684938
+            ],
+            [
+              "Statements!C13(Δ)",
+              -15.019001599934896,
+              -11.445091072632607
+            ],
+            [
+              "Statements!C14(Δ)",
+              -5.846999315552896,
+              -4.156540009440423
+            ]
+          ],
+          "ties_shock": [
+            [
+              "operations:C:fcff",
+              1.535235454035755,
+              0
+            ],
+            [
+              "operations:D:fcff",
+              -12.734926235589771,
+              0
+            ],
+            [
+              "operations:E:fcff",
+              3.6545947290452077,
+              0
+            ],
+            [
+              "operations:F:fcff",
+              -9.800717204627368,
+              0
+            ],
+            [
+              "operations:G:fcff",
+              16.410075542929874,
+              0
+            ],
+            [
+              "collection:C:fcff",
+              16.791148672702125,
+              0
+            ],
+            [
+              "collection:D:fcff",
+              -15.612127743366464,
+              0
+            ],
+            [
+              "collection:E:fcff",
+              4.426814938496986,
+              0
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14(Δ)",
+              1.214230477281106,
+              3.5025879152339954
+            ],
+            [
+              "Statements!C17(Δ)",
+              1.214230477281106,
+              3.5025879152339954
+            ],
+            [
+              "Statements!C31(Δ)",
+              1.2142304772811192,
+              3.5025879152339954
+            ],
+            [
+              "Statements!C26(Δ)",
+              -1.2142304772810988,
+              -3.5025879152339954
+            ],
+            [
+              "Statements!C29(Δ)",
+              -1.2142304772810988,
+              -3.5025879152340025
+            ],
+            [
+              "Statements!C22(Δ)",
+              -1.2142304772810917,
+              -3.5025879152340025
+            ],
+            [
+              "Statements!C32(Δ)",
+              1.214230477281106,
+              -3.5025879152339954
+            ],
+            [
+              "Statements!C33(Δ)",
+              1.1715189798050005,
+              -3.376127598405887
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33(Δ)",
+              -0.21495383592690587,
+              -0.11094813211835941
+            ],
+            [
+              "Statements!D33(Δ)",
+              -0.3059220047763027,
+              -0.2691154759945178
+            ],
+            [
+              "Statements!E33(Δ)",
+              -0.6941283355993946,
+              -0.3882952210316404
+            ],
+            [
+              "Statements!F33(Δ)",
+              -0.7094533085208994,
+              -0.5632459902500102
+            ],
+            [
+              "Statements!G33(Δ)",
+              -1.3109659355874044,
+              -0.5451040965987737
+            ],
+            [
+              "DCF!B4(Δ)",
+              0.007250683300000005,
+              0.0047134833000000015
+            ],
+            [
+              "DCF!B5(Δ)",
+              -117.57983225971509,
+              -47.743415816249126
+            ],
+            [
+              "DCF!B6(Δ)",
+              -107.08893063771598,
+              -42.17901408375786
+            ]
+          ]
+        }
+      },
+      "stripped_sheets": {
+        "reward": 0.165333334,
+        "pass_strict": false,
+        "task_mode": "brownfield",
+        "raw_score": 0.992,
+        "dynamic_gate": 1.0,
+        "structure_gate": 0.166666667,
+        "missing_required_sheets": [
+          "Cover",
+          "Drivers",
+          "Revenue_Build",
+          "Cost_OpEx",
+          "Working_Capital",
+          "PPE_Capex",
+          "Debt_Schedule",
+          "Peer_Comps",
+          "TSM_Dilution",
+          "Checks_Audit"
+        ],
+        "formula_ratio": 1.0,
+        "responsiveness_ratio": 1.0,
+        "shock_ratio": 1.0,
+        "pillars": {
+          "statements_and_fcff_40": 40.0,
+          "valuation_bridge_25": 25.0,
+          "accounting_integrity_15": 14.2,
+          "sensitivity_delta_20": 20.0
+        },
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            15,
+            25
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "formulas": [
+            155,
+            155
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "ties_shock": [
+            40,
+            40
+          ],
+          "shock_collection": [
+            45,
+            45
+          ],
+          "shock_discount": [
+            11,
+            11
+          ]
+        },
+        "examples": {
+          "controls": [
+            [
+              "LegacySheet!Cover",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Drivers",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Revenue_Build",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Cost_OpEx",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Working_Capital",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!PPE_Capex",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Debt_Schedule",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Peer_Comps",
+              false,
+              true
             ]
           ]
         }
@@ -15830,8 +18833,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -15893,8 +18899,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -15956,8 +18965,11 @@
     "single_dep_bug": {
       "reward": 0.637570513,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.637570513,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.560694,
@@ -16181,8 +19193,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -16460,8 +19475,11 @@
       "terminal": {
         "reward": 0.82525,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.82525,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.959538,
@@ -16585,8 +19603,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -16671,8 +19692,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -16757,8 +19781,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -16863,8 +19890,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -16925,18 +19955,18 @@
           "valuation": [
             [
               "DCF!B9",
-              43.058684168985,
+              42.8374590692976,
               42.54981348344967
             ],
             [
               "DCF!B13",
-              16.556,
+              16.6415,
               16.754
             ],
             [
               "DCF!B15",
-              0.0519999999999999,
-              0.25
+              0.6075,
+              0.72
             ]
           ]
         }
@@ -16947,8 +19977,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -17010,8 +20043,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -17073,8 +20109,11 @@
     "single_dep_bug": {
       "reward": 0.588312937,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.588312937,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.556818,
@@ -17289,17 +20328,17 @@
           [
             "DCF!B7(Δ)",
             -78.44097932772013,
-            -77.12981802229422
+            -77.12981802229433
           ],
           [
             "DCF!B8(Δ)",
             -78.44097932772002,
-            -77.12981802229422
+            -77.12981802229433
           ],
           [
             "DCF!B9(Δ)",
             -4.630518260195899,
-            -4.553117947006747
+            -4.553117947006754
           ]
         ]
       }
@@ -17308,8 +20347,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -17587,8 +20629,11 @@
       "terminal": {
         "reward": 0.823795455,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.823795455,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.943182,
@@ -17672,17 +20717,17 @@
             [
               "DCF!B7(Δ)",
               -125.05922223456605,
-              -118.3334061560098
+              -118.33340615600969
             ],
             [
               "DCF!B8(Δ)",
               -125.05922223456605,
-              -118.3334061560098
+              -118.33340615600969
             ],
             [
               "DCF!B9(Δ)",
               -7.3824806513910985,
-              -6.98544310247992
+              -6.985443102479913
             ]
           ],
           "shock_collection": [
@@ -17698,7 +20743,7 @@
             ],
             [
               "DCF!B9(Δ)",
-              0.05110163434429893,
+              0.051101634344199454,
               0.01883579163414595
             ]
           ],
@@ -17711,17 +20756,17 @@
             [
               "DCF!B7(Δ)",
               -79.44113043287598,
-              -77.12981802229422
+              -77.12981802229433
             ],
             [
               "DCF!B8(Δ)",
               -79.4411304328761,
-              -77.12981802229422
+              -77.12981802229433
             ],
             [
               "DCF!B9(Δ)",
               -4.6895590574306,
-              -4.553117947006747
+              -4.553117947006754
             ]
           ]
         }
@@ -17729,8 +20774,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -17815,8 +20863,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -17901,8 +20952,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -18007,8 +21061,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -18069,18 +21126,18 @@
           "valuation": [
             [
               "DCF!B9",
-              59.0763165793907,
+              59.4297495233296,
               58.64039334607168
             ],
             [
               "DCF!B13",
-              16.815,
+              16.715,
               16.94
             ],
             [
               "DCF!B15",
-              0.025,
-              0.15
+              -0.045,
+              0.18
             ]
           ]
         }
@@ -18091,8 +21148,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "brownfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -18105,8 +21165,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -18154,8 +21214,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "brownfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -18168,8 +21231,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -18217,8 +21280,11 @@
     "single_dep_bug": {
       "reward": 0.637570513,
       "pass_strict": false,
+      "task_mode": "brownfield",
       "raw_score": 0.637570513,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.560694,
@@ -18231,8 +21297,8 @@
       "excel_errors": [],
       "groups": {
         "controls": [
-          10,
-          10
+          25,
+          25
         ],
         "history": [
           19,
@@ -18442,8 +21508,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -18456,8 +21525,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -18721,8 +21790,11 @@
       "terminal": {
         "reward": 0.82525,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.82525,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.959538,
@@ -18735,8 +21807,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -18798,7 +21870,7 @@
             ],
             [
               "DCF!B9",
-              39.437025669205,
+              39.4370256692051,
               37.649683534552366
             ]
           ],
@@ -18815,7 +21887,7 @@
             ],
             [
               "DCF!B9(Δ)",
-              -5.5110605717607015,
+              -5.511060571760801,
               -5.24668614108888
             ]
           ],
@@ -18837,7 +21909,7 @@
             ],
             [
               "DCF!B9(Δ)",
-              -0.8998134404056017,
+              -0.8998134404057012,
               -0.9984942551846743
             ]
           ]
@@ -18846,8 +21918,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -18860,8 +21935,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -18932,8 +22007,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -18946,8 +22024,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -19018,8 +22096,11 @@
       "zero_mul_cheat": {
         "reward": 0.956387097,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.956387097,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.916129,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -19032,8 +22113,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -19124,8 +22205,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "brownfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -19138,8 +22222,8 @@
         "excel_errors": [],
         "groups": {
           "controls": [
-            10,
-            10
+            25,
+            25
           ],
           "history": [
             19,
@@ -19186,18 +22270,543 @@
           "valuation": [
             [
               "DCF!B9",
-              37.9616113186,
+              38.3388054484261,
               37.649683534552366
             ],
             [
               "DCF!B13",
-              9.656,
+              9.561,
               9.736
             ],
             [
               "DCF!B15",
-              0.49,
-              0.57
+              -0.0550000000000001,
+              0.12
+            ]
+          ]
+        }
+      },
+      "unmodified_legacy": {
+        "reward": 0.241638462,
+        "pass_strict": false,
+        "task_mode": "brownfield",
+        "raw_score": 0.241638462,
+        "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
+        "formula_ratio": 1.0,
+        "responsiveness_ratio": 1.0,
+        "shock_ratio": 0.0,
+        "pillars": {
+          "statements_and_fcff_40": 12.6538,
+          "valuation_bridge_25": 0.0,
+          "accounting_integrity_15": 11.51,
+          "sensitivity_delta_20": 0.0
+        },
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            22,
+            25
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            35,
+            130
+          ],
+          "fcff": [
+            0,
+            20
+          ],
+          "valuation": [
+            0,
+            10
+          ],
+          "formulas": [
+            155,
+            155
+          ],
+          "ties": [
+            15,
+            20
+          ],
+          "shock_operations": [
+            0,
+            120
+          ],
+          "ties_shock": [
+            30,
+            40
+          ],
+          "shock_collection": [
+            0,
+            43
+          ],
+          "shock_discount": [
+            0,
+            10
+          ]
+        },
+        "examples": {
+          "controls": [
+            [
+              "Inputs!B4",
+              1.04,
+              1.0
+            ],
+            [
+              "Inputs!B5",
+              4,
+              0.0
+            ],
+            [
+              "Inputs!B6",
+              0.0265,
+              0.0305
+            ]
+          ],
+          "forecast": [
+            [
+              "Statements!C6",
+              147.727442244079,
+              142.04561754238333
+            ],
+            [
+              "Statements!C7",
+              64.7632674974774,
+              62.27237259372822
+            ],
+            [
+              "Statements!C18",
+              7.75642935502535,
+              7.458105149062837
+            ],
+            [
+              "Statements!C9",
+              9.18222369998135,
+              9.16047586536668
+            ],
+            [
+              "Statements!C10",
+              57.68992704662,
+              54.52074508328843
+            ],
+            [
+              "Statements!C12",
+              13.2174537241342,
+              12.471745208162249
+            ],
+            [
+              "Statements!C13",
+              42.9553202840858,
+              40.53184683672619
+            ],
+            [
+              "Statements!C14",
+              24.1890597618563,
+              21.702047007642896
+            ]
+          ],
+          "fcff": [
+            [
+              "Statements!C31",
+              5.23198102483041,
+              2.52793283742567
+            ],
+            [
+              "Statements!C30",
+              13.5744398340697,
+              12.828731318097768
+            ],
+            [
+              "Statements!C32",
+              50.7732625823367,
+              40.86645164406883
+            ],
+            [
+              "Statements!C33",
+              48.9089460578055,
+              39.31125896340467
+            ],
+            [
+              "Statements!D31",
+              -7.18759681315851,
+              -6.618180621698048
+            ],
+            [
+              "Statements!D30",
+              10.0146791529305,
+              9.410422763252255
+            ],
+            [
+              "Statements!D32",
+              28.0959921518875,
+              40.11582774111544
+            ],
+            [
+              "Statements!D33",
+              25.1133166317862,
+              35.708024513714115
+            ]
+          ],
+          "valuation": [
+            [
+              "DCF!B4",
+              0.07768920770839,
+              0.08068707085999999
+            ],
+            [
+              "DCF!B5",
+              336.047124517521,
+              317.89528558684754
+            ],
+            [
+              "DCF!B6",
+              249.130011850153,
+              215.66730378863258
+            ],
+            [
+              "DCF!B7",
+              413.653203961276,
+              377.35731889240185
+            ],
+            [
+              "DCF!B8",
+              359.853203961276,
+              366.55731889240184
+            ],
+            [
+              "DCF!B9",
+              37.6376115428591,
+              37.649683534552366
+            ],
+            [
+              "DCF!B12",
+              1.31054685523564,
+              1.3252
+            ],
+            [
+              "DCF!B13",
+              9.561,
+              9.736
+            ]
+          ],
+          "ties": [
+            [
+              "C:fcff",
+              10.463962049660811,
+              0
+            ],
+            [
+              "D:fcff",
+              -14.375193626316978,
+              0
+            ],
+            [
+              "E:fcff",
+              13.197888347873356,
+              0
+            ],
+            [
+              "F:fcff",
+              -4.960972537966548,
+              0
+            ],
+            [
+              "G:fcff",
+              -12.29826162492747,
+              0
+            ]
+          ],
+          "shock_operations": [
+            [
+              "Statements!C6(Δ)",
+              -20.40030750020199,
+              -14.71848279850667
+            ],
+            [
+              "Statements!C7(Δ)",
+              -8.9434336071661,
+              -6.452538703416927
+            ],
+            [
+              "Statements!C18(Δ)",
+              -1.0711181452981107,
+              -0.7727939393355934
+            ],
+            [
+              "Statements!C9(Δ)",
+              -0.0780845127922305,
+              -0.056336678177563826
+            ],
+            [
+              "Statements!C10(Δ)",
+              -11.378789380243703,
+              -8.209607416912178
+            ],
+            [
+              "Statements!C12(Δ)",
+              -2.6774291411714,
+              -1.9317206251994357
+            ],
+            [
+              "Statements!C13(Δ)",
+              -8.7013602390724,
+              -6.277886791712746
+            ],
+            [
+              "Statements!C14(Δ)",
+              -3.3403696008445003,
+              -2.248722706837942
+            ]
+          ],
+          "ties_shock": [
+            [
+              "operations:C:fcff",
+              2.224713105768295,
+              0
+            ],
+            [
+              "operations:D:fcff",
+              -12.390062320331989,
+              0
+            ],
+            [
+              "operations:E:fcff",
+              11.375336108695558,
+              0
+            ],
+            [
+              "operations:F:fcff",
+              -4.275890851468763,
+              0
+            ],
+            [
+              "operations:G:fcff",
+              -10.599942646034298,
+              0
+            ],
+            [
+              "collection:C:fcff",
+              12.892358360522401,
+              0
+            ],
+            [
+              "collection:D:fcff",
+              -14.83222707620589,
+              0
+            ],
+            [
+              "collection:E:fcff",
+              13.826375975984558,
+              0
+            ]
+          ],
+          "shock_collection": [
+            [
+              "Statements!C14(Δ)",
+              1.2141981554308003,
+              2.724162528210094
+            ],
+            [
+              "Statements!C17(Δ)",
+              1.2141981554307968,
+              2.724162528210087
+            ],
+            [
+              "Statements!C31(Δ)",
+              1.2141981554307897,
+              2.724162528210087
+            ],
+            [
+              "Statements!C26(Δ)",
+              -1.2141981554308003,
+              -2.724162528210087
+            ],
+            [
+              "Statements!C29(Δ)",
+              -1.2141981554308003,
+              -2.724162528210087
+            ],
+            [
+              "Statements!C22(Δ)",
+              -1.2141981554308003,
+              -2.724162528210087
+            ],
+            [
+              "Statements!C32(Δ)",
+              1.2141981554308003,
+              -2.724162528210087
+            ],
+            [
+              "Statements!C33(Δ)",
+              1.1696146567526,
+              -2.6204931991058373
+            ]
+          ],
+          "shock_discount": [
+            [
+              "Statements!C33(Δ)",
+              -0.22319304805110107,
+              -0.13420844776270258
+            ],
+            [
+              "Statements!D33(Δ)",
+              -0.34224278533060115,
+              -0.3644739193069668
+            ],
+            [
+              "Statements!E33(Δ)",
+              -1.0470432114869936,
+              -0.5719687436894816
+            ],
+            [
+              "Statements!F33(Δ)",
+              -0.9147560163734987,
+              -0.726863754684544
+            ],
+            [
+              "Statements!G33(Δ)",
+              -0.6114418343918011,
+              -0.6730458495964307
+            ],
+            [
+              "DCF!B4(Δ)",
+              0.009903680999999998,
+              0.007416881
+            ],
+            [
+              "DCF!B6(Δ)",
+              -8.95116987828402,
+              -7.250779353437821
+            ],
+            [
+              "DCF!B7(Δ)",
+              -12.089846773919021,
+              -9.721340068477957
+            ]
+          ]
+        }
+      },
+      "stripped_sheets": {
+        "reward": 0.165333334,
+        "pass_strict": false,
+        "task_mode": "brownfield",
+        "raw_score": 0.992,
+        "dynamic_gate": 1.0,
+        "structure_gate": 0.166666667,
+        "missing_required_sheets": [
+          "Cover",
+          "Drivers",
+          "Revenue_Build",
+          "Cost_OpEx",
+          "Working_Capital",
+          "PPE_Capex",
+          "Debt_Schedule",
+          "Peer_Comps",
+          "TSM_Dilution",
+          "Checks_Audit"
+        ],
+        "formula_ratio": 1.0,
+        "responsiveness_ratio": 1.0,
+        "shock_ratio": 1.0,
+        "pillars": {
+          "statements_and_fcff_40": 40.0,
+          "valuation_bridge_25": 25.0,
+          "accounting_integrity_15": 14.2,
+          "sensitivity_delta_20": 20.0
+        },
+        "excel_errors": [],
+        "groups": {
+          "controls": [
+            15,
+            25
+          ],
+          "history": [
+            19,
+            19
+          ],
+          "forecast": [
+            130,
+            130
+          ],
+          "fcff": [
+            20,
+            20
+          ],
+          "valuation": [
+            10,
+            10
+          ],
+          "formulas": [
+            155,
+            155
+          ],
+          "ties": [
+            20,
+            20
+          ],
+          "shock_operations": [
+            120,
+            120
+          ],
+          "ties_shock": [
+            40,
+            40
+          ],
+          "shock_collection": [
+            43,
+            43
+          ],
+          "shock_discount": [
+            10,
+            10
+          ]
+        },
+        "examples": {
+          "controls": [
+            [
+              "LegacySheet!Cover",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Drivers",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Revenue_Build",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Cost_OpEx",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Working_Capital",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!PPE_Capex",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Debt_Schedule",
+              false,
+              true
+            ],
+            [
+              "LegacySheet!Peer_Comps",
+              false,
+              true
             ]
           ]
         }
@@ -19208,8 +22817,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -19271,8 +22883,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -19334,8 +22949,11 @@
     "single_dep_bug": {
       "reward": 0.588312937,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.588312937,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.556818,
@@ -19569,8 +23187,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -19848,8 +23469,11 @@
       "terminal": {
         "reward": 0.823795455,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.823795455,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.943182,
@@ -19910,17 +23534,17 @@
           "valuation": [
             [
               "DCF!B6",
-              909.572751848686,
+              909.572751848685,
               841.5983395360718
             ],
             [
               "DCF!B7",
-              1146.98793503581,
+              1146.9879350358,
               1079.0135227231913
             ],
             [
               "DCF!B8",
-              1117.78793503581,
+              1117.7879350358,
               1049.8135227231912
             ],
             [
@@ -19932,29 +23556,29 @@
           "shock_operations": [
             [
               "DCF!B7(Δ)",
-              -164.45504944180107,
+              -164.45504944179106,
               -154.4947229139715
             ],
             [
               "DCF!B8(Δ)",
-              -164.45504944180107,
+              -164.45504944179106,
               -154.49472291397137
             ],
             [
               "DCF!B9(Δ)",
-              -9.635849853037705,
+              -9.635849853037804,
               -9.052248369014556
             ]
           ],
           "shock_collection": [
             [
               "DCF!B7(Δ)",
-              -14.169191419380013,
+              -14.169191419370009,
               -13.699644007931965
             ],
             [
               "DCF!B8(Δ)",
-              -14.169191419380013,
+              -14.169191419370009,
               -13.699644007931965
             ],
             [
@@ -19971,17 +23595,17 @@
             ],
             [
               "DCF!B7(Δ)",
-              -92.9878084008601,
+              -92.9878084008501,
               -89.96823322815203
             ],
             [
               "DCF!B8(Δ)",
-              -92.9878084008601,
+              -92.9878084008501,
               -89.96823322815192
             ],
             [
               "DCF!B9(Δ)",
-              -5.448397984464506,
+              -5.448397984464606,
               -5.271473207250949
             ]
           ]
@@ -19990,8 +23614,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -20076,8 +23703,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -20162,8 +23792,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -20268,8 +23901,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -20330,18 +23966,18 @@
           "valuation": [
             [
               "DCF!B9",
-              62.0017436051968,
+              62.1370675104914,
               61.51130970429433
             ],
             [
               "DCF!B13",
-              16.932,
+              16.895125,
               17.067
             ],
             [
               "DCF!B15",
-              0.105,
-              0.24
+              0.248125,
+              0.42
             ]
           ]
         }
@@ -20352,8 +23988,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -20415,8 +24054,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -20478,8 +24120,11 @@
     "single_dep_bug": {
       "reward": 0.637570513,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.637570513,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.560694,
@@ -20703,8 +24348,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -20982,8 +24630,11 @@
       "terminal": {
         "reward": 0.82525,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.82525,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.959538,
@@ -21049,12 +24700,12 @@
             ],
             [
               "DCF!B7",
-              554.976198422291,
+              554.976198422292,
               516.7060257283119
             ],
             [
               "DCF!B8",
-              549.876198422291,
+              549.876198422292,
               511.606025728312
             ],
             [
@@ -21066,12 +24717,12 @@
           "shock_operations": [
             [
               "DCF!B7(Δ)",
-              -129.55726639157098,
+              -129.557266391572,
               -120.53294883121498
             ],
             [
               "DCF!B8(Δ)",
-              -129.55726639157103,
+              -129.55726639157194,
               -120.53294883121504
             ],
             [
@@ -21088,12 +24739,12 @@
             ],
             [
               "DCF!B7(Δ)",
-              -19.989667829372934,
+              -19.989667829373957,
               -22.161932533362574
             ],
             [
               "DCF!B8(Δ)",
-              -19.989667829373047,
+              -19.989667829373957,
               -22.16193253336263
             ],
             [
@@ -21107,8 +24758,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -21193,8 +24847,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -21279,8 +24936,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -21385,8 +25045,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -21457,8 +25120,8 @@
             ],
             [
               "DCF!B15",
-              0.2,
-              0.38
+              0.0400000000000001,
+              0.22
             ]
           ]
         }
@@ -21469,8 +25132,11 @@
     "oracle_local": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -21532,8 +25198,11 @@
     "alt_layout": {
       "reward": 1.0,
       "pass_strict": true,
+      "task_mode": "greenfield",
       "raw_score": 1.0,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 1.0,
@@ -21595,8 +25264,11 @@
     "single_dep_bug": {
       "reward": 0.588312937,
       "pass_strict": false,
+      "task_mode": "greenfield",
       "raw_score": 0.588312937,
       "dynamic_gate": 1.0,
+      "structure_gate": 1.0,
+      "missing_required_sheets": [],
       "formula_ratio": 1.0,
       "responsiveness_ratio": 1.0,
       "shock_ratio": 0.556818,
@@ -21741,7 +25413,7 @@
         "valuation": [
           [
             "DCF!B5",
-            662.575463718837,
+            662.575463718836,
             654.120862238161
           ],
           [
@@ -21830,8 +25502,11 @@
       "frozen": {
         "reward": 0.152,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.76,
         "dynamic_gate": 0.2,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.0,
         "responsiveness_ratio": 0.0,
         "shock_ratio": 0.0,
@@ -22109,8 +25784,11 @@
       "terminal": {
         "reward": 0.823795455,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.823795455,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 0.943182,
@@ -22181,7 +25859,7 @@
             ],
             [
               "DCF!B8",
-              618.201354381673,
+              618.201354381672,
               579.4523091072456
             ],
             [
@@ -22198,7 +25876,7 @@
             ],
             [
               "DCF!B8(Δ)",
-              -68.42396943454105,
+              -68.42396943454003,
               -64.07883108759961
             ],
             [
@@ -22215,12 +25893,12 @@
             ],
             [
               "DCF!B8(Δ)",
-              -5.238578823376997,
+              -5.238578823375974,
               -5.214927931118837
             ],
             [
               "DCF!B9(Δ)",
-              -0.39620169591410104,
+              -0.3962016959142005,
               -0.39441294290718787
             ]
           ],
@@ -22237,7 +25915,7 @@
             ],
             [
               "DCF!B8(Δ)",
-              -33.15798739214006,
+              -33.157987392139034,
               -31.860839707982336
             ],
             [
@@ -22251,8 +25929,11 @@
       "fake_formula": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -22337,8 +26018,11 @@
       "alias_hardcode": {
         "reward": 0.986580645,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.986580645,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.974194,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -22423,8 +26107,11 @@
       "zero_mul_cheat": {
         "reward": 0.953032258,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 1.0,
         "dynamic_gate": 0.953032258,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 0.909677,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -22529,8 +26216,11 @@
       "itm_filter": {
         "reward": 0.925,
         "pass_strict": false,
+        "task_mode": "greenfield",
         "raw_score": 0.925,
         "dynamic_gate": 1.0,
+        "structure_gate": 1.0,
+        "missing_required_sheets": [],
         "formula_ratio": 1.0,
         "responsiveness_ratio": 1.0,
         "shock_ratio": 1.0,
@@ -22591,18 +26281,18 @@
           "valuation": [
             [
               "DCF!B9",
-              44.0246398045317,
+              44.3489511973859,
               43.8248607704769
             ],
             [
               "DCF!B13",
-              13.162,
+              13.06575,
               13.222
             ],
             [
               "DCF!B15",
-              0.96,
-              1.02
+              0.14375,
+              0.3
             ]
           ]
         }

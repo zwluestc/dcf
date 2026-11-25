@@ -233,6 +233,18 @@ def grade(path, spec, recalc_fn=None):
         if not {"DCF", "Statements", "Inputs"}.issubset(wb.sheetnames):
             return {"reward": 0.0, "pass_strict": False, "reason": "missing required sheet(s)", "sheets": wb.sheetnames}
 
+        required_sheets = spec.get("required_sheets") or []
+        present_sheets = set(wb.sheetnames)
+        missing_required_sheets = [sn for sn in required_sheets if sn not in present_sheets]
+        for sn in required_sheets:
+            audit("controls", f"LegacySheet!{sn}", sn in present_sheets, True, ok=(sn in present_sheets))
+        structure_ratio = (
+            (len(required_sheets) - len(missing_required_sheets)) / len(required_sheets)
+            if required_sheets
+            else 1.0
+        )
+        structure_gate = 1.0 if not missing_required_sheets else round(0.50 * structure_ratio, 9)
+
         for cell, v in spec["controls"].items():
             audit("controls", "Inputs!" + cell, wb["Inputs"][cell].value, v)
 
@@ -375,8 +387,8 @@ def grade(path, spec, recalc_fn=None):
     shock_delta_ratio = s_ok / s_tot if s_tot else 0.0
 
     dynamic_gate = 0.20 + 0.80 * (0.65 * formula_ratio + 0.35 * responsiveness_ratio)
-    reward = round(raw_score * dynamic_gate, 9)
-    pass_strict = (reward == 1.0) and (len(excel_errors) == 0)
+    reward = round(raw_score * dynamic_gate * structure_gate, 9)
+    pass_strict = (reward == 1.0) and (len(excel_errors) == 0) and (len(missing_required_sheets) == 0)
 
     pillar_scores = {
         "statements_and_fcff_40": round(
@@ -404,8 +416,11 @@ def grade(path, spec, recalc_fn=None):
     return dict(
         reward=reward,
         pass_strict=pass_strict,
+        task_mode=spec.get("task_mode", "greenfield"),
         raw_score=round(raw_score, 9),
         dynamic_gate=round(dynamic_gate, 9),
+        structure_gate=round(structure_gate, 9),
+        missing_required_sheets=missing_required_sheets,
         formula_ratio=round(formula_ratio, 6),
         responsiveness_ratio=round(responsiveness_ratio, 6),
         shock_ratio=round(shock_delta_ratio, 6),

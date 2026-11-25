@@ -23,7 +23,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from openpyxl import Workbook, load_workbook
 
-from audit_sources import reconstruct
+from audit_sources import parse_filings
 from grade import build_leaf_probe_workbook, grade, run_soffice_recalc
 
 
@@ -45,7 +45,9 @@ def find_otm_row(ws_cap):
 def build_alt_layout_workbook(task: Path, out_path: Path):
     """Build a valid DCF workbook with a completely different layout & equivalent formulas."""
     pub = task / "environment/data"
-    d, _, _ = reconstruct(pub)
+    spec = json.loads((task / "tests/answers.json").read_text())
+    parsed = parse_filings(pub)
+    d = parsed["case"]
     s = d["scalar"]
     series = d["series"]
 
@@ -72,34 +74,38 @@ def build_alt_layout_workbook(task: Path, out_path: Path):
     ws_cap["A7"], ws_cap["B7"] = "ExitMult", s["exit_multiple"]
     ws_cap["A8"], ws_cap["B8"] = "DepRate", s["dep_rate"]
 
-    # Peer unlevering table in columns D:H of WACC_TSM
-    with (pub / "peer_set.csv").open(newline="") as f:
-        peers = list(csv.DictReader(f))
+    # Peer unlevering table in columns D:H of WACC_TSM (parsed from raw broker memo)
+    peers = parsed["peer_rows"]
     for i, rec in enumerate(peers, start=2):
         ws_cap[f"D{i}"] = rec["peer"]
-        ws_cap[f"E{i}"] = float(rec["observed_equity_beta"])
-        ws_cap[f"F{i}"] = float(rec["net_debt_to_equity_x"])
-        ws_cap[f"G{i}"] = float(rec["statutory_tax_pct"]) / 100.0
+        ws_cap[f"E{i}"] = rec["observed_equity_beta"]
+        ws_cap[f"F{i}"] = rec["net_debt_to_equity_x"]
+        ws_cap[f"G{i}"] = rec["statutory_tax_pct"] / 100.0
         ws_cap[f"H{i}"] = f"=E{i}/(1+(1-G{i})*F{i})"
     peer_end = 1 + len(peers)
     # Compute capital metrics on WACC_TSM and cross-link into DCF!B12:B15
     ws_cap["B11"] = f"=MEDIAN(H2:H{peer_end})"
     ws_cap["B12"] = "=B11*(1+(1-B5)*B3/(1-B3))"
 
-    note = (pub / "treasury_note.md").read_text()
-    basic = float(re.search(r"outstanding:\s*([\d.]+)\s*shares", note).group(1)) / 1e6
-    quote = float(re.search(r"quote:\s*EUR\s*([\d.]+)", note).group(1))
-    opts = re.findall(r"([\d.]+)\s*options at EUR\s*([\d.]+)", note)
+    basic = parsed["basic_shares"] / 1e6
+    quote = parsed["market_quote"]
+    opts = parsed["option_tranches"]
     ws_cap["B14"] = basic
     ws_cap["B15"] = quote
     for i, (cnt, stk) in enumerate(opts, start=17):
-        ws_cap[f"A{i}"] = float(cnt) / 1e6
-        ws_cap[f"B{i}"] = float(stk.rstrip("."))
+        ws_cap[f"A{i}"] = cnt / 1e6
+        ws_cap[f"B{i}"] = stk
         # Equivalent IF formula instead of MAX(0, ...)
         ws_cap[f"C{i}"] = f"=IF(B{i}<$B$15,A{i}*(1-B{i}/$B$15),0)"
     opt_end = 16 + len(opts)
     ws_cap["B22"] = f"=SUM(C17:C{opt_end})"
     ws_cap["B23"] = "=B14+B22"
+
+    # Preserve required legacy sheet names for brownfield tasks while still testing alt layout
+    for req_sh in spec.get("required_sheets") or []:
+        if req_sh not in wb.sheetnames:
+            ws_extra = wb.create_sheet(req_sh)
+            ws_extra["A1"] = f"Preserved legacy tab: {req_sh}"
 
     # Put annual drivers in Ops_Budget rows 2..6 (transposed vs reference!)
     drv_keys = ["A", "B", "C", "unit_price", "cogs_pct", "opex_fixed", "capex_pct", "dso", "dio", "dpo", "repay"]
@@ -252,9 +258,12 @@ def eval_task(task: Path):
         w_bug.close()
 
         staged_paths = {"oracle": ref, "alt_layout": alt_path, "single_dep_bug": dep_bug_path}
+        is_brownfield = spec.get("task_mode") == "brownfield"
         formula_neg_modes = ["terminal", "fake_formula", "alias_hardcode", "zero_mul_cheat"] + (
             ["itm_filter"] if "B15" in spec["base"]["DCF"] else []
         )
+        if is_brownfield:
+            formula_neg_modes.extend(["unmodified_legacy", "stripped_sheets"])
         for mode in formula_neg_modes:
             p = tp / f"{mode}.xlsx"
             if mode == "terminal":
@@ -296,6 +305,15 @@ def eval_task(task: Path):
                     r for r in range(1, w["Capital"].max_row + 1) if w["Capital"].cell(row=r, column=1).value == "Market quote (EUR)"
                 )
                 w["Capital"][f"D{otm_r}"] = f"=B{otm_r}*(1-C{otm_r}/$B${quote_r})"
+                w.save(p)
+                w.close()
+            elif mode == "unmodified_legacy":
+                shutil.copyfile(task / "environment/data/legacy_model.xlsx", p)
+            elif mode == "stripped_sheets":
+                w = load_workbook(ref)
+                for sn in list(w.sheetnames):
+                    if sn not in ("DCF", "Statements", "Inputs", "Ledger", "Capital"):
+                        del w[sn]
                 w.save(p)
                 w.close()
             staged_paths[mode] = p
@@ -348,6 +366,12 @@ def eval_task(task: Path):
                 assert ok_v < tot_v
             if mode == "itm_filter":
                 assert any(t[0] == "DCF!B9" for t in r["examples"]["valuation"])
+            if mode == "unmodified_legacy":
+                assert r["reward"] < 0.80, f"unmodified_legacy score too high: {r['reward']}"
+            if mode == "stripped_sheets":
+                assert r["structure_gate"] < 0.50 and r["reward"] < 0.50, (
+                    f"stripped_sheets not penalized: gate={r['structure_gate']}, reward={r['reward']}"
+                )
             result["negative"][mode] = r
     print(f"checked {task.name}: oracle={good['reward']} alt={alt_res['reward']} dep_bug={dep_res['reward']}", flush=True)
     return task.name, result

@@ -1,5 +1,6 @@
-"""Reconstruct canonical inputs strictly from the 7 public exhibits and verify exact equivalence."""
-import csv
+"""Reconstruct canonical inputs strictly from the 3 raw unstructured financial filings (zero CSVs)
+and verify exact mathematical equivalence against tests/answers.json.
+"""
 import json
 import math
 import re
@@ -10,90 +11,185 @@ from statistics import median
 from model import calculate
 from forward import forward
 
+CHART = dict(
+    zip(
+        "4100 5105 6202 6710 7102 7900 1210 1320 2315 1520 2112 2710 1015 3105".split(),
+        "revenue cogs opex da interest tax ar inv ap ppe debt debt cash equity".split(),
+    )
+)
 
-def reconstruct(p: Path):
-    read = lambda f: (p / f).read_text()
-    rows = lambda f: list(csv.DictReader(read(f).splitlines()))
-    numbers = r"([\d.]+)"
+NUM_RE = r"([\d,]+(?:\.\d+)?)"
 
-    def get(pattern, text):
-        return float(re.search(pattern, text).group(1).rstrip("."))
 
-    ops = read("operations_memo.md")
-    tr = read("treasury_note.md")
-    vp = read("valuation_policy.md")
+def num(s: str) -> float:
+    return float(s.replace(",", "").rstrip("."))
 
+
+def get_num(pattern: str, text: str) -> float:
+    m = re.search(pattern, text)
+    if not m:
+        raise ValueError(f"Pattern not found: {pattern}")
+    return num(m.group(1))
+
+
+def parse_filings(p: Path):
+    """Parse and clean the 3 raw financial filings into structured inputs (no CSVs)."""
+    ar = (p / "annual_report_fy2025.txt").read_text()
+    mg = (p / "management_guidance_fy26_30.md").read_text()
+    bm = (p / "broker_comps_and_treasury_memo.md").read_text()
+
+    # Strip Superseded Q3 Preliminary Draft section from management guidance before parsing
+    mg_clean = mg[mg.index("## 2. Approved Operating Contract") :]
+
+    # 1. Scalars from broker_comps_and_treasury_memo.md & management_guidance_fy26_30.md
     s = dict(
-        opening_units=get(r"FY2025 closing .+?: " + numbers, ops),
-        price_multiplier=get("price multiplier " + numbers, vp),
-        dso_shift=get("days " + numbers, vp),
-        dep_rate=get("depreciation rate " + numbers + "%", vp) / 100,
-        g=get("mandate is " + numbers + "%", vp) / 100,
-        exit_multiple=get("assumption is " + numbers + "x", vp),
+        opening_units=get_num(r"Audited FY2025 closing .+?:\s*\*\*" + NUM_RE + r"\*\*", mg_clean),
+        price_multiplier=get_num(r"price multiplier:\s*\*\*" + NUM_RE + r"\*\*", bm),
+        dso_shift=get_num(r"DSO shift\):\s*\*\*" + NUM_RE + r"\*\*", bm),
+        dep_rate=get_num(r"depreciation rate:\s*\*\*" + NUM_RE + r"%\*\*", bm) / 100.0,
+        g=get_num(r"growth mandate =\s*\*\*" + NUM_RE + r"%\*\*", bm) / 100.0,
+        exit_multiple=get_num(r"exit EBITDA multiple assumption =\s*\*\*" + NUM_RE + r"x\*\*", bm),
+        tax_rate=get_num(r"Statutory corporate tax rate:\s*\*\*" + NUM_RE + r"%\*\*", bm) / 100.0,
+        debt_weight=get_num(r"debt represents\s*\*\*" + NUM_RE + r"%\*\*", bm) / 100.0,
+        debt_cost=get_num(r"pre-tax cost of debt:\s*\*\*" + NUM_RE + r"\s*bp\*\*", bm) / 10000.0,
+        risk_free=get_num(r"Risk-free rate:\s*\*\*" + NUM_RE + r"\s*bp\*\*", bm) / 10000.0,
+        erp=get_num(r"equity risk premium \(ERP\):\s*\*\*" + NUM_RE + r"\s*bp\*\*", bm) / 10000.0,
     )
-    s.update(
-        tax_rate=get("Corporate tax " + numbers + "%", tr) / 100,
-        debt_weight=get("debt is " + numbers + "%", tr) / 100,
-        debt_cost=get("debt rate " + numbers + " bp", tr) / 10000,
-        risk_free=get("Risk-free rate " + numbers + " bp", tr) / 10000,
-        erp=get("risk premium " + numbers + " bp", tr) / 10000,
-    )
+
+    # 2. Comparable companies (APPROVED PEER only; drop EXCLUDED distressed peers)
+    peer_rows = []
+    for line in bm.splitlines():
+        if not line.lstrip().startswith("- [APPROVED PEER]"):
+            continue
+        m = re.search(
+            r"\[APPROVED PEER\]\s+\*\*(.+?)\*\*:\s*observed equity beta\s*=\s*"
+            + NUM_RE
+            + r",\s*net debt / equity\s*=\s*"
+            + NUM_RE
+            + r"x,\s*statutory tax rate\s*=\s*"
+            + NUM_RE
+            + r"%",
+            line,
+        )
+        if not m:
+            raise ValueError(f"Failed to parse peer line: {line}")
+        peer_rows.append(
+            {
+                "peer": m.group(1).strip(),
+                "observed_equity_beta": num(m.group(2)),
+                "net_debt_to_equity_x": num(m.group(3)),
+                "statutory_tax_pct": num(m.group(4)),
+            }
+        )
+    if not peer_rows:
+        raise ValueError("No approved peers parsed from broker_comps_and_treasury_memo.md")
 
     asset = median(
-        float(e["observed_equity_beta"]) / (1 + (1 - float(e["statutory_tax_pct"]) / 100) * float(e["net_debt_to_equity_x"]))
-        for e in rows("peer_set.csv")
+        r["observed_equity_beta"] / (1.0 + (1.0 - r["statutory_tax_pct"] / 100.0) * r["net_debt_to_equity_x"])
+        for r in peer_rows
     )
-    s["beta"] = asset * (1 + (1 - s["tax_rate"]) * s["debt_weight"] / (1 - s["debt_weight"]))
+    s["beta"] = asset * (1.0 + (1.0 - s["tax_rate"]) * s["debt_weight"] / (1.0 - s["debt_weight"]))
 
-    quote = get("quote: EUR " + numbers, tr)
-    options = re.findall(numbers + " options at EUR " + numbers, tr)
-    dilution = sum(float(count) * max(0.0, 1.0 - float(strike.rstrip(".")) / quote) for count, strike in options) / 1e6
-    s["shares"] = get("outstanding: " + numbers + " shares", tr) / 1e6 + dilution
-
-    a = {key: [] for key in ("A", "B", "C", "unit_price", "cogs_pct", "opex_fixed", "capex_pct", "dso", "dio", "dpo", "repay")}
-    for line in ops.splitlines():
-        if not re.match(r"FY20\d\d:", line):
-            continue
-        for key in "ABC":
-            a[key].append(get(r"\(" + key + r"\) = " + numbers, line))
-        a["unit_price"].append(get(r"(?:is|=)\s*EUR\s*" + numbers, line) / 1e6)
-
-    for e in sorted(rows("finance_budget.csv"), key=lambda x: x["fy"]):
-        for k, n, f in [
-            ("cogs_pct", "cash_cost_pct_of_sales", 100),
-            ("opex_fixed", "fixed_expense_EUR_thousands", 1000),
-            ("capex_pct", "investment_pct_of_sales", 100),
-            ("dso", "collection_days", 1),
-            ("dio", "stock_days", 1),
-            ("dpo", "supplier_days", 1),
-            ("repay", "debt_amort_EUR_thousands", 1000),
-        ]:
-            a[k].append(float(e[n]) / f)
-
-    chart = dict(
-        zip(
-            "4100 5105 6202 6710 7102 7900 1210 1320 2315 1520 2112 2710 1015 3105".split(),
-            "revenue cogs opex da interest tax ar inv ap ppe debt debt cash equity".split(),
+    # 3. Note 11: Basic shares & TSM option tranches from annual_report_fy2025.txt
+    basic_shares = get_num(r"basic ordinary shares totaled\s+" + NUM_RE + r"\s+shares", ar)
+    mkt_quote = get_num(r"reference market quote is EUR\s+" + NUM_RE + r"\s+per ordinary share", ar)
+    opt_rows = [
+        (num(cnt), num(stk))
+        for cnt, stk in re.findall(
+            r"Tranche \d+:\s*" + NUM_RE + r"\s+vested/unvested options exercisable at EUR\s+" + NUM_RE, ar
         )
-    )
-    led = []
-    for site in ["north", "south"]:
-        for e in rows(site + "_close.csv"):
-            if e["status"] != "POSTED":
-                continue
-            field = next(n for n in e if n.startswith("amount_"))
-            scale = 1000 if field.endswith("_thousands") else 1e6
-            led.append({"account": chart[e["account"]], "amount": float(e[field]) / scale})
+    ]
+    dilution = sum(cnt * max(0.0, 1.0 - stk / mkt_quote) for cnt, stk in opt_rows) / 1e6
+    s["shares"] = basic_shares / 1e6 + dilution
+
+    # 4. FY2026-2030 year-by-year approved operating & budget guidance
+    series = {
+        k: []
+        for k in ("A", "B", "C", "unit_price", "cogs_pct", "opex_fixed", "capex_pct", "dso", "dio", "dpo", "repay")
+    }
+    driver_labels = {}
+    blocks = re.split(r"(?=### FY20\d\d Approved Plan)", mg_clean)
+    fy_blocks = [b for b in blocks if b.startswith("### FY20")]
+    if len(fy_blocks) != 5:
+        raise ValueError(f"Expected 5 FY blocks in guidance, got {len(fy_blocks)}")
+    for block in fy_blocks:
+        for key in "ABC":
+            series[key].append(get_num(r"\(" + key + r"\)\s*=\s*" + NUM_RE, block))
+            if key not in driver_labels:
+                m_lbl = re.search(r"(?:Drivers\*\*:|;)\s*([^:;]+?)\s*\(" + key + r"\)\s*=", block)
+                if m_lbl:
+                    driver_labels[key] = m_lbl.group(1).strip()
+        series["unit_price"].append(get_num(r"full annual unit price\s*=\s*EUR\s+" + NUM_RE, block) / 1e6)
+        series["cogs_pct"].append(get_num(r"cash COGS\s*=\s*" + NUM_RE + r"%\s+of sales", block) / 100.0)
+        series["opex_fixed"].append(get_num(r"fixed cash operating expenses \(ex-D&A\)\s*=\s*EUR\s+" + NUM_RE + r"\s+thousand", block) / 1000.0)
+        series["capex_pct"].append(get_num(r"capital expenditure\s*=\s*" + NUM_RE + r"%\s+of sales", block) / 100.0)
+        series["dso"].append(get_num(r"collection days \(DSO\)\s*=\s*" + NUM_RE + r"\s+days", block))
+        series["dio"].append(get_num(r"inventory days \(DIO\)\s*=\s*" + NUM_RE + r"\s+days", block))
+        series["dpo"].append(get_num(r"payables days \(DPO\)\s*=\s*" + NUM_RE + r"\s+days", block))
+        series["repay"].append(get_num(r"principal repayment\s*=\s*EUR\s+" + NUM_RE + r"\s+thousand", block) / 1000.0)
+
+    # 5. FY2025 POSTED divisional ledger rows from annual_report_fy2025.txt (drop VOID & FY2024 COMPARATIVE)
+    ledger_rows = []
+    cur_site = None
+    for line in ar.splitlines():
+        if "NORTH DIVISION GENERAL LEDGER EXTRACT" in line:
+            cur_site = "North"
+            continue
+        if "SOUTH DIVISION GENERAL LEDGER EXTRACT" in line:
+            cur_site = "South"
+            continue
+        if cur_site is None or not line.lstrip().startswith("[FY2025 | POSTED]"):
+            continue
+        m = re.search(
+            r"\[FY2025 \| POSTED\]\s*\|\s*Acct\s+(\d{4})\s*\|\s*(.+?)\s*\|\s*(Dr|Cr)\s*\|\s*"
+            + NUM_RE
+            + r"\s+(EUR THOUSANDS|EUR UNITS)",
+            line,
+        )
+        if not m:
+            raise ValueError(f"Failed to parse posted ledger line: {line}")
+        acct, caption, side, raw_amt, unit_str = m.group(1), m.group(2).strip(), m.group(3), num(m.group(4)), m.group(5)
+        scale = 1000 if unit_str == "EUR THOUSANDS" else 1000000
+        ledger_rows.append(
+            {
+                "site": cur_site,
+                "account_code": acct,
+                "account": CHART[acct],
+                "caption": caption,
+                "side": side,
+                "native_amount": raw_amt,
+                "scale": scale,
+                "amount": raw_amt / scale,
+            }
+        )
+
+    terminal = re.search(r"Terminal value method:\s*\*\*(.+?)\*\*", bm).group(1).strip()
+    timing = re.search(r"Discounting convention:\s*\*\*(\S+?)\*\*", bm).group(1).strip()
 
     case = dict(
         slug=p.parent.parent.name.split("-", 2)[2],
-        ledger=led,
-        series=a,
+        ledger=[{"site": r["site"], "account": r["account"], "amount": r["amount"]} for r in ledger_rows],
+        series=series,
         scalar=s,
-        terminal=re.search("Terminal method is (.+?);", vp)[1],
-        timing=re.search(r"Timing: (\S+)", vp)[1],
+        driver_labels=driver_labels,
+        terminal=terminal,
+        timing=timing,
     )
-    return case, asset, dilution
+    return {
+        "case": case,
+        "asset_beta": asset,
+        "dilution": dilution,
+        "ledger_rows": ledger_rows,
+        "peer_rows": peer_rows,
+        "basic_shares": basic_shares,
+        "market_quote": mkt_quote,
+        "option_tranches": opt_rows,
+    }
+
+
+def reconstruct(p: Path):
+    parsed = parse_filings(p)
+    return parsed["case"], parsed["asset_beta"], parsed["dilution"]
 
 
 def audit(task: Path):

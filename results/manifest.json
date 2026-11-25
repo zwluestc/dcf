@@ -1,8 +1,12 @@
 {
-  "schema_version": "3.0",
+  "schema_version": "4.0",
   "seed": 2026,
   "waves": 2,
   "num_tasks": 20,
+  "mode_counts": {
+    "greenfield": 14,
+    "brownfield": 6
+  },
   "quadrant_counts": {
     "perpetuity / midyear": 5,
     "exit EBITDA / midyear": 5,
@@ -13,6 +17,8 @@
   "tasks": [
     {
       "task": "dcf-01-saas",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 1,
       "company": "SpruceCollab (云杉协作)",
       "slug": "saas",
@@ -32,14 +38,18 @@
       "ev_to_fy25_ebitda": 13.1,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "4e522704996e9ce67c314d1061af6339b34879d30e7ed8886cbe1bde9c268746",
-        "answers": "9e84958e4cdebbdd556604186dc31a90426686149578db1b6775c1242c7a2ab0",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "fe458a3b0f4e3eaf027d1bf538f92fc4f4a632c6ff7f81e542b60a5c56715bf0"
+        "instruction": "ff2b13f2edbf8325ce1e8f20bebe0418dd7543e6ff16ac6eab52440d03fd178a",
+        "answers": "4f3cc556e269f5ba89bd3038e082180968b209da5455737261409a53a7384560",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "9bed6c209a0bdc18571a84d2ea2cce09ac3cafdebbe79468a4b62690ffed7ad3",
+        "management_guidance": "6c1204e5f93e2950e4d799d0419516e84a51a6ec9baebf3e5b6f79bbb504edd8",
+        "broker_comps_memo": "adb51fcf0c1dc872af7b4e011720b2f8ca94641c2b39c87cd0744ab678d47767"
       }
     },
     {
       "task": "dcf-02-foundry",
+      "task_mode": "brownfield",
+      "required_sheets_count": 15,
       "wave": 1,
       "company": "Elmbridge Semi (榆桥微芯)",
       "slug": "foundry",
@@ -59,14 +69,19 @@
       "ev_to_fy25_ebitda": 11.48,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "77a7d97ac426f4761daa03a45eacdc532f3c4ff76549fb41b4fec72829956df7",
-        "answers": "52bb208284904edfb42d236a92b34f3a82348fafe22d22e428b277fa3685d1c9",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "a0bf38f2e9c26c122347aef56a09eb1e0aef101c14f09d2cf58de48107dd1e82"
+        "instruction": "2fb0f1bdab8ca656f74efb7f55a4e8c741f3254e7844ffc01b9ab9735821eab0",
+        "answers": "247cfceca878c19df6fbf2d26f6a14185cf174bfafdbf98bcd1e3a0b4341c1ee",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "276ce2b9d1556c55fd2278080b76ce25e453546928d97b306d53cded8d0957ea",
+        "management_guidance": "f6d370fac482e105e3f57c4c110098e567fb108660c835a21eeb08f35cc2da7e",
+        "broker_comps_memo": "2b8795c1c72baecbd607b74f36fd9f6aa84918c399b685f0e9c6b45539922b99",
+        "legacy_model": "a748f6f6185246803ebd3297bf8f15f93fa522bd7b2bfda0f96f77b82a33ecc0"
       }
     },
     {
       "task": "dcf-03-orders",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 1,
       "company": "Starport Machinery (星浦机床)",
       "slug": "orders",
@@ -86,14 +101,18 @@
       "ev_to_fy25_ebitda": 10.93,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "375f56fbeadb2cc0f631671de136982f5c761a4c6aa87dc26b515af0f8ababab",
-        "answers": "0173f7311e6b721b94679897cb10b9cce4fd5608545b0a2daa8fc0c6b52af597",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "dd5f169855f5ae96b572e26d354a0dfb998764e2fcc974d2685bab25b56b29b6"
+        "instruction": "df56e03a40da8c0f66eb63e3a7dbf9a06468f610f720af98e2f048ef3512f643",
+        "answers": "f272479db585b259231ddb412e1bcaaf8a65b0f443b31559ad6e493a7e08da13",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "6889ce0ba8379fc278677b56185014e4181dd284d5cad5b7512759489695f6ff",
+        "management_guidance": "efb27a347318a577e45679926ffa0bb9bbfdf31b2d4e83722064688f5bcd9132",
+        "broker_comps_memo": "854b3f371e0fc69236ecc96f4e2378a03044041e91a4caae00e3ee8267d8ee4d"
       }
     },
     {
       "task": "dcf-04-storage",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 1,
       "company": "Ninggang ColdChain (宁港冷仓)",
       "slug": "storage",
@@ -113,14 +132,18 @@
       "ev_to_fy25_ebitda": 7.54,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "0fef97ddea4f32bc0b586d3715a5fb8d274bc43e0c1508db7c0e0d0bedd8402b",
-        "answers": "c6dad338f0d19b6a9860853e7a59916bd8e7265371f54e64e473fda87c2bb2fc",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "e6fd8d3a53147c740fed3b01da2dd07479f07eff8610b8713178168597f6b4f3"
+        "instruction": "1d7200018f0b94a24a680f41c29f79e96431ee9dda07446e5392cc45a5c673d2",
+        "answers": "f28deb7036822303b23c2c0348dbe022fba8cc487fb819eaec7bdd46a9669c62",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "2c04870e5d78dcf601bb2430b82f4a76c443cd2db26085b92e0e21b58655987d",
+        "management_guidance": "ebc07bfbd17b4d3aa5cf532ff4ae81adada8c1e18d5032ad12a82fb5ac12a3f4",
+        "broker_comps_memo": "4ecc27004349a52f4996efd10054b69f0c6f834c78b5c1d602fb66cdbf8b9891"
       }
     },
     {
       "task": "dcf-05-fleet",
+      "task_mode": "brownfield",
+      "required_sheets_count": 15,
       "wave": 1,
       "company": "RiverRidge Fleet (川岭器租)",
       "slug": "fleet",
@@ -140,14 +163,19 @@
       "ev_to_fy25_ebitda": 11.29,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "9784ec555d216d479fb9f7a1f8090efb59f3d8d60be429a268ae1de55d815a74",
-        "answers": "c98271e97d37c9caf3e592125fb34d6541526cdfbe150b0dc4d99e54ca1aa15c",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "d06fdbf347715705ef1f5e570817120631a6cbf035e40f64eb0016d7f5bf9baa"
+        "instruction": "e414428c7073478478effbdc2ec74652c871b7d571717bca7cbc060a26322d45",
+        "answers": "7004b2b5168a6f26a74d37d08d840812983c25b66086c4ab0a9f4d3d532d62f4",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "a41eeca0916d49edbd9fbf4feae1701fe78e4d6167268707a0d473490fdda9ad",
+        "management_guidance": "cf63d7712d4f0670512c7f5ec7f74443a1a1567f993806afdaa982b9949016ea",
+        "broker_comps_memo": "bd9a96a5c130ca1eebac0a2d64a5e7a524d531f7beebe753e96b21165cf5786d",
+        "legacy_model": "5c70571ea44e6cb6436b8588b55f0f55a42a9a3bbf9232df151a33a847085f47"
       }
     },
     {
       "task": "dcf-06-license",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 1,
       "company": "ClearRiver CAD (晴川图软)",
       "slug": "license",
@@ -167,14 +195,18 @@
       "ev_to_fy25_ebitda": 8.82,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "a5c8cf600faaf3b72bb8ece3ca7077d05dec6ae209d822cc9c3a80a560629f5a",
-        "answers": "e4260a39e0952169847f3186e68fa5884d40f93c806931a783a3da56344aebc2",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "bdd036bd7be730396ff9626b322cb459fa28185853700a4adc73e9f5bc663be8"
+        "instruction": "833f888cabd1351fe016203dea953e0b3681be226b19815f6ded4b0ca9122e93",
+        "answers": "d278cf5bb3ec243c814bfae254aed6edcb4c77a52e7e59c94d523ad66a44f2c5",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "aad6cf8d0020b23a43af427ad4a1233de77882e3aa26c346f5ac4af356ea5bf0",
+        "management_guidance": "285b78f8ac19c4cd59d2424545f5f557a39b09dca9bff9fa063d2e0755fba8d9",
+        "broker_comps_memo": "bdb33fddfaa71482654227488e2bc6f01576940e84c2ac1b074af265beb58cfc"
       }
     },
     {
       "task": "dcf-07-mine",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 1,
       "company": "StoneCourt Copper (石庭铜业)",
       "slug": "mine",
@@ -194,14 +226,18 @@
       "ev_to_fy25_ebitda": 6.81,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "26acad8aab69d042d2e5c09f8cca25ef9774b1806878e2c387cb1270759b8494",
-        "answers": "1a6ea77c15ec49718c003ad086a4b12c7dbbe15cdd72d107efae42cc608fab5d",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "45e541b4f0e6a9b6a20786fdd521e73e4eb638356dfcc53fa3788102bb7ce250"
+        "instruction": "3fcfdc89d806fad53fdcb23fe60e9a09259341ad7b74145fe22ad4ea8a2ad17e",
+        "answers": "1e70fa7aac548cd190189947e0ec387557856749285e1d33f21849632ba372a4",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "9fa7a44ae55cf0a1ffc8d1298074715ad9f83962a508c4fc081d12f3c3debbf6",
+        "management_guidance": "562b18173ce0af69033f0bc23482a4a5494f5f7afa76dd361fdd3cb5df6b1a46",
+        "broker_comps_memo": "d52bf15274fe18e7e78ed63154d0caf9d416b4fa9389bd2469bd0f954eb9ddb9"
       }
     },
     {
       "task": "dcf-08-retail",
+      "task_mode": "brownfield",
+      "required_sheets_count": 15,
       "wave": 1,
       "company": "Platform Books (月台书铺)",
       "slug": "retail",
@@ -221,14 +257,19 @@
       "ev_to_fy25_ebitda": 10.33,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "d143412267f511438dc6f2d318f3f73b192da3ea7c09322c4853d40f68cb6b1f",
-        "answers": "e7a172ba9c84e64e70d37fafd4d3b0d60a8eae30a7b86c757498788012eb7277",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "b9748ae619ccbc0c9fee4873d1c16d7a435c0f27b231aa094e1adafe968723fe"
+        "instruction": "47fd16d84311b29313ac3f93cc5e5deb3e7f217419c65f4810350b64e53e602b",
+        "answers": "9efd68c346bb8d358c6e0af4b47e58fd28a401cb1fcab10123909b18fc628cf6",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "274824b02375d97c91e5c784cc9010676e471c89192459beb5a9d8103919aac3",
+        "management_guidance": "e9e185ff6a85e9ae5f33bec33fb3eae025ee678266ad700ee622234b33abd7a8",
+        "broker_comps_memo": "349ca7797484d736cf74748a3f372ac99108a0ab58cce3614f1c6adca16c502a",
+        "legacy_model": "cff258a8c4e4651b454bec86341f532dc2868f447ba831ac8f90db019dfc314f"
       }
     },
     {
       "task": "dcf-09-royalty",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 1,
       "company": "SeaChord Audio (海弦音频)",
       "slug": "royalty",
@@ -248,14 +289,18 @@
       "ev_to_fy25_ebitda": 10.1,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "9dd76b9cfe54dadef15058e52b62fbc226809dd3564003f0060639ab23741f0d",
-        "answers": "66c9418c9d416842eb319078f65379d70c7d59fde1124c9109bcbed60874f05d",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "f1758dbe85a075f43dddd33d0ffea01bd5b1a6a3e9d2cfea2ca251d261c08115"
+        "instruction": "009ffec101d20dad043e1a6c5e59ac5c3170201c432bde0abd5d9a24066b7d10",
+        "answers": "344a814acfa6bbe9e3136592831b7b90254eeb478cb2e3afec9d67f28eebc7f1",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "3d9f769e9122aa7beba166f4ab8d41319f6bdc4c52c5809a83ad13584bd136a5",
+        "management_guidance": "ca131ec76c400aba79a23563aadd15bc716ac84cbcca534cc2f66858b571c387",
+        "broker_comps_memo": "751c73d6fa0bb10576d829a7c0dc4eb7dac6ebb1f385a2078a3d6dc8fd693664"
       }
     },
     {
       "task": "dcf-10-returns",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 1,
       "company": "SwiftBoat Care (凌舟维保)",
       "slug": "returns",
@@ -275,14 +320,18 @@
       "ev_to_fy25_ebitda": 9.43,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "405d4854273d81160d38195adb53484bc183d0d23a792577a9375fd4fbfed9c0",
-        "answers": "d2c993b1eaf28fa31d7aac729719bddc5ecc3d80664c0cd72c2ce5d2e21b74a8",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "2d5f761845e3a3b5464caed22927ed21254a6447fbc70caba37fa8a439b92289"
+        "instruction": "42a0e4f1f48f43773cc3329ed39fc7215358c46a35cde4339bc8fc8ea557ef97",
+        "answers": "3fa589f4cd9e0ff6e1ed3fa030735595d25d0c6f080e31dbd9f329fce7358edb",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "f4b6618e9935afb53fda4aca847941865c65122f562deb5ffcd8315ae709b032",
+        "management_guidance": "ded592cc6cd0570caaff58fcdc7331f4949b242a78ec931d403c5aa4100a5f79",
+        "broker_comps_memo": "d7c3f9e6b1d3518d0aefaf06f80e99772516f721e2e7e380d616e78d9fbf8b54"
       }
     },
     {
       "task": "dcf-11-saas",
+      "task_mode": "brownfield",
+      "required_sheets_count": 15,
       "wave": 2,
       "company": "BambooCloud Ops (竹序算务)",
       "slug": "saas",
@@ -302,14 +351,19 @@
       "ev_to_fy25_ebitda": 10.12,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "01afc2f35ca0397b27112e6d980629d34f7201e8f83a3be57c9eb8ca30cad154",
-        "answers": "b6a940a4b8e50869983efa3c41965dc558cc151ed9859e18b863b7b20e0125d5",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "be1b64a061f08159b70b8b64c3654652070a6f87a567f7ee3184590f2753b407"
+        "instruction": "63a16639c1c06bf99b8988bbe27d94f177e36a092c244dd14b164984b0a309f6",
+        "answers": "222df7dde9616fde812e03332b0ea1811767e1bcebb6dcb643f5271f4a5f7d33",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "ce75bc0e6740e1a75dd77e610faa3831ce12e9a3c62dc43030e202734eb032a1",
+        "management_guidance": "01b3434025bae28abf6c2be69ed00fae7d6053ab1e8f1fd5a28c1eb53b61753c",
+        "broker_comps_memo": "339c80f2d96662c52d27c9f81c74f316fe29f02e5d1b6c612209ab152f42e332",
+        "legacy_model": "444ec3d937e99f731667ca7a9b1a8ba4e51ca60fbfef635f92d998ff62cb792a"
       }
     },
     {
       "task": "dcf-12-foundry",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 2,
       "company": "HarborCreek Fab (泊川晶圆)",
       "slug": "foundry",
@@ -329,14 +383,18 @@
       "ev_to_fy25_ebitda": 11.04,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "b58c9a5d136485aa8d7d8cce53e72b58c418993fdaa298870cc67a701c222ecb",
-        "answers": "4001246bb3c36ac771ea7c25d0d7015f2828742523d234e80a652d2207768488",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "e761bf13e9b0ecd1509b0a2d778222c00dfb4eea28d2af2b69243ec63c9e07b6"
+        "instruction": "397ad3f7e913846781b0222edd9de922c4830ae30659d60307752bff1f6f0fee",
+        "answers": "09335672de8805cf83eb94e7e954c7f3fb1534d512cb8669177c0a549a803985",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "c24db26bde82142803c2baddb94e2fbcb593a6fd88626c1ac97ef79cc444bf25",
+        "management_guidance": "c3c0e6111039b00620a372fec4f5882bd2cbe210d54bd26bf6e6b1f8ed74b201",
+        "broker_comps_memo": "0d009fa41d29c729ae63fe2df2ad9320dd3487b86be9444ec2bda305a101fb59"
       }
     },
     {
       "task": "dcf-13-orders",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 2,
       "company": "Langstone Pumps (朗石泵业)",
       "slug": "orders",
@@ -356,14 +414,18 @@
       "ev_to_fy25_ebitda": 8.37,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "ab05be02fcb71807dc1769ef3303355085fbe07628fdfbfdf494861699eefca7",
-        "answers": "662ccb3948e84993fe0903f14f301d1bbb0735d9a59bc331f3756f6113af9b10",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "ceaefb67adacaa9eaaae5aab5ee18648751e91c6a0697b8a9bf41b61e0706da8"
+        "instruction": "4fa45de8888b109f8a0b7dd48af303d7433068f9bffb8c48c6480e16ba9a846a",
+        "answers": "2cf592a6a2986192a473d3857e2bd8e32f909d811573b2dcc5a57b53a5970ca4",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "ced746384be3004bc233bb73f850c46a8f1806d3acf1a7639b98e8caf9669181",
+        "management_guidance": "8819eeb7f3962d6293720fb20551415c63b63f9853af527db6f3135275bc5caf",
+        "broker_comps_memo": "ce8fea8c196265ac971898d06f7e2418d7bf5eadf785ead9169486f0b859f649"
       }
     },
     {
       "task": "dcf-14-storage",
+      "task_mode": "brownfield",
+      "required_sheets_count": 15,
       "wave": 2,
       "company": "ReedBay Thermal (芦湾恒温)",
       "slug": "storage",
@@ -383,14 +445,19 @@
       "ev_to_fy25_ebitda": 10.54,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "ee2352a79a347ee72ea315a5967a5a432d55e0d6ea2f052a6eb534eb2e78f58a",
-        "answers": "55e8000a1c04980f8811ff91c9c711f61fcec12bf6470f11c171a4dbb707ed6d",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "b4cd7131ddb22d456bbed5e426dacecf257a150be105858c3cdcca188464a0f4"
+        "instruction": "c2d17b1faa196cd3b89875a1319270ae459846658cf1cd1a2bfe0f72b6ae31c5",
+        "answers": "2f635931db17e63abff19682e0e638b854c6f605718cdb111175891069cac9f6",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "40c3ca182d6c7647fcf84e58bd7bda1f23968c755688f68b6c4ffc6a4b525fcd",
+        "management_guidance": "8c40267b70cd02c1397c93d72446dca05c29645bc54cbd6615d5c8099caa2940",
+        "broker_comps_memo": "e1573c32d435a438c3ffe7c97084de7a642c91aa0dc1163dbb28614924a69f97",
+        "legacy_model": "e7732920c3248dba3044f963cadf6407eff6f002b07e35f6baa0ed77ce677a3a"
       }
     },
     {
       "task": "dcf-15-fleet",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 2,
       "company": "Greenfield Equip (青浦工装)",
       "slug": "fleet",
@@ -410,14 +477,18 @@
       "ev_to_fy25_ebitda": 9.53,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "3311453c54ad711d690e5ab8e5adfbff22fac9e7b60d38eb05ae7d17a5de165c",
-        "answers": "2aa9d44e62f59b1a6031c016992bf7c7b643be1b613bb23a0532089f7f177546",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "cc434b1b63f9dfff46fcda2fb11764cdccfef50718bc0ca4a3fb345a4ea6ed88"
+        "instruction": "22f58a0b218afe82eeac486e0c561186589a6ae4d7dba34656656095eeeb619d",
+        "answers": "8b74b3bb22e37a859a253195561f82127a571a41d0414e866a9fa5dac5e0d660",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "0ce83bcfb8fac8a729ef70ab13145f298588e069a040205aaad2eceeb6044d23",
+        "management_guidance": "76469f2e4727c95c4d78f10aa6c2e4d0ab675bb7b36fd3602440698802be4ba6",
+        "broker_comps_memo": "9a9ac292460c3b1169cd78ae412a022f3ce2997bad2577b522a2159a7cb0c375"
       }
     },
     {
       "task": "dcf-16-license",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 2,
       "company": "Shoreline Design (岸禾设计)",
       "slug": "license",
@@ -437,14 +508,18 @@
       "ev_to_fy25_ebitda": 11.38,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "f9f55a433a0b474ca0ad1f133349e9e795731301406c40a76a2c08cb4e696a4a",
-        "answers": "1fbc9e6fa76f0142d15cbf4e18a4e75a7f3ca0a96afba7fea0a6ddfc1d6f2e61",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "5c2fb193f2248274d224f06a0588156b6cc218b1ac767c6f981b5c6256fa303b"
+        "instruction": "09a7c10e25be4cf6da7737a8360fd463b6fad350f7972ec8f65356be3cc2cc92",
+        "answers": "0252f8dd6c10b6aa42a874e40d40a8700abdaf97f9a2379d3832237d87dbb013",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "eb9acc720ae37878e3b3add336c68c8b32d3a3fdee1ad9407d4a50af78045523",
+        "management_guidance": "2b5032fda47b1826e94100ec7a81a5071a7fbc3714457ec746f49eea9ec187d8",
+        "broker_comps_memo": "2fbf76189660ccc5f9b80ade1db67b6005650eccb87872f225ea4c852eb8daab"
       }
     },
     {
       "task": "dcf-17-mine",
+      "task_mode": "brownfield",
+      "required_sheets_count": 15,
       "wave": 2,
       "company": "RidgeSpring Zinc (岭泉锌业)",
       "slug": "mine",
@@ -464,14 +539,19 @@
       "ev_to_fy25_ebitda": 6.96,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "c3ea36647a084f7895fc56c755d0ab4db1bbcb518bf40db5396c5bdd90fac601",
-        "answers": "1d8a2e45839274a5c99e533955818b7d67f06c77348a2ba208cab1367f29fe11",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "ccfad692c7e70d548eca16cd09fb55ed73fe88838bdd050a9e3e0a232bb0b4a2"
+        "instruction": "a51241bccad2a95dbb0f0473bb69f958d6ec36f8df44c8391202b1aa97e77be2",
+        "answers": "6bf4a5e18293457b53f0824c7577c2f572e95047a01845db1028076ab0c43a9e",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "4e1f7260d007dc327eb9ef57fcfe6a233bce12c63d93d4eda00f639b7b71e95d",
+        "management_guidance": "975b216be77bbf91e747b6f4168c42b41b07840bd898acb8f35204b041d41412",
+        "broker_comps_memo": "e8767c5c3a555b8018381cf4a21cb5bca205f5e66b4febbf6e44fcf7e0336305",
+        "legacy_model": "f981b1e15518e90512b2615d1ad33b65699a8f50cf8e89b08efb838bc6841f91"
       }
     },
     {
       "task": "dcf-18-retail",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 2,
       "company": "EastIsle Home (东屿家居)",
       "slug": "retail",
@@ -491,14 +571,18 @@
       "ev_to_fy25_ebitda": 12.37,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "6fcb2674333519c94725ba0445e2104a264ea85eb533068905633deff2930683",
-        "answers": "09ff585a408bef4fbc5b7bfe406a793d14e1d4c895281eb699f9181b7e294550",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "4f1f08a65452b15c45921a361a9a49c9bc369e48b1efcae46fff815a419411e5"
+        "instruction": "df93e0b6b1e23b153a4267f8e240c515a80847d5e32e26c5d93e15afa0028229",
+        "answers": "4c3df04ec21cb7f9c745c4065a7d326108e24003282f20f6cbb60505350ad5f4",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "5b3224b4e538dbedf755bd35f6f0c425c42fd493778d01739a8595210fceb10c",
+        "management_guidance": "b9cdc69dead907986a159dc451b6d09b87bc6c89644ec306b6a214b1af2da8ba",
+        "broker_comps_memo": "3e7c6a5ecaae3f1c206d7ec5fe32fa667c6f614e1fddfe04266a8215636e78a2"
       }
     },
     {
       "task": "dcf-19-royalty",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 2,
       "company": "SpringStone Media (泉石影像)",
       "slug": "royalty",
@@ -518,14 +602,18 @@
       "ev_to_fy25_ebitda": 14.04,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "933461088b1b6488e854f652a356c070a952ab7e7465b258a036dc5a6c8fca57",
-        "answers": "b41ae6814951f7f1d2127cb269d5bfc0095d9b0e55cab9e5cfe406cc39ec359a",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "34c58e62d9774b017b1ec9837fd5410e832b6961fff5486d52bcaf80191125cc"
+        "instruction": "8789a420170e3967aabcdbd8c5854ede6422cc68092e3e5737d7774257e7276f",
+        "answers": "4937abe15f09479c564db53142093d210827d667972f53557b157563b57cb419",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "8e8af57550fc4afe886f8bf0869d978cc943b18e74f7e5f58e3a3a1a85200b98",
+        "management_guidance": "8811f9eb1be1ec62f8b4b61941db47fc69807713841bb3bd3f06a76f318dbdb7",
+        "broker_comps_memo": "e9736abd81a6a7b0462cc79c1e1fc76992e143438b85193374180c981ba508d7"
       }
     },
     {
       "task": "dcf-20-returns",
+      "task_mode": "greenfield",
+      "required_sheets_count": 0,
       "wave": 2,
       "company": "SilverDock Service (银栈售服)",
       "slug": "returns",
@@ -545,10 +633,12 @@
       "ev_to_fy25_ebitda": 10.36,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "1793815995f16fb22e7df3f080814a0facfe6957fa307f33be0ecb01074857a2",
-        "answers": "706debe981405f7081708c1c182d4c1b3093eca6845e0af5b6e21da8df9cb88a",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
-        "operations_memo": "252af611cbc23f995d867e44cbf4e9193ddd62a385017d6b61962ef3e2d9f2e3"
+        "instruction": "8bae83d8f2b845cd67a2154c07389ec9a4f4cf8a279e5783b95e3968c1ce7077",
+        "answers": "b09199ff5b624ce962f0846a2ab04f20434a90758e4a23a2d58c9193836ce8a2",
+        "grade": "8cafe8bdefe7290f92c0095e085a11d40d0f1f833a205443a0fa21b8b362a848",
+        "annual_report_fy2025": "da09ff085aeae95fae9bfdd6e0d439ed65448b11f0cd85d364df851331e1997c",
+        "management_guidance": "497cc9d87760697ca4fcc32f3d527d03c5c20eebd33647adbc3948692673e783",
+        "broker_comps_memo": "f9f41e41a331b4c1ab44181cb0c6aecae111c528f8e1c7c06cdad21860c49029"
       }
     }
   ]

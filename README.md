@@ -1,10 +1,12 @@
-# DCFEval：高难度、完全可验证的从零构建 DCF 估值评测集
+# DCFEval (`v1` Hard Mode)：原始财报清洗 + 30% 15-Sheet 存量模型接手修复评测集
 
-`DCFEval` 是一个面向 LLM Agent 的高难度端到端财务建模评测集，严格接入 [Harbor](https://github.com/laude-institute/harbor)（`schema_version = "1.4"`）标准任务格式。仓库包含 **20 道完全原创、零人工介入自动生成的 DCF 建模题目**（`DCFEval/dcf-01-saas` 至 `DCFEval/dcf-20-returns`），绝不包含任何外网原题。
+`DCFEval`（`v1` 分支，Schema `4.0`）是一个面向 LLM Agent 的高难度端到端财务建模评测集，严格接入 [Harbor](https://github.com/laude-institute/harbor)（`schema_version = "1.4"`）标准任务格式。仓库包含 **20 道完全原创、零人工介入自动生成的 DCF 建模题目**（`DCFEval/dcf-01-saas` 至 `DCFEval/dcf-20-returns`），绝不包含任何外网原题。
 
-每道题均要求 Agent 在**空白工作簿（无模板、无公式骨架、无已有结果）**环境下，仅依据 `/work/data/` 中的 **7 份原始形态财务与经营材料**，从零搭建 FY2025 历史合并报表、FY2026–2030 预测三大报表与自由现金流（FCFF）估值模型，并交付纯动态公式驱动的 `/work/output.xlsx`。
+相比 `main` 分支的 v3.0 干净表格基线，`v1` 分支针对头部推理模型饱和问题实施了**两项核心真实化加难升级**：
+1. **100% 原始财报清洗（20/20 题零 CSV）**：彻底移除所有预清洗 CSV 表格，`/work/data/` 仅提供 **3 份非结构化/半结构化原始财报与附注文件**（`annual_report_fy2025.txt`、`management_guidance_fy26_30.md`、`broker_comps_and_treasury_memo.md`），内含千分位格式、混合计量单位（`EUR` / `EUR thousands` / `EUR millions` / `bp` / `%`）以及 `VOID` / `FY2024 COMPARATIVE` / `[SUPERSEDED Q3 DRAFT]` / `[EXCLUDED — DISTRESSED PEER]` / 未动用表外授信等真实干扰项，要求 Agent 自主完成财报解析与数据清洗。
+2. **30% 存量 15-Sheet 投行模型接手修复（6/20 题 Brownfield）**：模拟真实投行分析师 80% 的日常工作场景——在 6 道指定题目（`dcf-02 / 05 / 08 / 11 / 14 / 17`）中提供一份 **15 张工作表的存量 Excel 模型（`/work/data/legacy_model.xlsx`）**，模型内预埋 **过期假设冲突** 与 **5 处隐蔽金融逻辑公式 Bug**（终值错折 4 年、EV→EqV 现金符号反了、FCFF 营运资本变动加减反了、同行 Beta 误用 `AVERAGE` 替代 `MEDIAN`、TSM 漏 `MAX(0,...)` 导致价外期权负稀释）。Agent 必须在**不破坏 15 张既定工作表结构的前提下**定位修错并按最新财报重算；评分器新增 `structure_gate` 对删表或推倒重来施加硬惩罚。
 
-> **深度技术规范**：评分标准演进（v1 → v3 从业者四支柱重构）与双独立路径验证细节见 [`docs/SCORING_AND_REFERENCE_PIPELINE.md`](docs/SCORING_AND_REFERENCE_PIPELINE.md)；解题轨迹归档规范见 [`trajectories/README.md`](trajectories/README.md)。
+> **深度技术规范**：评分标准演进（v1 → v3/v4）与双独立路径验证细节见 [`docs/SCORING_AND_REFERENCE_PIPELINE.md`](docs/SCORING_AND_REFERENCE_PIPELINE.md)；解题轨迹归档规范见 [`trajectories/README.md`](trajectories/README.md)。
 
 ---
 
@@ -27,38 +29,39 @@
 
 ## 1.1 题目定位、约束达标与 20 题总览
 
-| 构造维度 | 设计落地与达标情况 |
+| 构造维度 | 设计落地与达标情况（`v1` Hard Mode / Schema 4.0） |
 |---|---|
-| **题目类型与起点** | 全部 20 题均要求从**空白工作簿**开始构建，`/work/data/` 仅提供 7 份原始 CSV/Markdown 业务与财务材料，**零 `.xlsx` 模板、零公式骨架、零预置 DCF 结果** |
+| **原始财报清洗（20/20 题）** | **彻底移除全部 CSV 表格**；每题 `/work/data/` 仅提供 3 份非结构化/半结构化原始财务报告与附注（`annual_report_fy2025.txt`、`management_guidance_fy26_30.md`、`broker_comps_and_treasury_memo.md`），含 `VOID` / FY2024 对比 / 废弃 Q3 草案 / 需剔除异常同行干扰项、千分位逗号和混合单位 |
+| **30% 存量模型接手（6/20 题）** | **70%（14 题）Greenfield 从零构建 + 30%（6 题）Brownfield 15-Sheet 存量模型接手修复**（`dcf-02 / 05 / 08 / 11 / 14 / 17` 附带 `/work/data/legacy_model.xlsx`，含过期假设冲突 + 5 处隐蔽金融逻辑 Bug，强制保留全部 15 张工作表） |
 | **题目规模与覆盖** | **20 道独立题目**（10 种差异化行业经营递推机制 × 2 波次），4 种 `{永续增长 / 退出 EBITDA} × {年中 / 年末折现}` 估值象限严格均衡（各 **5 题**） |
 | **可 Scaling 与零人工** | 100% 纯 Python + 开源 `openpyxl` 自动生成流水线 [`dcf_benchmark/build_all.py`](dcf_benchmark/build_all.py)，更改 `--seed` 或 `--waves` 即可零人工批量扩展至任意题量 |
-| **原创性与防污染** | 全部公司主体、两地关账、经营驱动、预算、同行 Beta 与期权批次均按确定性种子合成生成，**绝无外网原题或公开财报原题泄露** |
+| **原创性与防污染** | 全部公司主体、两地关账、经营驱动、预算、同行 Beta、期权批次与 15-Sheet 存量模型均按确定性种子合成生成，**绝无外网原题或公开财报原题泄露** |
 | **Harbor 题目位置** | 统一存放于仓库根目录 [`DCFEval/`](DCFEval/)，每题均含 `instruction.md`、`task.toml`、`environment/`、`solution/`、`tests/`（含 `test.sh`） |
 
-### 最新 20 题总览与估值合理性核查表（Seed = 2026，Waves = 2，详见 [`results/manifest.json`](results/manifest.json)）
+### 最新 20 题总览与模式分布（Seed = 2026，Waves = 2，14 Greenfield + 6 Brownfield 15-Sheet，详见 [`results/manifest.json`](results/manifest.json)）
 
-| 任务 ID | 公司主体 | 行业经营机制 | 终值方法 | FCFF 折现 | FY25 营收 (m) | WACC | EV (EUR m) | 每股内在价值 (EUR) | PV(TV)/EV | EV/FY25 EBITDA |
-|---|---|---|---|---|---:|---:|---:|---:|---:|---:|
-| [`dcf-01-saas`](DCFEval/dcf-01-saas/instruction.md) | SpruceCollab (云杉协作) | 订阅软件：流失、年中新签与均值扩容 | perpetuity | midyear | 105.1 | 8.30% | 623.71 | **50.42** | 77.0% | 13.1x |
-| [`dcf-02-foundry`](DCFEval/dcf-02-foundry/instruction.md) | Elmbridge Semi (榆桥微芯) | 晶圆代工：产能滚动、需求上限与良率 | exit EBITDA | midyear | 215.1 | 8.70% | 882.02 | **63.43** | 70.1% | 11.5x |
-| [`dcf-03-orders`](DCFEval/dcf-03-orders/instruction.md) | Starport Machinery (星浦机床) | 装备制造：期初在手订单与新签分期履约 | perpetuity | year-end | 113.1 | 7.35% | 373.88 | **22.46** | 75.4% | 10.9x |
-| [`dcf-04-storage`](DCFEval/dcf-04-storage/instruction.md) | Ninggang ColdChain (宁港冷仓) | 仓储出租：退租、总库容上限与半年入驻 | exit EBITDA | year-end | 219.5 | 8.09% | 619.52 | **68.59** | 69.5% | 7.5x |
-| [`dcf-05-fleet`](DCFEval/dcf-05-fleet/instruction.md) | RiverRidge Fleet (川岭器租) | 设备租赁：年初退役、年中投放与利用率 | perpetuity | midyear | 193.8 | 8.64% | 964.53 | **75.06** | 72.6% | 11.3x |
-| [`dcf-06-license`](DCFEval/dcf-06-license/instruction.md) | ClearRiver CAD (晴川图软) | 许可合同：续签服务费与一次性签约费 | exit EBITDA | midyear | 140.0 | 9.26% | 530.88 | **42.05** | 70.3% | 8.8x |
-| [`dcf-07-mine`](DCFEval/dcf-07-mine/instruction.md) | StoneCourt Copper (石庭铜业) | 矿业开采：储量发现、开采上限与回收率 | perpetuity | year-end | 144.2 | 8.27% | 463.92 | **27.50** | 67.1% | 6.8x |
-| [`dcf-08-retail`](DCFEval/dcf-08-retail/instruction.md) | Platform Books (月台书铺) | 连锁零售：老店关停与新店首年爬坡 | exit EBITDA | year-end | 113.8 | 9.48% | 415.17 | **24.30** | 74.8% | 10.3x |
-| [`dcf-09-royalty`](DCFEval/dcf-09-royalty/instruction.md) | SeaChord Audio (海弦音频) | 特许权：分档费率、超额折扣与最低保底 | perpetuity | midyear | 173.9 | 10.52% | 650.12 | **56.57** | 72.6% | 10.1x |
-| [`dcf-10-returns`](DCFEval/dcf-10-returns/instruction.md) | SwiftBoat Care (凌舟维保) | 售后服务：保修到期、新签与索赔抵扣 | exit EBITDA | midyear | 144.0 | 6.73% | 557.18 | **42.54** | 67.4% | 9.4x |
-| [`dcf-11-saas`](DCFEval/dcf-11-saas/instruction.md) | BambooCloud Ops (竹序算务) | 订阅软件：流失、年中新签与均值扩容 | exit EBITDA | year-end | 182.9 | 8.17% | 825.64 | **74.49** | 68.3% | 10.1x |
-| [`dcf-12-foundry`](DCFEval/dcf-12-foundry/instruction.md) | HarborCreek Fab (泊川晶圆) | 晶圆代工：产能滚动、需求上限与良率 | perpetuity | year-end | 216.8 | 8.34% | 963.64 | **81.39** | 75.4% | 11.0x |
-| [`dcf-13-orders`](DCFEval/dcf-13-orders/instruction.md) | Langstone Pumps (朗石泵业) | 装备制造：期初在手订单与新签分期履约 | exit EBITDA | midyear | 142.3 | 9.35% | 510.76 | **28.65** | 63.1% | 8.4x |
-| [`dcf-14-storage`](DCFEval/dcf-14-storage/instruction.md) | ReedBay Thermal (芦湾恒温) | 仓储出租：退租、总库容上限与半年入驻 | perpetuity | midyear | 180.1 | 7.63% | 648.20 | **51.17** | 70.2% | 10.5x |
-| [`dcf-15-fleet`](DCFEval/dcf-15-fleet/instruction.md) | Greenfield Equip (青浦工装) | 设备租赁：年初退役、年中投放与利用率 | exit EBITDA | year-end | 163.2 | 9.09% | 717.88 | **42.55** | 71.2% | 9.5x |
-| [`dcf-16-license`](DCFEval/dcf-16-license/instruction.md) | Shoreline Design (岸禾设计) | 许可合同：续签服务费与一次性签约费 | perpetuity | year-end | 209.0 | 7.23% | 1,022.67 | **58.64** | 76.3% | 11.4x |
-| [`dcf-17-mine`](DCFEval/dcf-17-mine/instruction.md) | RidgeSpring Zinc (岭泉锌业) | 矿业开采：储量发现、开采上限与回收率 | exit EBITDA | midyear | 130.8 | 8.07% | 377.36 | **37.65** | 57.2% | 7.0x |
-| [`dcf-18-retail`](DCFEval/dcf-18-retail/instruction.md) | EastIsle Home (东屿家居) | 连锁零售：老店关停与新店首年爬坡 | perpetuity | midyear | 208.4 | 8.08% | 1,079.01 | **61.51** | 78.0% | 12.4x |
-| [`dcf-19-royalty`](DCFEval/dcf-19-royalty/instruction.md) | SpringStone Media (泉石影像) | 特许权：分档费率、超额折扣与最低保底 | exit EBITDA | year-end | 100.6 | 9.75% | 516.71 | **34.93** | 75.9% | 14.0x |
-| [`dcf-20-returns`](DCFEval/dcf-20-returns/instruction.md) | SilverDock Service (银栈售服) | 售后服务：保修到期、新签与索赔抵扣 | perpetuity | year-end | 141.7 | 9.20% | 589.65 | **43.82** | 71.5% | 10.4x |
+| 任务 ID | 题型模式 | 公司主体 | 行业经营机制 | 终值方法 | FCFF 折现 | FY25 营收 (m) | WACC | EV (EUR m) | 每股内在价值 (EUR) | PV(TV)/EV | EV/FY25 EBITDA |
+|---|---|---|---|---|---|---:|---:|---:|---:|---:|---:|
+| [`dcf-01-saas`](DCFEval/dcf-01-saas/instruction.md) | Greenfield (财报清洗) | SpruceCollab (云杉协作) | 订阅软件：流失、年中新签与均值扩容 | perpetuity | midyear | 105.1 | 8.30% | 623.71 | **50.42** | 77.0% | 13.1x |
+| [`dcf-02-foundry`](DCFEval/dcf-02-foundry/instruction.md) | **Brownfield (15-Sheet 接手)** | Elmbridge Semi (榆桥微芯) | 晶圆代工：产能滚动、需求上限与良率 | exit EBITDA | midyear | 215.1 | 8.70% | 882.02 | **63.43** | 70.1% | 11.5x |
+| [`dcf-03-orders`](DCFEval/dcf-03-orders/instruction.md) | Greenfield (财报清洗) | Starport Machinery (星浦机床) | 装备制造：期初在手订单与新签分期履约 | perpetuity | year-end | 113.1 | 7.35% | 373.88 | **22.46** | 75.4% | 10.9x |
+| [`dcf-04-storage`](DCFEval/dcf-04-storage/instruction.md) | Greenfield (财报清洗) | Ninggang ColdChain (宁港冷仓) | 仓储出租：退租、总库容上限与半年入驻 | exit EBITDA | year-end | 219.5 | 8.09% | 619.52 | **68.59** | 69.5% | 7.5x |
+| [`dcf-05-fleet`](DCFEval/dcf-05-fleet/instruction.md) | **Brownfield (15-Sheet 接手)** | RiverRidge Fleet (川岭器租) | 设备租赁：年初退役、年中投放与利用率 | perpetuity | midyear | 193.8 | 8.64% | 964.53 | **75.06** | 72.6% | 11.3x |
+| [`dcf-06-license`](DCFEval/dcf-06-license/instruction.md) | Greenfield (财报清洗) | ClearRiver CAD (晴川图软) | 许可合同：续签服务费与一次性签约费 | exit EBITDA | midyear | 140.0 | 9.26% | 530.88 | **42.05** | 70.3% | 8.8x |
+| [`dcf-07-mine`](DCFEval/dcf-07-mine/instruction.md) | Greenfield (财报清洗) | StoneCourt Copper (石庭铜业) | 矿业开采：储量发现、开采上限与回收率 | perpetuity | year-end | 144.2 | 8.27% | 463.92 | **27.50** | 67.1% | 6.8x |
+| [`dcf-08-retail`](DCFEval/dcf-08-retail/instruction.md) | **Brownfield (15-Sheet 接手)** | Platform Books (月台书铺) | 连锁零售：老店关停与新店首年爬坡 | exit EBITDA | year-end | 113.8 | 9.48% | 415.17 | **24.30** | 74.8% | 10.3x |
+| [`dcf-09-royalty`](DCFEval/dcf-09-royalty/instruction.md) | Greenfield (财报清洗) | SeaChord Audio (海弦音频) | 特许权：分档费率、超额折扣与最低保底 | perpetuity | midyear | 173.9 | 10.52% | 650.12 | **56.57** | 72.6% | 10.1x |
+| [`dcf-10-returns`](DCFEval/dcf-10-returns/instruction.md) | Greenfield (财报清洗) | SwiftBoat Care (凌舟维保) | 售后服务：保修到期、新签与索赔抵扣 | exit EBITDA | midyear | 144.0 | 6.73% | 557.18 | **42.54** | 67.4% | 9.4x |
+| [`dcf-11-saas`](DCFEval/dcf-11-saas/instruction.md) | **Brownfield (15-Sheet 接手)** | BambooCloud Ops (竹序算务) | 订阅软件：流失、年中新签与均值扩容 | exit EBITDA | year-end | 182.9 | 8.17% | 825.64 | **74.49** | 68.3% | 10.1x |
+| [`dcf-12-foundry`](DCFEval/dcf-12-foundry/instruction.md) | Greenfield (财报清洗) | HarborCreek Fab (泊川晶圆) | 晶圆代工：产能滚动、需求上限与良率 | perpetuity | year-end | 216.8 | 8.34% | 963.64 | **81.39** | 75.4% | 11.0x |
+| [`dcf-13-orders`](DCFEval/dcf-13-orders/instruction.md) | Greenfield (财报清洗) | Langstone Pumps (朗石泵业) | 装备制造：期初在手订单与新签分期履约 | exit EBITDA | midyear | 142.3 | 9.35% | 510.76 | **28.65** | 63.1% | 8.4x |
+| [`dcf-14-storage`](DCFEval/dcf-14-storage/instruction.md) | **Brownfield (15-Sheet 接手)** | ReedBay Thermal (芦湾恒温) | 仓储出租：退租、总库容上限与半年入驻 | perpetuity | midyear | 180.1 | 7.63% | 648.20 | **51.17** | 70.2% | 10.5x |
+| [`dcf-15-fleet`](DCFEval/dcf-15-fleet/instruction.md) | Greenfield (财报清洗) | Greenfield Equip (青浦工装) | 设备租赁：年初退役、年中投放与利用率 | exit EBITDA | year-end | 163.2 | 9.09% | 717.88 | **42.55** | 71.2% | 9.5x |
+| [`dcf-16-license`](DCFEval/dcf-16-license/instruction.md) | Greenfield (财报清洗) | Shoreline Design (岸禾设计) | 许可合同：续签服务费与一次性签约费 | perpetuity | year-end | 209.0 | 7.23% | 1,022.67 | **58.64** | 76.3% | 11.4x |
+| [`dcf-17-mine`](DCFEval/dcf-17-mine/instruction.md) | **Brownfield (15-Sheet 接手)** | RidgeSpring Zinc (岭泉锌业) | 矿业开采：储量发现、开采上限与回收率 | exit EBITDA | midyear | 130.8 | 8.07% | 377.36 | **37.65** | 57.2% | 7.0x |
+| [`dcf-18-retail`](DCFEval/dcf-18-retail/instruction.md) | Greenfield (财报清洗) | EastIsle Home (东屿家居) | 连锁零售：老店关停与新店首年爬坡 | perpetuity | midyear | 208.4 | 8.08% | 1,079.01 | **61.51** | 78.0% | 12.4x |
+| [`dcf-19-royalty`](DCFEval/dcf-19-royalty/instruction.md) | Greenfield (财报清洗) | SpringStone Media (泉石影像) | 特许权：分档费率、超额折扣与最低保底 | exit EBITDA | year-end | 100.6 | 9.75% | 516.71 | **34.93** | 75.9% | 14.0x |
+| [`dcf-20-returns`](DCFEval/dcf-20-returns/instruction.md) | Greenfield (财报清洗) | SilverDock Service (银栈售服) | 售后服务：保修到期、新签与索赔抵扣 | perpetuity | year-end | 141.7 | 9.20% | 589.65 | **43.82** | 71.5% | 10.4x |
 
 > **合理性分布**：全套 20 题 WACC 分布于 `6.73%–10.52%`、`PV(TV)/EV` 分布于 `57.2%–78.0%`、`EV / FY25 EBITDA` 分布于 `6.8x–14.0x`、每股内在价值分布于 `EUR 22.46–81.39`，彻底规避不现实的跨期营收断崖与极端估值倍数。
 
@@ -122,27 +125,24 @@ flowchart LR
 `build_all.py` 按四阶段自动将抽象案例编译为标准 [Harbor](https://github.com/laude-institute/harbor) 任务目录，单题完整结构如下：
 
 ```text
-DCFEval/dcf-01-saas/
-├── instruction.md                 # 面向 Agent 的完整英文任务书、口径说明、sheet/cell 契约与公式范围
-├── task.toml                      # Harbor v1.4 规范配置（1 CPU / 1536MB / no-network / verifier 独立容器隔离）
+DCFEval/dcf-02-foundry/                      # 示例：Brownfield 15-Sheet 存量接手题（Greenfield 题不含 legacy_model.xlsx）
+├── instruction.md                           # 面向 Agent 的完整任务书、财报清洗要求、15-Sheet 保留契约与公式范围
+├── task.toml                                # Harbor v1.4 规范配置（1 CPU / 1536MB / no-network / verifier 独立容器隔离）
 ├── environment/
-│   ├── Dockerfile                 # 自包含离线 Debian 12 + Python 3 + openpyxl + libreoffice-calc 镜像
-│   └── data/                      # 7 份公开原始材料（严禁包含任何 .xlsx 或私有真值）
-│       ├── north_close.csv        # 北站 FY2025 总账（EUR 千，含 POSTED/VOID 与长短债拆分）
-│       ├── south_close.csv        # 南站 FY2025 总账（EUR 元，含 POSTED/VOID 与长短债拆分）
-│       ├── operations_memo.md     # 经营委员会核准递推政策与 5 年量价驱动
-│       ├── finance_budget.csv     # 财务预算（混合 pct 百分数与 EUR 千）
-│       ├── peer_set.csv           # 3 或 5 家动态可比公司观察 Beta、D/E 与法定税率
-│       ├── treasury_note.md       # 财资利率（bp）、目标资本结构与动态 ITM+OTM 期权批次
-│       └── valuation_policy.md    # CFO 估值签批（折旧率、年中/年末折现、永续/退出终值）
+│   ├── Dockerfile                           # 自包含离线 Debian 12 + Python 3 + openpyxl + libreoffice-calc 镜像
+│   └── data/                                # 零 CSV！3 份原始财报/附注（+ Brownfield 题附 15-Sheet legacy_model.xlsx）
+│       ├── annual_report_fy2025.txt         # FY2025 年报原文与附注（含两地不同量纲、VOID/FY24 干扰、Note 8 债务与 Note 11 期权）
+│       ├── management_guidance_fy26_30.md   # 管理层经营与财务预算纪要（含废弃 Q3 草案干扰、混合千/元/百分数）
+│       ├── broker_comps_and_treasury_memo.md # 投行可比公司与财资政策纪要（含需剔除的异常同行、bp/百分数与终值签批）
+│       └── legacy_model.xlsx                # [仅 30% Brownfield 题] 15 张工作表存量 Excel（含过期假设冲突 + 5 处隐蔽公式 Bug）
 ├── solution/
-│   ├── solve.sh                   # Oracle 执行入口：cp /solution/reference.xlsx /work/output.xlsx
-│   ├── reference.xlsx             # 路径 B 生成的纯动态公式参考工作簿
-│   └── canonical.json             # 私有规范快照（仅用于审计/复现，不挂载至 agent 环境）
+│   ├── solve.sh                             # Oracle 执行入口：cp /solution/reference.xlsx /work/output.xlsx
+│   ├── reference.xlsx                       # 路径 B 生成的纯动态公式参考解（Brownfield 题保留完整 15-Sheet 结构）
+│   └── canonical.json                       # 私有规范快照（仅用于审计/复现，不挂载至 agent 环境）
 └── tests/
-    ├── test.sh                    # Harbor Verifier 入口：调用 grade.py 写入 /logs/verifier/reward.txt & details.json
-    ├── grade.py                   # v3.0 从业者四支柱评分器 + 动态防贴死数门控
-    └── answers.json               # 路径 A 生成的基准与 3 组扰动真值
+    ├── test.sh                              # Harbor Verifier 入口：调用 grade.py 写入 /logs/verifier/reward.txt & details.json
+    ├── grade.py                             # v4.0 四支柱评分器 + dynamic_gate 防贴死数门控 + structure_gate 15-Sheet 结构门控
+    └── answers.json                         # 路径 A 生成的基准、3 组扰动真值与 Brownfield required_sheets 清单
 ```
 
 - **安全隔离**：`task.toml` 声明 `network_mode = "no-network"` 防止联网查答案，且 `[verifier] environment_mode = "separate"` 确保评分脚本与真值仅在独立 Verifier 容器内挂载，解题 Agent 无法接触 `solution/` 或 `tests/`。
@@ -163,21 +163,24 @@ DCFEval/dcf-01-saas/
 | **3. 会计勾稽与表健康度** | **15%** | `ties` (**9%**) + `ties_shock` (**4%**) + `controls` (**2%**) | 基准 5 年 20 项恒等式（资产=负债+权益、现金闭环、权益滚存、FCFF 恒等）+ **价格/回款扰动后 40 项动态配平**（防基准强行 Plug 配平）+ 控制格与零 `#REF!/#DIV/0!/#VALUE!` 报错 |
 | **4. 假设敏感性增量联动** | **20%** | `shock_operations` (**7%**) + `shock_collection` (**6%**) + `shock_discount` (**7%**) | 分别修改单价、回款天数、无风险利率，考核**变动增量 $\Delta$ 及比例弹性 $\%\Delta$**——上游单点误差不连坐下游敏感性 |
 
-- **底层防贴死数动态门控（`formulas` 表面权重 = `0%`，专防“Python 算完贴死数字”）**：
-  $$\text{dynamic\_gate} = 0.20 + 0.80 \times \left(0.65 \cdot \text{formula\_ratio} + 0.35 \cdot \text{responsiveness\_ratio}\right), \qquad \text{reward} = \text{raw\_score} \times \text{dynamic\_gate}$$
+- **底层防贴死数动态门控与 15-Sheet 结构保留门控（`formulas` 表面权重 = `0%`）**：
+  $$\text{dynamic\_gate} = 0.20 + 0.80 \times \left(0.65 \cdot \text{formula\_ratio} + 0.35 \cdot \text{responsiveness\_ratio}\right), \qquad \text{reward} = \text{raw\_score} \times \text{dynamic\_gate} \times \text{structure\_gate}$$
   - `formula_ratio`（155 个计算格，豁免第 8 行外生固定费用）：结合**静态递归计算链审计**（拦截硬编码、`=1.13` 常数公式、`=Helper!A1` 静态中转）与**叶节点微扰探针 `leaf_probe`**（微扰全表静态输入后检查非零计算格必须真响应，封堵 `=常数 + 0*Inputs!$B$4` 伪公式作弊）。
   - `responsiveness_ratio`：三组扰动下理论应动格的真实非零响应率——只评估“模型是否为活体”，与基准数值偏差解耦，确保全动态模型即使局部有笔误也不会触发多重连坐。
+  - `structure_gate`（**30% Brownfield 题专属**）：强制校验 `/work/output.xlsx` 完整保留原有 15 张工作表名（`Cover`、`Inputs`、`Statements`、`DCF`、`Ledger`、`Capital`、`Drivers`、`Revenue_Build`、`Cost_OpEx`、`Working_Capital`、`PPE_Capex`、`Debt_Schedule`、`Peer_Comps`、`TSM_Dilution`、`Checks_Audit`）；完整保留得 `1.0`，若删表或推倒重建精简版则按 $0.50 \times \text{preserved\_ratio}$ 硬惩罚且判定 `pass_strict = False`。
 
 ---
 
 # 第二章：评估落地
 
-## 2.1 落地规范核对与 Oracle 20/20 全量验收（200 项正反例）
+## 2.1 落地规范核对与 Oracle 20/20 全量验收（212 项正反例）
 
 ### 落地规范核对
-- **Oracle 实现**：每题 `solution/solve.sh` 直接执行 `cp /solution/reference.xlsx /work/output.xlsx`（不重复做题），已通过全量 20 题无头 LibreOffice 验证，**20/20 全部 `reward = 1.0000`**（完整验证轨迹已归档至 [`trajectories/oracle/`](trajectories/oracle/)）。
-- **多维度正反例验收**：[`dcf_benchmark/accept.py`](dcf_benchmark/accept.py) 对全部 20 题逐一构建 10 组工作簿（共 **200 项**独立重算测试，原始明细见 [`results/acceptance.json`](results/acceptance.json)）：
-  - **20 项 Oracle 满分（`1.0000`）** + **20 项独立异构替代布局满分（`1.0000`）** + **20 项单点折旧括号笔误公平性校验（`Gate = 1.0000`、60/60 基准与扰动勾稽全过、回款增量 100%）** + **7 类共 140 项作弊与错误反例全部严格 `< 1.0`**。
+- **Oracle 实现**：每题 `solution/solve.sh` 直接执行 `cp /solution/reference.xlsx /work/output.xlsx`（不重复做题），已通过全量 20 题无头 LibreOffice 验证，**20/20 全部 `reward = 1.0000`**（含全部 6 道 15-Sheet Brownfield 接手修复题；完整验证轨迹已归档至 [`trajectories/oracle/`](trajectories/oracle/)）。
+- **多维度正反例验收（212 项全过）**：[`dcf_benchmark/accept.py`](dcf_benchmark/accept.py) 对全部 20 题逐一构建正反例工作簿（共 **212 项**独立 LibreOffice 重算测试，原始明细见 [`results/acceptance.json`](results/acceptance.json)）：
+  - **20 项 Oracle 满分（`1.0000`）** + **20 项独立异构替代布局满分（`1.0000`）** + **20 项单点折旧括号笔误公平性校验（`Gate = 1.0000`、60/60 基准与扰动勾稽全过、回款增量 100%）** + **140 项常规作弊与错误反例全部严格 `< 1.0`**；
+  - **6 项 Brownfield 未修改存量旧模型检验（`unmodified_legacy`）**：直接提交 `legacy_model.xlsx` 仅得 **`0.2416`**（全部 `< 0.80`），证明预埋的过期假设与 5 处金融公式 Bug 具有实质破坏力；
+  - **6 项 Brownfield 删表破坏结构检验（`stripped_sheets`）**：哪怕数值和公式全对，删除 10 张既有辅助表后 `structure_gate = 0.1667`、得分暴跌至 **`0.1653`**，严格锁死“不破坏 15-Sheet 既有结构”的硬约束。
 
 | 任务 ID | Oracle (`ref`) | 异构布局 (`alt_layout`) | 单点笔误 (`dep_bug`, Gate=1.0) | 纯贴死数 (`frozen`) | 终值错一年 (`terminal`) | 错纳价外期权 (`itm_filter`) | 零乘数伪公式 (`zero_mul`) | 常数伪公式 (`fake_f`) | 静态别名 (`alias`) | 缺文件 (`missing`) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -254,24 +257,25 @@ python3 dcf_benchmark/accept.py /tmp/DCFEval-2027 /tmp/acceptance-2027.json
 
 ---
 
-## 2.3 最新 20 题多模型实测分数总表（均分 · 耗时 · Token · 轮次）
+## 2.3 多模型 20 题实测分数总表（`main` v3.0 干净表格基线参考 & `v1` Hard Mode 基准）
 
-> **评测说明（截至 2026-11-25 03:54，开启推理 / Thinking 汇总）**：
-> - 本表汇总 **Oracle 20/20 参考解基准** 以及开启推理（Thinking）的 Frontier Model 在 20 题原始材料套件上的实测表现（每题独立首答，仅在代码执行失败或未交付工作簿时允许 1 次修复；无头 LibreOffice 独立容器验分）。
-> - `DeepSeek V4.1 Flash`、`GLM 5.3` 与 `GPT-6.1/6.2 Sol` 均已跑齐 **20/20**；`Qwen4 Max` 当前已完成 `17/20`（余 2 题已交付待评、1 题环境报错待补跑）；后续还将补测 `Kimi K3.1 Pro`（仅开默认 `thinking`、不设 `max` 档位）以做同口径横向对比，并在全部收齐后推送全量脱敏解题轨迹与逐模型失败归因。
+> **评测说明（截至 2026-11-25 13:00）**：
+> - 下表记录了 **`v1` Hard Mode** 的 **Oracle 20/20 验收基准（含 14 题原始财报清洗 + 6 题 15-Sheet 存量接手修复）**，以及各 Frontier Models 在 **`main` v3.0（7 份干净 CSV/MD 表格基线）** 上的开启推理（Thinking）实测表现（用于与后续 `v1` Hard Mode 跑分做难度拉开对照）。
+> - 在 `main` v3.0 基线上，头部推理模型在大预算 + 二次修复下已出现明显天花板效应（GPT-6.1/6.2 = `1.0000`、Kimi thinking-only = `0.9500`、DeepSeek = `0.8902`，但 1-shot 一次满分率仅为 Kimi `45%` / DeepSeek `30%` / Qwen `0%`）；这正是本 `v1` 分支升级为**去 CSV 原始财报清洗 + 30% 15-Sheet 存量模型接手修复**的直接动因。
 
-### 表 1：多模型综合评测总表（20 题，开启推理 / Thinking）
+### 表 1：多模型综合评测总表（`v1` Oracle 基准 + `main` v3.0 历史基线对照）
 
-| 模型 (Model) | 推理配置 / 上限 | 有效评分 | 平均得分 | 满分率 (`1.0`) | 交付率 | 平均时间 (s) | 平均推理 Token/题 | 平均调用轮次 | 当前状态 |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---|
-| `oracle`（参考解基准） | — | **20/20** | **1.0000** | 20/20 (100.0%) | 20/20 (100.0%) | 0.0 | 0 | 1.00 | ✅ 已归档 [`trajectories/oracle/`](trajectories/oracle/) |
-| `GPT-6.1 Sol` | max | **20/20** | **1.0000** | 20/20 (100.0%) | 20/20 (100.0%) | ~840.9 | 17,511 | 1.25 | ✅ 已完成 |
-| `GPT-6.2 Sol` | max | **20/20** | **1.0000** | 20/20 (100.0%) | 20/20 (100.0%) | ~525.3 | 17,308 | 1.05 | ✅ 已完成 |
-| `DeepSeek V4.1 Flash` | thinking / 200k | **20/20** | **0.8902** | 16/20 (80.0%) | 19/20 (95.0%) | 825.4 | ~40,604 | 1.65 | ✅ 已完成 |
-| `Qwen4 Max` | thinking / 200k | 17/20 | **0.7984** | 12/17 (70.6%) | 14/17 (82.4%) | 1,093.5 | ~22,732 | 2.00 | 🔄 2 题已交付待评，1 题环境报错待 `--retry-failed` |
-| `GLM 5.3` | thinking / 131k | **20/20** | **0.4491** | 1/20 (5.0%) | 15/20 (75.0%) | 182.7 | 6,504 | 1.30 | ✅ 已完成（服务端上限 `131,072`） |
+| 模型 (Model) | 评测套件版本 | 推理配置 / 上限 | 有效评分 | 平均得分 | 满分率 (`1.0`) | 1-shot 一次满分率 | 交付率 | 平均时间 (s) | 平均推理 Token/题 | 平均调用轮次 |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| `oracle`（`v1` 参考解基准） | **`v1` (Hard Mode)** | — | **20/20** | **1.0000** | 20/20 (100.0%) | 100.0% | 20/20 (100.0%) | 0.0 | 0 | 1.00 |
+| `GPT-6.1 Sol` | `main` (v3.0 基线) | max | **20/20** | **1.0000** | 20/20 (100.0%) | — | 20/20 (100.0%) | ~840.9 | 17,511 | 1.25 |
+| `GPT-6.2 Sol` | `main` (v3.0 基线) | max | **20/20** | **1.0000** | 20/20 (100.0%) | — | 20/20 (100.0%) | ~525.3 | 17,308 | 1.05 |
+| `Kimi K3.1 Pro` | `main` (v3.0 基线) | thinking-only / 200k | **20/20** | **0.9500** | 19/20 (95.0%) | **45.0%** (9/20) | 19/20 (95.0%) | 1,015.9 | 25,891 | 1.55 |
+| `DeepSeek V4.1 Flash` | `main` (v3.0 基线) | thinking / 200k | **20/20** | **0.8902** | 16/20 (80.0%) | **30.0%** (6/20) | 19/20 (95.0%) | 825.4 | ~40,604 | 1.65 |
+| `Qwen4 Max` | `main` (v3.0 基线) | thinking / 200k | 19/20 | **0.8196** | 14/19 (73.7%) | **0.0%** (0/19) | 16/19 (84.2%) | 1,252.0 | 23,872 | 2.00 |
+| `GLM 5.3` | `main` (v3.0 基线) | thinking / 131k | **20/20** | **0.4491** | 1/20 (5.0%) | **5.0%** (1/20) | 15/20 (75.0%) | 182.7 | 6,504 | 1.30 |
 
-> 注：`平均时间 (s)` 为单题端到端解题耗时（含 API 生成、重试等待与容器代码执行，不含评分器耗时）；`GLM 5.3` 因服务端 `max_tokens` 上限为 `131,072`，按服务端允许上限测齐 20/20。
+> 注：`v1`（原始财报清洗 + 30% 15-Sheet 存量接手修复）的 Frontier Models 实测待开跑后同步回填至本表；`GLM 5.3` 因服务端 `max_tokens` 上限为 `131,072`，按服务端允许上限测齐 20/20。
 
 ### 表 2：四支柱分项均分与防贴死数门控（v3.0 评分器汇总）
 

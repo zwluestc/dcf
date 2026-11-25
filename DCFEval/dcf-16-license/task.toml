@@ -2,7 +2,7 @@ schema_version = "1.4"
 artifacts = ["/work/output.xlsx"]
 [task]
 name = "dcfeval/dcf-16-license"
-description = "From-blank integrated 3-statement forecast and FCFF valuation: license (wave 2)"
+description = "Greenfield raw-filing data cleaning & 3-statement FCFF valuation: license (wave 2)"
 [agent]
 timeout_sec = 900
 [environment]
