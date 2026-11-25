@@ -24,7 +24,8 @@ from pathlib import Path
 from openpyxl import Workbook, load_workbook
 
 from audit_sources import reconstruct
-from grade import build_leaf_probe_workbook, grade, run_soffice_recalc
+from filings import plan_and_peers, read_ledger
+from grade import build_filing_probe, build_leaf_probe_workbook, grade, run_soffice_recalc
 
 
 def find_otm_row(ws_cap):
@@ -73,8 +74,7 @@ def build_alt_layout_workbook(task: Path, out_path: Path):
     ws_cap["A8"], ws_cap["B8"] = "DepRate", s["dep_rate"]
 
     # Peer unlevering table in columns D:H of WACC_TSM
-    with (pub / "peer_set.csv").open(newline="") as f:
-        peers = list(csv.DictReader(f))
+    _,peers=plan_and_peers(pub)
     for i, rec in enumerate(peers, start=2):
         ws_cap[f"D{i}"] = rec["peer"]
         ws_cap[f"E{i}"] = float(rec["observed_equity_beta"])
@@ -129,6 +129,22 @@ def build_alt_layout_workbook(task: Path, out_path: Path):
     ws_st["B17"] = "=B14+B15-B16"
     ws_st["B24"] = "=B22+B14+B15+B19"
     ws_st["B25"] = "=B16+B20+B23"
+
+    if (pub/"north_annual_report.txt").exists():
+        # Independent layout for forecasting; the Ledger evidence contract is shared.
+        from collections import defaultdict
+        ledger=wb.create_sheet("Ledger")
+        row_refs=defaultdict(list)
+        from reference import CHART_TO_KEY
+        idx=4
+        for site in ("North","South"):
+            for code,native,units,cite in reversed(read_ledger(pub,site)):
+                for j,v in enumerate([site,code,CHART_TO_KEY[code],native,units,f"=D{idx}/E{idx}",cite],1):
+                    ledger.cell(idx,j,v)
+                row_refs[CHART_TO_KEY[code]].append(f"Ledger!F{idx}")
+                idx+=1
+        for rr,key in {6:"revenue",7:"cogs",8:"opex",9:"da",11:"interest",12:"tax",14:"ar",15:"inv",16:"ap",19:"ppe",20:"debt",22:"cash",23:"equity"}.items():
+            ws_st[f"B{rr}"]="="+"+".join(row_refs[key])
 
     # Forecast columns C..G using DIFFERENT equivalent Excel formulas + numeric Row 8!
     for t in range(5):
@@ -210,6 +226,8 @@ def build_alt_layout_workbook(task: Path, out_path: Path):
 def stage_for_batch(tag: str, wb_path: Path, spec: dict, batch_in: Path):
     shutil.copyfile(wb_path, batch_in / f"{tag}__base.xlsx")
     build_leaf_probe_workbook(wb_path, batch_in / f"{tag}__leaf_probe.xlsx")
+    if "filing_evidence" in spec:
+        build_filing_probe(wb_path,batch_in/f"{tag}__filing_probe.xlsx",spec)
     for k, v in spec["shocks"].items():
         w = load_workbook(wb_path, keep_links=False)
         for addr, n in v["changes"].items():
@@ -220,15 +238,53 @@ def stage_for_batch(tag: str, wb_path: Path, spec: dict, batch_in: Path):
 
 def make_recalc_loader(tag: str, batch_out: Path):
     def _loader(_src: Path, out: Path):
-        for suffix in ("base", "leaf_probe", *("operations", "collection", "discount")):
+        for suffix in ("base", "leaf_probe","filing_probe", *("operations", "collection", "discount")):
             f = batch_out / f"{tag}__{suffix}.xlsx"
             if f.exists():
                 shutil.copyfile(f, out / f"{suffix}.xlsx")
     return _loader
 
 
+def eval_repair(task,spec):
+    ref=task/"solution/reference.xlsx"
+    prior=task/"environment/data/prior_model.xlsx"
+    good=grade(ref,spec)
+    assert good["reward"]==1 and good["pass_strict"], (task.name,good)
+    unchanged=grade(prior,spec)
+    assert 0<unchanged["reward"]<1, (task.name,unchanged)
+    negative={"unchanged":unchanged}
+    with tempfile.TemporaryDirectory() as td:
+        temp=Path(td)/"output.xlsx"
+        w=load_workbook(ref)
+        w["Discounting"].sheet_state="visible"
+        w.save(temp); w.close()
+        broken=grade(temp,spec)
+        assert broken["reward"]==0 and "structure" in broken["reason"]
+        negative["changed_visibility"]=broken
+        # Apply the signed controls and cleaned filing rows, leaving both code faults.
+        w=load_workbook(prior); fixed=load_workbook(ref)
+        for sheet in ("Inputs","Ledger"):
+            for addr in spec["inherited"]["editable"][sheet]:
+                w[sheet][addr]=fixed[sheet][addr].value
+        w.save(temp)
+        stale=grade(temp,spec)
+        assert stale["groups"]["filings"]==[28,28] and 0<stale["reward"]<1
+        negative["unfixed_formulas"]=stale
+        # Fix the actual inherited model in place, then test preservation and recalculation.
+        for sheet,addrs in spec["inherited"]["editable"].items():
+            for addr in addrs:
+                w[sheet][addr]=fixed[sheet][addr].value
+        w.save(temp); w.close(); fixed.close()
+        repaired=grade(temp,spec)
+        assert repaired["pass_strict"] and repaired["reward"]==1
+    print("checked inherited",task.name,flush=True)
+    return task.name,dict(oracle_local=good,repaired_in_place=repaired,negative=negative)
+
+
 def eval_task(task: Path):
     spec = json.loads((task / "tests/answers.json").read_text())
+    if "inherited" in spec:
+        return eval_repair(task,spec)
     ref = task / "solution/reference.xlsx"
     result = {"oracle_local": None, "alt_layout": None, "single_dep_bug": None, "negative": {}}
 
@@ -323,6 +379,16 @@ def eval_task(task: Path):
         assert 0.55 < dep_res["reward"] < 1.0, (task.name, "single_dep_bug reward out of range", dep_res)
         result["single_dep_bug"] = dep_res
 
+        if "filing_evidence" in spec:
+            with_provenance=load_workbook(ref)
+            with_provenance["Ledger"]["G4"]="Superseded filing#IS01"
+            path=tp/"wrong_source.xlsx"
+            with_provenance.save(path)
+            with_provenance.close()
+            wrong_source=grade(path,spec)
+            assert wrong_source["groups"]["filings"]==[27,28] and not wrong_source["pass_strict"]
+            result["negative"]["wrong_source"]=wrong_source
+
         # Build `frozen` from LibreOffice-recalculated oracle__base.xlsx and grade directly via standalone soffice
         frozen_path = tp / "frozen.xlsx"
         w_frz = load_workbook(batch_out / "oracle__base.xlsx", data_only=True)
@@ -397,11 +463,6 @@ if __name__ == "__main__":
     dest.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
     if len(sys.argv) > 3:
         export_oracle_trajectories(result, Path(sys.argv[3]))
-    for k, v in result.items():
-        print(
-            k,
-            f"oracle={v['oracle_local']['reward']}",
-            f"alt_layout={v['alt_layout']['reward']}",
-            f"dep_bug={v['single_dep_bug']['reward']}(gate={v['single_dep_bug']['dynamic_gate']})",
-            {m: r["reward"] for m, r in v["negative"].items()},
-        )
+    for key, entry in result.items():
+        print(key, "oracle", entry["oracle_local"]["reward"],
+              "counterexamples", {m:r["reward"] for m,r in entry["negative"].items()})

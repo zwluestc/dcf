@@ -1,0 +1,31 @@
+RidgeSpring Zinc (岭泉锌业) | South subsidiary | FY2025 annual financial report
+Statement release dated 28 February 2026. Calendar-year accounts.
+Presentation currency: EUR. Spaces group thousands; comma is decimal.
+Profit or loss expenses are shown in parentheses. Cost schedules use expense magnitudes.
+Each comparative is FY2024. Flows span twelve months. Balances are at 31 December.
+Use the signed amendment in note N01 for billings. Debt in BS07 is the total facility.
+
+Statement of profit or loss
+[IS01] Customer billings. FY2024 comparative 63 266 840. FY2025 reported 69 894 000.
+[IS02] Direct fulfilment costs. FY2024 comparative (17 984 330). FY2025 reported (19 763 000).
+[IS03] Selling and administration. FY2024 comparative (6 146 140). FY2025 reported (6 754 000).
+[IS04] Depreciation. FY2024 comparative (2 096 640). FY2025 reported (2 304 000).
+[IS05] Finance expense. FY2024 comparative (1 775 410). FY2025 reported (1 951 000).
+[IS06] Current tax expense. FY2024 comparative (3 445 260). FY2025 reported (3 786 000).
+
+Statement of financial position
+[BS01] Customer receivables. FY2024 comparative 7 927 010. FY2025 reported 8 711 000.
+[BS02] Merchandise on hand. FY2024 comparative 4 489 030. FY2025 reported 4 933 000.
+[BS03] Trade creditors. FY2024 comparative 2 386 930. FY2025 reported 2 623 000.
+[BS04] Operating plant, net. FY2024 comparative 25 651 080. FY2025 reported 28 188 000.
+[BS05] Cash at bank. FY2024 comparative 8 532 160. FY2025 reported 9 376 000.
+[BS06] Closing book capital. FY2024 comparative 37 461 970. FY2025 reported 41 167 000.
+[BS07] Borrowings, current and non-current together. FY2025 reported 10 494 000.
+[BS08] Interoffice clearing receivable: 3 076 000. Eliminated on group consolidation.
+
+Notes and subsequent amendment
+[N01] Signed amendment, 14 March 2026. For FY2025, replace IS01 with 69 524 000. Do not add both releases.
+[N03] Audited facility principal outstanding at 31 December 2025 totals 10 494 000.
+[N04] Included in N03, the principal due within the next twelve months is 2 098 800.
+The remainder of N03 is non-current. Both portions bear interest. Trade creditors exclude the facility.
+[M01] Prior unsigned credit proposal: projected new facility 4 197 600. It was never drawn.

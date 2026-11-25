@@ -1,0 +1,7 @@
+Treasury research | Market observations
+
+Maple reports an observed equity beta of 1.086650005544998552455811485. Net debt/equity is 0.3x and the statutory tax rate is 23.00%.
+Onyx reports an observed equity beta of 1.234060796441531926928435548. Net debt/equity is 0.64x and the statutory tax rate is 19.00%.
+Cinder reports an observed equity beta of 1.322730338831871767656704590. Net debt/equity is 0.39x and the statutory tax rate is 28.00%.
+Beryl reports an observed equity beta of 0.9183104151466085790010999781. Net debt/equity is 0.33x and the statutory tax rate is 18.00%.
+Alder reports an observed equity beta of 0.7561214513617167101419128552. Net debt/equity is 0.26x and the statutory tax rate is 25.00%.

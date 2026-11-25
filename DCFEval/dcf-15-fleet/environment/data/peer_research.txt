@@ -1,0 +1,5 @@
+Treasury research | Market observations
+
+Cobalt reports an observed equity beta of 1.481855486483351289309384926. Net debt/equity is 0.61x and the statutory tax rate is 25.00%.
+Dune reports an observed equity beta of 1.311383496865726832623655555. Net debt/equity is 0.67x and the statutory tax rate is 26.00%.
+Quartz reports an observed equity beta of 1.716458000445639317226136780. Net debt/equity is 0.62x and the statutory tax rate is 28.00%.

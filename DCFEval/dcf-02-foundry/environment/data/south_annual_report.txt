@@ -1,0 +1,31 @@
+Elmbridge Semi (榆桥微芯) | South subsidiary | FY2025 annual financial report
+Statement release dated 28 February 2026. Calendar-year accounts.
+Presentation currency: EUR. Spaces group thousands; comma is decimal.
+Profit or loss expenses are shown in parentheses. Cost schedules use expense magnitudes.
+Each comparative is FY2024. Flows span twelve months. Balances are at 31 December.
+Use the signed amendment in note N01 for billings. Debt in BS07 is the total facility.
+
+Statement of profit or loss
+[IS01] Customer billings. FY2024 comparative 100 540 440. FY2025 reported 110 854 000.
+[IS02] Direct fulfilment costs. FY2024 comparative (37 167 130). FY2025 reported (40 843 000).
+[IS03] Selling and administration. FY2024 comparative (16 352 700). FY2025 reported (17 970 000).
+[IS04] Depreciation. FY2024 comparative (8 032 570). FY2025 reported (8 827 000).
+[IS05] Finance expense. FY2024 comparative (1 777 230). FY2025 reported (1 953 000).
+[IS06] Current tax expense. FY2024 comparative (6 338 150). FY2025 reported (6 965 000).
+
+Statement of financial position
+[BS01] Customer receivables. FY2024 comparative 21 333 130. FY2025 reported 23 443 000.
+[BS02] Merchandise on hand. FY2024 comparative 8 258 250. FY2025 reported 9 075 000.
+[BS03] Trade creditors. FY2024 comparative 4 857 580. FY2025 reported 5 338 000.
+[BS04] Operating plant, net. FY2024 comparative 61 456 850. FY2025 reported 67 535 000.
+[BS05] Cash at bank. FY2024 comparative 12 597 130. FY2025 reported 13 843 000.
+[BS06] Closing book capital. FY2024 comparative 94 334 240. FY2025 reported 103 664 000.
+[BS07] Borrowings, current and non-current together. FY2025 reported 29 341 000.
+[BS08] Interoffice clearing receivable: 24 447 000. Eliminated on group consolidation.
+
+Notes and subsequent amendment
+[N01] Signed amendment, 14 March 2026. For FY2025, replace IS01 with 110 484 000. Do not add both releases.
+[N03] Audited facility principal outstanding at 31 December 2025 totals 29 341 000.
+[N04] Included in N03, the principal due within the next twelve months is 8 802 300.
+The remainder of N03 is non-current. Both portions bear interest. Trade creditors exclude the facility.
+[M01] Prior unsigned credit proposal: projected new facility 17 604 600. It was never drawn.

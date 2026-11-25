@@ -382,7 +382,7 @@
     },
     "collection": {
       "changes": {
-        "B5": 7
+        "B5": 7.0
       },
       "expected": {
         "Statements": {
@@ -560,9 +560,9 @@
           "B4": 0.08271961713999999,
           "B5": 489.5592852112778,
           "B6": 329.02224714741277,
-          "B7": 480.1101533713353,
-          "B8": 472.1101533713353,
-          "B9": 28.476395040191523,
+          "B7": 480.11015337133534,
+          "B8": 472.11015337133534,
+          "B9": 28.476395040191527,
           "B12": 1.1555,
           "B13": 16.579,
           "B14": 0.7948639626698619,
@@ -760,5 +760,147 @@
         }
       }
     }
+  },
+  "filing_evidence": {
+    "north_annual_report.txt#N01": [
+      86699.0,
+      1000,
+      86.699
+    ],
+    "north_annual_report.txt#IS02": [
+      19333.0,
+      1000,
+      19.333
+    ],
+    "north_annual_report.txt#IS03": [
+      9586.0,
+      1000,
+      9.586
+    ],
+    "north_annual_report.txt#IS04": [
+      4051.0,
+      1000,
+      4.051
+    ],
+    "north_annual_report.txt#IS05": [
+      1198.0,
+      1000,
+      1.198
+    ],
+    "north_annual_report.txt#IS06": [
+      7050.0,
+      1000,
+      7.05
+    ],
+    "north_annual_report.txt#BS01": [
+      16157.0,
+      1000,
+      16.157
+    ],
+    "north_annual_report.txt#BS02": [
+      5143.0,
+      1000,
+      5.143
+    ],
+    "north_annual_report.txt#BS03": [
+      4164.0,
+      1000,
+      4.164
+    ],
+    "north_annual_report.txt#BS04": [
+      28759.0,
+      1000,
+      28.759
+    ],
+    "north_annual_report.txt#BS05": [
+      6699.0,
+      1000,
+      6.699
+    ],
+    "north_annual_report.txt#BS06": [
+      53175.0,
+      1000,
+      53.175
+    ],
+    "north_annual_report.txt#N04": [
+      3622.15,
+      1000,
+      3.62215
+    ],
+    "north_annual_report.txt#N03-N04": [
+      6726.85,
+      1000,
+      6.72685
+    ],
+    "south_annual_report.txt#N01": [
+      57501000.0,
+      1000000,
+      57.501
+    ],
+    "south_annual_report.txt#IS02": [
+      40467000.0,
+      1000000,
+      40.467
+    ],
+    "south_annual_report.txt#IS03": [
+      6714000.0,
+      1000000,
+      6.714
+    ],
+    "south_annual_report.txt#IS04": [
+      4449000.0,
+      1000000,
+      4.449
+    ],
+    "south_annual_report.txt#IS05": [
+      702000.0,
+      1000000,
+      0.702
+    ],
+    "south_annual_report.txt#IS06": [
+      5850000.0,
+      1000000,
+      5.85
+    ],
+    "south_annual_report.txt#BS01": [
+      9543000.0,
+      1000000,
+      9.543
+    ],
+    "south_annual_report.txt#BS02": [
+      4657000.0,
+      1000000,
+      4.657
+    ],
+    "south_annual_report.txt#BS03": [
+      5536000.0,
+      1000000,
+      5.536
+    ],
+    "south_annual_report.txt#BS04": [
+      49241000.0,
+      1000000,
+      49.241
+    ],
+    "south_annual_report.txt#BS05": [
+      10301000.0,
+      1000000,
+      10.301
+    ],
+    "south_annual_report.txt#BS06": [
+      42625000.0,
+      1000000,
+      42.625
+    ],
+    "south_annual_report.txt#N04": [
+      5127850.0,
+      1000000,
+      5.12785
+    ],
+    "south_annual_report.txt#N03-N04": [
+      9523150.0,
+      1000000,
+      9.52315
+    ]
   }
 }

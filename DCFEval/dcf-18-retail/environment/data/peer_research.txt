@@ -1,0 +1,5 @@
+Treasury research | Market observations
+
+Onyx reports an observed equity beta of 1.314433366594092073669334527. Net debt/equity is 0.6x and the statutory tax rate is 23.00%.
+Quartz reports an observed equity beta of 1.406438625743470775535483073. Net debt/equity is 0.41x and the statutory tax rate is 20.0%.
+Maple reports an observed equity beta of 1.007932680790924960224251015. Net debt/equity is 0.51x and the statutory tax rate is 25.00%.

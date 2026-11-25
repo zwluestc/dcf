@@ -1,0 +1,31 @@
+BambooCloud Ops (竹序算务) | North subsidiary | FY2025 annual financial report
+Statement release dated 28 February 2026. Calendar-year accounts.
+Presentation currency: thousands of EUR. Commas group thousands; dot is decimal.
+Profit or loss expenses are shown in parentheses. Cost schedules use expense magnitudes.
+Each comparative is FY2024. Flows span twelve months. Balances are at 31 December.
+Use the signed amendment in note N01 for billings. Debt in BS07 is the total facility.
+
+Statement of profit or loss
+[IS01] Customer billings. FY2024 comparative 60,315.71. FY2025 reported 66,651.
+[IS02] Direct fulfilment costs. FY2024 comparative (28,852.46). FY2025 reported (31,706).
+[IS03] Selling and administration. FY2024 comparative (12,446.98). FY2025 reported (13,678).
+[IS04] Depreciation. FY2024 comparative (3,466.19). FY2025 reported (3,809).
+[IS05] Finance expense. FY2024 comparative (1,259.44). FY2025 reported (1,384).
+[IS06] Current tax expense. FY2024 comparative (5,419.05). FY2025 reported (5,955).
+
+Statement of financial position
+[BS01] Customer receivables. FY2024 comparative 9,452.17. FY2025 reported 10,387.
+[BS02] Merchandise on hand. FY2024 comparative 7,094.36. FY2025 reported 7,796.
+[BS03] Trade creditors. FY2024 comparative 6,971.51. FY2025 reported 7,661.
+[BS04] Operating plant, net. FY2024 comparative 48,556.69. FY2025 reported 53,359.
+[BS05] Cash at bank. FY2024 comparative 11,596.13. FY2025 reported 12,743.
+[BS06] Closing book capital. FY2024 comparative 32,151.21. FY2025 reported 35,331.
+[BS07] Borrowings, current and non-current together. FY2025 reported 26,429.
+[BS08] Interoffice clearing payable: 14,864. Eliminated on group consolidation.
+
+Notes and subsequent amendment
+[N01] Signed amendment, 14 March 2026. For FY2025, replace IS01 with 66,281. Do not add both releases.
+[N03] Audited facility principal outstanding at 31 December 2025 totals 26,429.
+[N04] Included in N03, the principal due within the next twelve months is 6,607.25.
+The remainder of N03 is non-current. Both portions bear interest. Trade creditors exclude the facility.
+[M01] Prior unsigned credit proposal: projected new facility 13,214.5. It was never drawn.

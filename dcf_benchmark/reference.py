@@ -14,6 +14,7 @@ from openpyxl.styles import Font, PatternFill
 from openpyxl.utils import get_column_letter
 
 from audit_sources import reconstruct
+from filings import read_ledger, plan_and_peers
 
 NF_NUM = '#,##0.00;(#,##0.00);"-"'
 NF_PCT = "0.00%"
@@ -192,22 +193,14 @@ def build_task_workbook(root: Path):
             ws_led.cell(row=3, column=j, value=h)
         row_idx = 4
         for site in ("north", "south"):
-            with (pub / f"{site}_close.csv").open(newline="") as f:
-                for rec in csv.DictReader(f):
-                    if rec["status"].strip().upper() != "POSTED":
-                        continue
-                    amt_col = next(col for col in rec if col.startswith("amount_"))
-                    scale = 1000 if amt_col.endswith("_thousands") else 1000000
-                    acct = rec["account"].strip()
-                    key = CHART_TO_KEY[acct]
-                    ws_led.cell(row=row_idx, column=1, value=site.title())
-                    ws_led.cell(row=row_idx, column=2, value=acct)
-                    ws_led.cell(row=row_idx, column=3, value=key)
-                    ws_led.cell(row=row_idx, column=4, value=float(rec[amt_col]))
-                    ws_led.cell(row=row_idx, column=5, value=scale)
-                    ws_led.cell(row=row_idx, column=6, value=f"=D{row_idx}/E{row_idx}")
-                    account_cells.setdefault(key, []).append(f"Ledger!F{row_idx}")
-                    row_idx += 1
+            for acct, amount, scale, cite in read_ledger(pub,site.title()):
+                key = CHART_TO_KEY[acct]
+                for j, value in enumerate([site.title(),acct,key,amount,scale,f"=D{row_idx}/E{row_idx}",cite],1):
+                    ws_led.cell(row_idx,j,value)
+                account_cells.setdefault(key, []).append(f"Ledger!F{row_idx}")
+                row_idx += 1
+        ws_led["G3"]="Filing reference"
+        ws_led.column_dimensions["G"].width=36
     else:
         ws_led["A1"] = "Actual ledger"
         for j, h in enumerate(["Site", "FY2025 account", "EUR millions"], start=1):
@@ -222,8 +215,7 @@ def build_task_workbook(root: Path):
     # Capital & Dilution schedule for raw mode
     if raw:
         ws_cap = wb.create_sheet("Capital")
-        with (pub / "peer_set.csv").open(newline="") as f:
-            peer_rows = list(csv.DictReader(f))
+        _,peer_rows=plan_and_peers(pub)
         note_text = (pub / "treasury_note.md").read_text()
         basic_shares = float(re.search(r"outstanding:\s*([\d.]+)\s*shares", note_text).group(1))
         mkt_quote = float(re.search(r"quote:\s*EUR\s*([\d.]+)", note_text).group(1))

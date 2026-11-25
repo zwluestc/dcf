@@ -1,0 +1,7 @@
+Treasury research | Market observations
+
+Beryl reports an observed equity beta of 1.470804899620000525972756512. Net debt/equity is 0.4x and the statutory tax rate is 27.00%.
+Cobalt reports an observed equity beta of 1.594898391759084199049636936. Net debt/equity is 0.64x and the statutory tax rate is 23.00%.
+Birch reports an observed equity beta of 1.864630001840904647793116537. Net debt/equity is 0.68x and the statutory tax rate is 22.00%.
+Vesper reports an observed equity beta of 1.285931324079381329297918257. Net debt/equity is 0.4x and the statutory tax rate is 28.00%.
+Cinder reports an observed equity beta of 1.144239048911347291889848631. Net debt/equity is 0.45x and the statutory tax rate is 26.00%.

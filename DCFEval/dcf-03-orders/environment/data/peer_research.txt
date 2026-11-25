@@ -1,0 +1,5 @@
+Treasury research | Market observations
+
+Onyx reports an observed equity beta of 0.7895542597294535328239085035. Net debt/equity is 0.25x and the statutory tax rate is 20.0%.
+Cobalt reports an observed equity beta of 1.006894998742426137534340381. Net debt/equity is 0.28x and the statutory tax rate is 28.00%.
+Flint reports an observed equity beta of 1.279174143105104350778060269. Net debt/equity is 0.4x and the statutory tax rate is 23.00%.

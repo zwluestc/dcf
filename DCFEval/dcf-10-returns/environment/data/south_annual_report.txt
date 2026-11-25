@@ -1,0 +1,31 @@
+SwiftBoat Care (凌舟维保) | South subsidiary | FY2025 annual financial report
+Statement release dated 28 February 2026. Calendar-year accounts.
+Presentation currency: EUR. Spaces group thousands; comma is decimal.
+Profit or loss expenses are shown in parentheses. Cost schedules use expense magnitudes.
+Each comparative is FY2024. Flows span twelve months. Balances are at 31 December.
+Use the signed amendment in note N01 for billings. Debt in BS07 is the total facility.
+
+Statement of profit or loss
+[IS01] Customer billings. FY2024 comparative 84 662 760. FY2025 reported 93 406 000.
+[IS02] Direct fulfilment costs. FY2024 comparative (36 439 130). FY2025 reported (40 043 000).
+[IS03] Selling and administration. FY2024 comparative (9 174 620). FY2025 reported (10 082 000).
+[IS04] Depreciation. FY2024 comparative (3 105 830). FY2025 reported (3 413 000).
+[IS05] Finance expense. FY2024 comparative (992 810). FY2025 reported (1 091 000).
+[IS06] Current tax expense. FY2024 comparative (5 267 080). FY2025 reported (5 788 000).
+
+Statement of financial position
+[BS01] Customer receivables. FY2024 comparative 8 684 130. FY2025 reported 9 543 000.
+[BS02] Merchandise on hand. FY2024 comparative 3 116 750. FY2025 reported 3 425 000.
+[BS03] Trade creditors. FY2024 comparative 3 204 110. FY2025 reported 3 521 000.
+[BS04] Operating plant, net. FY2024 comparative 48 836 060. FY2025 reported 53 666 000.
+[BS05] Cash at bank. FY2024 comparative 10 937 290. FY2025 reported 12 019 000.
+[BS06] Closing book capital. FY2024 comparative 38 381 980. FY2025 reported 42 178 000.
+[BS07] Borrowings, current and non-current together. FY2025 reported 10 220 000.
+[BS08] Interoffice clearing payable: 22 734 000. Eliminated on group consolidation.
+
+Notes and subsequent amendment
+[N01] Signed amendment, 14 March 2026. For FY2025, replace IS01 with 93 036 000. Do not add both releases.
+[N03] Audited facility principal outstanding at 31 December 2025 totals 10 220 000.
+[N04] Included in N03, the principal due within the next twelve months is 3 066 000.
+The remainder of N03 is non-current. Both portions bear interest. Trade creditors exclude the facility.
+[M01] Prior unsigned credit proposal: projected new facility 6 132 000. It was never drawn.

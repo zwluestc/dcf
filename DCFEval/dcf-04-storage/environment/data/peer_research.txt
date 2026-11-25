@@ -1,0 +1,5 @@
+Treasury research | Market observations
+
+Haven reports an observed equity beta of 1.213752654910963815835611549. Net debt/equity is 0.61x and the statutory tax rate is 28.00%.
+Onyx reports an observed equity beta of 1.213456759421990931587788113. Net debt/equity is 0.3x and the statutory tax rate is 22.00%.
+Quartz reports an observed equity beta of 0.9192257959409866405543142316. Net debt/equity is 0.39x and the statutory tax rate is 26.00%.

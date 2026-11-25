@@ -6,6 +6,8 @@ import shutil
 import sys
 from decimal import Decimal
 from pathlib import Path
+from filings import overhaul
+from takeover import is_takeover, TASK_CONTRACT
 
 GL = {
     "revenue": ("4100", "Product and service billings", "Cr"),
@@ -234,16 +236,30 @@ def build(baseline, out):
         d = json.loads((src / "environment/data/case.json").read_text())
         dst.mkdir(parents=True, exist_ok=True)
         asset, increment = sources(d, dst / "environment/data")
+        pub = dst / "environment/data"
+        evidence = overhaul(pub, d["company"], d["seed"])
+        takeover = is_takeover(src.name)
+        policy = pub / "valuation_policy.md"
+        policy.write_text("# CFO sign-off\nUse the latest signed FY2025 subsidiary filings, including signed amendments. Normalize expense signs and currency units. Eliminate interoffice clearing when consolidating.\n\n"+policy.read_text().split("\n\n",1)[1])
+        treasury = pub / "treasury_note.md"
+        treasury.write_text(treasury.read_text().replace("peer_set.csv","peer_research.txt"))
         shutil.copy(src / "environment/Dockerfile", dst / "environment/Dockerfile")
         if len(list((dst / "environment/data").iterdir())) != 7:
             raise ValueError("unexpected public file(s)")
-        (dst / "instruction.md").write_text(public_instruction(d, (src / "instruction.md").read_text()))
-        (dst / "task.toml").write_text((src / "task.toml").read_text())
+        brief=public_instruction(d,(src / "instruction.md").read_text()).replace("two site extracts","two subsidiary annual filings")
+        brief += "\nClean both filings into Ledger, one row for each site and economic line, beginning at row 4. Columns D, E, F and G contain the FY2025 positive native amount, divisor to millions, formula converting to EUR millions, and source reference (filename#note ID). Use N03-N04 for non-current debt. Include six income lines, six operating/equity balances and both debt maturities per site. Link historical statements to your cleaned records.\n"
+        if takeover:
+            brief=brief.replace("Start from a blank workbook.", "Continue the inherited /work/data/prior_model.xlsx.").replace("Other inputs and helper tabs may be laid out freely.","Preserve the inherited workbook layout.")
+            brief += TASK_CONTRACT
+        (dst / "instruction.md").write_text(brief)
+        mode="Inherited workbook repair" if takeover else "Financial filing reconstruction"
+        (dst / "task.toml").write_text((src / "task.toml").read_text().replace("From-blank integrated",mode+" and integrated"))
         for sub in ("tests", "solution"):
             shutil.copytree(src / sub, dst / sub, dirs_exist_ok=True)
         (dst / "solution/canonical.json").write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n")
         p = dst / "tests/answers.json"
         a = json.loads(p.read_text())
+        a["filing_evidence"] = evidence
         s = d["scalar"]
         extra = {"B12": s["beta"], "B13": s["shares"], "B14": asset, "B15": increment}
         for y in [a["base"]] + [v["expected"] for v in a["shocks"].values()]:

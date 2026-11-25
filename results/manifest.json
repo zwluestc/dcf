@@ -1,5 +1,6 @@
 {
-  "schema_version": "3.0",
+  "schema_version": "v1-filings-repair",
+  "repair_tasks": 6,
   "seed": 2026,
   "waves": 2,
   "num_tasks": 20,
@@ -13,6 +14,16 @@
   "tasks": [
     {
       "task": "dcf-01-saas",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "18f812ac66dd351e6b1fee4bf19787c12225d7c81ba0ef90df9e592cc7983168",
+        "north_annual_report.txt": "c64c47794b0a5209309799493edbc87b18ca3575b03eb31c3833935e648eef83",
+        "operations_memo.md": "fe458a3b0f4e3eaf027d1bf538f92fc4f4a632c6ff7f81e542b60a5c56715bf0",
+        "peer_research.txt": "2e1e0a5bcba4f3e9f0f94ee131fbc11c1086d46fe2381294c488266889148bab",
+        "south_annual_report.txt": "aea37d86e0b4cfc4f95c0163ae6f06aa0fab86f42405d2900298219f7a923677",
+        "treasury_note.md": "a5bf0cae3b23b64b36c2bec756905ffd8af6f47f0a60714531745995b352ad88",
+        "valuation_policy.md": "8ee0d02e6b9b33b6f747b8c50900137a88eb941b24ac79f3cb60c0f3ff9a0339"
+      },
       "wave": 1,
       "company": "SpruceCollab (云杉协作)",
       "slug": "saas",
@@ -32,14 +43,25 @@
       "ev_to_fy25_ebitda": 13.1,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "4e522704996e9ce67c314d1061af6339b34879d30e7ed8886cbe1bde9c268746",
-        "answers": "9e84958e4cdebbdd556604186dc31a90426686149578db1b6775c1242c7a2ab0",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "004a8101236b2802f9777e5875c5cde439534acfbd6fa8943abb0e1a6792a5fd",
+        "answers": "dfcbf99d5f108796a493b9a32c3e90d70dcd47dc61fab4fd438d678257998896",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "fe458a3b0f4e3eaf027d1bf538f92fc4f4a632c6ff7f81e542b60a5c56715bf0"
       }
     },
     {
       "task": "dcf-02-foundry",
+      "mode": "repair",
+      "public_files": {
+        "budget_approval.txt": "be0b14231d342c98726aa4403d98894e50bf6ed2787f404b54648bc5908b74ca",
+        "north_annual_report.txt": "7c7b986d7d96e530a9b68e55a90db99b2f113f5f30fe735a4b4c5995b268dd41",
+        "operations_memo.md": "a0bf38f2e9c26c122347aef56a09eb1e0aef101c14f09d2cf58de48107dd1e82",
+        "peer_research.txt": "bbe1667315fa4657d4a93d873404de252f63339661b0d2569117591099b261e4",
+        "prior_model.xlsx": "f89abdef4f117b85b2a40c45970025e64d98201bdf6f2bfc12c7da5d1304870f",
+        "south_annual_report.txt": "a822b979f3fe6657a4eaf230a64a720f8d99b9576ebaabf6aa5a2c04636e0d84",
+        "treasury_note.md": "0aafbe076acaaedcc9b6fc15b9d6e32d197afecb060084b884cea7566319f216",
+        "valuation_policy.md": "07ff4504b4822a0760e75ef16cb20da0089fe43a07bb44920413257b4042a8a8"
+      },
       "wave": 1,
       "company": "Elmbridge Semi (榆桥微芯)",
       "slug": "foundry",
@@ -50,23 +72,33 @@
       "fy25_revenue": 215.1,
       "fy25_ebitda": 76.8,
       "wacc": 0.08702,
-      "tv": 937.8964,
-      "pv_tv": 617.9693,
-      "ev": 882.0186,
-      "equity_value": 877.1186,
-      "share_price": 63.426,
-      "pv_tv_share": 0.7006,
-      "ev_to_fy25_ebitda": 11.48,
+      "tv": 964.3977,
+      "pv_tv": 635.4307,
+      "ev": 904.0455,
+      "equity_value": 899.1455,
+      "share_price": 65.0188,
+      "pv_tv_share": 0.7029,
+      "ev_to_fy25_ebitda": 11.77,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "77a7d97ac426f4761daa03a45eacdc532f3c4ff76549fb41b4fec72829956df7",
-        "answers": "52bb208284904edfb42d236a92b34f3a82348fafe22d22e428b277fa3685d1c9",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "828e3f6cbfefb85d891e33945deb6f23f9c861754eadb2ccc61bba283dd79aad",
+        "answers": "64a674ed1b5d837609e7da012d551f835ca7e3ca4ed9107ff107997c3cb2b615",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "a0bf38f2e9c26c122347aef56a09eb1e0aef101c14f09d2cf58de48107dd1e82"
       }
     },
     {
       "task": "dcf-03-orders",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "6ef8d24c124f37d7c3e7b8fe41320c3c61fa2896545293617d682f197b1d3959",
+        "north_annual_report.txt": "a087df8c251516f80d43b4b8561f70892b4aae4531a9a7cdbfe9dd584f00b44a",
+        "operations_memo.md": "dd5f169855f5ae96b572e26d354a0dfb998764e2fcc974d2685bab25b56b29b6",
+        "peer_research.txt": "a4a2dd73ab9604db2977aa0317d2ded48fee18d17b0fa9de9348ce05258f354c",
+        "south_annual_report.txt": "74a4690091901a94369f3a157b83cddbe5a477559a0130f7e48d85ebc1153f25",
+        "treasury_note.md": "55a8556975755175cc91a35e33359062147ba040878b1f819996f7980a45b168",
+        "valuation_policy.md": "22dc7f4c88b31f499e03c080d9b8acdfd1bb0e7d1369bb7fcabdc09221cf90b0"
+      },
       "wave": 1,
       "company": "Starport Machinery (星浦机床)",
       "slug": "orders",
@@ -86,14 +118,24 @@
       "ev_to_fy25_ebitda": 10.93,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "375f56fbeadb2cc0f631671de136982f5c761a4c6aa87dc26b515af0f8ababab",
-        "answers": "0173f7311e6b721b94679897cb10b9cce4fd5608545b0a2daa8fc0c6b52af597",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "815bdfc213376696a2e4ad4d971bd9c65fa9bd1639252dcb95356aa5d5be24cf",
+        "answers": "19c060e2049e5ac5adcf672a5cf4456a43ee13bf0cdcfd31bc52e26644ed671c",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "dd5f169855f5ae96b572e26d354a0dfb998764e2fcc974d2685bab25b56b29b6"
       }
     },
     {
       "task": "dcf-04-storage",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "cedf589040a8b47bb73c66c0ef1dd52c1e8807a133db71895ddaa0be88878037",
+        "north_annual_report.txt": "90daa8be3e769da22cfe647c4ed0bd2d6a30dc9cf5a8eedd93f7eed854d7989d",
+        "operations_memo.md": "e6fd8d3a53147c740fed3b01da2dd07479f07eff8610b8713178168597f6b4f3",
+        "peer_research.txt": "36cabdc28a4758434def3175d79bf265e3c71a21872babe31f681b224a285796",
+        "south_annual_report.txt": "6f2614ebe1f65386d1b5952c8a2557563319c498c6184d40afccdc6f834c52a3",
+        "treasury_note.md": "36c18f7e6815579bfbb11a3799fd61e8e7b33a48014afd4921740f7a8efdf1df",
+        "valuation_policy.md": "4a6924ff3c3929eaf74ec012d3d1247dcb536a7fc72a32c4cd1a62224dad2c48"
+      },
       "wave": 1,
       "company": "Ninggang ColdChain (宁港冷仓)",
       "slug": "storage",
@@ -113,14 +155,25 @@
       "ev_to_fy25_ebitda": 7.54,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "0fef97ddea4f32bc0b586d3715a5fb8d274bc43e0c1508db7c0e0d0bedd8402b",
-        "answers": "c6dad338f0d19b6a9860853e7a59916bd8e7265371f54e64e473fda87c2bb2fc",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "2ee89de86d5fe1021391c4abb65b62fd20814ec4fb597b50e88a65fe9acdec29",
+        "answers": "b4b0295083e8b60edf3502cf108888cc01a7c8bf50b44d4eeddc8408c5028d6b",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "e6fd8d3a53147c740fed3b01da2dd07479f07eff8610b8713178168597f6b4f3"
       }
     },
     {
       "task": "dcf-05-fleet",
+      "mode": "repair",
+      "public_files": {
+        "budget_approval.txt": "bed51c418f1d3e8253c87eed272d55b31b27020dd72ce757d8ebd87f20b01688",
+        "north_annual_report.txt": "6cde18aae60e8b7e5bcc9c5738be0c103913a49078ffab514bb71d2da2d818ff",
+        "operations_memo.md": "d06fdbf347715705ef1f5e570817120631a6cbf035e40f64eb0016d7f5bf9baa",
+        "peer_research.txt": "56d8934e268e6760527da6a5a934a68d29d58bde78efc9c3b7fece1ba28208d9",
+        "prior_model.xlsx": "753db0174e2ad39f8b556fefa5f60da1626aefc873d7e121c31a1012ee57521f",
+        "south_annual_report.txt": "3f08bf8cb2832a5eabab14373edef0774f7eac8ab98d5cff35ad41e0c93055c7",
+        "treasury_note.md": "27e0675408cd679d61f165b31c3dfaddaae63e095b7f280675ea9579fc6c4f9a",
+        "valuation_policy.md": "f209b8ab45b4adb55d74c7c0c23c4363d849a635eef65d87940b47a0e39f5104"
+      },
       "wave": 1,
       "company": "RiverRidge Fleet (川岭器租)",
       "slug": "fleet",
@@ -131,23 +184,33 @@
       "fy25_revenue": 193.8,
       "fy25_ebitda": 85.4,
       "wacc": 0.086351,
-      "tv": 1059.4387,
-      "pv_tv": 700.205,
-      "ev": 964.5303,
-      "equity_value": 959.9303,
-      "share_price": 75.0649,
-      "pv_tv_share": 0.726,
-      "ev_to_fy25_ebitda": 11.29,
+      "tv": 1102.6881,
+      "pv_tv": 728.7894,
+      "ev": 999.7121,
+      "equity_value": 995.1121,
+      "share_price": 77.8161,
+      "pv_tv_share": 0.729,
+      "ev_to_fy25_ebitda": 11.71,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "9784ec555d216d479fb9f7a1f8090efb59f3d8d60be429a268ae1de55d815a74",
-        "answers": "c98271e97d37c9caf3e592125fb34d6541526cdfbe150b0dc4d99e54ca1aa15c",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "ec9f0d0212fa13fc47e99dc9d0dacac8771d2ecb15b95832ff60847c261131dc",
+        "answers": "d1fdb1b6bf5a9a3e028ec5de38eefcbbfa7eb05715833d71fa9d1521fc1afef2",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "d06fdbf347715705ef1f5e570817120631a6cbf035e40f64eb0016d7f5bf9baa"
       }
     },
     {
       "task": "dcf-06-license",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "1a7560cdf95f32020bd48b98feacf55955715333c3d38311c6d83d5363ce1528",
+        "north_annual_report.txt": "e1dbcbe47663ef6b5e122948214451c1cd61a8c3a4fa6eb88b7e2939dfbd4acd",
+        "operations_memo.md": "bdd036bd7be730396ff9626b322cb459fa28185853700a4adc73e9f5bc663be8",
+        "peer_research.txt": "d5505a0a653351e810e8db6da87cb55ca42cfecb4848b970b64c41b61978f3bc",
+        "south_annual_report.txt": "cdeab7995876d9763daadeb3a169e9427d1c888bf5cacbde13ed91d390c4a85a",
+        "treasury_note.md": "1e9bfabd370c72bbfa5fea7669725f3cbfaa2a69a4eea3ee9cc8b36d5d0d5a4d",
+        "valuation_policy.md": "52c28b85f2a4a0628cc0ed497876ee58e4f799ba57b4484fb30517a58c93216c"
+      },
       "wave": 1,
       "company": "ClearRiver CAD (晴川图软)",
       "slug": "license",
@@ -167,14 +230,24 @@
       "ev_to_fy25_ebitda": 8.82,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "a5c8cf600faaf3b72bb8ece3ca7077d05dec6ae209d822cc9c3a80a560629f5a",
-        "answers": "e4260a39e0952169847f3186e68fa5884d40f93c806931a783a3da56344aebc2",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "94c7beafa4d5140d38d00602736ee23adc8155056c791968abea4de8cbfa507c",
+        "answers": "05cf3c78f86df0aca3ec9ad38e8adb9190d00ebb1fb5d104b94d916cd84678f2",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "bdd036bd7be730396ff9626b322cb459fa28185853700a4adc73e9f5bc663be8"
       }
     },
     {
       "task": "dcf-07-mine",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "3a9561505bb8eb8290a4ebeeedf47bef03e26775711974a7c9b9dcdf5644f368",
+        "north_annual_report.txt": "01f8998102534ebb441b7e5f893f401a5b6cda9ba1580953e8903477d684a587",
+        "operations_memo.md": "45e541b4f0e6a9b6a20786fdd521e73e4eb638356dfcc53fa3788102bb7ce250",
+        "peer_research.txt": "d42e087a869cb9b12a048a55db04d18b479f5a8a8442d1d73f424a587b3bc1e7",
+        "south_annual_report.txt": "b2055204f3a1c10071d198eb8069aaf74082728c515ae537a8a2d604985c52d6",
+        "treasury_note.md": "953cae98c411288d3bf1cbbbfe56913627249c41909e0bb04a3226f4b55bef38",
+        "valuation_policy.md": "888dbcb60daf40b2acb41c6c4b36b04eaff377848ba0cd7cc8e687d1ed69ea50"
+      },
       "wave": 1,
       "company": "StoneCourt Copper (石庭铜业)",
       "slug": "mine",
@@ -194,14 +267,24 @@
       "ev_to_fy25_ebitda": 6.81,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "26acad8aab69d042d2e5c09f8cca25ef9774b1806878e2c387cb1270759b8494",
-        "answers": "1a6ea77c15ec49718c003ad086a4b12c7dbbe15cdd72d107efae42cc608fab5d",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "0fb9452f47005c838884e28c97f2eb4105ac9f1db95a79fd8f5aeb38fcc11d46",
+        "answers": "9677486b2c443f220edf5f192ee233adf40a70428fab31228ae76db99b8cbf4b",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "45e541b4f0e6a9b6a20786fdd521e73e4eb638356dfcc53fa3788102bb7ce250"
       }
     },
     {
       "task": "dcf-08-retail",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "44a415453ec989ac0dd58dd37d975a7d076518682b601fd3f3282266bff2ec7a",
+        "north_annual_report.txt": "2bb5dee2e38be0c7c30374041251eb87f26e433ec3a70ef39f7fbb3ade631db7",
+        "operations_memo.md": "b9748ae619ccbc0c9fee4873d1c16d7a435c0f27b231aa094e1adafe968723fe",
+        "peer_research.txt": "304530927533ab05537db45ebd6d13cb8b07c90e2e54e457eca131e0a2401f92",
+        "south_annual_report.txt": "72c07a84e9fe926cee4d2814cf38aa91d6135a3a3a63cb110cda0eb835afd053",
+        "treasury_note.md": "0820e60b812b133b2b3c9097b5be573611ccde0966f3faf9ddfd2c3b5332e56a",
+        "valuation_policy.md": "136f2c7fdfdcc6291adbc9f30056a486cb591d967f4347c39a471897b0611537"
+      },
       "wave": 1,
       "company": "Platform Books (月台书铺)",
       "slug": "retail",
@@ -221,14 +304,25 @@
       "ev_to_fy25_ebitda": 10.33,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "d143412267f511438dc6f2d318f3f73b192da3ea7c09322c4853d40f68cb6b1f",
-        "answers": "e7a172ba9c84e64e70d37fafd4d3b0d60a8eae30a7b86c757498788012eb7277",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "3cff8de6a104dea1978f159bebeb4f9b22c4e332bfc2731f5cf1f7f96aebcb6e",
+        "answers": "110ae5a0da1eb55494fa8a09d054cb5b1be42c56f080abd493a90e2749de78bb",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "b9748ae619ccbc0c9fee4873d1c16d7a435c0f27b231aa094e1adafe968723fe"
       }
     },
     {
       "task": "dcf-09-royalty",
+      "mode": "repair",
+      "public_files": {
+        "budget_approval.txt": "a13c36606fbff691ae9785501d2861d9ab08af7a4ab8d012bd5ea2a0144a3d90",
+        "north_annual_report.txt": "7d8b463e5be682ecb14ab56b915e533bb3cd0ac1d423514596690738a2f81e08",
+        "operations_memo.md": "f1758dbe85a075f43dddd33d0ffea01bd5b1a6a3e9d2cfea2ca251d261c08115",
+        "peer_research.txt": "8d1b36439bc4d5642a34e476b45a3017cecb1a657a9c9ee3e6dd6f217280329a",
+        "prior_model.xlsx": "1b150a6dcf7f56eee5764115500996a3b5615d4bc353eb119c664d237fbcac38",
+        "south_annual_report.txt": "c0c1c142d17fef515dd341d46647809394d41be152384e57c312620fc31340b2",
+        "treasury_note.md": "0ee078e0c46f2604ba668ae99e4708966ea0882757b990c41ada112b0c39cfe0",
+        "valuation_policy.md": "83d90c7bd684ec9c38d13e07922c0f734e0d737a8409db9eee4fdc8cc5eb3327"
+      },
       "wave": 1,
       "company": "SeaChord Audio (海弦音频)",
       "slug": "royalty",
@@ -239,23 +333,33 @@
       "fy25_revenue": 173.9,
       "fy25_ebitda": 64.4,
       "wacc": 0.105217,
-      "tv": 778.3409,
-      "pv_tv": 471.9894,
-      "ev": 650.1235,
-      "equity_value": 647.1235,
-      "share_price": 56.5667,
-      "pv_tv_share": 0.726,
-      "ev_to_fy25_ebitda": 10.1,
+      "tv": 822.634,
+      "pv_tv": 498.849,
+      "ev": 683.3713,
+      "equity_value": 680.3713,
+      "share_price": 59.473,
+      "pv_tv_share": 0.73,
+      "ev_to_fy25_ebitda": 10.61,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "9dd76b9cfe54dadef15058e52b62fbc226809dd3564003f0060639ab23741f0d",
-        "answers": "66c9418c9d416842eb319078f65379d70c7d59fde1124c9109bcbed60874f05d",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "b3b79b005a744aa74e46f68ff5092838cb753ae7be891d92449f283da51cf47c",
+        "answers": "f50f9595847eea957be0022b4dde140b188d62980d6b5ef356a1fff39ec35678",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "f1758dbe85a075f43dddd33d0ffea01bd5b1a6a3e9d2cfea2ca251d261c08115"
       }
     },
     {
       "task": "dcf-10-returns",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "8b31eb943fb8e24676d1218a2479d9a3c9ce542c1a2abb64deab99e8f624a1f3",
+        "north_annual_report.txt": "376d33b40c73ee8a47353db969876b30b57e73c8a91712fd685d093163678920",
+        "operations_memo.md": "2d5f761845e3a3b5464caed22927ed21254a6447fbc70caba37fa8a439b92289",
+        "peer_research.txt": "3fbbc383b24e55142d10694a86d596b765e5e2c6f231d5044d021fbbe51e4e70",
+        "south_annual_report.txt": "dc36bc5051d0e60e65a19b13c681868b6cfe9a26b235d981dd1c7cf4d84718ac",
+        "treasury_note.md": "cc9b8c7b138db1f5846d32e8bdc36620b7ddef52d5b280fb826ec6b4807bd78a",
+        "valuation_policy.md": "c4d62de7332dd2dc2492cee8d1147436d314a59734ff411ef1dbbdbe70d107f9"
+      },
       "wave": 1,
       "company": "SwiftBoat Care (凌舟维保)",
       "slug": "returns",
@@ -275,14 +379,25 @@
       "ev_to_fy25_ebitda": 9.43,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "405d4854273d81160d38195adb53484bc183d0d23a792577a9375fd4fbfed9c0",
-        "answers": "d2c993b1eaf28fa31d7aac729719bddc5ecc3d80664c0cd72c2ce5d2e21b74a8",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "b61187e510119a97c13de38c9794902726ed651c15d07585542f3a4d3c1b3c41",
+        "answers": "0ddb594f9e13e9474190a68aeeee2e1093e7bdc55ed1ea260312c222afa048d0",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "2d5f761845e3a3b5464caed22927ed21254a6447fbc70caba37fa8a439b92289"
       }
     },
     {
       "task": "dcf-11-saas",
+      "mode": "repair",
+      "public_files": {
+        "budget_approval.txt": "1796248f8cd0b420fbb5417cc25c351a330ef4d84f22773552d98a7e608249a9",
+        "north_annual_report.txt": "ccfcc1cb57c2330518e5828d6f2097bd12eb2229b549bad06aab3db7874aab62",
+        "operations_memo.md": "be1b64a061f08159b70b8b64c3654652070a6f87a567f7ee3184590f2753b407",
+        "peer_research.txt": "e3475ac4280cf3d57e00a3d88eb6bbf995d3d1d3e665c8286745f24a601f80d8",
+        "prior_model.xlsx": "bafad4535aa6e1daf89c851c2d6368eb172044b4c225eb2119aedce46f8a1df3",
+        "south_annual_report.txt": "b745665e3b2da288daaf50bfb8cb3003e594235a2781137797b2085f87f8d325",
+        "treasury_note.md": "370154322872b1e97f75cd423ed9263aad142a603c318a0c92e2bc95c3e1ae6f",
+        "valuation_policy.md": "f14ab902897fd88145fe0c981edad7ae59e42e22ab7efccedbc7142dc620cbb7"
+      },
       "wave": 2,
       "company": "BambooCloud Ops (竹序算务)",
       "slug": "saas",
@@ -293,23 +408,33 @@
       "fy25_revenue": 182.9,
       "fy25_ebitda": 81.6,
       "wacc": 0.081737,
-      "tv": 834.9782,
-      "pv_tv": 563.7234,
-      "ev": 825.6376,
-      "equity_value": 800.2376,
-      "share_price": 74.4892,
-      "pv_tv_share": 0.6828,
-      "ev_to_fy25_ebitda": 10.12,
+      "tv": 855.2287,
+      "pv_tv": 577.3953,
+      "ev": 844.0811,
+      "equity_value": 818.6811,
+      "share_price": 76.206,
+      "pv_tv_share": 0.6841,
+      "ev_to_fy25_ebitda": 10.34,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "01afc2f35ca0397b27112e6d980629d34f7201e8f83a3be57c9eb8ca30cad154",
-        "answers": "b6a940a4b8e50869983efa3c41965dc558cc151ed9859e18b863b7b20e0125d5",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "3d226565d98350f8b5c508261af891ec9022c0a8b1eac5f9a3c2cb239ce42a9d",
+        "answers": "b7281910e6b842d050136a7eb32d9c6506a969a4e375fbebb78e30b07e44ffc4",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "be1b64a061f08159b70b8b64c3654652070a6f87a567f7ee3184590f2753b407"
       }
     },
     {
       "task": "dcf-12-foundry",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "8b53ac373c64e7827574671e5fb685e1aadf3789188e6143fb00ed1b7fa5693b",
+        "north_annual_report.txt": "e010dfb2294010320fcc6235b98f42d2d940f332ca71b8567707f4798b2aa135",
+        "operations_memo.md": "e761bf13e9b0ecd1509b0a2d778222c00dfb4eea28d2af2b69243ec63c9e07b6",
+        "peer_research.txt": "4b01716b1fbcb8c78faa6a2d3c57356359041606daf05ddfeced350d9ee66af3",
+        "south_annual_report.txt": "f6f73ffc8f761e48520e1ad963f9acfcef499179adafdbec7e6a55fbb5860355",
+        "treasury_note.md": "082fe57d5180c8d268f367f15cac31d271490a36b0c360f46747f40b362d6548",
+        "valuation_policy.md": "526664d71eb1935302a4c83b7e25f44878a781b6405c14d0dbc27b5a3dd63f37"
+      },
       "wave": 2,
       "company": "HarborCreek Fab (泊川晶圆)",
       "slug": "foundry",
@@ -329,14 +454,24 @@
       "ev_to_fy25_ebitda": 11.04,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "b58c9a5d136485aa8d7d8cce53e72b58c418993fdaa298870cc67a701c222ecb",
-        "answers": "4001246bb3c36ac771ea7c25d0d7015f2828742523d234e80a652d2207768488",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "2b5e3045a226edb5926f37fbc22a0810d2046aed1bae1d00c25cb205a5619d43",
+        "answers": "8e4207903e95798f5829a3046d72dfb85c94fd3b2703af4a5df3e108fcc91e2b",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "e761bf13e9b0ecd1509b0a2d778222c00dfb4eea28d2af2b69243ec63c9e07b6"
       }
     },
     {
       "task": "dcf-13-orders",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "68e78558c4fa8945b2ded62e3aff64bbf3c286ef994d128ea1129be5944194f1",
+        "north_annual_report.txt": "e3c30c920ee228cb28fe3dd2a6243b33576aacead17cfe93fff8c4bb620c816f",
+        "operations_memo.md": "ceaefb67adacaa9eaaae5aab5ee18648751e91c6a0697b8a9bf41b61e0706da8",
+        "peer_research.txt": "8642bfa622d14678f0b83c807a026bc4202a3cd3ab85039146eca3a88dc44dda",
+        "south_annual_report.txt": "613a47fda44c527d7f305496547e6dda2d6eddc6ccd84f4f5893cd9e87dcbd20",
+        "treasury_note.md": "b3caa42de37c583a166added4941d7c87ad84d761f08476d9fec0c8e835875fb",
+        "valuation_policy.md": "c9608e17aed90dcbe8efc5b78690db5a9d353ff43770dda92eeae18adb7cc0df"
+      },
       "wave": 2,
       "company": "Langstone Pumps (朗石泵业)",
       "slug": "orders",
@@ -356,14 +491,25 @@
       "ev_to_fy25_ebitda": 8.37,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "ab05be02fcb71807dc1769ef3303355085fbe07628fdfbfdf494861699eefca7",
-        "answers": "662ccb3948e84993fe0903f14f301d1bbb0735d9a59bc331f3756f6113af9b10",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "58d80d5c168f827c8d9cd8d1722f2fa81a8db558f25e6cf2e0e42417b0818c9e",
+        "answers": "9191434dcaddb3343feed71bb043fe07e481b939bd23b9d1f66527dc6f773e45",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "ceaefb67adacaa9eaaae5aab5ee18648751e91c6a0697b8a9bf41b61e0706da8"
       }
     },
     {
       "task": "dcf-14-storage",
+      "mode": "repair",
+      "public_files": {
+        "budget_approval.txt": "51a93d1eda647a4dcc0a63322e866924e0bbffb327e43e5cbac259a83442ad74",
+        "north_annual_report.txt": "c7a25028b1543c14b5ae8eb3cd9cae0eb4b38190055ace80c660a8f4b0b4d2c8",
+        "operations_memo.md": "b4cd7131ddb22d456bbed5e426dacecf257a150be105858c3cdcca188464a0f4",
+        "peer_research.txt": "a33d86e29edc80fbcf10b2378ad1629ea79bfd1771ead0faf5f5226e05b7f373",
+        "prior_model.xlsx": "9896dcb2d82e73b1eb2c070ea522139cc78cdce56323c8836b6bb598026b9b6a",
+        "south_annual_report.txt": "858af35966c4a8c49fb4eaedda19e37ed1e3deb0f65208eaf5d30c28a234da52",
+        "treasury_note.md": "a3f9945ea6ba0602d09ad722854edc9b3e2c7e9dc68792ed5c7be92fe8bbbb61",
+        "valuation_policy.md": "c900d97abb7a1019482f3c0d699625398069a957ad48c2b466d67ee878bdc8d1"
+      },
       "wave": 2,
       "company": "ReedBay Thermal (芦湾恒温)",
       "slug": "storage",
@@ -374,23 +520,33 @@
       "fy25_revenue": 180.1,
       "fy25_ebitda": 61.5,
       "wacc": 0.076317,
-      "tv": 657.693,
-      "pv_tv": 455.3248,
-      "ev": 648.1972,
-      "equity_value": 634.5972,
-      "share_price": 51.1731,
-      "pv_tv_share": 0.7024,
-      "ev_to_fy25_ebitda": 10.54,
+      "tv": 680.7003,
+      "pv_tv": 471.2529,
+      "ev": 668.702,
+      "equity_value": 655.102,
+      "share_price": 52.8265,
+      "pv_tv_share": 0.7047,
+      "ev_to_fy25_ebitda": 10.87,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "ee2352a79a347ee72ea315a5967a5a432d55e0d6ea2f052a6eb534eb2e78f58a",
-        "answers": "55e8000a1c04980f8811ff91c9c711f61fcec12bf6470f11c171a4dbb707ed6d",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "43e64d3c109cb1d1d9219e87a5c3f802f5391e5984b5981da74b848725e9fd6a",
+        "answers": "9191ef4fa674a8ab31a61237d3ec02c477903f270699aab7481a8628fa7e93d7",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "b4cd7131ddb22d456bbed5e426dacecf257a150be105858c3cdcca188464a0f4"
       }
     },
     {
       "task": "dcf-15-fleet",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "8186aba96f1335f503fa2e17c1109598d18aa1d56ed3719a0c52a9cc3f67e9d8",
+        "north_annual_report.txt": "45d7434a5e6e8b57d7177e18648a675ed40521badc91e0990511e4596153ea16",
+        "operations_memo.md": "cc434b1b63f9dfff46fcda2fb11764cdccfef50718bc0ca4a3fb345a4ea6ed88",
+        "peer_research.txt": "ba94e4033d77d7b916838ab44e2c70dde9cf4c29dc4a6ae2e81d0f81109ca4ad",
+        "south_annual_report.txt": "b2e793b42ccdd010d189f58dfacf8128589264d84bcd9ea2c23bac61eed64bda",
+        "treasury_note.md": "273864d5cc0465f2ea28946e014f7e5f90dab41df32c57b2f514168cd66ef61c",
+        "valuation_policy.md": "ac962f71732d6ea82f7e83b04e1929b88dacac3361bebad95d831dec1d24305d"
+      },
       "wave": 2,
       "company": "Greenfield Equip (青浦工装)",
       "slug": "fleet",
@@ -410,14 +566,24 @@
       "ev_to_fy25_ebitda": 9.53,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "3311453c54ad711d690e5ab8e5adfbff22fac9e7b60d38eb05ae7d17a5de165c",
-        "answers": "2aa9d44e62f59b1a6031c016992bf7c7b643be1b613bb23a0532089f7f177546",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "2a8e7d1a28e11898c351c0405f2bfbb1d04b54c1e402fd78367542b5efb75a4e",
+        "answers": "7d073970f974691a89733fcf3877bc0720448864cc5850f664a05025696ed5d8",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "cc434b1b63f9dfff46fcda2fb11764cdccfef50718bc0ca4a3fb345a4ea6ed88"
       }
     },
     {
       "task": "dcf-16-license",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "7783bad7465aacc8b4c00376e6a79d909ef8994c6a13857f9af737b76377854d",
+        "north_annual_report.txt": "ff116e70c47096c8429a3116702be0eb338c1fab0d067dd1ef5d52d3ec2a3697",
+        "operations_memo.md": "5c2fb193f2248274d224f06a0588156b6cc218b1ac767c6f981b5c6256fa303b",
+        "peer_research.txt": "03073f304a897fbfb3fa2cc3565a12a69c872320613b8522d039435d72644513",
+        "south_annual_report.txt": "7bdb2eb41126d09927fce1134272a0934b7db6125f1014601a41d679a11c745a",
+        "treasury_note.md": "87e4cefa2269799c86dd6b2971b419b3ff1f9511dac721562b313e778d08c9b1",
+        "valuation_policy.md": "a2ce9a2f4003e412318553ba2e8e64e073bb49b10a54ddd3c7853f65f309c2ce"
+      },
       "wave": 2,
       "company": "Shoreline Design (岸禾设计)",
       "slug": "license",
@@ -437,14 +603,24 @@
       "ev_to_fy25_ebitda": 11.38,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "f9f55a433a0b474ca0ad1f133349e9e795731301406c40a76a2c08cb4e696a4a",
-        "answers": "1fbc9e6fa76f0142d15cbf4e18a4e75a7f3ca0a96afba7fea0a6ddfc1d6f2e61",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "d1eaef8ca8310d629be63f6f5ee47e926132126a0ef016f753157b3dd57e8fda",
+        "answers": "f38329be550b7292ad33d23771ca217721f63b2cb335e644be11dc232279bbfc",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "5c2fb193f2248274d224f06a0588156b6cc218b1ac767c6f981b5c6256fa303b"
       }
     },
     {
       "task": "dcf-17-mine",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "8c3ed66960249e97d398f20b2a34940af7725da256357f62a18ca4291bf1722f",
+        "north_annual_report.txt": "deeb9fbe6087ce929c52a0ab574fef907dca8a83c610e35bca85f73d00136d2d",
+        "operations_memo.md": "ccfad692c7e70d548eca16cd09fb55ed73fe88838bdd050a9e3e0a232bb0b4a2",
+        "peer_research.txt": "b55db4b5de904dde8ffd5754e4070015ab42aa298e616ea832f3031b7ffe1474",
+        "south_annual_report.txt": "5340dffc19803dc02ce8125f598832624b2dd04065fd73915b370a10a7c93b97",
+        "treasury_note.md": "252b70174e496eeb4d8de4b904e546e6ff19660e4ad543db56b482c2ae5d2200",
+        "valuation_policy.md": "96c1e080aebc443abd049c1e2ed03e0aaccabbd92267994c518323b05f6e8de9"
+      },
       "wave": 2,
       "company": "RidgeSpring Zinc (岭泉锌业)",
       "slug": "mine",
@@ -464,14 +640,25 @@
       "ev_to_fy25_ebitda": 6.96,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "c3ea36647a084f7895fc56c755d0ab4db1bbcb518bf40db5396c5bdd90fac601",
-        "answers": "1d8a2e45839274a5c99e533955818b7d67f06c77348a2ba208cab1367f29fe11",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "6542d844fa90fa276477f6381f3b5858a9ad6cca07afaea308db1f70df909cfc",
+        "answers": "599fcc7843b1370bce0e14b4a7297f3a19d5f4ae9033d4cf9dac8d3385ff46f2",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "ccfad692c7e70d548eca16cd09fb55ed73fe88838bdd050a9e3e0a232bb0b4a2"
       }
     },
     {
       "task": "dcf-18-retail",
+      "mode": "repair",
+      "public_files": {
+        "budget_approval.txt": "6d0c7c7be7ebe7516b56f1cb081216c41bc2ea1f07197b206ff04c7d125cbf8f",
+        "north_annual_report.txt": "ff909be34dde2578dc9421d6a315140b62356e3c75a2ddaf0e90f42732c206c9",
+        "operations_memo.md": "4f1f08a65452b15c45921a361a9a49c9bc369e48b1efcae46fff815a419411e5",
+        "peer_research.txt": "18813a253a4113386d976c48870f5a4562b88574e3bef77f6b60bab0d361c25b",
+        "prior_model.xlsx": "debc19f7060c3eb94fc68531637013e1ca1c4f0a70413b699fe0f6be2b85e9b6",
+        "south_annual_report.txt": "01005ca097cabe0c88ddfa592de3114330175eaa3f6f5460ba45040cccae0809",
+        "treasury_note.md": "b2db4768613ee68ee0b967a02a29dd9fcc8eb24d51258754db14f527a327bc5a",
+        "valuation_policy.md": "427a7ca19508a3b0cc2b7bb2962f9fc8d9ae1ca6cbfe2e9bf5891217b72b5738"
+      },
       "wave": 2,
       "company": "EastIsle Home (东屿家居)",
       "slug": "retail",
@@ -482,23 +669,33 @@
       "fy25_revenue": 208.4,
       "fy25_ebitda": 87.2,
       "wacc": 0.080768,
-      "tv": 1240.9884,
-      "pv_tv": 841.5983,
-      "ev": 1079.0135,
-      "equity_value": 1049.8135,
-      "share_price": 61.5113,
-      "pv_tv_share": 0.78,
-      "ev_to_fy25_ebitda": 12.37,
+      "tv": 1304.7367,
+      "pv_tv": 884.8304,
+      "ev": 1130.948,
+      "equity_value": 1101.748,
+      "share_price": 64.5543,
+      "pv_tv_share": 0.7824,
+      "ev_to_fy25_ebitda": 12.97,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "6fcb2674333519c94725ba0445e2104a264ea85eb533068905633deff2930683",
-        "answers": "09ff585a408bef4fbc5b7bfe406a793d14e1d4c895281eb699f9181b7e294550",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "cce879d1d5b553a20cd63f250c180a26471918f797f2faa38e7f0aa8640a1780",
+        "answers": "1abd9a71f3ca12fd454e4a6189bc6821651cf07b00ff7a82cb961c597a86443f",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "4f1f08a65452b15c45921a361a9a49c9bc369e48b1efcae46fff815a419411e5"
       }
     },
     {
       "task": "dcf-19-royalty",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "37b7d70a302c8b1f0d9233d55fe651c13a45d6e6877ad9b58736deebe7f60258",
+        "north_annual_report.txt": "6e05f60f858e54aa3b896d7ec2a51bed72c9d3ec56b17a5861548d1c7dc74106",
+        "operations_memo.md": "34c58e62d9774b017b1ec9837fd5410e832b6961fff5486d52bcaf80191125cc",
+        "peer_research.txt": "21b33548b1c5c87c37d4c3a840f5aeff3fca37138e596f88db76d6bedeb9a566",
+        "south_annual_report.txt": "cd42eb6f8e928364f49bf055b6fde8ee169f9e53ba96847e1ff3dcb8ab5de1e0",
+        "treasury_note.md": "77449bc53c4db594210674e103201b94d84e80606d319226d42da5caffbbe6f9",
+        "valuation_policy.md": "1af33b645fc4bfa4ad8cc41adc2dd41a3e2286fb59c515d804c1388393ec7e9c"
+      },
       "wave": 2,
       "company": "SpringStone Media (泉石影像)",
       "slug": "royalty",
@@ -518,14 +715,24 @@
       "ev_to_fy25_ebitda": 14.04,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "933461088b1b6488e854f652a356c070a952ab7e7465b258a036dc5a6c8fca57",
-        "answers": "b41ae6814951f7f1d2127cb269d5bfc0095d9b0e55cab9e5cfe406cc39ec359a",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "973fcc6529f73d08397f988f429dd641d9685991b64c0bc3751eb102d7071c17",
+        "answers": "989d423388358f4d4d8661437f36dfbe7c53adccf8a8ac2c9beb2ed394ec5b3a",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "34c58e62d9774b017b1ec9837fd5410e832b6961fff5486d52bcaf80191125cc"
       }
     },
     {
       "task": "dcf-20-returns",
+      "mode": "build",
+      "public_files": {
+        "budget_approval.txt": "48becb1c2fda2272d2d3eab5fd1cd2296bbe1fbfdf2d44787a017509fa73660c",
+        "north_annual_report.txt": "188bcbfdf477f159a6d4105ec94c9e437a5a15c208af0cdb861d0dc8e622c83a",
+        "operations_memo.md": "252af611cbc23f995d867e44cbf4e9193ddd62a385017d6b61962ef3e2d9f2e3",
+        "peer_research.txt": "4b7281e15003e678ca8df7d9caf7d55af8390cabe2ead8aaee79e44348eb01ef",
+        "south_annual_report.txt": "26e122a7f87023c62c4c86c2ec129667b3cbab7958e4d11b0ed54a9ad0bc1e1a",
+        "treasury_note.md": "ebd39ef40ad4a5358b1c1e80bfa4487b6604bb26d27eab4f558fdbb82b0858f4",
+        "valuation_policy.md": "e85da824fee414a52bcb5c9b7f689c8766664b0cb1e9c8aa26f18420e18d4e97"
+      },
       "wave": 2,
       "company": "SilverDock Service (银栈售服)",
       "slug": "returns",
@@ -545,9 +752,9 @@
       "ev_to_fy25_ebitda": 10.36,
       "audit_checked_values": 716,
       "sha256": {
-        "instruction": "1793815995f16fb22e7df3f080814a0facfe6957fa307f33be0ecb01074857a2",
-        "answers": "706debe981405f7081708c1c182d4c1b3093eca6845e0af5b6e21da8df9cb88a",
-        "grade": "37ad2280125d95f7f8864160dc74d0097937803e2a5fc4abe78a07cf3bb3533d",
+        "instruction": "08b50ca1df4225f86e38c9503d8ef1d60a55bdd9939753507609823bae5f31fe",
+        "answers": "39ee2223bf4aea385302d11360210c1a7ac09db79042aced6d464bb54a8123cd",
+        "grade": "267fc34274e30c8ddb9a1c8ada8d27beaae156d48b16a3ab1395d58525debb66",
         "operations_memo": "252af611cbc23f995d867e44cbf4e9193ddd62a385017d6b61962ef3e2d9f2e3"
       }
     }

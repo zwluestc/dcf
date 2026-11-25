@@ -1,0 +1,31 @@
+RiverRidge Fleet (川岭器租) | North subsidiary | FY2025 annual financial report
+Statement release dated 28 February 2026. Calendar-year accounts.
+Presentation currency: thousands of EUR. Commas group thousands; dot is decimal.
+Profit or loss expenses are shown in parentheses. Cost schedules use expense magnitudes.
+Each comparative is FY2024. Flows span twelve months. Balances are at 31 December.
+Use the signed amendment in note N01 for billings. Debt in BS07 is the total facility.
+
+Statement of profit or loss
+[IS01] Customer billings. FY2024 comparative 96,653.83. FY2025 reported 106,583.
+[IS02] Direct fulfilment costs. FY2024 comparative (38,350.13). FY2025 reported (42,143).
+[IS03] Selling and administration. FY2024 comparative (15,055.95). FY2025 reported (16,545).
+[IS04] Depreciation. FY2024 comparative (8,504.86). FY2025 reported (9,346).
+[IS05] Finance expense. FY2024 comparative (1,220.31). FY2025 reported (1,341).
+[IS06] Current tax expense. FY2024 comparative (7,501.13). FY2025 reported (8,243).
+
+Statement of financial position
+[BS01] Customer receivables. FY2024 comparative 8,088.99. FY2025 reported 8,889.
+[BS02] Merchandise on hand. FY2024 comparative 5,026.84. FY2025 reported 5,524.
+[BS03] Trade creditors. FY2024 comparative 4,934.93. FY2025 reported 5,423.
+[BS04] Operating plant, net. FY2024 comparative 36,119.72. FY2025 reported 39,692.
+[BS05] Cash at bank. FY2024 comparative 14,966.77. FY2025 reported 16,447.
+[BS06] Closing book capital. FY2024 comparative 61,708.92. FY2025 reported 67,812.
+[BS07] Borrowings, current and non-current together. FY2025 reported 18,513.
+[BS08] Interoffice clearing receivable: 21,196. Eliminated on group consolidation.
+
+Notes and subsequent amendment
+[N01] Signed amendment, 14 March 2026. For FY2025, replace IS01 with 106,213. Do not add both releases.
+[N03] Audited facility principal outstanding at 31 December 2025 totals 18,513.
+[N04] Included in N03, the principal due within the next twelve months is 5,553.9.
+The remainder of N03 is non-current. Both portions bear interest. Trade creditors exclude the facility.
+[M01] Prior unsigned credit proposal: projected new facility 11,107.8. It was never drawn.

@@ -1,6 +1,6 @@
 # Elmbridge Semi (榆桥微芯) | 晶圆代工：良率与产能上限 | FY2025 valuation
 
-Start from a blank workbook. Read the seven source exhibits in /work/data/. They are original synthetic records, not a public company's filings. Deliver a self-contained /work/output.xlsx. Use the operating memo, budget, two site extracts and treasury/peer and valuation notes to build your own schedules, including peer beta and option dilution. Preserve full precision. Inputs and outputs are in EUR millions and millions of shares unless a source explicitly uses different units. Price per share is in EUR. The required price is DCF intrinsic value, not the market quote.
+Continue the inherited /work/data/prior_model.xlsx. Read the seven source exhibits in /work/data/. They are original synthetic records, not a public company's filings. Deliver a self-contained /work/output.xlsx. Use the operating memo, budget, two subsidiary annual filings and treasury/peer and valuation notes to build your own schedules, including peer beta and option dilution. Preserve full precision. Inputs and outputs are in EUR millions and millions of shares unless a source explicitly uses different units. Price per share is in EUR. The required price is DCF intrinsic value, not the market quote.
 
 Reconstruct FY2025 actuals (income statement and closing balance sheet; FY2025 cash flow statement is NOT required) and forecast FY2026–2030 IS, BS and CF. No other balances, tax deferrals, distributions, funding, issuance or transactions. Revenue-equivalent billable units express full-price equivalent annual volume: deduct expected warranty credits (returns), ADD immediate upfront license fees recognised in full (license), and apply minimum billing guarantees (royalty), strictly following operations_memo.md. Forecast revenue = those revenue-equivalent billable units times full annual unit price (converted to EUR millions) times the editable price_multiplier. Budget rate fields suffixed pct are percentages (e.g., 45.0 = 45%), while operations memo ratios are decimal fractions (e.g., 0.08 = 8%).
 
@@ -13,7 +13,7 @@ Inputs!B4:B6 must be editable numeric values stored in the exact underlying unit
 - Inputs!B4 (`price_multiplier`): dimensionless decimal multiplier (e.g., `1.0`).
 - Inputs!B5 (`dso_shift`): additive shift in calendar days (e.g., `0.0`).
 - Inputs!B6 (`risk_free`): annual decimal fraction (e.g., 320 bp MUST be stored as `0.032`, not `320` or `3.2`; display as `3.20%` is optional).
-Other inputs and helper tabs may be laid out freely.
+Preserve the inherited workbook layout.
 
 Formula scope: every required computed forecast cell in Statements!C4:G33 EXCEPT row 8 (exogenous Cash operating expense, which may either link to a budget sheet or hold the numeric EUR millions budget value), plus every required output in DCF!B4:B9 (and DCF!B12:B15 where requested), MUST be a live Excel formula referencing upstream computation cells (hardcoded numbers, constant-only formulas such as `=1.13`, or bare links to hardcoded helper cells are rejected).
 
@@ -61,3 +61,8 @@ DCF sheet outputs (rates such as WACC in B4 must evaluate to annual decimal frac
 Numeric tolerance: greater of EUR million (or native-unit) absolute 0.000001 and 0.0001% relative. Scoring follows a practitioner four-pillar rubric: three-statement & FCFF accuracy (40%), materiality-weighted valuation bridge & per-share value (25%), base & post-shock accounting reconciliation (15%), and assumption sensitivity delta linkage across the three editable assumptions (20%), multiplied by an anti-hardcoding dynamic formula gate.
 
 Additional required outputs (included in the 155 graded live-formula cells): DCF!B12 = relevered equity beta; DCF!B13 = diluted shares (millions); DCF!B14 = median unlevered peer beta; DCF!B15 = TSM incremental shares (millions). All four must resolve to live upstream calculation formulas. Their base values and formulas are graded as part of valuation.
+
+Clean both filings into Ledger, one row for each site and economic line, beginning at row 4. Columns D, E, F and G contain the FY2025 positive native amount, divisor to millions, formula converting to EUR millions, and source reference (filename#note ID). Use N03-N04 for non-current debt. Include six income lines, six operating/equity balances and both debt maturities per site. Link historical statements to your cleaned records.
+
+## Inherited analyst model
+Open prior_model.xlsx, update its previous close from the two signed filings, apply the latest approved assumptions in the CFO and treasury notes, diagnose internal calculation discrepancies, and save the repaired model as /work/output.xlsx. Preserve all 15 tabs, their order and visibility, named ranges, report labels and existing layout. Retain unaffected formulas, inputs and links. Correct the faulty formulas on their owning schedules. The existing Ledger rows specify the site and line item. Update their native amounts and source references from the current filings. The latest signed assumptions supersede the prior workbook. Deliver an editable model that also recalculates after subsequent input changes.

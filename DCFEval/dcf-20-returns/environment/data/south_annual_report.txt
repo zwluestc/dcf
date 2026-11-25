@@ -1,0 +1,31 @@
+SilverDock Service (银栈售服) | South subsidiary | FY2025 annual financial report
+Statement release dated 28 February 2026. Calendar-year accounts.
+Presentation currency: EUR. Spaces group thousands; comma is decimal.
+Profit or loss expenses are shown in parentheses. Cost schedules use expense magnitudes.
+Each comparative is FY2024. Flows span twelve months. Balances are at 31 December.
+Use the signed amendment in note N01 for billings. Debt in BS07 is the total facility.
+
+Statement of profit or loss
+[IS01] Customer billings. FY2024 comparative 71 773 520. FY2025 reported 79 242 000.
+[IS02] Direct fulfilment costs. FY2024 comparative (24 264 240). FY2025 reported (26 664 000).
+[IS03] Selling and administration. FY2024 comparative (8 914 360). FY2025 reported (9 796 000).
+[IS04] Depreciation. FY2024 comparative (2 513 420). FY2025 reported (2 762 000).
+[IS05] Finance expense. FY2024 comparative (1 591 590). FY2025 reported (1 749 000).
+[IS06] Current tax expense. FY2024 comparative (5 043 220). FY2025 reported (5 542 000).
+
+Statement of financial position
+[BS01] Customer receivables. FY2024 comparative 12 285 000. FY2025 reported 13 500 000.
+[BS02] Merchandise on hand. FY2024 comparative 5 641 090. FY2025 reported 6 199 000.
+[BS03] Trade creditors. FY2024 comparative 6 026 020. FY2025 reported 6 622 000.
+[BS04] Operating plant, net. FY2024 comparative 33 982 130. FY2025 reported 37 343 000.
+[BS05] Cash at bank. FY2024 comparative 13 912 080. FY2025 reported 15 288 000.
+[BS06] Closing book capital. FY2024 comparative 30 971 850. FY2025 reported 34 035 000.
+[BS07] Borrowings, current and non-current together. FY2025 reported 15 061 000.
+[BS08] Interoffice clearing payable: 16 612 000. Eliminated on group consolidation.
+
+Notes and subsequent amendment
+[N01] Signed amendment, 14 March 2026. For FY2025, replace IS01 with 78 872 000. Do not add both releases.
+[N03] Audited facility principal outstanding at 31 December 2025 totals 15 061 000.
+[N04] Included in N03, the principal due within the next twelve months is 3 012 200.
+The remainder of N03 is non-current. Both portions bear interest. Trade creditors exclude the facility.
+[M01] Prior unsigned credit proposal: projected new facility 6 024 400. It was never drawn.

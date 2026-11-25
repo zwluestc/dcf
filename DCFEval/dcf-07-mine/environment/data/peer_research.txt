@@ -1,0 +1,7 @@
+Treasury research | Market observations
+
+Alder reports an observed equity beta of 0.9585356021527387463857053491. Net debt/equity is 0.54x and the statutory tax rate is 26.00%.
+Birch reports an observed equity beta of 1.218276721822619197827320318. Net debt/equity is 0.3x and the statutory tax rate is 21.00%.
+Quartz reports an observed equity beta of 0.7214510139260085393087906883. Net debt/equity is 0.28x and the statutory tax rate is 24.00%.
+Cobalt reports an observed equity beta of 1.089996952009181653985937229. Net debt/equity is 0.47x and the statutory tax rate is 21.00%.
+Aster reports an observed equity beta of 1.263071624191443573768669260. Net debt/equity is 0.66x and the statutory tax rate is 25.00%.

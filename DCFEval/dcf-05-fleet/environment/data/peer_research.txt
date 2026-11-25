@@ -1,0 +1,5 @@
+Treasury research | Market observations
+
+Quartz reports an observed equity beta of 1.198787699871831661588732478. Net debt/equity is 0.2x and the statutory tax rate is 29.00%.
+Dune reports an observed equity beta of 1.572580350006734225779239881. Net debt/equity is 0.42x and the statutory tax rate is 18.00%.
+Aster reports an observed equity beta of 1.108463087777667782029175493. Net debt/equity is 0.29x and the statutory tax rate is 20.0%.

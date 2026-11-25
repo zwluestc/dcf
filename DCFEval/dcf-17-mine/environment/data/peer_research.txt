@@ -1,0 +1,5 @@
+Treasury research | Market observations
+
+Beryl reports an observed equity beta of 1.089525047997037846936859107. Net debt/equity is 0.62x and the statutory tax rate is 22.00%.
+Birch reports an observed equity beta of 1.445855308769384943683163697. Net debt/equity is 0.51x and the statutory tax rate is 22.00%.
+Alder reports an observed equity beta of 1.402511333266248512422270898. Net debt/equity is 0.68x and the statutory tax rate is 19.00%.

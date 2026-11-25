@@ -5,6 +5,7 @@ import json
 import tempfile
 from pathlib import Path
 
+from takeover import install, is_takeover
 from audit_sources import audit
 from generate import build as build_structured
 from raw import build as build_raw
@@ -29,6 +30,8 @@ def write_manifest(dataset_dir: Path, manifest_path: Path, seed: int, waves: int
         tasks.append(
             {
                 "task": task.name,
+                "mode":"repair" if is_takeover(task.name) else "build",
+                "public_files":{p.name:sha256_file(p) for p in sorted((task/"environment/data").iterdir())},
                 "wave": canon.get("wave", 0) + 1,
                 "company": canon.get("company", ""),
                 "slug": canon["slug"],
@@ -56,7 +59,8 @@ def write_manifest(dataset_dir: Path, manifest_path: Path, seed: int, waves: int
             }
         )
     manifest = {
-        "schema_version": "3.0",
+        "schema_version": "v1-filings-repair",
+        "repair_tasks":sum(t["mode"]=="repair" for t in tasks),
         "seed": seed,
         "waves": waves,
         "num_tasks": len(tasks),
@@ -91,6 +95,7 @@ def main():
     print("[4/4] Auditing independent round-trip reconstruction strictly from public exhibits...")
     totals = {}
     for task in sorted(args.out.glob("dcf-*")):
+        install(task)
         totals[task.name] = audit(task)
     manifest = write_manifest(args.out, args.manifest, args.seed, args.waves, totals)
     print(

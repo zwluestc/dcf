@@ -8,6 +8,7 @@ import asyncio
 import json
 import os
 import re
+import shlex
 import subprocess
 import sys
 import tempfile
@@ -82,7 +83,22 @@ class OpenAICompatAgent(BaseAgent):
     async def run(self, instruction, environment, context):
         task_t0 = time.monotonic()
         model_name = self.model_name or os.getenv("DCF_MODEL", "gpt-4o")
-        data = await environment.exec("for f in /work/data/*; do printf '\\nFILE %s\\n' \"$f\"; cat \"$f\"; done")
+        # Provide a readable view of the actual workbook as well as its on-disk path.
+        inspect = """from pathlib import Path
+from openpyxl import load_workbook
+for file in sorted(Path('/work/data').iterdir()):
+    print('FILE', file)
+    if file.suffix != '.xlsx':
+        print(file.read_text())
+        continue
+    book = load_workbook(file, data_only=False)
+    for sheet in book:
+        print(sheet.title, sheet.sheet_state)
+        for row in sheet.iter_rows():
+            print(' | '.join(f'{c.coordinate}={c.value}' for c in row if c.value is not None))
+    book.close()
+"""
+        data = await environment.exec("python3 -c "+shlex.quote(inspect))
         if data.return_code:
             raise RuntimeError("public input data missing in /work/data")
 
@@ -92,7 +108,7 @@ class OpenAICompatAgent(BaseAgent):
                 "content": (
                     "You are an expert financial modeling agent. Return a complete Python 3 script inside a single "
                     "```python``` block. It runs in an offline Linux container with openpyxl and LibreOffice Calc. "
-                    "Read the raw exhibits in /work/data/ and generate /work/output.xlsx from a blank workbook using "
+                    "Read the raw exhibits in /work/data/ and generate /work/output.xlsx according to the assigned build or repair mode using "
                     "live Excel formulas for every required forecast and DCF output. You may run LibreOffice inside "
                     "your script to verify formula recalculation before finishing."
                 ),

@@ -1,0 +1,5 @@
+Treasury research | Market observations
+
+Onyx reports an observed equity beta of 1.129774689827065479475107579. Net debt/equity is 0.31x and the statutory tax rate is 26.00%.
+Alder reports an observed equity beta of 0.9441360935160592785877132147. Net debt/equity is 0.23x and the statutory tax rate is 21.00%.
+Linden reports an observed equity beta of 0.7566227900271974813187884515. Net debt/equity is 0.19x and the statutory tax rate is 22.00%.

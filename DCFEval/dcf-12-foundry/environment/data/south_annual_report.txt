@@ -1,0 +1,31 @@
+HarborCreek Fab (泊川晶圆) | South subsidiary | FY2025 annual financial report
+Statement release dated 28 February 2026. Calendar-year accounts.
+Presentation currency: EUR. Spaces group thousands; comma is decimal.
+Profit or loss expenses are shown in parentheses. Cost schedules use expense magnitudes.
+Each comparative is FY2024. Flows span twelve months. Balances are at 31 December.
+Use the signed amendment in note N01 for billings. Debt in BS07 is the total facility.
+
+Statement of profit or loss
+[IS01] Customer billings. FY2024 comparative 122 180 240. FY2025 reported 134 634 000.
+[IS02] Direct fulfilment costs. FY2024 comparative (50 518 650). FY2025 reported (55 515 000).
+[IS03] Selling and administration. FY2024 comparative (8 283 730). FY2025 reported (9 103 000).
+[IS04] Depreciation. FY2024 comparative (5 890 430). FY2025 reported (6 473 000).
+[IS05] Finance expense. FY2024 comparative (2 739 100). FY2025 reported (3 010 000).
+[IS06] Current tax expense. FY2024 comparative (8 563 100). FY2025 reported (9 410 000).
+
+Statement of financial position
+[BS01] Customer receivables. FY2024 comparative 12 020 190. FY2025 reported 13 209 000.
+[BS02] Merchandise on hand. FY2024 comparative 5 343 520. FY2025 reported 5 872 000.
+[BS03] Trade creditors. FY2024 comparative 7 319 130. FY2025 reported 8 043 000.
+[BS04] Operating plant, net. FY2024 comparative 31 687 110. FY2025 reported 34 821 000.
+[BS05] Cash at bank. FY2024 comparative 11 230 310. FY2025 reported 12 341 000.
+[BS06] Closing book capital. FY2024 comparative 52 261 300. FY2025 reported 57 430 000.
+[BS07] Borrowings, current and non-current together. FY2025 reported 25 610 000.
+[BS08] Interoffice clearing receivable: 24 840 000. Eliminated on group consolidation.
+
+Notes and subsequent amendment
+[N01] Signed amendment, 14 March 2026. For FY2025, replace IS01 with 134 264 000. Do not add both releases.
+[N03] Audited facility principal outstanding at 31 December 2025 totals 25 610 000.
+[N04] Included in N03, the principal due within the next twelve months is 8 963 500.
+The remainder of N03 is non-current. Both portions bear interest. Trade creditors exclude the facility.
+[M01] Prior unsigned credit proposal: projected new facility 17 927 000. It was never drawn.

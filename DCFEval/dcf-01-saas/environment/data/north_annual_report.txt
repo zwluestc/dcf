@@ -1,0 +1,31 @@
+SpruceCollab (云杉协作) | North subsidiary | FY2025 annual financial report
+Statement release dated 28 February 2026. Calendar-year accounts.
+Presentation currency: thousands of EUR. Commas group thousands; dot is decimal.
+Profit or loss expenses are shown in parentheses. Cost schedules use expense magnitudes.
+Each comparative is FY2024. Flows span twelve months. Balances are at 31 December.
+Use the signed amendment in note N01 for billings. Debt in BS07 is the total facility.
+
+Statement of profit or loss
+[IS01] Customer billings. FY2024 comparative 59,246.46. FY2025 reported 65,476.
+[IS02] Direct fulfilment costs. FY2024 comparative (13,299.65). FY2025 reported (14,615).
+[IS03] Selling and administration. FY2024 comparative (4,186). FY2025 reported (4,600).
+[IS04] Depreciation. FY2024 comparative (3,074.89). FY2025 reported (3,379).
+[IS05] Finance expense. FY2024 comparative (1,454.18). FY2025 reported (1,598).
+[IS06] Current tax expense. FY2024 comparative (4,823.91). FY2025 reported (5,301).
+
+Statement of financial position
+[BS01] Customer receivables. FY2024 comparative 8,625.89. FY2025 reported 9,479.
+[BS02] Merchandise on hand. FY2024 comparative 2,863.77. FY2025 reported 3,147.
+[BS03] Trade creditors. FY2024 comparative 3,209.57. FY2025 reported 3,527.
+[BS04] Operating plant, net. FY2024 comparative 29,376.62. FY2025 reported 32,282.
+[BS05] Cash at bank. FY2024 comparative 9,979.97. FY2025 reported 10,967.
+[BS06] Closing book capital. FY2024 comparative 30,241.12. FY2025 reported 33,232.
+[BS07] Borrowings, current and non-current together. FY2025 reported 10,248.
+[BS08] Interoffice clearing payable: 8,868. Eliminated on group consolidation.
+
+Notes and subsequent amendment
+[N01] Signed amendment, 14 March 2026. For FY2025, replace IS01 with 65,106. Do not add both releases.
+[N03] Audited facility principal outstanding at 31 December 2025 totals 10,248.
+[N04] Included in N03, the principal due within the next twelve months is 2,562.
+The remainder of N03 is non-current. Both portions bear interest. Trade creditors exclude the facility.
+[M01] Prior unsigned credit proposal: projected new facility 5,124. It was never drawn.

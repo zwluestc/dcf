@@ -5,6 +5,7 @@ import random
 import shutil
 from pathlib import Path
 
+from takeover import is_takeover
 from model import CASES, ROWS, VAL, HIST, generate, calculate, branches_covered
 
 HERE = Path(__file__).resolve().parent
@@ -82,6 +83,8 @@ def build(out, seed, waves=2):
             for attempt in range(600):
                 cand_seed = sd + attempt * 104729
                 d = generate(k, cand_seed, wave=wave)
+                if is_takeover(f"dcf-{offset+k+1:02}-{slug}"):
+                    d["scalar"].update(price_multiplier=round(1.02+.003*k,4),dso_shift=2+k%5)
                 baseline = calculate(d)
                 w = baseline["DCF"]["B4"]
                 ev = baseline["DCF"]["B7"]
@@ -148,7 +151,7 @@ workdir = "/tests"
             keys = ["price_multiplier", "dso_shift", "risk_free"]
             vs = [
                 round(rng.uniform(0.80, 0.94), 6),
-                rng.randint(6, 15),
+                s["dso_shift"] + rng.randint(6, 15),
                 round(s["risk_free"] + rng.uniform(0.006, 0.015), 6),
             ]
             tar = {"base": baseline, "controls": {f"B{i + 4}": s[key] for i, key in enumerate(keys)}, "shocks": {}}

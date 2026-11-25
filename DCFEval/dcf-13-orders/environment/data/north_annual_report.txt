@@ -1,0 +1,31 @@
+Langstone Pumps (朗石泵业) | North subsidiary | FY2025 annual financial report
+Statement release dated 28 February 2026. Calendar-year accounts.
+Presentation currency: thousands of EUR. Commas group thousands; dot is decimal.
+Profit or loss expenses are shown in parentheses. Cost schedules use expense magnitudes.
+Each comparative is FY2024. Flows span twelve months. Balances are at 31 December.
+Use the signed amendment in note N01 for billings. Debt in BS07 is the total facility.
+
+Statement of profit or loss
+[IS01] Customer billings. FY2024 comparative 50,541.4. FY2025 reported 55,910.
+[IS02] Direct fulfilment costs. FY2024 comparative (37,455.6). FY2025 reported (41,160).
+[IS03] Selling and administration. FY2024 comparative (5,717.53). FY2025 reported (6,283).
+[IS04] Depreciation. FY2024 comparative (2,669.03). FY2025 reported (2,933).
+[IS05] Finance expense. FY2024 comparative (922.74). FY2025 reported (1,014).
+[IS06] Current tax expense. FY2024 comparative (4,642.82). FY2025 reported (5,102).
+
+Statement of financial position
+[BS01] Customer receivables. FY2024 comparative 10,839.01. FY2025 reported 11,911.
+[BS02] Merchandise on hand. FY2024 comparative 5,056.87. FY2025 reported 5,557.
+[BS03] Trade creditors. FY2024 comparative 3,203.2. FY2025 reported 3,520.
+[BS04] Operating plant, net. FY2024 comparative 37,139.83. FY2025 reported 40,813.
+[BS05] Cash at bank. FY2024 comparative 10,897.25. FY2025 reported 11,975.
+[BS06] Closing book capital. FY2024 comparative 50,858.08. FY2025 reported 55,888.
+[BS07] Borrowings, current and non-current together. FY2025 reported 13,984.
+[BS08] Interoffice clearing receivable: 3,136. Eliminated on group consolidation.
+
+Notes and subsequent amendment
+[N01] Signed amendment, 14 March 2026. For FY2025, replace IS01 with 55,540. Do not add both releases.
+[N03] Audited facility principal outstanding at 31 December 2025 totals 13,984.
+[N04] Included in N03, the principal due within the next twelve months is 4,894.4.
+The remainder of N03 is non-current. Both portions bear interest. Trade creditors exclude the facility.
+[M01] Prior unsigned credit proposal: projected new facility 9,788.8. It was never drawn.

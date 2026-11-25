@@ -1,0 +1,7 @@
+Treasury research | Market observations
+
+Birch reports an observed equity beta of 0.7924888050778877111582574475. Net debt/equity is 0.31x and the statutory tax rate is 28.00%.
+Onyx reports an observed equity beta of 1.170830724764861707301968572. Net debt/equity is 0.47x and the statutory tax rate is 29.00%.
+Flint reports an observed equity beta of 0.6598731789319429725710842353. Net debt/equity is 0.28x and the statutory tax rate is 19.00%.
+Haven reports an observed equity beta of 1.029222238317539156083674928. Net debt/equity is 0.34x and the statutory tax rate is 24.00%.
+Slate reports an observed equity beta of 1.086513841142399485642595362. Net debt/equity is 0.65x and the statutory tax rate is 21.00%.

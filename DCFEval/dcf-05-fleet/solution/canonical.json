@@ -91,8 +91,8 @@
     ]
   },
   "scalar": {
-    "price_multiplier": 1.0,
-    "dso_shift": 0.0,
+    "price_multiplier": 1.032,
+    "dso_shift": 6,
     "risk_free": 0.0348,
     "beta": 1.2253,
     "erp": 0.0495,

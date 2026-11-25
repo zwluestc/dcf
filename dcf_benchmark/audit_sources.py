@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 from statistics import median
 
+from filings import read_ledger, plan_and_peers
 from model import calculate
 from forward import forward
 
@@ -39,9 +40,10 @@ def reconstruct(p: Path):
         erp=get("risk premium " + numbers + " bp", tr) / 10000,
     )
 
+    budget, peers = plan_and_peers(p)
     asset = median(
         float(e["observed_equity_beta"]) / (1 + (1 - float(e["statutory_tax_pct"]) / 100) * float(e["net_debt_to_equity_x"]))
-        for e in rows("peer_set.csv")
+        for e in peers
     )
     s["beta"] = asset * (1 + (1 - s["tax_rate"]) * s["debt_weight"] / (1 - s["debt_weight"]))
 
@@ -58,7 +60,7 @@ def reconstruct(p: Path):
             a[key].append(get(r"\(" + key + r"\) = " + numbers, line))
         a["unit_price"].append(get(r"(?:is|=)\s*EUR\s*" + numbers, line) / 1e6)
 
-    for e in sorted(rows("finance_budget.csv"), key=lambda x: x["fy"]):
+    for e in sorted(budget, key=lambda x: x["fy"]):
         for k, n, f in [
             ("cogs_pct", "cash_cost_pct_of_sales", 100),
             ("opex_fixed", "fixed_expense_EUR_thousands", 1000),
@@ -78,12 +80,8 @@ def reconstruct(p: Path):
     )
     led = []
     for site in ["north", "south"]:
-        for e in rows(site + "_close.csv"):
-            if e["status"] != "POSTED":
-                continue
-            field = next(n for n in e if n.startswith("amount_"))
-            scale = 1000 if field.endswith("_thousands") else 1e6
-            led.append({"account": chart[e["account"]], "amount": float(e[field]) / scale})
+        for account, native, scale, cite in read_ledger(p,site.title()):
+            led.append({"account":chart[account], "amount":native/scale})
 
     case = dict(
         slug=p.parent.parent.name.split("-", 2)[2],

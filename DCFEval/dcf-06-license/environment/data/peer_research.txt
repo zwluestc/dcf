@@ -1,0 +1,5 @@
+Treasury research | Market observations
+
+Dune reports an observed equity beta of 1.385433990514841019380089771. Net debt/equity is 0.55x and the statutory tax rate is 22.00%.
+Quartz reports an observed equity beta of 1.435948162016992880709591913. Net debt/equity is 0.23x and the statutory tax rate is 27.00%.
+Flint reports an observed equity beta of 1.607794244788489077886073111. Net debt/equity is 0.67x and the statutory tax rate is 29.00%.

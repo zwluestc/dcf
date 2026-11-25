@@ -1,0 +1,31 @@
+Starport Machinery (星浦机床) | North subsidiary | FY2025 annual financial report
+Statement release dated 28 February 2026. Calendar-year accounts.
+Presentation currency: thousands of EUR. Commas group thousands; dot is decimal.
+Profit or loss expenses are shown in parentheses. Cost schedules use expense magnitudes.
+Each comparative is FY2024. Flows span twelve months. Balances are at 31 December.
+Use the signed amendment in note N01 for billings. Debt in BS07 is the total facility.
+
+Statement of profit or loss
+[IS01] Customer billings. FY2024 comparative 39,987.22. FY2025 reported 44,312.
+[IS02] Direct fulfilment costs. FY2024 comparative (22,436.96). FY2025 reported (24,656).
+[IS03] Selling and administration. FY2024 comparative (6,460.09). FY2025 reported (7,099).
+[IS04] Depreciation. FY2024 comparative (3,633.63). FY2025 reported (3,993).
+[IS05] Finance expense. FY2024 comparative (657.02). FY2025 reported (722).
+[IS06] Current tax expense. FY2024 comparative (2,523.43). FY2025 reported (2,773).
+
+Statement of financial position
+[BS01] Customer receivables. FY2024 comparative 9,787.05. FY2025 reported 10,755.
+[BS02] Merchandise on hand. FY2024 comparative 4,062.24. FY2025 reported 4,464.
+[BS03] Trade creditors. FY2024 comparative 3,543.54. FY2025 reported 3,894.
+[BS04] Operating plant, net. FY2024 comparative 34,452.6. FY2025 reported 37,860.
+[BS05] Cash at bank. FY2024 comparative 6,856.85. FY2025 reported 7,535.
+[BS06] Closing book capital. FY2024 comparative 47,518.38. FY2025 reported 52,218.
+[BS07] Borrowings, current and non-current together. FY2025 reported 13,028.
+[BS08] Interoffice clearing receivable: 8,526. Eliminated on group consolidation.
+
+Notes and subsequent amendment
+[N01] Signed amendment, 14 March 2026. For FY2025, replace IS01 with 43,942. Do not add both releases.
+[N03] Audited facility principal outstanding at 31 December 2025 totals 13,028.
+[N04] Included in N03, the principal due within the next twelve months is 2,605.6.
+The remainder of N03 is non-current. Both portions bear interest. Trade creditors exclude the facility.
+[M01] Prior unsigned credit proposal: projected new facility 5,211.2. It was never drawn.

@@ -26,6 +26,7 @@ Anti-Hardcoding Dynamic Gate (`dynamic_gate` in [0.20, 1.00]):
 - `dynamic_gate = 0.20 + 0.80 * (0.65 * formula_ratio + 0.35 * responsiveness_ratio)`.
   Genuine dynamic models achieve `dynamic_gate = 1.0`; static pasted-value workbooks get `0.20` (`reward ~ 0.15`).
 """
+import hashlib
 import argparse
 import json
 import math
@@ -199,6 +200,49 @@ def run_soffice_recalc(src_dir: Path, out_dir: Path, timeout: int = 125):
     )
 
 
+def structure_fingerprint(wb, editable):
+    """Hash the inherited layout and unaffected model, independent of ZIP serialization."""
+    names = wb.defined_names
+    entries = names.values() if hasattr(names,"values") else names.definedName
+    signature = {"names":sorted((n.name,n.attr_text) for n in entries), "sheets":[]}
+    for ws in wb.worksheets:
+        free=set(editable.get(ws.title,()))
+        cells=[]
+        for row in ws.iter_rows():
+            for cell in row:
+                val=cell.value
+                if val is None and not cell.has_style and cell.coordinate not in free: continue
+                if cell.coordinate in free: val="<editable>"
+                elif type(val) in (float,int): val=format(val,".12g")
+                cells.append((cell.coordinate,val,cell.number_format))
+        signature["sheets"].append((ws.title,ws.sheet_state,ws.freeze_panes,sorted(str(r) for r in ws.merged_cells.ranges),
+            sorted((k,v.width,v.hidden) for k,v in ws.column_dimensions.items()),
+            sorted((k,v.height,v.hidden) for k,v in ws.row_dimensions.items()),cells))
+    return hashlib.sha256(json.dumps(signature,ensure_ascii=False).encode()).hexdigest()
+
+
+FILING_HISTORY_ROWS = {"N01":6,"IS02":7,"IS03":8,"IS04":9,"IS05":11,"IS06":12,
+                       "BS01":14,"BS02":15,"BS03":16,"BS04":19,"BS05":22,"BS06":23,
+                       "N04":20,"N03-N04":20}
+
+
+def filing_increment(ref):
+    return (int(hashlib.sha256(ref.encode()).hexdigest()[:4],16)+1)/10000
+
+
+def build_filing_probe(src,dst,spec):
+    wb=load_workbook(src)
+    if "Ledger" in wb.sheetnames:
+        sheet=wb["Ledger"]
+        for r in range(4,32):
+            ref=sheet[f"G{r}"].value
+            native=sheet[f"D{r}"].value
+            if ref in spec["filing_evidence"] and is_num(native):
+                sheet[f"D{r}"]=native+filing_increment(ref)*spec["filing_evidence"][ref][1]
+    wb.save(dst)
+    wb.close()
+
+
 def grade(path, spec, recalc_fn=None):
     if not path.is_file():
         return {"reward": 0.0, "pass_strict": False, "reason": "missing output.xlsx"}
@@ -233,6 +277,15 @@ def grade(path, spec, recalc_fn=None):
         if not {"DCF", "Statements", "Inputs"}.issubset(wb.sheetnames):
             return {"reward": 0.0, "pass_strict": False, "reason": "missing required sheet(s)", "sheets": wb.sheetnames}
 
+        inherited = spec.get("inherited")
+        if inherited and structure_fingerprint(wb,inherited["editable"]) != inherited["digest"]:
+            wb.close()
+            return {"reward":0.0,"pass_strict":False,"reason":"inherited workbook structure or unaffected content changed"}
+        filing_formulas = set()
+        if "Ledger" in wb.sheetnames:
+            for r in range(4,32):
+                if wb["Ledger"][f"F{r}"].data_type=="f":
+                    filing_formulas.add(r)
         for cell, v in spec["controls"].items():
             audit("controls", "Inputs!" + cell, wb["Inputs"][cell].value, v)
 
@@ -248,6 +301,8 @@ def grade(path, spec, recalc_fn=None):
 
         shutil.copyfile(path, p / "base.xlsx")
         build_leaf_probe_workbook(path, p / "leaf_probe.xlsx")
+        if spec.get("filing_evidence"):
+            build_filing_probe(path,p/"filing_probe.xlsx",spec)
         for k, v in spec["shocks"].items():
             w = load_workbook(path, keep_links=False)
             for addr, n in v["changes"].items():
@@ -299,6 +354,33 @@ def grade(path, spec, recalc_fn=None):
             else:
                 audit("formulas", f"{sh}!{c}", "live_formula", "live_formula", ok=True)
 
+        if spec.get("filing_evidence"):
+            filing_probe=load_workbook(out/"filing_probe.xlsx",data_only=True)
+            by_source = {}
+            deltas = {}
+            for ref in spec["filing_evidence"]:
+                hist_row=FILING_HISTORY_ROWS[ref.split("#")[1]]
+                deltas[hist_row]=deltas.get(hist_row,0)+filing_increment(ref)
+            if "Ledger" in w_base.sheetnames:
+                ledger=w_base["Ledger"]
+                for r in range(4,32):
+                    ref=ledger[f"G{r}"].value
+                    by_source.setdefault(ref,[]).append((r,[ledger[f"{c}{r}"].value for c in "DEF"]))
+            for ref,expected in spec["filing_evidence"].items():
+                found=by_source.get(ref,[])
+                ok=(len(found)==1 and found[0][0] in filing_formulas and
+                    all(close(v,target) for v,target in zip(found[0][1],expected)))
+                if ok:
+                    changed = filing_probe["Ledger"][f"F{found[0][0]}"].value
+                    ok=close(changed,expected[2]+filing_increment(ref))
+                audit("filings",ref,found,expected,ok=ok)
+            for hist_row,delta in deltas.items():
+                addr=f"B{hist_row}"
+                old=w_base["Statements"][addr].value
+                new=filing_probe["Statements"][addr].value
+                measured=new-old if is_num(new) and is_num(old) else None
+                audit("filing_links","Statements!"+addr,measured,delta)
+            filing_probe.close()
         ws_base = w_base["Statements"]
         for j, cc in enumerate("BCDEFG"):
             audit("controls", cc + "3", ws_base[cc + "3"].value, 2025 + j)
@@ -375,7 +457,12 @@ def grade(path, spec, recalc_fn=None):
     shock_delta_ratio = s_ok / s_tot if s_tot else 0.0
 
     dynamic_gate = 0.20 + 0.80 * (0.65 * formula_ratio + 0.35 * responsiveness_ratio)
-    reward = round(raw_score * dynamic_gate, 9)
+    filing_factor = 1.0
+    if "filings" in groups:
+        correct,total=groups["filings"]
+        linked,links=groups["filing_links"]
+        filing_factor=0.80+0.20*(correct+linked)/(total+links)
+    reward = round(raw_score * dynamic_gate * filing_factor, 9)
     pass_strict = (reward == 1.0) and (len(excel_errors) == 0)
 
     pillar_scores = {
