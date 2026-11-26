@@ -1,0 +1,101 @@
+model,task,reward,original_reward,format_replay,delivered,reason,calls,solve_s,failed_request_s,reasoning_tokens
+dashscope.kimi-k3.1-pro,dcf-01-saas,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,649.493,599.635,19944
+dashscope.kimi-k3.1-pro,dcf-02-foundry,1.0,1.0,False,True,,1,707.823,1512.347,20938
+dashscope.kimi-k3.1-pro,dcf-03-orders,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,885.855,0.0,26051
+dashscope.kimi-k3.1-pro,dcf-04-storage,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,935.879,659.992,22982
+dashscope.kimi-k3.1-pro,dcf-05-fleet,1.0,1.0,False,True,,1,576.077,1512.192,17681
+dashscope.kimi-k3.1-pro,dcf-06-license,1.0,1.0,False,True,,1,910.499,1.234,21316
+dashscope.kimi-k3.1-pro,dcf-07-mine,1.0,1.0,False,True,,1,711.926,0.0,21721
+dashscope.kimi-k3.1-pro,dcf-08-retail,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,774.695,0.0,24323
+dashscope.kimi-k3.1-pro,dcf-09-royalty,1.0,1.0,False,True,,1,631.491,0.0,19335
+dashscope.kimi-k3.1-pro,dcf-10-returns,1.0,1.0,False,True,,2,895.988,0.0,27012
+dashscope.kimi-k3.1-pro,dcf-11-saas,1.0,0.0,True,True,,1,523.796,0.0,17526
+dashscope.kimi-k3.1-pro,dcf-12-foundry,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,2,1170.436,0.0,31583
+dashscope.kimi-k3.1-pro,dcf-13-orders,1.0,1.0,False,True,,1,799.303,0.0,22776
+dashscope.kimi-k3.1-pro,dcf-14-storage,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,847.084,0.0,25067
+dashscope.kimi-k3.1-pro,dcf-15-fleet,1.0,1.0,False,True,,2,1035.184,0.0,30435
+dashscope.kimi-k3.1-pro,dcf-16-license,1.0,1.0,False,True,,1,662.193,0.0,18944
+dashscope.kimi-k3.1-pro,dcf-17-mine,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,790.846,0.0,25725
+dashscope.kimi-k3.1-pro,dcf-18-retail,1.0,0.0,True,True,,1,808.237,0.0,25817
+dashscope.kimi-k3.1-pro,dcf-19-royalty,1.0,1.0,False,True,,1,595.112,0.0,18651
+dashscope.kimi-k3.1-pro,dcf-20-returns,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,575.749,0.0,17519
+openai/gpt-6.2-sol,dcf-01-saas,1.0,1.0,False,True,,1,508.474,0.0,19836
+openai/gpt-6.2-sol,dcf-02-foundry,1.0,1.0,False,True,,1,424.261,0.0,15228
+openai/gpt-6.2-sol,dcf-03-orders,1.0,1.0,False,True,,1,328.754,0.0,12709
+openai/gpt-6.2-sol,dcf-04-storage,1.0,1.0,False,True,,1,467.587,0.0,16998
+openai/gpt-6.2-sol,dcf-05-fleet,1.0,1.0,False,True,,1,496.639,0.0,15821
+openai/gpt-6.2-sol,dcf-06-license,1.0,1.0,False,True,,1,385.305,0.0,15205
+openai/gpt-6.2-sol,dcf-07-mine,1.0,1.0,False,True,,1,417.015,0.0,15855
+openai/gpt-6.2-sol,dcf-08-retail,1.0,1.0,False,True,,1,427.97,0.0,15331
+openai/gpt-6.2-sol,dcf-09-royalty,1.0,1.0,False,True,,1,345.155,0.0,13356
+openai/gpt-6.2-sol,dcf-10-returns,1.0,1.0,False,True,,1,962.106,0.0,23182
+openai/gpt-6.2-sol,dcf-11-saas,1.0,1.0,False,True,,1,425.219,0.0,15598
+openai/gpt-6.2-sol,dcf-12-foundry,1.0,1.0,False,True,,1,542.179,0.0,20878
+openai/gpt-6.2-sol,dcf-13-orders,1.0,1.0,False,True,,1,430.99,288.841,15662
+openai/gpt-6.2-sol,dcf-14-storage,1.0,1.0,False,True,,1,334.838,0.0,12358
+openai/gpt-6.2-sol,dcf-15-fleet,1.0,1.0,False,True,,2,869.604,0.0,32881
+openai/gpt-6.2-sol,dcf-16-license,1.0,1.0,False,True,,1,440.261,0.0,15722
+openai/gpt-6.2-sol,dcf-17-mine,1.0,1.0,False,True,,1,352.423,0.0,17636
+openai/gpt-6.2-sol,dcf-18-retail,1.0,1.0,False,True,,1,383.306,0.0,14472
+openai/gpt-6.2-sol,dcf-19-royalty,1.0,1.0,False,True,,1,465.636,0.0,18058
+openai/gpt-6.2-sol,dcf-20-returns,1.0,1.0,False,True,,2,613.387,618.223,23126
+openai/gpt-6.1-sol,dcf-01-saas,1.0,1.0,False,True,,1,600.562,0.0,16862
+openai/gpt-6.1-sol,dcf-02-foundry,1.0,0.0,True,True,,1,462.743,369.888,13768
+openai/gpt-6.1-sol,dcf-03-orders,1.0,1.0,False,True,,2,916.05,778.707,20878
+openai/gpt-6.1-sol,dcf-04-storage,1.0,1.0,False,True,,1,612.274,0.0,21960
+openai/gpt-6.1-sol,dcf-05-fleet,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,583.876,0.0,16255
+openai/gpt-6.1-sol,dcf-06-license,1.0,1.0,False,True,,2,852.595,0.0,20022
+openai/gpt-6.1-sol,dcf-07-mine,1.0,0.0,True,True,,1,625.222,0.0,19164
+openai/gpt-6.1-sol,dcf-08-retail,1.0,1.0,False,True,,1,564.368,0.0,17303
+openai/gpt-6.1-sol,dcf-09-royalty,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,2,835.522,0.0,18952
+openai/gpt-6.1-sol,dcf-10-returns,1.0,1.0,False,True,,1,593.205,0.0,18231
+openai/gpt-6.1-sol,dcf-11-saas,1.0,0.0,True,True,,2,789.05,0.0,21383
+openai/gpt-6.1-sol,dcf-12-foundry,1.0,1.0,False,True,,2,878.225,0.0,18376
+openai/gpt-6.1-sol,dcf-13-orders,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,535.384,0.0,15020
+openai/gpt-6.1-sol,dcf-14-storage,1.0,0.0,True,True,,1,416.207,0.0,12536
+openai/gpt-6.1-sol,dcf-15-fleet,1.0,1.0,False,True,,2,739.171,0.0,16644
+openai/gpt-6.1-sol,dcf-16-license,1.0,1.0,False,True,,1,591.631,0.0,17908
+openai/gpt-6.1-sol,dcf-17-mine,1.0,0.0,True,True,,2,966.074,0.0,22149
+openai/gpt-6.1-sol,dcf-18-retail,1.0,0.0,True,True,,2,895.273,0.0,22030
+openai/gpt-6.1-sol,dcf-19-royalty,1.0,0.0,True,True,,1,608.125,0.0,18982
+openai/gpt-6.1-sol,dcf-20-returns,1.0,1.0,False,True,,2,717.195,0.0,16306
+dashscope.deepseek-v4.1-flash-1017,dcf-01-saas,1.0,1.0,False,True,,1,169.795,0.0,25204
+dashscope.deepseek-v4.1-flash-1017,dcf-02-foundry,0.717647287,0.717647287,False,True,,1,175.424,0.0,30851
+dashscope.deepseek-v4.1-flash-1017,dcf-03-orders,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,137.476,0.0,22755
+dashscope.deepseek-v4.1-flash-1017,dcf-04-storage,1.0,1.0,False,True,,1,180.491,0.0,29927
+dashscope.deepseek-v4.1-flash-1017,dcf-05-fleet,0.985365854,0.0,True,True,,1,194.718,0.0,30153
+dashscope.deepseek-v4.1-flash-1017,dcf-06-license,1.0,0.0,True,True,,1,190.911,0.0,31543
+dashscope.deepseek-v4.1-flash-1017,dcf-07-mine,1.0,0.0,True,True,,1,200.401,0.0,30454
+dashscope.deepseek-v4.1-flash-1017,dcf-08-retail,0.985365854,0.985365854,False,True,,1,211.408,0.0,35927
+dashscope.deepseek-v4.1-flash-1017,dcf-09-royalty,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,126.55,0.0,23683
+dashscope.deepseek-v4.1-flash-1017,dcf-10-returns,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,189.317,0.0,28491
+dashscope.deepseek-v4.1-flash-1017,dcf-11-saas,1.0,0.0,True,True,,1,213.988,0.0,40083
+dashscope.deepseek-v4.1-flash-1017,dcf-12-foundry,1.0,1.0,False,True,,1,188.658,0.0,26315
+dashscope.deepseek-v4.1-flash-1017,dcf-13-orders,0.72125,0.72125,False,True,,1,210.081,0.0,35776
+dashscope.deepseek-v4.1-flash-1017,dcf-14-storage,0.985365854,0.985365854,False,True,,1,181.298,0.0,24741
+dashscope.deepseek-v4.1-flash-1017,dcf-15-fleet,1.0,1.0,False,True,,1,126.476,0.0,21663
+dashscope.deepseek-v4.1-flash-1017,dcf-16-license,1.0,1.0,False,True,,1,183.802,0.0,28008
+dashscope.deepseek-v4.1-flash-1017,dcf-17-mine,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,142.987,0.0,21240
+dashscope.deepseek-v4.1-flash-1017,dcf-18-retail,1.0,0.0,True,True,,1,192.282,0.0,37193
+dashscope.deepseek-v4.1-flash-1017,dcf-19-royalty,1.0,0.0,True,True,,1,149.444,0.0,26992
+dashscope.deepseek-v4.1-flash-1017,dcf-20-returns,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,208.217,0.0,34471
+qwen4-max,dcf-01-saas,0.0,0.0,False,False,missing output.xlsx,2,166.18,0.0,7960
+qwen4-max,dcf-02-foundry,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,249.063,0.0,19065
+qwen4-max,dcf-03-orders,0.0,0.0,False,False,missing output.xlsx,2,175.605,0.0,7292
+qwen4-max,dcf-04-storage,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,196.533,0.0,14590
+qwen4-max,dcf-05-fleet,0.985365854,0.985365854,False,True,,1,215.204,0.0,16635
+qwen4-max,dcf-06-license,1.0,1.0,False,True,,2,359.08,0.0,24115
+qwen4-max,dcf-07-mine,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,255.55,0.0,19456
+qwen4-max,dcf-08-retail,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,107.827,0.0,6915
+qwen4-max,dcf-09-royalty,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,296.999,0.0,19892
+qwen4-max,dcf-10-returns,1.0,1.0,False,True,,1,320.145,0.0,20918
+qwen4-max,dcf-11-saas,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,2,450.547,0.0,31727
+qwen4-max,dcf-12-foundry,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,2,377.927,0.0,23876
+qwen4-max,dcf-13-orders,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,125.107,0.0,6436
+qwen4-max,dcf-14-storage,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,2,174.723,0.0,8117
+qwen4-max,dcf-15-fleet,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,2,339.247,0.0,20563
+qwen4-max,dcf-16-license,0.0,0.0,False,False,missing output.xlsx,2,178.451,0.0,6375
+qwen4-max,dcf-17-mine,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,2,186.009,0.0,9022
+qwen4-max,dcf-18-retail,0.0,0.0,False,True,inherited workbook structure or unaffected content changed,1,172.3,0.0,9888
+qwen4-max,dcf-19-royalty,1.0,1.0,False,True,,2,412.496,0.0,24744
+qwen4-max,dcf-20-returns,1.0,0.0,True,True,,2,195.797,0.0,9665
