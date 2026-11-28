@@ -1,0 +1,15 @@
+{
+  "model": "dashscope.deepseek-v4.1-flash-1017",
+  "system": "你是行业研究分析师。通过目录自行取证，可以心算。回复单个 JSON 对象：读取原文用 {\"fetch\":[\"文档ID\",...]}，可一次取多份；交卷则直接返回题面要求的 {\"cutoff\":\"...\",\"findings\":{...}}。最多三轮取文，第4次回复只能交卷。题面提到的本地命令及写文件由这个接口代替。不会得到评分反馈。",
+  "temperature": 0,
+  "max_tokens": 10000,
+  "max_fetch_rounds": 3,
+  "pack_sizes": {
+    "main": 14,
+    "extra": 28
+  },
+  "workers": 5,
+  "replay_from": "deepseek-flash-1017-catalog-v1",
+  "adapter": "also accept single DSML fetch or leading JSON fetch with trailing text; final answers unchanged",
+  "endpoint_sha256": "c80c4c5f20201d133a3054f50e4e679db99bef9e12950680e4c8efea5d11b3fe"
+}

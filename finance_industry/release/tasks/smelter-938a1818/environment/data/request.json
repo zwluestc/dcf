@@ -1,0 +1,7 @@
+{
+  "task_id": "smelter-938a1818",
+  "question": "铜冶炼：加工费重定价会不会吃掉契约缓冲？\n\n为 Sable Inlet Metals 的信贷委员会量化年度加工费重定价。只对浮动合同套用新费率；套保收益与其他抵消项假定为零。契约测试按冲击后的全年 EBITDA，比门槛低即 breach，否则 clear。\n\n覆盖组：Sable Inlet / smelter；档期：FY2025；研究截止日（含当日）：2026-04-30。同档期正式稿优先于预告；文件发布日期与其所述事项的发生日分开。\n\n请逐项回答：\n- `exposed_tonnes`：浮动合同干吨数。\n- `loss_usd_m`：全年 EBITDA 减少额（百万美元，损失写正）。\n- `post_cny_m`：冲击后 EBITDA（百万人民币）。\n- `headroom_cny_m`：契约缓冲（冲击后减门槛，百万人民币）。\n- `test`：契约测试结论：breach 或 clear。",
+  "cutoff": "2026-04-30",
+  "coverage": "Sable Inlet / smelter",
+  "period": "FY2025"
+}

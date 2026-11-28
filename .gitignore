@@ -3,3 +3,4 @@ __pycache__/
 .DS_Store
 dcf_benchmark/jobs/
 .env
+/build/

@@ -1,0 +1,44 @@
+{
+  "cutoff": "2026-04-30",
+  "claims": {
+    "q2_local": {
+      "sources": [
+        "9757317b3b",
+        "c1b641278d",
+        "e8ab99d2e2"
+      ],
+      "value": 202
+    },
+    "q3_local": {
+      "sources": [
+        "9757317b3b",
+        "c1b641278d",
+        "e8ab99d2e2"
+      ],
+      "value": 174
+    },
+    "peak_quarter": {
+      "sources": [
+        "9757317b3b",
+        "c1b641278d",
+        "e8ab99d2e2"
+      ],
+      "value": "Q2"
+    },
+    "peak_local": {
+      "sources": [
+        "9757317b3b",
+        "c1b641278d",
+        "e8ab99d2e2"
+      ],
+      "value": 202
+    },
+    "annual_local": {
+      "sources": [
+        "9757317b3b",
+        "e8ab99d2e2"
+      ],
+      "value": 675
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "task": "port-8cfa48e3",
+  "pack": "main",
+  "corpus_sha256": "1a4bfb1758364158d0bde88e6c35d53edf2279f902140a3be6fb31c3dcc65e23",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T09:55:11.131336+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 375,
+        "prompt_tokens": 2140,
+        "total_tokens": 2515,
+        "completion_tokens_details": {
+          "reasoning_tokens": 331,
+          "text_tokens": 43
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 2140,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"17eb730f0b\",\"26b7124252\",\"95593112cd\",\"194720af45\",\"fd2366736a\",\"66ebf6f71b\"]}",
+      "fetched": [
+        "17eb730f0b",
+        "26b7124252",
+        "95593112cd",
+        "194720af45",
+        "fd2366736a",
+        "66ebf6f71b"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 2061,
+        "prompt_tokens": 3162,
+        "total_tokens": 5223,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1885,
+          "text_tokens": 175
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 2048,
+          "text_tokens": 3162,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2025-04-30\",\"findings\":{\"q2_local\":{\"value\":162.00,\"sources\":[\"17eb730f0b\",\"95593112cd\",\"26b7124252\"]},\"q3_local\":{\"value\":204.00,\"sources\":[\"17eb730f0b\",\"95593112cd\",\"26b7124252\"]},\"peak_quarter\":{\"value\":\"Q3\",\"sources\":[\"17eb730f0b\",\"95593112cd\",\"26b7124252\"]},\"peak_local\":{\"value\":204.00,\"sources\":[\"17eb730f0b\",\"95593112cd\",\"26b7124252\"]},\"annual_local\":{\"value\":655.00,\"sources\":[\"17eb730f0b\",\"95593112cd\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2025-04-30",
+    "findings": {
+      "q2_local": {
+        "value": 162.0,
+        "sources": [
+          "17eb730f0b",
+          "95593112cd",
+          "26b7124252"
+        ]
+      },
+      "q3_local": {
+        "value": 204.0,
+        "sources": [
+          "17eb730f0b",
+          "95593112cd",
+          "26b7124252"
+        ]
+      },
+      "peak_quarter": {
+        "value": "Q3",
+        "sources": [
+          "17eb730f0b",
+          "95593112cd",
+          "26b7124252"
+        ]
+      },
+      "peak_local": {
+        "value": 204.0,
+        "sources": [
+          "17eb730f0b",
+          "95593112cd",
+          "26b7124252"
+        ]
+      },
+      "annual_local": {
+        "value": 655.0,
+        "sources": [
+          "17eb730f0b",
+          "95593112cd"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "elapsed_s": 14.15
+}

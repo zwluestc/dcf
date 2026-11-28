@@ -1,0 +1,100 @@
+{
+  "task": "wind-669378f4",
+  "pack": "main",
+  "corpus_sha256": "86efe361c0138d32b78d8171d952005e4f306791c2b4480935356bb16e2049e5",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T09:55:21.310761+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 456,
+        "prompt_tokens": 1940,
+        "total_tokens": 2396,
+        "completion_tokens_details": {
+          "reasoning_tokens": 397,
+          "text_tokens": 58
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1940,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"4d03c3df4c\",\"8630515acc\",\"78d3844c69\",\"eb485c5c9a\",\"d322b33fc7\",\"db57ed91a7\",\"1c1d4f5350\"]}",
+      "fetched": [
+        "4d03c3df4c",
+        "8630515acc",
+        "78d3844c69",
+        "eb485c5c9a",
+        "d322b33fc7",
+        "db57ed91a7",
+        "1c1d4f5350"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 909,
+        "prompt_tokens": 2980,
+        "total_tokens": 3889,
+        "completion_tokens_details": {
+          "reasoning_tokens": 721,
+          "text_tokens": 187
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 1024,
+          "text_tokens": 2980,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2026-04-30\",\"findings\":{\"awarded_gross\":{\"value\":940.00,\"sources\":[\"4d03c3df4c\"]},\"bankable_equity\":{\"value\":465.00,\"sources\":[\"4d03c3df4c\",\"8630515acc\",\"78d3844c69\"]},\"watch_equity\":{\"value\":128.00,\"sources\":[\"4d03c3df4c\",\"8630515acc\",\"78d3844c69\"]},\"conversion_pct\":{\"value\":78.4148,\"sources\":[\"4d03c3df4c\",\"8630515acc\",\"78d3844c69\"]},\"next_catalyst\":{\"value\":\"II\",\"sources\":[\"4d03c3df4c\",\"78d3844c69\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2026-04-30",
+    "findings": {
+      "awarded_gross": {
+        "value": 940.0,
+        "sources": [
+          "4d03c3df4c"
+        ]
+      },
+      "bankable_equity": {
+        "value": 465.0,
+        "sources": [
+          "4d03c3df4c",
+          "8630515acc",
+          "78d3844c69"
+        ]
+      },
+      "watch_equity": {
+        "value": 128.0,
+        "sources": [
+          "4d03c3df4c",
+          "8630515acc",
+          "78d3844c69"
+        ]
+      },
+      "conversion_pct": {
+        "value": 78.4148,
+        "sources": [
+          "4d03c3df4c",
+          "8630515acc",
+          "78d3844c69"
+        ]
+      },
+      "next_catalyst": {
+        "value": "II",
+        "sources": [
+          "4d03c3df4c",
+          "78d3844c69"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "elapsed_s": 9.23
+}

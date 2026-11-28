@@ -1,0 +1,21 @@
+schema_version = "1.4"
+artifacts = ["/work/answer.json"]
+[task]
+name = "industry-research/wind-55cf8730"
+description = "海上风电：中标容量能否进入可融资项目清单？"
+[agent]
+timeout_sec = 600
+[environment]
+cpus = 1
+memory_mb = 512
+storage_mb = 1024
+network_mode = "no-network"
+workdir = "/work"
+[verifier]
+timeout_sec = 60
+environment_mode = "separate"
+[verifier.environment]
+cpus = 1
+memory_mb = 512
+network_mode = "no-network"
+workdir = "/tests"

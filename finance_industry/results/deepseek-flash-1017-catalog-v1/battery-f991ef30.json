@@ -1,0 +1,118 @@
+{
+  "task": "battery-f991ef30",
+  "pack": "main",
+  "corpus_sha256": "e6a3da4c37ace65a862376e40e564fa0511b82fa27a4461c9ec7114e1eb691a4",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T09:55:04.470811+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 312,
+        "prompt_tokens": 2254,
+        "total_tokens": 2566,
+        "completion_tokens_details": {
+          "reasoning_tokens": 238,
+          "text_tokens": 73
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 2254,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"2efd68a1c3\",\"30fea39278\",\"ceda13efe2\",\"2d972d34ea\",\"8fb0dec727\",\"d9f2924d80\",\"e406bc31f9\",\"a2b121268a\",\"fb132961cd\",\"77831b2731\"]}",
+      "fetched": [
+        "2efd68a1c3",
+        "30fea39278",
+        "ceda13efe2",
+        "2d972d34ea",
+        "8fb0dec727",
+        "d9f2924d80",
+        "e406bc31f9",
+        "a2b121268a",
+        "fb132961cd",
+        "77831b2731"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 1067,
+        "prompt_tokens": 3823,
+        "total_tokens": 4890,
+        "completion_tokens_details": {
+          "reasoning_tokens": 791,
+          "text_tokens": 275
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 2048,
+          "text_tokens": 3823,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2026-04-30\",\"findings\":{\"demand_m\":{\"value\":68.80,\"sources\":[\"2efd68a1c3\",\"8fb0dec727\"]},\"supply_m\":{\"value\":61.60,\"sources\":[\"ceda13efe2\",\"a2b121268a\",\"e406bc31f9\"]},\"base_balance_m\":{\"value\":-7.20,\"sources\":[\"2efd68a1c3\",\"8fb0dec727\",\"ceda13efe2\",\"a2b121268a\",\"e406bc31f9\"]},\"no_subsidy_balance_m\":{\"value\":7.20,\"sources\":[\"2efd68a1c3\",\"8fb0dec727\",\"ceda13efe2\",\"a2b121268a\",\"e406bc31f9\"]},\"release_balance_m\":{\"value\":-2.40,\"sources\":[\"2efd68a1c3\",\"8fb0dec727\",\"ceda13efe2\",\"a2b121268a\",\"e406bc31f9\"]},\"catalyst_readthrough\":{\"value\":\"residual_shortage\",\"sources\":[\"a2b121268a\",\"e406bc31f9\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2026-04-30",
+    "findings": {
+      "demand_m": {
+        "value": 68.8,
+        "sources": [
+          "2efd68a1c3",
+          "8fb0dec727"
+        ]
+      },
+      "supply_m": {
+        "value": 61.6,
+        "sources": [
+          "ceda13efe2",
+          "a2b121268a",
+          "e406bc31f9"
+        ]
+      },
+      "base_balance_m": {
+        "value": -7.2,
+        "sources": [
+          "2efd68a1c3",
+          "8fb0dec727",
+          "ceda13efe2",
+          "a2b121268a",
+          "e406bc31f9"
+        ]
+      },
+      "no_subsidy_balance_m": {
+        "value": 7.2,
+        "sources": [
+          "2efd68a1c3",
+          "8fb0dec727",
+          "ceda13efe2",
+          "a2b121268a",
+          "e406bc31f9"
+        ]
+      },
+      "release_balance_m": {
+        "value": -2.4,
+        "sources": [
+          "2efd68a1c3",
+          "8fb0dec727",
+          "ceda13efe2",
+          "a2b121268a",
+          "e406bc31f9"
+        ]
+      },
+      "catalyst_readthrough": {
+        "value": "residual_shortage",
+        "sources": [
+          "a2b121268a",
+          "e406bc31f9"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "elapsed_s": 9.72
+}

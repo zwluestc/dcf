@@ -1,0 +1,101 @@
+{
+  "task": "foundry-0934c479",
+  "pack": "main",
+  "corpus_sha256": "fa88f1e177052b7ee2cc2c2fd00df6030299ac3549791fc184cb5dc50c3d3ce2",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T09:55:04.471348+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 273,
+        "prompt_tokens": 1934,
+        "total_tokens": 2207,
+        "completion_tokens_details": {
+          "reasoning_tokens": 209,
+          "text_tokens": 63
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1934,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"20dee5bf66\",\"6e9bd7f81e\",\"0d3933e326\",\"662d1f0d5e\",\"e439a84868\",\"3ed11a9861\",\"864333806e\",\"b204f711b2\"]}",
+      "fetched": [
+        "20dee5bf66",
+        "6e9bd7f81e",
+        "0d3933e326",
+        "662d1f0d5e",
+        "e439a84868",
+        "3ed11a9861",
+        "864333806e",
+        "b204f711b2"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 1321,
+        "prompt_tokens": 3170,
+        "total_tokens": 4491,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1144,
+          "text_tokens": 176
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 1024,
+          "text_tokens": 3170,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2025-04-30\",\"findings\":{\"a_external\":{\"value\":237.00,\"sources\":[\"20dee5bf66\"]},\"b_external\":{\"value\":220.89,\"sources\":[\"3ed11a9861\",\"e439a84868\"]},\"a_share_pct\":{\"value\":51.76,\"sources\":[\"20dee5bf66\",\"3ed11a9861\",\"e439a84868\"]},\"leader\":{\"value\":\"Alder Ness\",\"sources\":[\"20dee5bf66\",\"3ed11a9861\",\"e439a84868\"]},\"physical_count_bias\":{\"value\":\"Sable Inlet\",\"sources\":[\"20dee5bf66\",\"3ed11a9861\",\"e439a84868\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2025-04-30",
+    "findings": {
+      "a_external": {
+        "value": 237.0,
+        "sources": [
+          "20dee5bf66"
+        ]
+      },
+      "b_external": {
+        "value": 220.89,
+        "sources": [
+          "3ed11a9861",
+          "e439a84868"
+        ]
+      },
+      "a_share_pct": {
+        "value": 51.76,
+        "sources": [
+          "20dee5bf66",
+          "3ed11a9861",
+          "e439a84868"
+        ]
+      },
+      "leader": {
+        "value": "Alder Ness",
+        "sources": [
+          "20dee5bf66",
+          "3ed11a9861",
+          "e439a84868"
+        ]
+      },
+      "physical_count_bias": {
+        "value": "Sable Inlet",
+        "sources": [
+          "20dee5bf66",
+          "3ed11a9861",
+          "e439a84868"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "elapsed_s": 9.61
+}

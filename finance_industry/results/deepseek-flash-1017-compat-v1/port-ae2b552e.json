@@ -1,0 +1,103 @@
+{
+  "task": "port-ae2b552e",
+  "pack": "extra",
+  "corpus_sha256": "f947da76b730c8ceb4b03c9c4605b0e3ef40fd28c952cf894495b831b22d1ef3",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T10:01:27.758748+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 388,
+        "prompt_tokens": 2140,
+        "total_tokens": 2528,
+        "completion_tokens_details": {
+          "reasoning_tokens": 307,
+          "text_tokens": 80
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 2140,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "<｜DSML｜ calls>\n<｜DSML｜ invoke name=\"fetch\">\n<｜DSML｜ parameter name=\"data\" string=\"true\">[\"fef6fbe605\", \"df4524366c\", \"53b3b155bb\", \"e13b887ad9\", \"393bf81029\", \"91831844b7\"]</｜DSML｜ parameter>\n</｜DSML｜ invoke>\n</｜DSML｜ calls>",
+      "fetched": [
+        "fef6fbe605",
+        "df4524366c",
+        "53b3b155bb",
+        "e13b887ad9",
+        "393bf81029",
+        "91831844b7"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 796,
+        "prompt_tokens": 3192,
+        "total_tokens": 3988,
+        "completion_tokens_details": {
+          "reasoning_tokens": 604,
+          "text_tokens": 191
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 2048,
+          "text_tokens": 3192,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2025-04-30\",\"findings\":{\"q2_local\":{\"value\":179.00,\"sources\":[\"fef6fbe605\",\"df4524366c\",\"53b3b155bb\"]},\"q3_local\":{\"value\":155.00,\"sources\":[\"fef6fbe605\",\"df4524366c\",\"53b3b155bb\"]},\"peak_quarter\":{\"value\":\"Q2\",\"sources\":[\"fef6fbe605\",\"df4524366c\",\"53b3b155bb\"]},\"peak_local\":{\"value\":179.00,\"sources\":[\"fef6fbe605\",\"df4524366c\",\"53b3b155bb\"]},\"annual_local\":{\"value\":591.00,\"sources\":[\"fef6fbe605\",\"df4524366c\",\"53b3b155bb\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2025-04-30",
+    "findings": {
+      "q2_local": {
+        "value": 179.0,
+        "sources": [
+          "fef6fbe605",
+          "df4524366c",
+          "53b3b155bb"
+        ]
+      },
+      "q3_local": {
+        "value": 155.0,
+        "sources": [
+          "fef6fbe605",
+          "df4524366c",
+          "53b3b155bb"
+        ]
+      },
+      "peak_quarter": {
+        "value": "Q2",
+        "sources": [
+          "fef6fbe605",
+          "df4524366c",
+          "53b3b155bb"
+        ]
+      },
+      "peak_local": {
+        "value": 179.0,
+        "sources": [
+          "fef6fbe605",
+          "df4524366c",
+          "53b3b155bb"
+        ]
+      },
+      "annual_local": {
+        "value": 591.0,
+        "sources": [
+          "fef6fbe605",
+          "df4524366c",
+          "53b3b155bb"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "reused_steps": 1,
+  "elapsed_s": 5.53
+}

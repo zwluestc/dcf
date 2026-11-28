@@ -1,0 +1,2388 @@
+{
+  "overall": {
+    "n": 42,
+    "full": 25,
+    "avg_score": 0.732381,
+    "all_values": 31,
+    "claims": 216,
+    "values_ok": 162,
+    "refs_ok": 156,
+    "joint_ok": 156
+  },
+  "by_pack": {
+    "main": {
+      "n": 14,
+      "full": 8,
+      "avg_score": 0.769524,
+      "all_values": 11,
+      "claims": 72,
+      "values_ok": 57,
+      "refs_ok": 54,
+      "joint_ok": 54
+    },
+    "extra": {
+      "n": 28,
+      "full": 17,
+      "avg_score": 0.713809,
+      "all_values": 20,
+      "claims": 144,
+      "values_ok": 105,
+      "refs_ok": 102,
+      "joint_ok": 102
+    }
+  },
+  "by_family": {
+    "battery": {
+      "n": 6,
+      "full": 3,
+      "avg_score": 0.966666,
+      "all_values": 6,
+      "claims": 36,
+      "values_ok": 36,
+      "refs_ok": 33,
+      "joint_ok": 33
+    },
+    "foundry": {
+      "n": 6,
+      "full": 5,
+      "avg_score": 0.833333,
+      "all_values": 5,
+      "claims": 30,
+      "values_ok": 25,
+      "refs_ok": 25,
+      "joint_ok": 25
+    },
+    "insurer": {
+      "n": 6,
+      "full": 4,
+      "avg_score": 0.973333,
+      "all_values": 6,
+      "claims": 30,
+      "values_ok": 30,
+      "refs_ok": 28,
+      "joint_ok": 28
+    },
+    "port": {
+      "n": 6,
+      "full": 5,
+      "avg_score": 0.833333,
+      "all_values": 5,
+      "claims": 30,
+      "values_ok": 25,
+      "refs_ok": 25,
+      "joint_ok": 25
+    },
+    "retail": {
+      "n": 6,
+      "full": 3,
+      "avg_score": 0.533333,
+      "all_values": 3,
+      "claims": 30,
+      "values_ok": 16,
+      "refs_ok": 16,
+      "joint_ok": 16
+    },
+    "smelter": {
+      "n": 6,
+      "full": 3,
+      "avg_score": 0.5,
+      "all_values": 3,
+      "claims": 30,
+      "values_ok": 15,
+      "refs_ok": 15,
+      "joint_ok": 15
+    },
+    "wind": {
+      "n": 6,
+      "full": 2,
+      "avg_score": 0.486667,
+      "all_values": 3,
+      "claims": 30,
+      "values_ok": 15,
+      "refs_ok": 14,
+      "joint_ok": 14
+    }
+  },
+  "calls": 76,
+  "tokens": {
+    "prompt_tokens": 195549,
+    "completion_tokens": 63973
+  },
+  "models": {
+    "dashscope.deepseek-v4.1-flash-1017": 76
+  },
+  "infrastructure_errors": [],
+  "missed_items": [
+    {
+      "family": "battery",
+      "key": "catalyst_readthrough",
+      "value_ok": true,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "retail",
+      "key": "reported_pct",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "retail",
+      "key": "comparable_pct",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "retail",
+      "key": "gap_pp",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "retail",
+      "key": "readthrough",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "smelter",
+      "key": "exposed_tonnes",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "smelter",
+      "key": "loss_usd_m",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "smelter",
+      "key": "post_cny_m",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "smelter",
+      "key": "headroom_cny_m",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "smelter",
+      "key": "test",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "wind",
+      "key": "awarded_gross",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "wind",
+      "key": "bankable_equity",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "wind",
+      "key": "watch_equity",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "wind",
+      "key": "conversion_pct",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "wind",
+      "key": "next_catalyst",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 3
+    },
+    {
+      "family": "insurer",
+      "key": "elapsed_days",
+      "value_ok": true,
+      "refs_ok": false,
+      "n": 2
+    },
+    {
+      "family": "retail",
+      "key": "perimeter_net",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 2
+    },
+    {
+      "family": "wind",
+      "key": "next_catalyst",
+      "value_ok": true,
+      "refs_ok": false,
+      "n": 1
+    },
+    {
+      "family": "foundry",
+      "key": "a_external",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 1
+    },
+    {
+      "family": "foundry",
+      "key": "b_external",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 1
+    },
+    {
+      "family": "foundry",
+      "key": "a_share_pct",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 1
+    },
+    {
+      "family": "foundry",
+      "key": "leader",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 1
+    },
+    {
+      "family": "foundry",
+      "key": "physical_count_bias",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 1
+    },
+    {
+      "family": "port",
+      "key": "q2_local",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 1
+    },
+    {
+      "family": "port",
+      "key": "q3_local",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 1
+    },
+    {
+      "family": "port",
+      "key": "peak_quarter",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 1
+    },
+    {
+      "family": "port",
+      "key": "peak_local",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 1
+    },
+    {
+      "family": "port",
+      "key": "annual_local",
+      "value_ok": false,
+      "refs_ok": false,
+      "n": 1
+    }
+  ],
+  "rows": [
+    {
+      "task": "battery-84e679d5",
+      "pack": "main",
+      "family": "battery",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "demand_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "supply_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "base_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "no_subsidy_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "release_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "catalyst_readthrough",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 10
+    },
+    {
+      "task": "battery-f991ef30",
+      "pack": "main",
+      "family": "battery",
+      "score": 0.933333,
+      "claims": [
+        {
+          "key": "demand_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "supply_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "base_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "no_subsidy_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "release_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "catalyst_readthrough",
+          "value_ok": true,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "2efd68a1c3",
+              "8fb0dec727",
+              "a2b121268a",
+              "ceda13efe2",
+              "e406bc31f9"
+            ],
+            "value": "residual_shortage"
+          },
+          "submitted": {
+            "value": "residual_shortage",
+            "sources": [
+              "a2b121268a",
+              "e406bc31f9"
+            ]
+          }
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 10
+    },
+    {
+      "task": "foundry-0934c479",
+      "pack": "main",
+      "family": "foundry",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "a_external",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "b_external",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "a_share_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "leader",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "physical_count_bias",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 8
+    },
+    {
+      "task": "foundry-8bbfc469",
+      "pack": "main",
+      "family": "foundry",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "a_external",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "b_external",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "a_share_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "leader",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "physical_count_bias",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 7
+    },
+    {
+      "task": "insurer-45a6f230",
+      "pack": "main",
+      "family": "insurer",
+      "score": 0.92,
+      "claims": [
+        {
+          "key": "cash_per_share",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "premium_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "approval_date",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "completion_date",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "elapsed_days",
+          "value_ok": true,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "257a4fb4e0"
+            ],
+            "value": "unconfirmed"
+          },
+          "submitted": {
+            "value": "unconfirmed",
+            "sources": [
+              "a62fc7b72f",
+              "257a4fb4e0"
+            ]
+          }
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 9
+    },
+    {
+      "task": "insurer-d3d3f964",
+      "pack": "main",
+      "family": "insurer",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "cash_per_share",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "premium_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "approval_date",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "completion_date",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "elapsed_days",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 9
+    },
+    {
+      "task": "port-8cfa48e3",
+      "pack": "main",
+      "family": "port",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "q2_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "q3_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "peak_quarter",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "peak_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "annual_local",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 6
+    },
+    {
+      "task": "port-bf278efc",
+      "pack": "main",
+      "family": "port",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "q2_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "q3_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "peak_quarter",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "peak_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "annual_local",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 8
+    },
+    {
+      "task": "retail-aa53e8ec",
+      "pack": "main",
+      "family": "retail",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "reported_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "comparable_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "gap_pp",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "perimeter_net",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "readthrough",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 4
+    },
+    {
+      "task": "retail-ddb709f4",
+      "pack": "main",
+      "family": "retail",
+      "score": 0,
+      "claims": [
+        {
+          "key": "reported_pct",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "aa25ae6312",
+              "b471764f11"
+            ],
+            "value": 19.12087912087912
+          },
+          "submitted": {}
+        },
+        {
+          "key": "comparable_pct",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "29d2931eba",
+              "aa25ae6312",
+              "b471764f11"
+            ],
+            "value": 6.0324825986078885
+          },
+          "submitted": {}
+        },
+        {
+          "key": "gap_pp",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "29d2931eba",
+              "aa25ae6312",
+              "b471764f11"
+            ],
+            "value": 13.088396522271232
+          },
+          "submitted": {}
+        },
+        {
+          "key": "perimeter_net",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "29d2931eba"
+            ],
+            "value": 61
+          },
+          "submitted": {}
+        },
+        {
+          "key": "readthrough",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "29d2931eba",
+              "aa25ae6312",
+              "b471764f11"
+            ],
+            "value": "comparable_growth"
+          },
+          "submitted": {}
+        }
+      ],
+      "status": "invalid_answer",
+      "docs_read": 0
+    },
+    {
+      "task": "smelter-3cf59f05",
+      "pack": "main",
+      "family": "smelter",
+      "score": 0,
+      "claims": [
+        {
+          "key": "exposed_tonnes",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "e17d0ea48b"
+            ],
+            "value": 388000.0
+          },
+          "submitted": {}
+        },
+        {
+          "key": "loss_usd_m",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "6b05509458",
+              "e17d0ea48b"
+            ],
+            "value": 17.072
+          },
+          "submitted": {}
+        },
+        {
+          "key": "post_cny_m",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "6b05509458",
+              "d5a3dfd1dc",
+              "e17d0ea48b"
+            ],
+            "value": 457.0816
+          },
+          "submitted": {}
+        },
+        {
+          "key": "headroom_cny_m",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "6b05509458",
+              "d5a3dfd1dc",
+              "e17d0ea48b"
+            ],
+            "value": 15.08159999999998
+          },
+          "submitted": {}
+        },
+        {
+          "key": "test",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "6b05509458",
+              "d5a3dfd1dc",
+              "e17d0ea48b"
+            ],
+            "value": "clear"
+          },
+          "submitted": {}
+        }
+      ],
+      "status": "invalid_answer",
+      "docs_read": 0
+    },
+    {
+      "task": "smelter-938a1818",
+      "pack": "main",
+      "family": "smelter",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "exposed_tonnes",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "loss_usd_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "post_cny_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "headroom_cny_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "test",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 4
+    },
+    {
+      "task": "wind-55cf8730",
+      "pack": "main",
+      "family": "wind",
+      "score": 0,
+      "claims": [
+        {
+          "key": "awarded_gross",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "6133a3597b"
+            ],
+            "value": 880
+          },
+          "submitted": {}
+        },
+        {
+          "key": "bankable_equity",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "21cb77ba8c",
+              "6133a3597b",
+              "ead5ee9f17"
+            ],
+            "value": 280.0
+          },
+          "submitted": {}
+        },
+        {
+          "key": "watch_equity",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "21cb77ba8c",
+              "6133a3597b",
+              "ead5ee9f17"
+            ],
+            "value": 397.5
+          },
+          "submitted": {}
+        },
+        {
+          "key": "conversion_pct",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "21cb77ba8c",
+              "6133a3597b",
+              "ead5ee9f17"
+            ],
+            "value": 41.32841328413284
+          },
+          "submitted": {}
+        },
+        {
+          "key": "next_catalyst",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "21cb77ba8c"
+            ],
+            "value": "I"
+          },
+          "submitted": {}
+        }
+      ],
+      "status": "invalid_answer",
+      "docs_read": 0
+    },
+    {
+      "task": "wind-669378f4",
+      "pack": "main",
+      "family": "wind",
+      "score": 0.92,
+      "claims": [
+        {
+          "key": "awarded_gross",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "bankable_equity",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "watch_equity",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "conversion_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "next_catalyst",
+          "value_ok": true,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "78d3844c69"
+            ],
+            "value": "II"
+          },
+          "submitted": {
+            "value": "II",
+            "sources": [
+              "4d03c3df4c",
+              "78d3844c69"
+            ]
+          }
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 7
+    },
+    {
+      "task": "battery-6449370d",
+      "pack": "extra",
+      "family": "battery",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "demand_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "supply_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "base_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "no_subsidy_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "release_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "catalyst_readthrough",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 10
+    },
+    {
+      "task": "battery-6a1bb995",
+      "pack": "extra",
+      "family": "battery",
+      "score": 0.933333,
+      "claims": [
+        {
+          "key": "demand_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "supply_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "base_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "no_subsidy_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "release_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "catalyst_readthrough",
+          "value_ok": true,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "0359baf059",
+              "12c5489a1c",
+              "373d40692d",
+              "6cb8bcae51",
+              "a25bf1918d"
+            ],
+            "value": "residual_shortage"
+          },
+          "submitted": {
+            "value": "residual_shortage",
+            "sources": [
+              "373d40692d",
+              "a25bf1918d",
+              "12c5489a1c",
+              "6cb8bcae51"
+            ]
+          }
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 6
+    },
+    {
+      "task": "battery-97c87cd5",
+      "pack": "extra",
+      "family": "battery",
+      "score": 0.933333,
+      "claims": [
+        {
+          "key": "demand_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "supply_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "base_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "no_subsidy_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "release_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "catalyst_readthrough",
+          "value_ok": true,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "13c41d1d46",
+              "20cd2e158d",
+              "36c8c12d3c",
+              "760aa5002b",
+              "e515c9a28e"
+            ],
+            "value": "residual_shortage"
+          },
+          "submitted": {
+            "value": "residual_shortage",
+            "sources": [
+              "20cd2e158d",
+              "760aa5002b"
+            ]
+          }
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 6
+    },
+    {
+      "task": "battery-c52d0a71",
+      "pack": "extra",
+      "family": "battery",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "demand_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "supply_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "base_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "no_subsidy_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "release_balance_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "catalyst_readthrough",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 14
+    },
+    {
+      "task": "foundry-02ba6f55",
+      "pack": "extra",
+      "family": "foundry",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "a_external",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "b_external",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "a_share_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "leader",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "physical_count_bias",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 8
+    },
+    {
+      "task": "foundry-6412cb89",
+      "pack": "extra",
+      "family": "foundry",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "a_external",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "b_external",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "a_share_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "leader",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "physical_count_bias",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 5
+    },
+    {
+      "task": "foundry-a8ee9eef",
+      "pack": "extra",
+      "family": "foundry",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "a_external",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "b_external",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "a_share_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "leader",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "physical_count_bias",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 7
+    },
+    {
+      "task": "foundry-e5f75b94",
+      "pack": "extra",
+      "family": "foundry",
+      "score": 0,
+      "claims": [
+        {
+          "key": "a_external",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "ecabd7bf93"
+            ],
+            "value": 167
+          },
+          "submitted": {}
+        },
+        {
+          "key": "b_external",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "1ce4e2a130",
+              "77fb58c07d"
+            ],
+            "value": 182.66666666666666
+          },
+          "submitted": {}
+        },
+        {
+          "key": "a_share_pct",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "1ce4e2a130",
+              "77fb58c07d",
+              "ecabd7bf93"
+            ],
+            "value": 47.75977121067684
+          },
+          "submitted": {}
+        },
+        {
+          "key": "leader",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "1ce4e2a130",
+              "77fb58c07d",
+              "ecabd7bf93"
+            ],
+            "value": "Lark Sound"
+          },
+          "submitted": {}
+        },
+        {
+          "key": "physical_count_bias",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "1ce4e2a130",
+              "77fb58c07d",
+              "ecabd7bf93"
+            ],
+            "value": "Lark Sound"
+          },
+          "submitted": {}
+        }
+      ],
+      "status": "invalid_answer",
+      "docs_read": 0
+    },
+    {
+      "task": "insurer-23e3b1ba",
+      "pack": "extra",
+      "family": "insurer",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "cash_per_share",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "premium_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "approval_date",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "completion_date",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "elapsed_days",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 7
+    },
+    {
+      "task": "insurer-923b674b",
+      "pack": "extra",
+      "family": "insurer",
+      "score": 0.92,
+      "claims": [
+        {
+          "key": "cash_per_share",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "premium_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "approval_date",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "completion_date",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "elapsed_days",
+          "value_ok": true,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "85332d435a"
+            ],
+            "value": "unconfirmed"
+          },
+          "submitted": {
+            "value": "unconfirmed",
+            "sources": [
+              "cf039b078a",
+              "85332d435a"
+            ]
+          }
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 8
+    },
+    {
+      "task": "insurer-b9af1d60",
+      "pack": "extra",
+      "family": "insurer",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "cash_per_share",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "premium_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "approval_date",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "completion_date",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "elapsed_days",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 9
+    },
+    {
+      "task": "insurer-ce023a10",
+      "pack": "extra",
+      "family": "insurer",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "cash_per_share",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "premium_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "approval_date",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "completion_date",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "elapsed_days",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 7
+    },
+    {
+      "task": "port-0d631a96",
+      "pack": "extra",
+      "family": "port",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "q2_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "q3_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "peak_quarter",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "peak_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "annual_local",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 3
+    },
+    {
+      "task": "port-5fb1ac01",
+      "pack": "extra",
+      "family": "port",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "q2_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "q3_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "peak_quarter",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "peak_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "annual_local",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 6
+    },
+    {
+      "task": "port-ae2b552e",
+      "pack": "extra",
+      "family": "port",
+      "score": 0,
+      "claims": [
+        {
+          "key": "q2_local",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "53b3b155bb",
+              "df4524366c",
+              "fef6fbe605"
+            ],
+            "value": 179
+          },
+          "submitted": {}
+        },
+        {
+          "key": "q3_local",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "53b3b155bb",
+              "df4524366c",
+              "fef6fbe605"
+            ],
+            "value": 155
+          },
+          "submitted": {}
+        },
+        {
+          "key": "peak_quarter",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "53b3b155bb",
+              "df4524366c",
+              "fef6fbe605"
+            ],
+            "value": "Q2"
+          },
+          "submitted": {}
+        },
+        {
+          "key": "peak_local",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "53b3b155bb",
+              "df4524366c",
+              "fef6fbe605"
+            ],
+            "value": 179
+          },
+          "submitted": {}
+        },
+        {
+          "key": "annual_local",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "df4524366c",
+              "fef6fbe605"
+            ],
+            "value": 591
+          },
+          "submitted": {}
+        }
+      ],
+      "status": "invalid_answer",
+      "docs_read": 0
+    },
+    {
+      "task": "port-cf894bdd",
+      "pack": "extra",
+      "family": "port",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "q2_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "q3_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "peak_quarter",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "peak_local",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "annual_local",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 6
+    },
+    {
+      "task": "retail-19639753",
+      "pack": "extra",
+      "family": "retail",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "reported_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "comparable_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "gap_pp",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "perimeter_net",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "readthrough",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 6
+    },
+    {
+      "task": "retail-84b6cbe7",
+      "pack": "extra",
+      "family": "retail",
+      "score": 0,
+      "claims": [
+        {
+          "key": "reported_pct",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "81d810705a",
+              "92cdb4a180"
+            ],
+            "value": 11.977715877437323
+          },
+          "submitted": {}
+        },
+        {
+          "key": "comparable_pct",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "81d810705a",
+              "92cdb4a180",
+              "d343fd07f5"
+            ],
+            "value": -6.948640483383686
+          },
+          "submitted": {}
+        },
+        {
+          "key": "gap_pp",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "81d810705a",
+              "92cdb4a180",
+              "d343fd07f5"
+            ],
+            "value": 18.92635636082101
+          },
+          "submitted": {}
+        },
+        {
+          "key": "perimeter_net",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "d343fd07f5"
+            ],
+            "value": 66
+          },
+          "submitted": {}
+        },
+        {
+          "key": "readthrough",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "81d810705a",
+              "92cdb4a180",
+              "d343fd07f5"
+            ],
+            "value": "masked_contraction"
+          },
+          "submitted": {}
+        }
+      ],
+      "status": "invalid_answer",
+      "docs_read": 0
+    },
+    {
+      "task": "retail-95a5ed95",
+      "pack": "extra",
+      "family": "retail",
+      "score": 0.2,
+      "claims": [
+        {
+          "key": "reported_pct",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "0f66572236",
+              "f449ae5d5c"
+            ],
+            "value": 18.75
+          },
+          "submitted": {
+            "value": -6.7,
+            "sources": [
+              "f449ae5d5c",
+              "45a4aa3cd7"
+            ]
+          }
+        },
+        {
+          "key": "comparable_pct",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "0f66572236",
+              "625e00cd49",
+              "f449ae5d5c"
+            ],
+            "value": 5.116279069767442
+          },
+          "submitted": {
+            "value": -18.79,
+            "sources": [
+              "f449ae5d5c",
+              "45a4aa3cd7",
+              "625e00cd49"
+            ]
+          }
+        },
+        {
+          "key": "gap_pp",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "0f66572236",
+              "625e00cd49",
+              "f449ae5d5c"
+            ],
+            "value": 13.633720930232558
+          },
+          "submitted": {
+            "value": 12.09,
+            "sources": [
+              "f449ae5d5c",
+              "45a4aa3cd7",
+              "625e00cd49"
+            ]
+          }
+        },
+        {
+          "key": "perimeter_net",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "readthrough",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "0f66572236",
+              "625e00cd49",
+              "f449ae5d5c"
+            ],
+            "value": "comparable_growth"
+          },
+          "submitted": {
+            "value": "masked_contraction",
+            "sources": [
+              "f449ae5d5c",
+              "45a4aa3cd7",
+              "625e00cd49"
+            ]
+          }
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 12
+    },
+    {
+      "task": "retail-9b6100eb",
+      "pack": "extra",
+      "family": "retail",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "reported_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "comparable_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "gap_pp",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "perimeter_net",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "readthrough",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 10
+    },
+    {
+      "task": "smelter-169f343f",
+      "pack": "extra",
+      "family": "smelter",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "exposed_tonnes",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "loss_usd_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "post_cny_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "headroom_cny_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "test",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 21
+    },
+    {
+      "task": "smelter-6a887a94",
+      "pack": "extra",
+      "family": "smelter",
+      "score": 0,
+      "claims": [
+        {
+          "key": "exposed_tonnes",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "7b39045b0b"
+            ],
+            "value": 460000.0
+          },
+          "submitted": {}
+        },
+        {
+          "key": "loss_usd_m",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "0ca04fde21",
+              "7b39045b0b"
+            ],
+            "value": 15.64
+          },
+          "submitted": {}
+        },
+        {
+          "key": "post_cny_m",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "0ca04fde21",
+              "5be1bcca68",
+              "7b39045b0b"
+            ],
+            "value": 517.392
+          },
+          "submitted": {}
+        },
+        {
+          "key": "headroom_cny_m",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "0ca04fde21",
+              "5be1bcca68",
+              "7b39045b0b"
+            ],
+            "value": -14.607999999999947
+          },
+          "submitted": {}
+        },
+        {
+          "key": "test",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "0ca04fde21",
+              "5be1bcca68",
+              "7b39045b0b"
+            ],
+            "value": "breach"
+          },
+          "submitted": {}
+        }
+      ],
+      "status": "invalid_answer",
+      "docs_read": 0
+    },
+    {
+      "task": "smelter-928006a9",
+      "pack": "extra",
+      "family": "smelter",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "exposed_tonnes",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "loss_usd_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "post_cny_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "headroom_cny_m",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "test",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 7
+    },
+    {
+      "task": "smelter-f283396c",
+      "pack": "extra",
+      "family": "smelter",
+      "score": 0,
+      "claims": [
+        {
+          "key": "exposed_tonnes",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "3c4f52a028"
+            ],
+            "value": 500000.0
+          },
+          "submitted": {}
+        },
+        {
+          "key": "loss_usd_m",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "3c4f52a028",
+              "6f0050d6d8"
+            ],
+            "value": 16.0
+          },
+          "submitted": {}
+        },
+        {
+          "key": "post_cny_m",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "25443a02bb",
+              "3c4f52a028",
+              "6f0050d6d8"
+            ],
+            "value": 581.2
+          },
+          "submitted": {}
+        },
+        {
+          "key": "headroom_cny_m",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "25443a02bb",
+              "3c4f52a028",
+              "6f0050d6d8"
+            ],
+            "value": -14.799999999999955
+          },
+          "submitted": {}
+        },
+        {
+          "key": "test",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "25443a02bb",
+              "3c4f52a028",
+              "6f0050d6d8"
+            ],
+            "value": "breach"
+          },
+          "submitted": {}
+        }
+      ],
+      "status": "invalid_answer",
+      "docs_read": 0
+    },
+    {
+      "task": "wind-4cd798e6",
+      "pack": "extra",
+      "family": "wind",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "awarded_gross",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "bankable_equity",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "watch_equity",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "conversion_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "next_catalyst",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 7
+    },
+    {
+      "task": "wind-5022dabd",
+      "pack": "extra",
+      "family": "wind",
+      "score": 1.0,
+      "claims": [
+        {
+          "key": "awarded_gross",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "bankable_equity",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "watch_equity",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "conversion_pct",
+          "value_ok": true,
+          "refs_ok": true
+        },
+        {
+          "key": "next_catalyst",
+          "value_ok": true,
+          "refs_ok": true
+        }
+      ],
+      "status": "submitted",
+      "docs_read": 3
+    },
+    {
+      "task": "wind-71d48f99",
+      "pack": "extra",
+      "family": "wind",
+      "score": 0,
+      "claims": [
+        {
+          "key": "awarded_gross",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "2e56444b81"
+            ],
+            "value": 1030
+          },
+          "submitted": {}
+        },
+        {
+          "key": "bankable_equity",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "2e56444b81",
+              "58dd8bbae0",
+              "64e13cb6ad"
+            ],
+            "value": 442.5
+          },
+          "submitted": {}
+        },
+        {
+          "key": "watch_equity",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "2e56444b81",
+              "58dd8bbae0",
+              "64e13cb6ad"
+            ],
+            "value": 242.0
+          },
+          "submitted": {}
+        },
+        {
+          "key": "conversion_pct",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "2e56444b81",
+              "58dd8bbae0",
+              "64e13cb6ad"
+            ],
+            "value": 64.64572680788898
+          },
+          "submitted": {}
+        },
+        {
+          "key": "next_catalyst",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "64e13cb6ad"
+            ],
+            "value": "II"
+          },
+          "submitted": {}
+        }
+      ],
+      "status": "invalid_answer",
+      "docs_read": 0
+    },
+    {
+      "task": "wind-7e9e342b",
+      "pack": "extra",
+      "family": "wind",
+      "score": 0,
+      "claims": [
+        {
+          "key": "awarded_gross",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "5e1c60212b"
+            ],
+            "value": 930
+          },
+          "submitted": {}
+        },
+        {
+          "key": "bankable_equity",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "042dc01be0",
+              "5e1c60212b",
+              "c3d800f6f7"
+            ],
+            "value": 375.0
+          },
+          "submitted": {}
+        },
+        {
+          "key": "watch_equity",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "042dc01be0",
+              "5e1c60212b",
+              "c3d800f6f7"
+            ],
+            "value": 236.5
+          },
+          "submitted": {}
+        },
+        {
+          "key": "conversion_pct",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "042dc01be0",
+              "5e1c60212b",
+              "c3d800f6f7"
+            ],
+            "value": 61.324611610793134
+          },
+          "submitted": {}
+        },
+        {
+          "key": "next_catalyst",
+          "value_ok": false,
+          "refs_ok": false,
+          "expected": {
+            "sources": [
+              "042dc01be0"
+            ],
+            "value": "II"
+          },
+          "submitted": {}
+        }
+      ],
+      "status": "invalid_answer",
+      "docs_read": 0
+    }
+  ]
+}

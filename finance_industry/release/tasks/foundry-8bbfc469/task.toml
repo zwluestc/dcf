@@ -1,0 +1,21 @@
+schema_version = "1.4"
+artifacts = ["/work/answer.json"]
+[task]
+name = "industry-research/foundry-8bbfc469"
+description = "晶圆代工：谁拿到了更多外部客户出货？"
+[agent]
+timeout_sec = 600
+[environment]
+cpus = 1
+memory_mb = 512
+storage_mb = 1024
+network_mode = "no-network"
+workdir = "/work"
+[verifier]
+timeout_sec = 60
+environment_mode = "separate"
+[verifier.environment]
+cpus = 1
+memory_mb = 512
+network_mode = "no-network"
+workdir = "/tests"

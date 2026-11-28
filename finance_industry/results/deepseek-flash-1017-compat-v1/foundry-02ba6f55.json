@@ -1,0 +1,102 @@
+{
+  "task": "foundry-02ba6f55",
+  "pack": "extra",
+  "corpus_sha256": "0d0da9127a2268271cda086a7cb8649edc525e7558990fb2e7992f7256306b51",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T10:01:27.749057+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 831,
+        "prompt_tokens": 1932,
+        "total_tokens": 2763,
+        "completion_tokens_details": {
+          "reasoning_tokens": 766,
+          "text_tokens": 64
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1932,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"653bf80c7e\",\"2961aaf5c5\",\"7c4a16c1e7\",\"ead5891476\",\"fc112c0fd3\",\"9fc008b6a1\",\"1614a04eb7\",\"9726d60177\"]}",
+      "fetched": [
+        "653bf80c7e",
+        "2961aaf5c5",
+        "7c4a16c1e7",
+        "ead5891476",
+        "fc112c0fd3",
+        "9fc008b6a1",
+        "1614a04eb7",
+        "9726d60177"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 684,
+        "prompt_tokens": 3142,
+        "total_tokens": 3826,
+        "completion_tokens_details": {
+          "reasoning_tokens": 495,
+          "text_tokens": 188
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 1024,
+          "text_tokens": 3142,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2025-04-30\",\"findings\":{\"a_external\":{\"value\":243.00,\"sources\":[\"2961aaf5c5\"]},\"b_external\":{\"value\":226.67,\"sources\":[\"7c4a16c1e7\",\"ead5891476\"]},\"a_share_pct\":{\"value\":51.74,\"sources\":[\"2961aaf5c5\",\"7c4a16c1e7\",\"ead5891476\"]},\"leader\":{\"value\":\"Mica Basin\",\"sources\":[\"2961aaf5c5\",\"7c4a16c1e7\",\"ead5891476\"]},\"physical_count_bias\":{\"value\":\"Cairn Vale\",\"sources\":[\"2961aaf5c5\",\"7c4a16c1e7\",\"ead5891476\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2025-04-30",
+    "findings": {
+      "a_external": {
+        "value": 243.0,
+        "sources": [
+          "2961aaf5c5"
+        ]
+      },
+      "b_external": {
+        "value": 226.67,
+        "sources": [
+          "7c4a16c1e7",
+          "ead5891476"
+        ]
+      },
+      "a_share_pct": {
+        "value": 51.74,
+        "sources": [
+          "2961aaf5c5",
+          "7c4a16c1e7",
+          "ead5891476"
+        ]
+      },
+      "leader": {
+        "value": "Mica Basin",
+        "sources": [
+          "2961aaf5c5",
+          "7c4a16c1e7",
+          "ead5891476"
+        ]
+      },
+      "physical_count_bias": {
+        "value": "Cairn Vale",
+        "sources": [
+          "2961aaf5c5",
+          "7c4a16c1e7",
+          "ead5891476"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "reused_steps": 2,
+  "elapsed_s": 0.0
+}

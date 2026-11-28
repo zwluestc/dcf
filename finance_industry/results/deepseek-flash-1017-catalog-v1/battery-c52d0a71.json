@@ -1,0 +1,125 @@
+{
+  "task": "battery-c52d0a71",
+  "pack": "extra",
+  "corpus_sha256": "000b79c1c443e21d342a00a197c41a82b057d76c71a0c8a1e2813faa1e3d1cc7",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T09:55:26.895197+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 427,
+        "prompt_tokens": 2284,
+        "total_tokens": 2711,
+        "completion_tokens_details": {
+          "reasoning_tokens": 320,
+          "text_tokens": 106
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 2284,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"e3cf69bc69\",\"3a2313f178\",\"e0cb84fad8\",\"8d8ceb224a\",\"09f2ea76c6\",\"d80edf8728\",\"daa40dec8f\",\"adbc2fbedd\",\"2bfcceeeb2\",\"1d1134485b\",\"80896e026c\",\"a1b12878b3\",\"ea97107482\",\"e6891bf9fc\"]}",
+      "fetched": [
+        "e3cf69bc69",
+        "3a2313f178",
+        "e0cb84fad8",
+        "8d8ceb224a",
+        "09f2ea76c6",
+        "d80edf8728",
+        "daa40dec8f",
+        "adbc2fbedd",
+        "2bfcceeeb2",
+        "1d1134485b",
+        "80896e026c",
+        "a1b12878b3",
+        "ea97107482",
+        "e6891bf9fc"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 663,
+        "prompt_tokens": 4542,
+        "total_tokens": 5205,
+        "completion_tokens_details": {
+          "reasoning_tokens": 353,
+          "text_tokens": 309
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 2048,
+          "text_tokens": 4542,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2026-04-30\",\"findings\":{\"demand_m\":{\"value\":84.60,\"sources\":[\"e3cf69bc69\",\"e0cb84fad8\"]},\"supply_m\":{\"value\":79.00,\"sources\":[\"3a2313f178\",\"09f2ea76c6\",\"8d8ceb224a\"]},\"base_balance_m\":{\"value\":-5.60,\"sources\":[\"3a2313f178\",\"09f2ea76c6\",\"8d8ceb224a\",\"e3cf69bc69\",\"e0cb84fad8\"]},\"no_subsidy_balance_m\":{\"value\":8.80,\"sources\":[\"3a2313f178\",\"09f2ea76c6\",\"8d8ceb224a\",\"e3cf69bc69\",\"e0cb84fad8\"]},\"release_balance_m\":{\"value\":2.40,\"sources\":[\"3a2313f178\",\"09f2ea76c6\",\"8d8ceb224a\",\"e3cf69bc69\",\"e0cb84fad8\"]},\"catalyst_readthrough\":{\"value\":\"closes_gap\",\"sources\":[\"3a2313f178\",\"09f2ea76c6\",\"8d8ceb224a\",\"e3cf69bc69\",\"e0cb84fad8\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2026-04-30",
+    "findings": {
+      "demand_m": {
+        "value": 84.6,
+        "sources": [
+          "e3cf69bc69",
+          "e0cb84fad8"
+        ]
+      },
+      "supply_m": {
+        "value": 79.0,
+        "sources": [
+          "3a2313f178",
+          "09f2ea76c6",
+          "8d8ceb224a"
+        ]
+      },
+      "base_balance_m": {
+        "value": -5.6,
+        "sources": [
+          "3a2313f178",
+          "09f2ea76c6",
+          "8d8ceb224a",
+          "e3cf69bc69",
+          "e0cb84fad8"
+        ]
+      },
+      "no_subsidy_balance_m": {
+        "value": 8.8,
+        "sources": [
+          "3a2313f178",
+          "09f2ea76c6",
+          "8d8ceb224a",
+          "e3cf69bc69",
+          "e0cb84fad8"
+        ]
+      },
+      "release_balance_m": {
+        "value": 2.4,
+        "sources": [
+          "3a2313f178",
+          "09f2ea76c6",
+          "8d8ceb224a",
+          "e3cf69bc69",
+          "e0cb84fad8"
+        ]
+      },
+      "catalyst_readthrough": {
+        "value": "closes_gap",
+        "sources": [
+          "3a2313f178",
+          "09f2ea76c6",
+          "8d8ceb224a",
+          "e3cf69bc69",
+          "e0cb84fad8"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "elapsed_s": 7.76
+}

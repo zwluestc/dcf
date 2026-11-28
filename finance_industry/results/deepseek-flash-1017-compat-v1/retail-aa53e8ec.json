@@ -1,0 +1,98 @@
+{
+  "task": "retail-aa53e8ec",
+  "pack": "main",
+  "corpus_sha256": "769d47aff70c9dbed3ef260a9018ceab24bbac81664a0076908dda376673b3fa",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T10:01:27.718687+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 279,
+        "prompt_tokens": 2028,
+        "total_tokens": 2307,
+        "completion_tokens_details": {
+          "reasoning_tokens": 245,
+          "text_tokens": 33
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 2028,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"b3042419be\",\"d533516cdd\",\"9d2d925f87\",\"954dab2af4\"]}",
+      "fetched": [
+        "b3042419be",
+        "d533516cdd",
+        "9d2d925f87",
+        "954dab2af4"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 679,
+        "prompt_tokens": 2580,
+        "total_tokens": 3259,
+        "completion_tokens_details": {
+          "reasoning_tokens": 496,
+          "text_tokens": 182
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 1024,
+          "text_tokens": 2580,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2026-04-30\",\"findings\":{\"reported_pct\":{\"value\":4.64037,\"sources\":[\"b3042419be\",\"9d2d925f87\"]},\"comparable_pct\":{\"value\":-7.14286,\"sources\":[\"b3042419be\",\"9d2d925f87\",\"d533516cdd\"]},\"gap_pp\":{\"value\":11.78323,\"sources\":[\"b3042419be\",\"9d2d925f87\",\"d533516cdd\"]},\"perimeter_net\":{\"value\":49.0,\"sources\":[\"d533516cdd\"]},\"readthrough\":{\"value\":\"masked_contraction\",\"sources\":[\"b3042419be\",\"9d2d925f87\",\"d533516cdd\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2026-04-30",
+    "findings": {
+      "reported_pct": {
+        "value": 4.64037,
+        "sources": [
+          "b3042419be",
+          "9d2d925f87"
+        ]
+      },
+      "comparable_pct": {
+        "value": -7.14286,
+        "sources": [
+          "b3042419be",
+          "9d2d925f87",
+          "d533516cdd"
+        ]
+      },
+      "gap_pp": {
+        "value": 11.78323,
+        "sources": [
+          "b3042419be",
+          "9d2d925f87",
+          "d533516cdd"
+        ]
+      },
+      "perimeter_net": {
+        "value": 49.0,
+        "sources": [
+          "d533516cdd"
+        ]
+      },
+      "readthrough": {
+        "value": "masked_contraction",
+        "sources": [
+          "b3042419be",
+          "9d2d925f87",
+          "d533516cdd"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "reused_steps": 2,
+  "elapsed_s": 0.0
+}

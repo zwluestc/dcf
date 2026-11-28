@@ -1,0 +1,95 @@
+{
+  "task": "wind-5022dabd",
+  "pack": "extra",
+  "corpus_sha256": "2fcf1ba22dcea626e238311bf682f6c9046d62208b3b3b8ddc3cc1f3af4c1d82",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T09:56:14.370984+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 589,
+        "prompt_tokens": 1936,
+        "total_tokens": 2525,
+        "completion_tokens_details": {
+          "reasoning_tokens": 562,
+          "text_tokens": 26
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1936,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"99146bb7f8\",\"7f456d8297\",\"86bd90d252\"]}",
+      "fetched": [
+        "99146bb7f8",
+        "7f456d8297",
+        "86bd90d252"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 713,
+        "prompt_tokens": 2375,
+        "total_tokens": 3088,
+        "completion_tokens_details": {
+          "reasoning_tokens": 540,
+          "text_tokens": 172
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 1024,
+          "text_tokens": 2375,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2025-04-30\",\"findings\":{\"awarded_gross\":{\"value\":1050.00,\"sources\":[\"99146bb7f8\"]},\"bankable_equity\":{\"value\":156.00,\"sources\":[\"99146bb7f8\",\"7f456d8297\",\"86bd90d252\"]},\"watch_equity\":{\"value\":396.00,\"sources\":[\"99146bb7f8\",\"7f456d8297\",\"86bd90d252\"]},\"conversion_pct\":{\"value\":28.26,\"sources\":[\"99146bb7f8\",\"7f456d8297\",\"86bd90d252\"]},\"next_catalyst\":{\"value\":\"I\",\"sources\":[\"86bd90d252\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2025-04-30",
+    "findings": {
+      "awarded_gross": {
+        "value": 1050.0,
+        "sources": [
+          "99146bb7f8"
+        ]
+      },
+      "bankable_equity": {
+        "value": 156.0,
+        "sources": [
+          "99146bb7f8",
+          "7f456d8297",
+          "86bd90d252"
+        ]
+      },
+      "watch_equity": {
+        "value": 396.0,
+        "sources": [
+          "99146bb7f8",
+          "7f456d8297",
+          "86bd90d252"
+        ]
+      },
+      "conversion_pct": {
+        "value": 28.26,
+        "sources": [
+          "99146bb7f8",
+          "7f456d8297",
+          "86bd90d252"
+        ]
+      },
+      "next_catalyst": {
+        "value": "I",
+        "sources": [
+          "86bd90d252"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "elapsed_s": 10.06
+}

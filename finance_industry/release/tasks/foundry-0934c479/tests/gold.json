@@ -1,0 +1,42 @@
+{
+  "cutoff": "2025-04-30",
+  "claims": {
+    "a_external": {
+      "sources": [
+        "20dee5bf66"
+      ],
+      "value": 237
+    },
+    "b_external": {
+      "sources": [
+        "3ed11a9861",
+        "e439a84868"
+      ],
+      "value": 220.88888888888889
+    },
+    "a_share_pct": {
+      "sources": [
+        "20dee5bf66",
+        "3ed11a9861",
+        "e439a84868"
+      ],
+      "value": 51.75928172773598
+    },
+    "leader": {
+      "sources": [
+        "20dee5bf66",
+        "3ed11a9861",
+        "e439a84868"
+      ],
+      "value": "Alder Ness"
+    },
+    "physical_count_bias": {
+      "sources": [
+        "20dee5bf66",
+        "3ed11a9861",
+        "e439a84868"
+      ],
+      "value": "Sable Inlet"
+    }
+  }
+}

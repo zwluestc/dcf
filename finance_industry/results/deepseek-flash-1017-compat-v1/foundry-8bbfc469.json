@@ -1,0 +1,101 @@
+{
+  "task": "foundry-8bbfc469",
+  "pack": "main",
+  "corpus_sha256": "2f6386616cdafba6b49d395fc1f210703e40c4063cbb99a4463dd35f45f5c2fd",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T10:01:27.712760+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 365,
+        "prompt_tokens": 1923,
+        "total_tokens": 2288,
+        "completion_tokens_details": {
+          "reasoning_tokens": 308,
+          "text_tokens": 56
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1923,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"c5535d2e72\",\"8635639e2d\",\"868d1554ee\",\"8bfcd59d52\",\"0488fe2b0d\",\"58012e9569\",\"15c3b7074f\"]}",
+      "fetched": [
+        "c5535d2e72",
+        "8635639e2d",
+        "868d1554ee",
+        "8bfcd59d52",
+        "0488fe2b0d",
+        "58012e9569",
+        "15c3b7074f"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 755,
+        "prompt_tokens": 2995,
+        "total_tokens": 3750,
+        "completion_tokens_details": {
+          "reasoning_tokens": 575,
+          "text_tokens": 179
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 1024,
+          "text_tokens": 2995,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2026-04-30\",\"findings\":{\"a_external\":{\"value\":164.00,\"sources\":[\"c5535d2e72\"]},\"b_external\":{\"value\":180.00,\"sources\":[\"8635639e2d\",\"868d1554ee\"]},\"a_share_pct\":{\"value\":47.67,\"sources\":[\"c5535d2e72\",\"8635639e2d\",\"868d1554ee\"]},\"leader\":{\"value\":\"Tarn Head\",\"sources\":[\"c5535d2e72\",\"8635639e2d\",\"868d1554ee\"]},\"physical_count_bias\":{\"value\":\"Tarn Head\",\"sources\":[\"c5535d2e72\",\"8635639e2d\",\"868d1554ee\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2026-04-30",
+    "findings": {
+      "a_external": {
+        "value": 164.0,
+        "sources": [
+          "c5535d2e72"
+        ]
+      },
+      "b_external": {
+        "value": 180.0,
+        "sources": [
+          "8635639e2d",
+          "868d1554ee"
+        ]
+      },
+      "a_share_pct": {
+        "value": 47.67,
+        "sources": [
+          "c5535d2e72",
+          "8635639e2d",
+          "868d1554ee"
+        ]
+      },
+      "leader": {
+        "value": "Tarn Head",
+        "sources": [
+          "c5535d2e72",
+          "8635639e2d",
+          "868d1554ee"
+        ]
+      },
+      "physical_count_bias": {
+        "value": "Tarn Head",
+        "sources": [
+          "c5535d2e72",
+          "8635639e2d",
+          "868d1554ee"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "reused_steps": 2,
+  "elapsed_s": 0.0
+}

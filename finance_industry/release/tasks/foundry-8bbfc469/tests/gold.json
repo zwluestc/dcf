@@ -1,0 +1,42 @@
+{
+  "cutoff": "2026-04-30",
+  "claims": {
+    "a_external": {
+      "sources": [
+        "c5535d2e72"
+      ],
+      "value": 164
+    },
+    "b_external": {
+      "sources": [
+        "8635639e2d",
+        "868d1554ee"
+      ],
+      "value": 180.0
+    },
+    "a_share_pct": {
+      "sources": [
+        "8635639e2d",
+        "868d1554ee",
+        "c5535d2e72"
+      ],
+      "value": 47.674418604651166
+    },
+    "leader": {
+      "sources": [
+        "8635639e2d",
+        "868d1554ee",
+        "c5535d2e72"
+      ],
+      "value": "Tarn Head"
+    },
+    "physical_count_bias": {
+      "sources": [
+        "8635639e2d",
+        "868d1554ee",
+        "c5535d2e72"
+      ],
+      "value": "Tarn Head"
+    }
+  }
+}

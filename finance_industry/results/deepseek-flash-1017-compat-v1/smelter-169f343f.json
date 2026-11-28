@@ -1,0 +1,115 @@
+{
+  "task": "smelter-169f343f",
+  "pack": "extra",
+  "corpus_sha256": "ae4270cc37eca7f4a8857315b053658289742952302485dc6583fde3e706a414",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T10:01:32.092065+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 885,
+        "prompt_tokens": 2091,
+        "total_tokens": 2976,
+        "completion_tokens_details": {
+          "reasoning_tokens": 738,
+          "text_tokens": 146
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 2091,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"468578b6df\",\"b3388ab516\",\"f0200c20e3\",\"289016aa19\",\"e00d673745\",\"7e4a4e228d\",\"a60e1863fe\",\"1568391cd8\",\"3807b99115\",\"77e6bf884e\",\"bf7b69c5bb\",\"d971141db9\",\"0598e75bf0\",\"ec0afac12b\",\"36e1227423\",\"bffa36904e\",\"6161775018\",\"6fefa482a3\",\"910b545cc3\",\"9789c052cc\",\"9f5cc18b5e\"]}",
+      "fetched": [
+        "468578b6df",
+        "b3388ab516",
+        "f0200c20e3",
+        "289016aa19",
+        "e00d673745",
+        "7e4a4e228d",
+        "a60e1863fe",
+        "1568391cd8",
+        "3807b99115",
+        "77e6bf884e",
+        "bf7b69c5bb",
+        "d971141db9",
+        "0598e75bf0",
+        "ec0afac12b",
+        "36e1227423",
+        "bffa36904e",
+        "6161775018",
+        "6fefa482a3",
+        "910b545cc3",
+        "9789c052cc",
+        "9f5cc18b5e"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 887,
+        "prompt_tokens": 5254,
+        "total_tokens": 6141,
+        "completion_tokens_details": {
+          "reasoning_tokens": 710,
+          "text_tokens": 176
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 2048,
+          "text_tokens": 5254,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2025-04-30\",\"findings\":{\"exposed_tonnes\":{\"value\":600000.00,\"sources\":[\"289016aa19\"]},\"loss_usd_m\":{\"value\":24.00,\"sources\":[\"289016aa19\",\"7e4a4e228d\"]},\"post_cny_m\":{\"value\":526.80,\"sources\":[\"289016aa19\",\"7e4a4e228d\",\"d971141db9\"]},\"headroom_cny_m\":{\"value\":14.80,\"sources\":[\"289016aa19\",\"7e4a4e228d\",\"d971141db9\"]},\"test\":{\"value\":\"clear\",\"sources\":[\"289016aa19\",\"7e4a4e228d\",\"d971141db9\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2025-04-30",
+    "findings": {
+      "exposed_tonnes": {
+        "value": 600000.0,
+        "sources": [
+          "289016aa19"
+        ]
+      },
+      "loss_usd_m": {
+        "value": 24.0,
+        "sources": [
+          "289016aa19",
+          "7e4a4e228d"
+        ]
+      },
+      "post_cny_m": {
+        "value": 526.8,
+        "sources": [
+          "289016aa19",
+          "7e4a4e228d",
+          "d971141db9"
+        ]
+      },
+      "headroom_cny_m": {
+        "value": 14.8,
+        "sources": [
+          "289016aa19",
+          "7e4a4e228d",
+          "d971141db9"
+        ]
+      },
+      "test": {
+        "value": "clear",
+        "sources": [
+          "289016aa19",
+          "7e4a4e228d",
+          "d971141db9"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "reused_steps": 2,
+  "elapsed_s": 0.0
+}

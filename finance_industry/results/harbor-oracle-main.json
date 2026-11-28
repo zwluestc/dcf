@@ -1,0 +1,52 @@
+{
+    "id": "40a574ad-0e99-439d-86ff-0062c6ad07c6",
+    "started_at": "2026-11-24T17:20:54.029237",
+    "updated_at": "2026-11-24T17:43:09.485710",
+    "finished_at": "2026-11-24T17:43:09.485710",
+    "n_total_trials": 14,
+    "stats": {
+        "n_completed_trials": 14,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "oracle__tasks": {
+                "n_trials": 14,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 1.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "battery-84e679d5__wpdCDwt",
+                            "battery-f991ef30__su9CYkY",
+                            "foundry-0934c479__poxYZvL",
+                            "foundry-8bbfc469__Y4ptJfq",
+                            "insurer-45a6f230__7BXmypB",
+                            "insurer-d3d3f964__CxsRw6J",
+                            "port-8cfa48e3__f4tzQeY",
+                            "port-bf278efc__ED7Kaxg",
+                            "retail-aa53e8ec__f5BEnWN",
+                            "retail-ddb709f4__YJK5QUQ",
+                            "smelter-3cf59f05__9psaUvi",
+                            "smelter-938a1818__mbxicUo",
+                            "wind-55cf8730__S9iG8Ta",
+                            "wind-669378f4__AiqPnzS"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null
+    }
+}

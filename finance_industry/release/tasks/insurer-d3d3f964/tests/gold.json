@@ -1,0 +1,37 @@
+{
+  "cutoff": "2026-04-30",
+  "claims": {
+    "cash_per_share": {
+      "sources": [
+        "d0148c6bc8"
+      ],
+      "value": 30.6
+    },
+    "premium_pct": {
+      "sources": [
+        "2ec0b1308f",
+        "d0148c6bc8"
+      ],
+      "value": 18.146718146718154
+    },
+    "approval_date": {
+      "sources": [
+        "0276b7de4c"
+      ],
+      "value": "2026-04-11"
+    },
+    "completion_date": {
+      "sources": [
+        "5fd7a09ea7"
+      ],
+      "value": "2026-04-22"
+    },
+    "elapsed_days": {
+      "sources": [
+        "5fd7a09ea7",
+        "d0148c6bc8"
+      ],
+      "value": 49
+    }
+  }
+}

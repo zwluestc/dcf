@@ -1,0 +1,7 @@
+{
+  "task_id": "wind-55cf8730",
+  "question": "海上风电：中标容量能否进入可融资项目清单？\n\n复核 Sorrel Bay Renewables 的两处海上项目 Sorrel Bay Bank 和 Lark Sound Shoal。授标只是第一关；本行只纳入已授标且已签并网协议的权益容量。未签项目的权益容量单列。\n\n覆盖组：Sorrel Bay / wind；档期：FY2024；研究截止日（含当日）：2025-04-30。同档期正式稿优先于预告；文件发布日期与其所述事项的发生日分开。\n\n请逐项回答：\n- `awarded_gross`：合计已授标毛容量（MW）。\n- `bankable_equity`：纳入清单的权益容量（MW）。\n- `watch_equity`：待并网签署的权益容量（MW）。\n- `conversion_pct`：纳入清单占已授标权益容量的百分比。\n- `next_catalyst`：应跟踪哪一地块的并网签署（I 或 II）。",
+  "cutoff": "2025-04-30",
+  "coverage": "Sorrel Bay / wind",
+  "period": "FY2024"
+}

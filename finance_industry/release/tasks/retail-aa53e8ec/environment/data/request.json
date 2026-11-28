@@ -1,0 +1,7 @@
+{
+  "task_id": "retail-aa53e8ec",
+  "question": "连锁零售：开店掩盖了老店下滑吗？\n\n为 Lark Sound 的 FY2025 业绩会准备简报。按审计口径桥接两年收入，对比全网增长与持续经营门店的增长。用同一货币，剔除两年不同时营业的门店。\n\n覆盖组：Lark Sound / retail；档期：FY2025；研究截止日（含当日）：2026-04-30。同档期正式稿优先于预告；文件发布日期与其所述事项的发生日分开。\n\n请逐项回答：\n- `reported_pct`：审计口径全网同比增长率（%）。\n- `comparable_pct`：持续经营门店同比增长率（%）。\n- `gap_pp`：全网减可比增长（百分点）。\n- `perimeter_net`：开关店带来的净收入增量（百万）。\n- `readthrough`：结论：新店净贡献掩盖老店萎缩填 masked_contraction，否则填 comparable_growth。",
+  "cutoff": "2026-04-30",
+  "coverage": "Lark Sound / retail",
+  "period": "FY2025"
+}

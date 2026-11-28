@@ -1,0 +1,7 @@
+{
+  "task_id": "insurer-d3d3f964",
+  "question": "保险并购：报价溢价与交易完成日能否同时确认？\n\n给事件团队还原 Mica Basin Assurance 收购 Opal Strand Life 的时间线。按最早正式公告指定的未受影响交易日收盘价，计算现金报价溢价。以交易所状态登记判定是否完成；批准、签约与交割的日期要分开。\n\n覆盖组：Mica Basin / insurer；档期：FY2025；研究截止日（含当日）：2026-04-30。同档期正式稿优先于预告；文件发布日期与其所述事项的发生日分开。\n\n请逐项回答：\n- `cash_per_share`：每股现金报价（货币单位，非分）。\n- `premium_pct`：相对未受影响收盘价的报价溢价（%）。\n- `approval_date`：监管批准日（ISO 日期）。\n- `completion_date`：已登记交割日（ISO 日期）；尚无记录填 unconfirmed。\n- `elapsed_days`：从正式公告到交割经过的自然日数，不含起始日；尚未交割填 unconfirmed。",
+  "cutoff": "2026-04-30",
+  "coverage": "Mica Basin / insurer",
+  "period": "FY2025"
+}

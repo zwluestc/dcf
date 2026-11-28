@@ -1,0 +1,98 @@
+{
+  "task": "foundry-6412cb89",
+  "pack": "extra",
+  "corpus_sha256": "1c205f00c99240b5998b1956ff47967122547475feeb62682977a8cbcb023f98",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T09:55:32.762413+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 245,
+        "prompt_tokens": 1947,
+        "total_tokens": 2192,
+        "completion_tokens_details": {
+          "reasoning_tokens": 202,
+          "text_tokens": 42
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1947,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"8efd40d691\",\"8ed8a6f074\",\"a852663ea6\",\"0179bac5d0\",\"0f2ceeab43\"]}",
+      "fetched": [
+        "8efd40d691",
+        "8ed8a6f074",
+        "a852663ea6",
+        "0179bac5d0",
+        "0f2ceeab43"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 1317,
+        "prompt_tokens": 2760,
+        "total_tokens": 4077,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1136,
+          "text_tokens": 180
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 1024,
+          "text_tokens": 2760,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2026-04-30\",\"findings\":{\"a_external\":{\"value\":205.00,\"sources\":[\"8efd40d691\"]},\"b_external\":{\"value\":220.89,\"sources\":[\"a852663ea6\",\"0f2ceeab43\"]},\"a_share_pct\":{\"value\":48.1346,\"sources\":[\"8efd40d691\",\"a852663ea6\",\"0f2ceeab43\"]},\"leader\":{\"value\":\"Mica Basin\",\"sources\":[\"8efd40d691\",\"a852663ea6\",\"0f2ceeab43\"]},\"physical_count_bias\":{\"value\":\"Mica Basin\",\"sources\":[\"8efd40d691\",\"a852663ea6\",\"0f2ceeab43\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2026-04-30",
+    "findings": {
+      "a_external": {
+        "value": 205.0,
+        "sources": [
+          "8efd40d691"
+        ]
+      },
+      "b_external": {
+        "value": 220.89,
+        "sources": [
+          "a852663ea6",
+          "0f2ceeab43"
+        ]
+      },
+      "a_share_pct": {
+        "value": 48.1346,
+        "sources": [
+          "8efd40d691",
+          "a852663ea6",
+          "0f2ceeab43"
+        ]
+      },
+      "leader": {
+        "value": "Mica Basin",
+        "sources": [
+          "8efd40d691",
+          "a852663ea6",
+          "0f2ceeab43"
+        ]
+      },
+      "physical_count_bias": {
+        "value": "Mica Basin",
+        "sources": [
+          "8efd40d691",
+          "a852663ea6",
+          "0f2ceeab43"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "elapsed_s": 9.91
+}

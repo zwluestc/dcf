@@ -1,0 +1,21 @@
+schema_version = "1.4"
+artifacts = ["/work/answer.json"]
+[task]
+name = "industry-research/port-8cfa48e3"
+description = "集装箱港口：修订后哪个季度的本地吞吐量最高？"
+[agent]
+timeout_sec = 600
+[environment]
+cpus = 1
+memory_mb = 512
+storage_mb = 1024
+network_mode = "no-network"
+workdir = "/work"
+[verifier]
+timeout_sec = 60
+environment_mode = "separate"
+[verifier.environment]
+cpus = 1
+memory_mb = 512
+network_mode = "no-network"
+workdir = "/tests"

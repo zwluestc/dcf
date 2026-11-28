@@ -1,0 +1,21 @@
+schema_version = "1.4"
+artifacts = ["/work/answer.json"]
+[task]
+name = "industry-research/smelter-3cf59f05"
+description = "铜冶炼：加工费重定价会不会吃掉契约缓冲？"
+[agent]
+timeout_sec = 600
+[environment]
+cpus = 1
+memory_mb = 512
+storage_mb = 1024
+network_mode = "no-network"
+workdir = "/work"
+[verifier]
+timeout_sec = 60
+environment_mode = "separate"
+[verifier.environment]
+cpus = 1
+memory_mb = 512
+network_mode = "no-network"
+workdir = "/tests"

@@ -1,0 +1,100 @@
+{
+  "task": "foundry-a8ee9eef",
+  "pack": "extra",
+  "corpus_sha256": "6a101f4e26d2431427c1b729720b823141a893529ec72babc320eed91d4c7a67",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T09:55:34.657680+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 586,
+        "prompt_tokens": 1929,
+        "total_tokens": 2515,
+        "completion_tokens_details": {
+          "reasoning_tokens": 537,
+          "text_tokens": 48
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1929,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"2361913889\",\"7a580762f7\",\"8320842216\",\"ee0f990fc4\",\"4779db56a8\",\"b75551179b\",\"634ee86564\"]}",
+      "fetched": [
+        "2361913889",
+        "7a580762f7",
+        "8320842216",
+        "ee0f990fc4",
+        "4779db56a8",
+        "b75551179b",
+        "634ee86564"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 868,
+        "prompt_tokens": 2988,
+        "total_tokens": 3856,
+        "completion_tokens_details": {
+          "reasoning_tokens": 703,
+          "text_tokens": 164
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 1024,
+          "text_tokens": 2988,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2025-04-30\",\"findings\":{\"a_external\":{\"value\":225.00,\"sources\":[\"2361913889\"]},\"b_external\":{\"value\":208.89,\"sources\":[\"7a580762f7\",\"8320842216\"]},\"a_share_pct\":{\"value\":51.86,\"sources\":[\"2361913889\",\"7a580762f7\",\"8320842216\"]},\"leader\":{\"value\":\"Mica Basin\",\"sources\":[\"2361913889\",\"7a580762f7\",\"8320842216\"]},\"physical_count_bias\":{\"value\":\"Sable Inlet\",\"sources\":[\"2361913889\",\"7a580762f7\",\"8320842216\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2025-04-30",
+    "findings": {
+      "a_external": {
+        "value": 225.0,
+        "sources": [
+          "2361913889"
+        ]
+      },
+      "b_external": {
+        "value": 208.89,
+        "sources": [
+          "7a580762f7",
+          "8320842216"
+        ]
+      },
+      "a_share_pct": {
+        "value": 51.86,
+        "sources": [
+          "2361913889",
+          "7a580762f7",
+          "8320842216"
+        ]
+      },
+      "leader": {
+        "value": "Mica Basin",
+        "sources": [
+          "2361913889",
+          "7a580762f7",
+          "8320842216"
+        ]
+      },
+      "physical_count_bias": {
+        "value": "Sable Inlet",
+        "sources": [
+          "2361913889",
+          "7a580762f7",
+          "8320842216"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "elapsed_s": 11.48
+}

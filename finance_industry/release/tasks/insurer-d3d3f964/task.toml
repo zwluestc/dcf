@@ -1,0 +1,21 @@
+schema_version = "1.4"
+artifacts = ["/work/answer.json"]
+[task]
+name = "industry-research/insurer-d3d3f964"
+description = "保险并购：报价溢价与交易完成日能否同时确认？"
+[agent]
+timeout_sec = 600
+[environment]
+cpus = 1
+memory_mb = 512
+storage_mb = 1024
+network_mode = "no-network"
+workdir = "/work"
+[verifier]
+timeout_sec = 60
+environment_mode = "separate"
+[verifier.environment]
+cpus = 1
+memory_mb = 512
+network_mode = "no-network"
+workdir = "/tests"

@@ -1,0 +1,7 @@
+{
+  "task_id": "port-bf278efc",
+  "question": "集装箱港口：修订后哪个季度的本地吞吐量最高？\n\n交易台认为 Sorrel Bay 港 FY2025 的峰值来自转运。核对港务局累计月报和关务复核，找出本地箱量（总吞吐减转运）的单季峰值。复核只改其指明的累计单元格，不得把修订额滚入后期累计。\n\n覆盖组：Sorrel Bay / port；档期：FY2025；研究截止日（含当日）：2026-04-30。同档期正式稿优先于预告；文件发布日期与其所述事项的发生日分开。\n\n请逐项回答：\n- `q2_local`：修订后 Q2 单季本地箱量（千 TEU）。\n- `q3_local`：修订后 Q3 单季本地箱量（千 TEU）。\n- `peak_quarter`：修订后单季本地箱量最高季度（Q1 至 Q4）。\n- `peak_local`：峰值单季本地箱量（千 TEU）。\n- `annual_local`：全年本地箱量（千 TEU，用年末累计）。",
+  "cutoff": "2026-04-30",
+  "coverage": "Sorrel Bay / port",
+  "period": "FY2025"
+}

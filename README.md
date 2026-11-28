@@ -1,5 +1,8 @@
 # DCFEval：高难度、完全可验证的从零构建 DCF 估值评测集
 
+**hangyan 分支 · 行业研究出题**　[使用说明](finance_industry/README.md) · [生成器](finance_industry/generate.py) · [7 种题型定义](finance_industry/scenarios.py) · [14 题主包](exports/industry-research-harbor-v1.zip) · [28 题扩量包](exports/industry-research-harbor-extra28.zip)
+
+
 `DCFEval` 是一个面向 LLM Agent 的高难度端到端财务建模评测集，严格接入 [Harbor](https://github.com/laude-institute/harbor)（`schema_version = "1.4"`）标准任务格式。仓库包含 **20 道完全原创、零人工介入自动生成的 DCF 建模题目**（`DCFEval/dcf-01-saas` 至 `DCFEval/dcf-20-returns`），绝不包含任何外网原题。
 
 每道题均要求 Agent 在**空白工作簿（无模板、无公式骨架、无已有结果）**环境下，仅依据 `/work/data/` 中的 **7 份原始形态财务与经营材料**，从零搭建 FY2025 历史合并报表、FY2026–2030 预测三大报表与自由现金流（FCFF）估值模型，并交付纯动态公式驱动的 `/work/output.xlsx`。

@@ -1,0 +1,7 @@
+{
+  "task_id": "foundry-8bbfc469",
+  "question": "晶圆代工：谁拿到了更多外部客户出货？\n\n比较 Sorrel Bay 与 Tarn Head 在 FY2025 的外部客户晶圆出货，只看两家合计。两家以不同片径报告，集团内部调拨不属于可比市场。\n\n覆盖组：Sorrel Bay / foundry；档期：FY2025；研究截止日（含当日）：2026-04-30。同档期正式稿优先于预告；文件发布日期与其所述事项的发生日分开。\n\n请逐项回答：\n- `a_external`：第一家公司外部出货（千片，300 mm 当量）。\n- `b_external`：第二家公司外部出货（同单位）。\n- `a_share_pct`：第一家公司占两家可比出货的百分比。\n- `leader`：外部出货领先者（公司全称）。\n- `physical_count_bias`：直接按两种片径的原始外销量排名会偏向哪家公司（全称）。",
+  "cutoff": "2026-04-30",
+  "coverage": "Sorrel Bay / foundry",
+  "period": "FY2025"
+}

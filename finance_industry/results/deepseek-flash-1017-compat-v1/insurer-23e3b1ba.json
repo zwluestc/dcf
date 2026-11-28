@@ -1,0 +1,95 @@
+{
+  "task": "insurer-23e3b1ba",
+  "pack": "extra",
+  "corpus_sha256": "03f4252c3cb81a75826890d2d0e33e4e5c156d7ac8e2eda6ccebab945429c4cb",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T10:01:27.751934+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 553,
+        "prompt_tokens": 1830,
+        "total_tokens": 2383,
+        "completion_tokens_details": {
+          "reasoning_tokens": 496,
+          "text_tokens": 56
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1830,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"fetch\":[\"656a3c767f\",\"798d48c57a\",\"ebe47b39dd\",\"716303feb1\",\"1b73ac498c\",\"a1adc2b828\",\"0e6ad1b15c\"]}",
+      "fetched": [
+        "656a3c767f",
+        "798d48c57a",
+        "ebe47b39dd",
+        "716303feb1",
+        "1b73ac498c",
+        "a1adc2b828",
+        "0e6ad1b15c"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 1180,
+        "prompt_tokens": 2945,
+        "total_tokens": 4125,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1038,
+          "text_tokens": 141
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 1024,
+          "text_tokens": 2945,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2025-04-30\",\"findings\":{\"cash_per_share\":{\"value\":29.90,\"sources\":[\"656a3c767f\"]},\"premium_pct\":{\"value\":18.65,\"sources\":[\"656a3c767f\",\"716303feb1\"]},\"approval_date\":{\"value\":\"2025-04-11\",\"sources\":[\"1b73ac498c\"]},\"completion_date\":{\"value\":\"unconfirmed\",\"sources\":[\"a1adc2b828\"]},\"elapsed_days\":{\"value\":\"unconfirmed\",\"sources\":[\"a1adc2b828\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2025-04-30",
+    "findings": {
+      "cash_per_share": {
+        "value": 29.9,
+        "sources": [
+          "656a3c767f"
+        ]
+      },
+      "premium_pct": {
+        "value": 18.65,
+        "sources": [
+          "656a3c767f",
+          "716303feb1"
+        ]
+      },
+      "approval_date": {
+        "value": "2025-04-11",
+        "sources": [
+          "1b73ac498c"
+        ]
+      },
+      "completion_date": {
+        "value": "unconfirmed",
+        "sources": [
+          "a1adc2b828"
+        ]
+      },
+      "elapsed_days": {
+        "value": "unconfirmed",
+        "sources": [
+          "a1adc2b828"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "reused_steps": 2,
+  "elapsed_s": 0.0
+}

@@ -1,0 +1,41 @@
+{
+  "cutoff": "2026-04-30",
+  "claims": {
+    "awarded_gross": {
+      "sources": [
+        "4d03c3df4c"
+      ],
+      "value": 940
+    },
+    "bankable_equity": {
+      "sources": [
+        "4d03c3df4c",
+        "78d3844c69",
+        "8630515acc"
+      ],
+      "value": 465.0
+    },
+    "watch_equity": {
+      "sources": [
+        "4d03c3df4c",
+        "78d3844c69",
+        "8630515acc"
+      ],
+      "value": 128.0
+    },
+    "conversion_pct": {
+      "sources": [
+        "4d03c3df4c",
+        "78d3844c69",
+        "8630515acc"
+      ],
+      "value": 78.41483979763912
+    },
+    "next_catalyst": {
+      "sources": [
+        "78d3844c69"
+      ],
+      "value": "II"
+    }
+  }
+}

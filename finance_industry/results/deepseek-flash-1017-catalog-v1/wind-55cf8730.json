@@ -1,0 +1,31 @@
+{
+  "task": "wind-55cf8730",
+  "pack": "main",
+  "corpus_sha256": "b2f2aaf22459da822158d1a77b4a0e88e4f2a901552687ae2c5fc2a579c97b13",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T09:55:19.002472+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 456,
+        "prompt_tokens": 1924,
+        "total_tokens": 2380,
+        "completion_tokens_details": {
+          "reasoning_tokens": 376,
+          "text_tokens": 79
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1924,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "<｜DSML｜ calls>\n<｜DSML｜ invoke name=\"fetch\">\n<｜DSML｜ parameter name=\"data\" string=\"true\">[\"6133a3597b\",\"74fe8536d4\",\"21cb77ba8c\",\"ead5ee9f17\",\"4992a63ada\",\"6f44de69c4\"]</｜DSML｜ parameter>\n</｜DSML｜ invoke>\n</｜DSML｜ calls>"
+    }
+  ],
+  "answer": null,
+  "status": "invalid_answer",
+  "elapsed_s": 3.25
+}

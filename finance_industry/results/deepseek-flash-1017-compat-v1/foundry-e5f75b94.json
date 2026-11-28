@@ -1,0 +1,101 @@
+{
+  "task": "foundry-e5f75b94",
+  "pack": "extra",
+  "corpus_sha256": "e965ccf6f3c07b70aac48a29f659f2d021c31caf3335a0db5b886664ae2c979b",
+  "requested_model": "dashscope.deepseek-v4.1-flash-1017",
+  "started": "2026-11-24T10:01:27.751754+00:00",
+  "steps": [
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 381,
+        "prompt_tokens": 1935,
+        "total_tokens": 2316,
+        "completion_tokens_details": {
+          "reasoning_tokens": 284,
+          "text_tokens": 96
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1935,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "<｜DSML｜ calls>\n<｜DSML｜ invoke name=\"fetch\">\n<｜DSML｜ parameter name=\"items\" string=\"false\">[\"12173b47a4\", \"ecabd7bf93\", \"1ce4e2a130\", \"77fb58c07d\", \"3c85fe24ee\", \"9a7bbf7c9b\", \"835d5e4d61\"]</｜DSML｜ parameter>\n</｜DSML｜ invoke>\n</｜DSML｜ calls>",
+      "fetched": [
+        "12173b47a4",
+        "ecabd7bf93",
+        "1ce4e2a130",
+        "77fb58c07d",
+        "3c85fe24ee",
+        "9a7bbf7c9b",
+        "835d5e4d61"
+      ]
+    },
+    {
+      "model": "dashscope.deepseek-v4.1-flash-1017",
+      "usage": {
+        "completion_tokens": 785,
+        "prompt_tokens": 3060,
+        "total_tokens": 3845,
+        "completion_tokens_details": {
+          "reasoning_tokens": 605,
+          "text_tokens": 179
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 1024,
+          "text_tokens": 3060,
+          "image_tokens": 0
+        }
+      },
+      "finish": "stop",
+      "response": "{\"cutoff\":\"2026-04-30\",\"findings\":{\"a_external\":{\"value\":167.00,\"sources\":[\"ecabd7bf93\"]},\"b_external\":{\"value\":182.67,\"sources\":[\"1ce4e2a130\",\"77fb58c07d\"]},\"a_share_pct\":{\"value\":47.76,\"sources\":[\"ecabd7bf93\",\"1ce4e2a130\",\"77fb58c07d\"]},\"leader\":{\"value\":\"Lark Sound\",\"sources\":[\"ecabd7bf93\",\"1ce4e2a130\",\"77fb58c07d\"]},\"physical_count_bias\":{\"value\":\"Lark Sound\",\"sources\":[\"ecabd7bf93\",\"1ce4e2a130\",\"77fb58c07d\"]}}}"
+    }
+  ],
+  "answer": {
+    "cutoff": "2026-04-30",
+    "findings": {
+      "a_external": {
+        "value": 167.0,
+        "sources": [
+          "ecabd7bf93"
+        ]
+      },
+      "b_external": {
+        "value": 182.67,
+        "sources": [
+          "1ce4e2a130",
+          "77fb58c07d"
+        ]
+      },
+      "a_share_pct": {
+        "value": 47.76,
+        "sources": [
+          "ecabd7bf93",
+          "1ce4e2a130",
+          "77fb58c07d"
+        ]
+      },
+      "leader": {
+        "value": "Lark Sound",
+        "sources": [
+          "ecabd7bf93",
+          "1ce4e2a130",
+          "77fb58c07d"
+        ]
+      },
+      "physical_count_bias": {
+        "value": "Lark Sound",
+        "sources": [
+          "ecabd7bf93",
+          "1ce4e2a130",
+          "77fb58c07d"
+        ]
+      }
+    }
+  },
+  "status": "submitted",
+  "reused_steps": 1,
+  "elapsed_s": 4.82
+}

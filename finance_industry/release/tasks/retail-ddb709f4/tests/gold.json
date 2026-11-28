@@ -1,0 +1,42 @@
+{
+  "cutoff": "2025-04-30",
+  "claims": {
+    "reported_pct": {
+      "sources": [
+        "aa25ae6312",
+        "b471764f11"
+      ],
+      "value": 19.12087912087912
+    },
+    "comparable_pct": {
+      "sources": [
+        "29d2931eba",
+        "aa25ae6312",
+        "b471764f11"
+      ],
+      "value": 6.0324825986078885
+    },
+    "gap_pp": {
+      "sources": [
+        "29d2931eba",
+        "aa25ae6312",
+        "b471764f11"
+      ],
+      "value": 13.088396522271232
+    },
+    "perimeter_net": {
+      "sources": [
+        "29d2931eba"
+      ],
+      "value": 61
+    },
+    "readthrough": {
+      "sources": [
+        "29d2931eba",
+        "aa25ae6312",
+        "b471764f11"
+      ],
+      "value": "comparable_growth"
+    }
+  }
+}

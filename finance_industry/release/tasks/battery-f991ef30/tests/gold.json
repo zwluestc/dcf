@@ -1,0 +1,60 @@
+{
+  "cutoff": "2026-04-30",
+  "claims": {
+    "demand_m": {
+      "sources": [
+        "2efd68a1c3",
+        "8fb0dec727"
+      ],
+      "value": 68.8
+    },
+    "supply_m": {
+      "sources": [
+        "a2b121268a",
+        "ceda13efe2",
+        "e406bc31f9"
+      ],
+      "value": 61.6
+    },
+    "base_balance_m": {
+      "sources": [
+        "2efd68a1c3",
+        "8fb0dec727",
+        "a2b121268a",
+        "ceda13efe2",
+        "e406bc31f9"
+      ],
+      "value": -7.2
+    },
+    "no_subsidy_balance_m": {
+      "sources": [
+        "2efd68a1c3",
+        "8fb0dec727",
+        "a2b121268a",
+        "ceda13efe2",
+        "e406bc31f9"
+      ],
+      "value": 7.2
+    },
+    "release_balance_m": {
+      "sources": [
+        "2efd68a1c3",
+        "8fb0dec727",
+        "a2b121268a",
+        "ceda13efe2",
+        "e406bc31f9"
+      ],
+      "value": -2.4000000000000004
+    },
+    "catalyst_readthrough": {
+      "sources": [
+        "2efd68a1c3",
+        "8fb0dec727",
+        "a2b121268a",
+        "ceda13efe2",
+        "e406bc31f9"
+      ],
+      "value": "residual_shortage"
+    }
+  }
+}

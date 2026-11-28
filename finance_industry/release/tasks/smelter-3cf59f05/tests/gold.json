@@ -1,0 +1,42 @@
+{
+  "cutoff": "2025-04-30",
+  "claims": {
+    "exposed_tonnes": {
+      "sources": [
+        "e17d0ea48b"
+      ],
+      "value": 388000.0
+    },
+    "loss_usd_m": {
+      "sources": [
+        "6b05509458",
+        "e17d0ea48b"
+      ],
+      "value": 17.072
+    },
+    "post_cny_m": {
+      "sources": [
+        "6b05509458",
+        "d5a3dfd1dc",
+        "e17d0ea48b"
+      ],
+      "value": 457.0816
+    },
+    "headroom_cny_m": {
+      "sources": [
+        "6b05509458",
+        "d5a3dfd1dc",
+        "e17d0ea48b"
+      ],
+      "value": 15.08159999999998
+    },
+    "test": {
+      "sources": [
+        "6b05509458",
+        "d5a3dfd1dc",
+        "e17d0ea48b"
+      ],
+      "value": "clear"
+    }
+  }
+}

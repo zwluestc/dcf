@@ -1,0 +1,260 @@
+{
+  "source": "original synthetic disclosures",
+  "oracle_kind": "derived_target",
+  "seed": 8301,
+  "variants_per_family": 4,
+  "tasks": [
+    {
+      "task_id": "foundry-02ba6f55",
+      "family": "foundry",
+      "title": "晶圆代工：谁拿到了更多外部客户出货？",
+      "aligned_to": "Finance Agent Benchmark",
+      "docs_visible": 19,
+      "docs_withheld": 1,
+      "corpus_sha256": "0d0da9127a2268271cda086a7cb8649edc525e7558990fb2e7992f7256306b51"
+    },
+    {
+      "task_id": "foundry-e5f75b94",
+      "family": "foundry",
+      "title": "晶圆代工：谁拿到了更多外部客户出货？",
+      "aligned_to": "Finance Agent Benchmark",
+      "docs_visible": 19,
+      "docs_withheld": 1,
+      "corpus_sha256": "e965ccf6f3c07b70aac48a29f659f2d021c31caf3335a0db5b886664ae2c979b"
+    },
+    {
+      "task_id": "foundry-a8ee9eef",
+      "family": "foundry",
+      "title": "晶圆代工：谁拿到了更多外部客户出货？",
+      "aligned_to": "Finance Agent Benchmark",
+      "docs_visible": 19,
+      "docs_withheld": 1,
+      "corpus_sha256": "6a101f4e26d2431427c1b729720b823141a893529ec72babc320eed91d4c7a67"
+    },
+    {
+      "task_id": "foundry-6412cb89",
+      "family": "foundry",
+      "title": "晶圆代工：谁拿到了更多外部客户出货？",
+      "aligned_to": "Finance Agent Benchmark",
+      "docs_visible": 19,
+      "docs_withheld": 1,
+      "corpus_sha256": "1c205f00c99240b5998b1956ff47967122547475feeb62682977a8cbcb023f98"
+    },
+    {
+      "task_id": "retail-95a5ed95",
+      "family": "retail",
+      "title": "连锁零售：开店掩盖了老店下滑吗？",
+      "aligned_to": "Finance Agent Benchmark",
+      "docs_visible": 21,
+      "docs_withheld": 1,
+      "corpus_sha256": "31a33de94a29ed985ddc56d35043117e17a192d29df3cfbdb8ed66991335e101"
+    },
+    {
+      "task_id": "retail-9b6100eb",
+      "family": "retail",
+      "title": "连锁零售：开店掩盖了老店下滑吗？",
+      "aligned_to": "Finance Agent Benchmark",
+      "docs_visible": 21,
+      "docs_withheld": 1,
+      "corpus_sha256": "2b2704e0c0ec5fd01ad065376212a6e8b685966c370fe58bd2cfc2b6d8308258"
+    },
+    {
+      "task_id": "retail-19639753",
+      "family": "retail",
+      "title": "连锁零售：开店掩盖了老店下滑吗？",
+      "aligned_to": "Finance Agent Benchmark",
+      "docs_visible": 21,
+      "docs_withheld": 1,
+      "corpus_sha256": "fa474d32e2b33ee6ef17d357628dfb47b148e94bbe465ac8a2162f323b8c3841"
+    },
+    {
+      "task_id": "retail-84b6cbe7",
+      "family": "retail",
+      "title": "连锁零售：开店掩盖了老店下滑吗？",
+      "aligned_to": "Finance Agent Benchmark",
+      "docs_visible": 21,
+      "docs_withheld": 1,
+      "corpus_sha256": "87d259814d7e5c9b6263e5fedb04fd850dd27fc98e0dbba2ce6f43307896dbcd"
+    },
+    {
+      "task_id": "wind-5022dabd",
+      "family": "wind",
+      "title": "海上风电：中标容量能否进入可融资项目清单？",
+      "aligned_to": "FrontierFinance (Samaya)",
+      "docs_visible": 19,
+      "docs_withheld": 1,
+      "corpus_sha256": "2fcf1ba22dcea626e238311bf682f6c9046d62208b3b3b8ddc3cc1f3af4c1d82"
+    },
+    {
+      "task_id": "wind-71d48f99",
+      "family": "wind",
+      "title": "海上风电：中标容量能否进入可融资项目清单？",
+      "aligned_to": "FrontierFinance (Samaya)",
+      "docs_visible": 19,
+      "docs_withheld": 1,
+      "corpus_sha256": "9e43a5e4d92b1f505079342bdfe1a69442e2765f73e515f303b1374f08031972"
+    },
+    {
+      "task_id": "wind-4cd798e6",
+      "family": "wind",
+      "title": "海上风电：中标容量能否进入可融资项目清单？",
+      "aligned_to": "FrontierFinance (Samaya)",
+      "docs_visible": 19,
+      "docs_withheld": 1,
+      "corpus_sha256": "4cb43d57dcc21c1013b1bf1ddb3b809b6348a961a39e70cec17117dcc38b4226"
+    },
+    {
+      "task_id": "wind-7e9e342b",
+      "family": "wind",
+      "title": "海上风电：中标容量能否进入可融资项目清单？",
+      "aligned_to": "FrontierFinance (Samaya)",
+      "docs_visible": 19,
+      "docs_withheld": 1,
+      "corpus_sha256": "f418435e1da1c53ef31e9fde33fc5f216321c4dbea850c892cebcb1e6e8b270e"
+    },
+    {
+      "task_id": "smelter-169f343f",
+      "family": "smelter",
+      "title": "铜冶炼：加工费重定价会不会吃掉契约缓冲？",
+      "aligned_to": "FrontierFinance (Samaya)",
+      "docs_visible": 21,
+      "docs_withheld": 1,
+      "corpus_sha256": "ae4270cc37eca7f4a8857315b053658289742952302485dc6583fde3e706a414"
+    },
+    {
+      "task_id": "smelter-f283396c",
+      "family": "smelter",
+      "title": "铜冶炼：加工费重定价会不会吃掉契约缓冲？",
+      "aligned_to": "FrontierFinance (Samaya)",
+      "docs_visible": 21,
+      "docs_withheld": 1,
+      "corpus_sha256": "1a63ab92926ede39fccee3afc21286f4943b8cd59012ac550ed7c36cfc3ee823"
+    },
+    {
+      "task_id": "smelter-928006a9",
+      "family": "smelter",
+      "title": "铜冶炼：加工费重定价会不会吃掉契约缓冲？",
+      "aligned_to": "FrontierFinance (Samaya)",
+      "docs_visible": 21,
+      "docs_withheld": 1,
+      "corpus_sha256": "54c0c1e14cba370f122f6c47c9b9892a3c9a32fa5976b8badac97f85ad54d5af"
+    },
+    {
+      "task_id": "smelter-6a887a94",
+      "family": "smelter",
+      "title": "铜冶炼：加工费重定价会不会吃掉契约缓冲？",
+      "aligned_to": "FrontierFinance (Samaya)",
+      "docs_visible": 21,
+      "docs_withheld": 1,
+      "corpus_sha256": "f34492d2505329299b1002f667434a0683acd008102581fb98e5fca8213ece3a"
+    },
+    {
+      "task_id": "port-cf894bdd",
+      "family": "port",
+      "title": "集装箱港口：修订后哪个季度的本地吞吐量最高？",
+      "aligned_to": "FinSearchComp",
+      "docs_visible": 21,
+      "docs_withheld": 1,
+      "corpus_sha256": "fe053c9c3f9a1d8b6580f78e7a4979ecfc3af6ae0bcac36a9c91dfeffc095f04"
+    },
+    {
+      "task_id": "port-5fb1ac01",
+      "family": "port",
+      "title": "集装箱港口：修订后哪个季度的本地吞吐量最高？",
+      "aligned_to": "FinSearchComp",
+      "docs_visible": 21,
+      "docs_withheld": 1,
+      "corpus_sha256": "e15ba0f22af75fcd3fe74364aff2f4861a4223d28fb2aaa38be4f79cc90568e6"
+    },
+    {
+      "task_id": "port-ae2b552e",
+      "family": "port",
+      "title": "集装箱港口：修订后哪个季度的本地吞吐量最高？",
+      "aligned_to": "FinSearchComp",
+      "docs_visible": 21,
+      "docs_withheld": 1,
+      "corpus_sha256": "f947da76b730c8ceb4b03c9c4605b0e3ef40fd28c952cf894495b831b22d1ef3"
+    },
+    {
+      "task_id": "port-0d631a96",
+      "family": "port",
+      "title": "集装箱港口：修订后哪个季度的本地吞吐量最高？",
+      "aligned_to": "FinSearchComp",
+      "docs_visible": 21,
+      "docs_withheld": 1,
+      "corpus_sha256": "75eeba05f5aab5121f4eb78c5b2d2afb1e5d59505b91954dcf6b14043f467f6d"
+    },
+    {
+      "task_id": "insurer-923b674b",
+      "family": "insurer",
+      "title": "保险并购：报价溢价与交易完成日能否同时确认？",
+      "aligned_to": "FinSearchComp",
+      "docs_visible": 18,
+      "docs_withheld": 1,
+      "corpus_sha256": "aaa32e19ebbaa4c9f00ab096b34b1f9011d1c9863800d5725b839ffc0b862fa4"
+    },
+    {
+      "task_id": "insurer-ce023a10",
+      "family": "insurer",
+      "title": "保险并购：报价溢价与交易完成日能否同时确认？",
+      "aligned_to": "FinSearchComp",
+      "docs_visible": 18,
+      "docs_withheld": 1,
+      "corpus_sha256": "2cef9d2d1b39a8020e281eb80a04623108d8d333b49a6d70d832054e3a04bee7"
+    },
+    {
+      "task_id": "insurer-23e3b1ba",
+      "family": "insurer",
+      "title": "保险并购：报价溢价与交易完成日能否同时确认？",
+      "aligned_to": "FinSearchComp",
+      "docs_visible": 18,
+      "docs_withheld": 1,
+      "corpus_sha256": "03f4252c3cb81a75826890d2d0e33e4e5c156d7ac8e2eda6ccebab945429c4cb"
+    },
+    {
+      "task_id": "insurer-b9af1d60",
+      "family": "insurer",
+      "title": "保险并购：报价溢价与交易完成日能否同时确认？",
+      "aligned_to": "FinSearchComp",
+      "docs_visible": 18,
+      "docs_withheld": 1,
+      "corpus_sha256": "73c8e071846332a03d22c1fd71b7598e943d666b4adbe4e577bcaa17974a8381"
+    },
+    {
+      "task_id": "battery-97c87cd5",
+      "family": "battery",
+      "title": "电池隔膜行业：本地供需缺口能否靠一条新线填平？",
+      "aligned_to": "FrontierFinance (Samaya)",
+      "docs_visible": 23,
+      "docs_withheld": 1,
+      "corpus_sha256": "b74f75a4ab2b49707184b6b94b720076a6085adfe0ae2a2d4df0742aff565dfa"
+    },
+    {
+      "task_id": "battery-c52d0a71",
+      "family": "battery",
+      "title": "电池隔膜行业：本地供需缺口能否靠一条新线填平？",
+      "aligned_to": "FrontierFinance (Samaya)",
+      "docs_visible": 23,
+      "docs_withheld": 1,
+      "corpus_sha256": "000b79c1c443e21d342a00a197c41a82b057d76c71a0c8a1e2813faa1e3d1cc7"
+    },
+    {
+      "task_id": "battery-6a1bb995",
+      "family": "battery",
+      "title": "电池隔膜行业：本地供需缺口能否靠一条新线填平？",
+      "aligned_to": "FrontierFinance (Samaya)",
+      "docs_visible": 23,
+      "docs_withheld": 1,
+      "corpus_sha256": "746faafa907dbb93a7d05ab282f251ae6b911f58cd8d86de242fa237c182fdbe"
+    },
+    {
+      "task_id": "battery-6449370d",
+      "family": "battery",
+      "title": "电池隔膜行业：本地供需缺口能否靠一条新线填平？",
+      "aligned_to": "FrontierFinance (Samaya)",
+      "docs_visible": 23,
+      "docs_withheld": 1,
+      "corpus_sha256": "4ba07d035479aa026ad0a0579b947c36a4532aaa74c8fc498c2c05392a286002"
+    }
+  ]
+}
